@@ -7,7 +7,61 @@
                         <div class="form-group d-flex justify-content-end">
                             <button class="auth-btn-close" data-dismiss="modal" aria-label="Close"></button>
                         </div>
-                        <template v-if="sms.check">
+                        <template v-if="password.check">
+                            <div class="form-group">
+                                <h3 class="auth-title text-center">Новый пароль</h3>
+                                <h6 class="text-secondary text-center mt-3 auth-description">Придумайте новый пароль, минимальное количество символов 8.</h6>
+                            </div>
+                            <div class="form-group p-0" v-if="password.error">
+                                <div class="auth-error font-weight-bold text-center">Пароли не совпадают</div>
+                            </div>
+                            <div class="form-row mx-md-3">
+                                <div class="col-12 mt-md-3 auth-row">
+                                    <input type="password" class="form-control p-3 auth-input" v-model="password.new" placeholder="Новый пароль" ref="new_password" v-on:keyup.enter="passwordChange">
+                                </div>
+                                <div class="col-12 mt-md-3 auth-row">
+                                    <input type="password" class="form-control p-3 auth-input" v-model="password.confirm" placeholder="Подтвердите пароль" ref="confirm_password" v-on:keyup.enter="passwordChange">
+                                </div>
+                                <div class="col-12 mt-md-4 auth-row">
+                                    <button class="btn btn-block auth-register text-white" @click="passwordChange">
+                                        <div v-if="password.status">Сменить пароль</div>
+                                        <div class="spinner" v-else></div>
+                                    </button>
+                                </div>
+                            </div>
+                        </template>
+                        <template v-else-if="reset.check">
+                            <div class="form-group">
+                                <h3 class="auth-title text-center">Востановление пароля</h3>
+                                <h6 class="text-secondary text-center mt-3 auth-description">Введите ваш телефон номер.</h6>
+                            </div>
+                            <div class="form-group p-0" v-if="reset.error">
+                                <div class="auth-error font-weight-bold text-center">{{reset.message}}</div>
+                            </div>
+                            <div class="form-row mx-md-3">
+                                <div class="col-12 mt-md-3 auth-row" v-if="!reset.user">
+                                    <div class="auth-phone-prefix">+7</div>
+                                    <input type="text" class="form-control p-3 auth-input auth-phone" v-maska="'##########'" v-model="reset.phone" ref="reset_phone" v-on:keyup.enter="reset_btn" pattern="[0-9]*" inputmode="numeric">
+                                </div>
+                                <div class="col-12 mt-md-3 auth-row" v-else>
+                                    <input type="text" class="form-control p-3 auth-input" v-maska="'######'" v-model="reset.code" placeholder="код смс" ref="reset_code" v-on:keyup.enter="reset_check" pattern="[0-9]*" inputmode="numeric">
+                                </div>
+                                <div class="col-12 mt-md-4 auth-row">
+                                    <button class="btn btn-block auth-btn text-white" @click="reset_btn" v-if="!reset.user">
+                                        <div v-if="reset.status">Подтвердить номер</div>
+                                        <div v-else class="spinner"></div>
+                                    </button>
+                                    <button class="btn btn-block auth-btn text-white" v-else @click="reset_check">
+                                        <div v-if="reset.checkStatus">Подтвердить код</div>
+                                        <div v-else class="spinner"></div>
+                                    </button>
+                                </div>
+                                <div class="col-12 mt-md-4 auth-row">
+                                    <button class="btn btn-block auth-register text-white" @click="cancel">Отмена</button>
+                                </div>
+                            </div>
+                        </template>
+                        <template v-else-if="sms.check">
                             <div class="form-group">
                                 <h3 class="auth-title text-center">Смс подтверждение</h3>
                                 <h6 class="text-secondary text-center mt-3 auth-description">На ваш номер был отправлен смс код.</h6>
@@ -17,7 +71,7 @@
                             </div>
                             <div class="form-row mx-md-3">
                                 <div class="col-12 mt-md-3 auth-row">
-                                    <input type="number" class="form-control p-3 auth-input" v-maska="'######'" v-model="sms.code" placeholder="код смс" ref="phone_code" v-on:keyup.enter="sms_btn">
+                                    <input type="text" class="form-control p-3 auth-input" v-maska="'######'" v-model="sms.code" placeholder="код смс" ref="phone_code" v-on:keyup.enter="sms_btn" pattern="[0-9]*" inputmode="numeric">
                                 </div>
                                 <div class="col-12 mt-md-4 auth-row">
                                     <button class="btn btn-block auth-btn text-white" @click="sms_btn">
@@ -26,7 +80,7 @@
                                     </button>
                                 </div>
                                 <div class="col-12 mt-md-4 auth-row">
-                                    <button class="btn btn-block auth-register text-white" @click="cancelSms">Отмена</button>
+                                    <button class="btn btn-block auth-register text-white" @click="cancel">Отмена</button>
                                 </div>
                             </div>
                         </template>
@@ -41,22 +95,22 @@
                             <div class="form-row mx-md-3">
                                 <div class="col-12 mt-md-3 auth-row">
                                     <div class="auth-phone-prefix">+7</div>
-                                    <input type="number" class="form-control p-3 auth-input auth-phone" v-maska="'##########'" v-model="login.phone" ref="phone" v-on:keyup.enter="login_btn">
+                                    <input type="text" class="form-control p-3 auth-input auth-phone" v-maska="'##########'" v-model="login.phone" ref="phone" v-on:keyup.enter="login_btn" pattern="[0-9]*" inputmode="numeric">
                                 </div>
                                 <div class="col-12 mt-md-3 auth-row">
                                     <input type="password" class="form-control p-3 auth-input" v-model="login.password" placeholder="Пароль" ref="password" v-on:keyup.enter="login_btn">
                                 </div>
-                                <div class="col-12 mt-md-4 auth-row">
+                                <div class="col-12 mt-md-3 auth-row">
                                     <button class="btn btn-block auth-btn text-white" @click="login_btn">
                                         <div v-if="login.status">Далее</div>
                                         <div class="spinner" v-else></div>
                                     </button>
                                 </div>
-                                <div class="col-12 mt-md-4 auth-row">
+                                <div class="col-12 mt-md-3 auth-row">
                                     <button class="btn btn-block auth-register text-white" @click="storage.auth = false">Регистрация</button>
                                 </div>
                                 <div class="col-12 mt-md-3 auth-row">
-                                    <button class="btn btn-block text-secondary">Забыли пароль</button>
+                                    <button class="btn btn-block text-secondary auth-forgot" @click="reset.check = true">Забыли пароль</button>
                                 </div>
                             </div>
                         </template>
@@ -74,7 +128,7 @@
                                 </div>
                                 <div class="col-12 mt-md-3 auth-row">
                                     <div class="auth-phone-prefix">+7</div>
-                                    <input type="number" class="form-control p-3 auth-input auth-phone" v-maska="'##########'" v-model="register.phone" ref="phone_register" v-on:keyup.enter="register_btn">
+                                    <input type="text" class="form-control p-3 auth-input auth-phone" v-maska="'##########'" v-model="register.phone" ref="phone_register" v-on:keyup.enter="register_btn" pattern="[0-9]*" inputmode="numeric">
                                 </div>
                                 <div class="col-12 mt-md-3 auth-row">
                                     <input type="password" class="form-control p-3 auth-input" v-model="register.password" placeholder="Пароль" ref="password_register" v-on:keyup.enter="register_btn">
@@ -89,7 +143,7 @@
                                     <button class="btn btn-block auth-register text-white" @click="storage.auth = true">Войти</button>
                                 </div>
                                 <div class="col-12 mt-md-3 auth-row">
-                                    <button class="btn btn-block text-secondary">Забыли пароль</button>
+                                    <button class="btn btn-block text-secondary auth-forgot" @click="reset.check = true">Забыли пароль</button>
                                 </div>
                             </div>
                         </template>
@@ -114,11 +168,27 @@ export default {
     name: "Auth",
     data: function() {
         return {
+            password: {
+                check: false,
+                status: true,
+                error: false,
+                new: '',
+                confirm: '',
+            },
             sms: {
                 check: false,
                 status: false,
                 error: false,
                 code: '',
+                phone: '',
+            },
+            reset: {
+                check: false,
+                status: true,
+                checkStatus: true,
+                user: false,
+                error: false,
+                message: '',
                 phone: '',
             },
             login: {
@@ -138,15 +208,80 @@ export default {
         }
     },
     methods: {
-        cancelSms: function() {
-            this.sms.check    =   false;
-            this.sms.error    =   false;
-            this.sms.status   =   false;
+        cancel: function() {
+            this.reset.check    = false;
+            this.reset.user.false   =   false;
+            this.reset.error    = false;
+            this.reset.status   = true;
+            this.reset.checkStatus  =   true;
+            this.reset.phone    = '';
+            this.sms.check    = false;
+            this.sms.error    = false;
+            this.sms.status   = true;
             this.sms.phone    = '';
             this.login.status   =   true;
             this.login.error    =   false;
             this.register.status   =   true;
             this.register.error    =   false;
+        },
+        passwordChange: function() {
+            if (this.password.status) {
+                if (this.password.new.trim() === '' || this.password.new.length < 8) {
+                    return this.$refs.new_password.focus();
+                } else if (this.password.confirm.trim() === '' || this.password.confirm.length < 8) {
+                    return this.$refs.confirm_password.focus();
+                } else if (this.password.confirm !== this.password.new) {
+                    return this.password.error  =   true;
+                }
+                this.password.status    =   false;
+                axios.post('/api/user/reset/'+this.reset.user.id,{
+                    password: this.password.confirm.trim()
+                })
+                    .then(response => {
+                        window.location.reload();
+                    });
+            }
+        },
+        reset_check: function() {
+            if (this.reset.checkStatus) {
+                if (this.reset.code.trim() === '') {
+                    return this.$refs.reset_code.focus();
+                }
+                this.reset.checkStatus  =   false;
+                axios.get('/api/sms/'+this.reset.user.phone+'/'+this.reset.code)
+                    .then(response => {
+                        let data    =   response.data;
+                        if (data.hasOwnProperty('data')) {
+                            this.storage.token  =   data.data.api_token;
+                            sessionStorage.user =   JSON.stringify(data.data);
+                            this.password.check =   true;
+                            this.reset.checkStatus  =   true;
+                        }
+                    }).catch(error => {
+                        this.reset.message  =   error.response.data.message;
+                        this.reset.checkStatus  =   true;
+                        this.reset.error    =   true;
+                    });
+            }
+        },
+        reset_btn: function() {
+            if (!this.storage.token && this.reset.status) {
+                if (this.reset.phone.trim() === '') {
+                    return this.$refs.reset_phone.focus();
+                }
+                this.reset.error    =   false;
+                this.reset.status   =   false;
+                axios.get('/api/sms/reset/7'+this.reset.phone)
+                    .then(response => {
+                        this.reset.user =   response.data.data;
+                        this.reset.status   =   true;
+                        this.reset.error    =   false;
+                    }).catch(error => {
+                        this.reset.message  =   error.response.data.message;
+                        this.reset.status   =   true;
+                        this.reset.error    =   true;
+                    });
+            }
         },
         sms_btn: function() {
             if (!this.storage.token) {
@@ -168,7 +303,6 @@ export default {
                         this.sms.status   =   true;
                         this.sms.error    =   true;
                     });
-
                 }
             }
         },

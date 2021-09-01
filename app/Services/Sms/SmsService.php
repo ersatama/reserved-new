@@ -99,7 +99,7 @@ class SmsService extends BaseService
     }
 
     public function message():string {
-        return 'Ваш код: '.$this->code.' для подтверждения регистрации';
+        return 'Ваш код подтверждения: '.$this->code;
     }
 
 }

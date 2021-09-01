@@ -74,6 +74,7 @@ class MainContract
     const SCORE     =   'score';
     const EMAIL     =   'email';
     const PASSWORD  =   'password';
+    const CONFIRM   =   'confirm';
     const AVATAR    =   'avatar';
     const TITLE     =   'title';
     const TITLE_KZ  =   'title_kz';

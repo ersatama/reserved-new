@@ -163,13 +163,17 @@ Route::prefix('organization')->group(function() {
 });
 
 Route::prefix('user')->group(function() {
+
     Route::post('update/{id}',[UserController::class,'update'])->name('user.update');
+    Route::post('reset/{id}',[UserController::class,'resetPassword'])->name('user.reset.password');
     Route::post('password/{id}',[UserController::class,'updatePassword'])->name('user.update.password');
-    Route::get('{id}',[UserController::class,'getById'])->name('user.id');
-    Route::get('phone/{phone}',[UserController::class,'getByPhone'])->name('user.phone');
     Route::post('booking',[UserController::class,'booking'])->name('user.booking');
     Route::post('new',[UserController::class,'guest'])->name('user.guest');
     Route::post('token/{token}',[UserController::class,'authToken'])->name('user.authToken');
+
+    Route::get('phone/{phone}',[UserController::class,'getByPhone'])->name('user.phone');
+    Route::get('{id}',[UserController::class,'getById'])->name('user.id');
+
 });
 
 Route::prefix('category')->group(function() {
@@ -194,7 +198,9 @@ Route::prefix('languages')->group(function() {
 });
 
 Route::prefix('sms')->group(function() {
+    Route::get('reset/{phone}',[UserController::class,'smsResend']);
     Route::get('{phone}/{code}',[UserController::class,'smsVerify']);
+
 });
 
 Route::get('/sms_resend/{phone}',[UserController::class,'smsResend']);

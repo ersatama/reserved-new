@@ -35,6 +35,7 @@ use App\Http\Requests\User\UserCreateRequest;
 use App\Http\Requests\User\UserGuestRequest;
 use App\Http\Requests\User\UserUpdateRequest;
 use App\Http\Requests\User\UserPasswordRequest;
+use App\Http\Requests\User\UserPasswordResetRequest;
 use Illuminate\Validation\ValidationException;
 use Pusher\Pusher;
 
@@ -149,14 +150,28 @@ class UserController extends Controller
         return new UserResource($this->userService->update($id,$userUpdateRequest->validated()));
     }
 
+    /**
+     * @throws ValidationException
+     */
+    public function resetPassword($id, UserPasswordResetRequest $userPasswordResetRequest)
+    {
+        $this->userService->update($id,[
+            MainContract::PASSWORD  =>  Hash::make($userPasswordResetRequest->validated()[MainContract::PASSWORD])
+        ]);
+        return response(['message'  =>  'Ваш пароль успешно изменен'],200);
+    }
+
+    /**
+     * @throws ValidationException
+     */
     public function updatePassword($id, UserPasswordRequest $userPasswordRequest)
     {
         $data   =   $userPasswordRequest->validated();
         $user   =   $this->userService->getById($id);
-        if (Hash::check($data[UserContract::OLD], $user->{UserContract::PASSWORD})) {
-            if (strlen($data[UserContract::NEW]) >= 8) {
+        if (Hash::check($data[MainContract::OLD], $user->{MainContract::PASSWORD})) {
+            if (strlen($data[MainContract::NEW]) >= 8) {
                 $this->userService->update($id,[
-                    UserContract::PASSWORD  =>  Hash::make($data[UserContract::NEW])
+                    MainContract::PASSWORD  =>  Hash::make($data[MainContract::NEW])
                 ]);
                 return response(['message'  =>  'Ваш пароль успешно изменен'],200);
             }
@@ -180,17 +195,17 @@ class UserController extends Controller
         if ($user) {
             return new UserResource($user);
         }
-        return response(['message'  =>  'incorrect code'],400);
+        return response(['message'  =>  'Не правильный код'],400);
     }
 
     public function smsResend($phone)
     {
         $user   =   $this->userService->smsResend($phone);
         if ($user) {
-            $this->smsService->sendCode($user->phone,$user->code);
+            $this->smsService->sendCode($user->{MainContract::PHONE},$user->{MainContract::CODE});
             return new UserResource($user);
         }
-        return response(['message'  =>  'Phone doesn\'t exist'],400);
+        return response(['message'  =>  'Телефон номер не зарегистрирован'],400);
     }
 
     public function token($token)

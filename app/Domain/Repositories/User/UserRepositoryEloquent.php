@@ -3,6 +3,7 @@
 
 namespace App\Domain\Repositories\User;
 
+use App\Domain\Contracts\MainContract;
 use App\Domain\Contracts\UserContract;
 use App\Models\User;
 use Illuminate\Support\Str;
@@ -68,7 +69,7 @@ class UserRepositoryEloquent implements UserRepositoryInterface
 
     public function smsVerify($phone,$code)
     {
-        $user   =   User::where(UserContract::PHONE,$phone)->first();
+        $user   =   User::where(MainContract::PHONE,$phone)->first();
         if ($user && ($user->code === $code)) {
             $user->phone_verified_at    =   date('Y-m-d H:i:s');
             $user->save();
@@ -79,9 +80,9 @@ class UserRepositoryEloquent implements UserRepositoryInterface
 
     public function smsResend($phone)
     {
-        $user   =   User::where(UserContract::PHONE,$phone)->first();
+        $user   =   User::where(MainContract::PHONE,$phone)->first();
         if ($user) {
-            $user->{UserContract::CODE} =   rand(100000,999999);
+            $user->{MainContract::CODE} =   rand(100000,999999);
             $user->save();
             return $user;
         }

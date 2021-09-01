@@ -218,47 +218,21 @@ class Organization extends Model
 
     public function setImageAttribute($value)
     {
-        $disk               =   config('backpack.base.root_disk_name');
-        $destination_path   =   'public/uploads';
-
-        if ($value  ==  null) {
-            Storage::disk($disk)->delete($this->{MainContract::IMAGE});
-            $this->attributes[MainContract::IMAGE] = null;
-        }
-
         if (Str::startsWith($value, 'data:image')) {
             $image      =   Image::make($value)->encode('jpg', 100);
-            $filename   =   md5($value.time()).'.jpg';
-            /*//https://reserved-app-image.s3.eu-central-1.amazonaws.com/
-            Storage::disk('s3')->put('Hello.txt', 'Hello World!');
-            Storage::disk('s3')->put('/'.$filename, $image->stream()->__toString());
-            echo Storage::disk('s3')->url($filename);;
-            exit();*/
-            Storage::disk($disk)->put($destination_path.'/'.$filename, $image->stream());
-            Storage::disk($disk)->delete($this->{MainContract::IMAGE});
-            $public_destination_path = Str::replaceFirst('public/', '', $destination_path);
-            $this->attributes[MainContract::IMAGE] = '/'.$public_destination_path.'/'.$filename;
+            $filename   =   'logo/'.md5($value.time()).'.jpg';
+            Storage::disk('s3')->put($filename, $image->stream()->__toString());
+            $this->attributes[MainContract::IMAGE]  =   Storage::disk('s3')->url($filename);
         }
     }
 
     public function setWallpaperAttribute($value)
     {
-
-        $disk               =   config('backpack.base.root_disk_name');
-        $destination_path   =   'public/uploads/wallpaper';
-
-        if ($value  ==  null) {
-            Storage::disk($disk)->delete($this->{MainContract::WALLPAPER});
-            $this->attributes[MainContract::WALLPAPER] = null;
-        }
-
         if (Str::startsWith($value, 'data:image')) {
             $image      =   Image::make($value)->encode('jpg', 90);
-            $filename   =   md5($value.time()).'.jpg';
-            Storage::disk($disk)->put($destination_path.'/'.$filename, $image->stream());
-            Storage::disk($disk)->delete($this->{MainContract::WALLPAPER});
-            $public_destination_path = Str::replaceFirst('public/', '', $destination_path);
-            $this->attributes[MainContract::WALLPAPER] = '/'.$public_destination_path.'/'.$filename;
+            $filename   =   'wall/'.md5($value.time()).'.jpg';
+            Storage::disk('s3')->put($filename, $image->stream()->__toString());
+            $this->attributes[MainContract::WALLPAPER]  =   Storage::disk('s3')->url($filename);
         }
     }
 
