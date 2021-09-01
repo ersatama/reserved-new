@@ -1,0 +1,45 @@
+.favorite {
+    &-main, &-category {
+        background: no-repeat center;
+        background-size: contain;
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+        &-on {
+            background-image: url('/img/logo/favorite-red.svg');
+
+        }
+        &-off {
+            background-image: url('/img/logo/favorite-grey.svg');
+            opacity: .3;
+        }
+    }
+    &-main {
+        margin-left: 5px;
+        background-size: 70%;
+    }
+    &-category {
+        position: absolute;
+        z-index: 2;
+        left: 5px;
+        top: 5px;
+        background-color: #fff;
+        box-shadow: 0 0 0 10px #fff;
+        border-radius: 0 0 10px 0;
+        opacity: 1;
+    }
+}
+@media only screen and (max-width: 768px) {
+    .favorite {
+        &-main {
+            width: 16px;
+            height: 16px;
+        }
+        &-category {
+            width: 10px;
+            height: 10px;
+            border-radius: 0 0 2px 0;
+            box-shadow: 0 0 0 8px #fff;
+        }
+    }
+}

@@ -1,0 +1,55 @@
+.footer {
+    &-title {
+        font-size: 1.75rem;
+        text-transform: uppercase;
+        &-sub {
+            font-size: 1rem;
+        }
+    }
+}
+.main {
+    &-thumbnail {
+        max-width: 160px;
+        border-radius: 5px;
+    }
+}
+@media only screen and (max-width: 768px) {
+    .footer {
+        &-title {
+            font-size: 12px;
+            margin-top: 10px;
+            &-sub {
+                font-size: 11px;
+            }
+        }
+        &-mobile {
+            width: 50%;
+            float: left;
+            &-main {
+                display: flex;
+                justify-content: space-between;
+            }
+            &-icon {
+                border-radius: 5px;
+                border: 2px solid white;
+            }
+        }
+        &-company {
+            clear: both;
+            text-align: center;
+            margin-bottom: 0;
+            font-size: 12px;
+        }
+        &-menu {
+            &-title {
+                font-size: 14px;
+            }
+            &-group {
+                display: grid;
+                grid-template-columns: repeat(3,1fr);
+                margin-top: 10px !important;
+                font-size: 11px;
+            }
+        }
+    }
+}

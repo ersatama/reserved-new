@@ -1,0 +1,265 @@
+.modal-mask {
+    position: fixed;
+    z-index: 9998;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: all 0.5s ease;
+    overflow: auto;
+}
+.modal-table {
+    background: #57a283;
+    padding: 10px 20px 10px 20px;
+    color: #fff !important;
+    border-radius: 5px;
+}
+.modal-table-title {
+    font-size: 16px;
+    font-weight: bold;
+}
+.modal-table-price {
+    font-size: 14px;
+}
+.modal-calendar {
+    border: none;
+    background: transparent;
+    border-radius: 0;
+    width: 100%;
+}
+.modal-calendar-green {
+    border-radius: 5px;
+}
+.modal-calendar-bg {
+    background: rgb(245,245,245);
+    border-radius: 5px;
+}
+.modal-photo, .modal-photo-view {
+    min-height: 200px;
+    background: rgba(0,0,0,.02) url('/img/logo/cloud-computing.png') no-repeat center;
+}
+
+.modal-photo-view > img {
+    display: block;
+}
+.modal-hidden {
+    display: none;
+}
+
+.modal-wrapper {
+    position: relative;
+    width: inherit;
+    margin: 50px auto 100px auto;
+}
+
+.modal-close {
+    width: 30px;
+    height: 30px;
+    background: url(/img/logo/close.svg) no-repeat center;
+    background-size: 15px;
+    opacity: .5;
+    cursor: pointer;
+}
+
+.modal-container {
+    max-width: 600px;
+    border-radius: 5px;
+    margin: 0 auto;
+    background-color: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,.33);
+    transition: all 0.5s ease;
+}
+
+.modal-header h3 {
+    margin-top: 0;
+    color: #42b983;
+}
+
+.modal-header {
+    border-bottom: 1px solid rgba(22,28,45,.1);
+    font-size: 24px;
+    padding: 20px;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.modal-body {
+    margin: 0;
+    padding: 0;
+}
+.modal-inputs {
+    display: flex;
+    padding: 20px;
+    gap: 20px;
+    border-bottom: 1px solid rgba(22,28,45,.1);
+    position: relative;
+}
+.modal-inputs:last-child {
+    border: none;
+}
+.modal-input-close {
+    position: absolute;
+    right: 25px;
+    top: 16px;
+    background: url(/img/logo/close.svg) no-repeat center;
+    background-size: 15px;
+    width: 20px;
+    height: 20px;
+    opacity: .5;
+    cursor: pointer;
+}
+.modal-input {
+    width: 50%;
+}
+.modal-100 {
+    width: 50%;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+}
+.modal-100 > div {
+    width: 100%;
+}
+.modal-input > div {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: grey;
+}
+
+.modal-input > input {
+    background: #f4f4f5;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    height: 35px;
+    width: 100%;
+    padding: 0 10px 0 10px;
+    margin-bottom: 10px;
+    outline: none;
+}
+
+.modal-input > select {
+    background: #f4f4f5;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    height: 35px;
+    width: 100%;
+    padding: 0 10px 0 10px;
+    outline: none;
+}
+
+.modal-default-button {
+    color: #fff;
+    float: right;
+    background: #57a283;
+    border-radius: 50px;
+    border: none;
+    height: 35px;
+    padding: 0 20px 0 20px;
+    outline: none !important;
+    font-size: 14px;
+}
+
+.modal-additional-button {
+    color: #fff;
+    float: right;
+    background: #FF8008;
+    border-radius: 50px;
+    border: none;
+    height: 35px;
+    padding: 0 20px 0 20px;
+    outline: none !important;
+    font-size: 14px;
+    margin-right: 10px !important;
+}
+
+/*
+ * The following styles are auto-applied to elements with
+ * transition="modal" when their visibility is toggled
+ * by Vue.js.
+ *
+ * You can easily play with the modal transition by editing
+ * these styles.
+ */
+
+.modal-enter {
+    opacity: 0;
+}
+
+.modal-leave-active {
+    opacity: 0;
+}
+
+.modal-enter .modal-container,
+.modal-leave-active .modal-container {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+@media only screen and (max-width: 768px) {
+    .modal-table {
+        padding: 10px;
+    }
+    .modal-table-title {
+        font-size: 12px;
+    }
+    .modal-table-price {
+        font-size: 11px;
+    }
+    .modal-mask {
+
+    }
+    .modal-wrapper {
+        margin: 150px 50px 100px 50px;
+        width: auto;
+    }
+    .modal-header {
+        padding: 10px;
+        font-size: 14px;
+    }
+    .modal-close {
+        width: 20px;
+        height: 20px;
+        background-size: 10px;
+    }
+    .modal-inputs {
+        padding: 10px;
+        gap: 10px;
+        flex-direction: column;
+    }
+    .modal-input {
+        width: 100%;
+    }
+    .modal-input > div {
+        font-size: 12px;
+    }
+    .modal-input > input {
+        height: 30px;
+        font-size: 11px;
+        border-radius: 3px;
+    }
+    .modal-input > select {
+        font-size: 11px;
+        border-radius: 3px;
+        height: 30px;
+    }
+    .modal-default-button, .modal-additional-button {
+        height: 25px;
+        padding: 0 10px 0 10px;
+        font-size: 11px;
+    }
+    .modal-footer {
+        padding: 10px;
+    }
+    .modal-100 {
+        gap: 5px;
+        width: 100%;
+    }
+    .modal-input-close {
+        top: 8px;
+        right: 10px;
+        background-size: 10px;
+    }
+}

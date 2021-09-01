@@ -1,0 +1,39 @@
+.title {
+    font-size: 7px;
+    margin-top: 2px;
+    color: #00a082;
+}
+.footer {
+    &-fixed {
+        box-shadow: 0 0 5px 1px rgba(0,0,0,.1);
+        position: fixed;
+        right: 10px;
+        bottom: 30px;
+        left: 10px;
+        z-index: 1030;
+        margin: 0;
+        border-radius: 50px;
+        &-main {
+
+        }
+    }
+    &-img {
+        width: 18px;
+        height: 18px;
+    }
+    &-icon {
+        width: 20%;
+        & > button {
+            padding: 3px 0 3px 0;
+            margin: 3px 0 3px 0;
+        }
+        &-center {
+            background: whitesmoke;
+            &-notify {
+                & > .title {
+                    color: #FF8008 !important;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,91 @@
+.settings {
+    &-title {
+        margin: 50px 0 10px 0;
+        font-weight: bold;
+        font-size: 24px;
+    }
+    &-description {
+        font-size: 16px;
+        margin: 0;
+    }
+    &-switcher {
+        display: flex;
+        align-items: center;
+    }
+    &-select {
+        border: none;
+        outline: none;
+        box-shadow: none !important;
+        background: transparent;
+        &:focus, :hover {
+            background: transparent !important;
+        }
+    }
+    &-form {
+        width: 70px;
+        padding: 4px;
+        border-radius: 50px;
+        cursor: pointer;
+        background: #6c757d;
+        transition: all 0.3s ease;
+        &-active {
+            background: #00a082;
+            & > button {
+                margin-left: 29px;
+            }
+        }
+        & > button {
+            transition: all 0.3s ease;
+        }
+    }
+    &-btn {
+        height: 30px;
+        width: 30px;
+        background: #fff;
+        border-radius: 40px;
+        padding: 0;
+        &-bg {
+            background: #FF8008;
+            border-radius: 30px;
+            height: 44px;
+        }
+    }
+    &-item {
+
+    }
+}
+@media only screen and (max-width: 768px) {
+    .settings {
+        &-form {
+            width: 60px;
+            &-active {
+                &-btn {
+                    margin-left: 27px;
+                }
+            }
+        }
+        &-btn {
+            height: 24px;
+            width: 24px !important;
+        }
+        &-select {
+            font-size: 12px;
+        }
+        &-title {
+            font-size: 16px;
+            margin: 20px 0 0 0;
+        }
+        &-description {
+            font-size: 11px;
+            margin: 10px 0 0 0;
+        }
+        &-list {
+            &-title {
+                font-size: 12px !important;
+            }
+            &-description {
+                font-size: 11px !important;
+            }
+        }
+    }
+}

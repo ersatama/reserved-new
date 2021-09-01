@@ -1,0 +1,277 @@
+#app {
+    margin-bottom: 100px;
+}
+.dashboard, .dashboard-block, .dashboard-single, .dashboard-footer {
+    margin: 20px 0 0 0;
+    background: #fff;
+    box-shadow: 0 .125rem .25rem rgba(22,28,45,.075)!important;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    justify-content: space-between;
+}
+.dashboard-blocks {
+    display: flex;
+    flex-direction: column;
+}
+.dashboard-block {
+    display: block;
+}
+.dashboard-block-title {
+    font-size: 20px;
+    margin: 20px 20px 5px 20px;
+}
+.dashboard-block-body {
+    margin: 10px;
+    color: grey;
+    display: flex;
+    flex-wrap: wrap;
+}
+.dashboard-table {
+    width: 20%;
+    padding: 10px;
+}
+.dashboard-table-item {
+    background: rgba(87,162,131,.15);
+    font-size: 14px;
+    border-radius: 5px;
+    height: 100%;
+    color: #57a283;
+}
+.dashboard-table-item > .dashboard-table-title {
+    border-bottom: 1px solid rgba(87,162,131,.15);
+}
+.dashboard-table-item > .dashboard-table-buttons {
+    border-top: 1px solid rgba(87,162,131,.15);
+}
+.dashboard-table-item-checking {
+    background: rgba(255,128,8,1);
+    color: #fff;
+}
+.dashboard-table-item-checking > .dashboard-table-forms > .dashboard-table-form > .dashboard-table-value {
+    color: #fff;
+}
+.dashboard-table-item-checking > .dashboard-table-forms > .dashboard-table-form-double > .dashboard-table-form > .dashboard-table-value {
+    color: #fff;
+}
+.dashboard-table-item-checking > .dashboard-table-title {
+    border-bottom: 1px solid rgb(222 110 4);
+}
+.dashboard-table-item-checking > .dashboard-table-buttons {
+    border-top: 1px solid rgb(222 110 4);
+}
+.dashboard-table-item-checking > .dashboard-table-buttons > .dashboard-table-button {
+    background: rgb(111 59 9);
+    color: #fff;
+}
+.dashboard-table-item-on {
+    background: #57a283;
+    color: #fff;
+}
+.dashboard-table-item-on > .dashboard-table-title {
+    border-bottom: 1px solid #288e64;
+}
+.dashboard-table-item-on > .dashboard-table-buttons {
+    border-top: 1px solid #288e64;
+}
+.dashboard-table-item-on > .dashboard-table-buttons > .dashboard-table-button {
+    background: #035030;
+    color: #fff;
+}
+
+.dashboard-table-item-came {
+    background: #6bc0ff;
+    color: #fff;
+}
+
+.dashboard-table-item-came > .dashboard-table-title {
+    border-bottom: 1px solid #68aee2;
+}
+.dashboard-table-item-came > .dashboard-table-buttons {
+    border-top: 1px solid #68aee2;
+}
+.dashboard-table-item-came > .dashboard-table-buttons > .dashboard-table-button {
+    background: #254358;
+    color: #fff;
+}
+.dashboard-table-title {
+    font-size: 16px;
+    padding: 15px;
+    margin: 0 0 5px 0;
+    font-weight: bold;
+}
+.dashboard-table-title-loading, .dashboard-table-description-loading, .dashboard-table-value-loading, .dashboard-table-button-loading {
+    height: 24px;
+    background: #8bbd9c;
+    border-radius: 3px;
+    animation: pulse 1s cubic-bezier(.4,0,.6,1) infinite;
+}
+.dashboard-table-description-loading {
+    height: 13px;
+    width: 50%;
+}
+.dashboard-table-value-loading {
+    height: 18px;
+    width: 30%;
+}
+.dashboard-table-button-loading {
+    height: 34px;
+    width: 100%;
+}
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: .5;
+    }
+}
+.dashboard-table-buttons {
+    display: flex;
+    gap: 10px;
+    padding: 15px;
+}
+.dashboard-table-button {
+    background: #288e64;
+    text-align: center;
+    color: #fff;
+    border-radius: 3px;
+    height: 34px;
+    border: none;
+    width: 100%;
+    font-size: 11px;
+    outline: none !important;
+    box-shadow: none;
+}
+.dashboard-table-button-transparent {
+    background: transparent !important;
+}
+.dashboard-table-forms {
+    margin: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.dashboard-table-form {
+    font-size: 9px;
+}
+.dashboard-table-form:last-child {
+    margin-bottom: 0;
+}
+.dashboard-table-form-double {
+    display: flex;
+    gap: 10px;
+}
+.dashboard-table-form-double > .dashboard-table-form {
+    width: 50%;
+}
+.dashboard-table-value {
+    color: #000;
+    font-size: 12px;
+    font-weight: bold;
+    margin: 2px 0 0 0;
+}
+.dashboard-block-description {
+    font-size: 15px;
+    color: grey;
+    margin: 0 20px 0 20px;
+}
+
+.dashboard-main {
+    padding: 20px;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+.dashboard-calendar-input {
+    outline: none;
+    border: none !important;
+    background: rgba(87,162,131,.15) !important;
+    cursor: pointer;
+    width: 84px;
+    font-size: 14px;
+    padding: 5px;
+    color: grey;
+    text-align: center;
+}
+.dashboard-header {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.dashboard-title {
+    font-size: 24px;
+}
+.dashboard-body {
+    margin: 20px 0 0 0;
+}
+.dashboard-table {
+
+}
+.dashboard-tables {
+
+}
+@media only screen and (max-width: 1200px) {
+    .dashboard-table {
+        width: 25%;
+    }
+}
+@media only screen and (max-width: 992px) {
+    .dashboard-table {
+        width: 33.3%;
+    }
+}
+@media only screen and (max-width: 768px) {
+    .dashboard-calendar-input {
+        width: 60px;
+        font-size: 11px;
+        margin-right: 10px;
+        padding: 2px;
+    }
+    .dashboard-main {
+        padding: 10px 0 10px 10px;
+    }
+    .dashboard-title {
+        font-size: 14px;
+    }
+    .dashboard-block-title {
+        font-size: 11px;
+        margin: 10px 10px 0 10px;
+    }
+    .dashboard-block-description {
+        font-size: 11px;
+        margin: 0 10px 0 10px;
+    }
+    .dashboard-block-body {
+        margin: 5px;
+    }
+    .dashboard-table {
+        width: 50%;
+        padding: 5px;
+    }
+    .dashboard-table-title {
+        font-size: 11px;
+        padding: 10px;
+        margin: 0;
+    }
+    .dashboard-table-forms {
+        margin: 10px;
+        gap: 0;
+    }
+    .dashboard-table-form {
+        font-size: 8px;
+    }
+    .dashboard-table-value {
+        font-size: 8px;
+    }
+    .dashboard-table-buttons {
+        padding: 10px;
+        gap: 5px;
+    }
+    .dashboard-table-button {
+        height: 26px;
+        font-size: 9px;
+    }
+}

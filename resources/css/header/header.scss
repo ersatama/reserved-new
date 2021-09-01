@@ -1,0 +1,122 @@
+.navbar {
+
+}
+.fixed-top {
+    z-index: 500 !important;
+}
+.header {
+    &-notification {
+        cursor: pointer;
+        width: 44px;
+        height: 100%;
+        border-radius: 50px;
+        margin-right: 15px;
+        background: no-repeat center #fff;
+        background-size: 40%;
+        &-icon {
+            background-image: url('/img/logo/bell.svg');
+        }
+        &-icon-message {
+            background-image: url('/img/logo/notification.svg');
+        }
+    }
+    &-sign-out, &-location {
+        background: url('/img/logo/sign-out.svg') no-repeat center rgb(245,245,245);
+        background-size: 40%;
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        right: 12px;
+        border-radius: 30px;
+        cursor: pointer;
+    }
+    &-reserved {
+        background: url('/favicon/favicon.ico') no-repeat center whitesmoke;
+        background-size: cover;
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        left: 12px;
+        border-radius: 30px;
+        cursor: pointer;
+    }
+    &-location {
+        background-image: url('/img/logo/location-pin-green.svg');
+        left: 12px;
+    }
+    &-text {
+        font-size: 20px;
+    }
+    &-dropdown {
+        background: #fff;
+        box-shadow: 1px 2px 10px rgba(0, 0, 0, .1);
+        position: absolute;
+        top: 44px;
+        right: 0;
+        width: max-content;
+        border-radius: 10px;
+        font-size: 14px;
+        display: none;
+        &-ul {
+            & > a {
+                cursor: pointer;
+                border-color: #f0f0f0;
+                color: grey;
+                font-weight: bold;
+                &:hover {
+                    background: #FF8008;
+                    color: #fff;
+
+                }
+            }
+        }
+    }
+    &-main {
+        cursor: pointer;
+        &:hover > .header-dropdown {
+            display: block;
+        }
+    }
+    &-profile {
+        display: grid;
+        justify-content: center;
+        align-content: center;
+        grid-template-columns: auto 30px;
+        grid-gap: 5px;
+        height: 100%;
+        font-size: 14px;
+        color: #FF8008;
+        padding: 0 5px 0 10px;
+        background: #fff;
+        border-radius: 30px;
+        &-main {
+            &-content {
+                display: grid;
+                justify-content: center;
+                align-content: center;
+                height: 100%;
+            }
+        }
+        &-icon {
+            height: 30px;
+            width: 30px;
+            background: #FF8008;
+            border-radius: 30px;
+            display: grid;
+            justify-content: center;
+            align-content: center;
+            & > div {
+                text-transform: uppercase;
+            }
+        }
+    }
+}
+@media only screen and (max-width: 768px) {
+    .header {
+        &-text {
+            font-size: 14px;
+            margin: 3px auto 3px auto;
+            padding: 0;
+        }
+    }
+}

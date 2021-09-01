@@ -1,0 +1,94 @@
+@import '../components/loading.scss';
+@import '../components/loading-btn.scss';
+.profile {
+    &-error {
+        color: red;
+        margin: 0;
+    }
+    &-success {
+        color: #00a082;
+        margin: 0;
+    }
+    &-title {
+        margin: 50px 0 10px 0;
+        font-weight: bold;
+        font-size: 24px;
+    }
+    &-description {
+        font-size: 16px;
+        margin: 0;
+    }
+    &-input {
+        border: 2px solid gainsboro;
+        outline: none !important;
+        box-shadow: none !important;
+    }
+    &-btn {
+        background-color: #FF8008;
+        border-radius: 30px;
+        height: 44px;
+        padding: 0 30px 0 30px;
+        min-width: 200px;
+    }
+}
+
+.avatar {
+    overflow: hidden;
+    clear: both;
+    width: 56px;
+    height: 56px;
+    display: block;
+    &-img {
+        width: 100%;
+        position: relative;
+        float: left;
+        color: #00a082;
+        & > div {
+            font-size: 30px;
+            position: absolute;
+            transform: translate(-50%,-50%);
+            top: 50%;
+            left: 50%;
+        }
+        &:before {
+            content: '';
+            float: left;
+            padding-top: 100%;
+        }
+    }
+}
+@media only screen and (max-width: 768px) {
+    .profile {
+        &-title {
+            font-size: 16px;
+            margin: 20px 0 0 0;
+            &-input {
+                font-size: 12px !important;
+            }
+        }
+        &-row {
+            margin-bottom: 0;
+        }
+        &-input {
+            margin: 0 !important;
+            height: 38px;
+            font-size: 13px;
+        }
+        &-description {
+            font-size: 11px;
+            margin: 10px 0 0 0;
+        }
+        &-btn {
+            height: 30px;
+            padding: 0 10px 0 10px;
+            font-size: 12px !important;
+            min-width: 120px;
+        }
+        &-error {
+            font-size: 13px;
+        }
+        &-success {
+            font-size: 13px;
+        }
+    }
+}

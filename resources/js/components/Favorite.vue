@@ -1,0 +1,109 @@
+<template>
+    <Header></Header>
+    <profile-section></profile-section>
+    <loading v-if="Loading"></loading>
+    <organization v-else-if="list.length > 0 && storage.favorite.length > 0" :organizations="list"></organization>
+    <not-found v-else :params="notFound"></not-found>
+    <Footer-menu></Footer-menu>
+    <Footer></Footer>
+</template>
+
+<script>
+import Header from "./header/Header";
+import Footer from "./footer/Footer";
+import ProfileSection from './sections/ProfileSection';
+import FooterMenu from './footerMenu/FooterMenu';
+import NotFound from './layout/Not-found';
+import Organization from './layout/Organization';
+import Loading from './layout/Loading';
+export default {
+    components: {
+        Header,
+        Footer,
+        ProfileSection,
+        FooterMenu,
+        NotFound,
+        Organization,
+        Loading
+    },
+    name: "Favorite",
+    data() {
+        return {
+            list: [],
+            Loading: true,
+            notFound: {
+                img: '/img/logo/favorite-red.svg',
+                title: 'Список пуст',
+                description: 'Здесь будет отображаться список добавленных вами заведении.'
+            }
+        }
+    },
+    created() {
+        this.getOrganizations();
+    },
+    methods: {
+        getOrganizations: function() {
+            if (this.storage.favorite.length > 0) {
+                axios.post('/api/organization/ids',{
+                    ids: this.storage.favorite
+                })
+                    .then(response => {
+                        let data    =   response.data.data;
+                        console.log(data);
+                        for (let i = 0; i < data.length; i++) {
+                            data[i].timeTitle   =   this.getTime(data[i]);
+                            this.list.push(data[i]);
+                        }
+                        if (data.length === 0) {
+                            this.storage.favorite   =   [];
+                            this.list   =   [];
+                        }
+                        this.Loading    =   false;
+                    }).catch(error => {
+                        this.storage.favorite   =   [];
+                        this.list   =   [];
+                        this.Loading    =   false;
+                    });
+            } else {
+                this.storage.favorite   =   [];
+                this.list   =   [];
+                this.Loading    =   false;
+            }
+        },
+        getTime: function(organization) {
+            let today   =   new Date();
+            today       =   new Date(today.getFullYear(),today.getMonth(),today.getDate());
+            let weekDay =   today.getDay();
+            let week;
+            if (weekDay === 0) {
+                week    =   organization.sunday;
+            } else if (weekDay === 1) {
+                week    =   organization.monday;
+            } else if (weekDay === 2) {
+                week    =   organization.tuesday;
+            } else if (weekDay === 3) {
+                week    =   organization.wednesday;
+            } else if (weekDay === 4) {
+                week    =   organization.thursday;
+            } else if (weekDay === 5) {
+                week    =   organization.friday;
+            } else if (weekDay === 6) {
+                week    =   organization.saturday;
+            }
+            if (week.start === week.end) {
+                return 'круглосуточно';
+            }
+            return this.timeConvert(week.start)+' '+this.timeConvert(week.end);
+        },
+        timeConvert: function(time) {
+            let converted   =   time.split(':');
+            return converted[0]+'.'+converted[1];
+        },
+    }
+}
+</script>
+
+<style lang="scss">
+    @import '../../css/favorite/favorite.scss';
+    @import '../../css/organization/list.scss';
+</style>

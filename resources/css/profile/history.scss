@@ -1,0 +1,111 @@
+.history {
+    &-title {
+        margin: 50px 0 10px 0;
+        font-weight: bold;
+        font-size: 24px;
+    }
+    &-font {
+        font-size: 15px;
+    }
+    &-shadow {
+        box-shadow: 0 0 5px 0 rgba(0,0,0,.1);
+        border-radius: 10px;
+        overflow: hidden;
+    }
+    &-icon {
+        width: 44px;
+        height: 44px;
+        background: url(/img/logo/calendar.svg) no-repeat center;
+        background-size: contain;
+    }
+    &-status {
+        padding: 8px 10px 8px 10px;
+        color: white;
+        font-weight: bold;
+        border-radius: 30px;
+        font-size: 13px;
+        display: flex;
+        gap: 5px;
+        &-waiting {
+            cursor: pointer;
+            background: #FF8008;
+        }
+        &-success {
+            background: #00a082;
+        }
+        &-review {
+            background: #1d1d1d;
+            cursor: pointer;
+        }
+        &-last {
+            cursor: pointer;
+            background: #6c757d;
+        }
+        &-icon {
+            width: 20px;
+            height: 20px;
+            background: no-repeat center;
+            background-size: contain;
+            &-pen {
+                background-image: url(/img/logo/quill-pen.svg);
+            }
+        }
+    }
+    &-empty {
+        &-title {
+
+        }
+        &-description {
+            font-size: 16px;
+        }
+    }
+}
+@media only screen and (max-width: 768px) {
+    .history {
+        &-icon {
+            width: 30px;
+            height: 30px;
+            margin-right: 5px;
+        }
+        &-status {
+            padding: 4px 6px 4px 6px;
+            font-size: 11px;
+        }
+        &-title {
+            font-size: 16px;
+            margin: 20px 0 0 0;
+        }
+        &-font {
+            font-size: 11px;
+        }
+        &-description {
+            font-size: 11px;
+            margin: 10px 0 0 0;
+        }
+        &-all {
+            margin: 10px 0 10px 0;
+        }
+        &-btn {
+            height: 30px;
+            padding: 0 10px 0 10px;
+            font-size: 12px !important;
+            min-width: 120px;
+        }
+        &-empty {
+            &-title {
+                font-size: 16px;
+            }
+            &-description {
+                font-size: 12px;
+            }
+        }
+        &-empty {
+            &-title {
+                font-size: 16px;
+            }
+            &-description {
+                font-size: 12px;
+            }
+        }
+    }
+}

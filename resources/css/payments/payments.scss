@@ -1,0 +1,112 @@
+@import '../components/loading.scss';
+@import '../components/loading-btn.scss';
+.payments {
+    &-card {
+        &-bank {
+            font-size: 1.25rem;
+            font-weight: bold;
+            margin: 0 0 5px 0;
+        }
+        &-hash {
+            font-size: 1rem;
+            margin: 0;
+        }
+    }
+    &-title {
+        margin: 50px 0 10px 0;
+        font-weight: bold;
+        font-size: 24px;
+    }
+    &-description {
+        font-size: 16px;
+        margin: 0;
+    }
+    &-all {
+        margin: 30px 0 30px 0;
+    }
+    &-list {
+        display: flex;
+        gap: 10px
+    }
+    &-icon {
+        width: 40px;
+        height: 40px;
+        background: #00a082 no-repeat center;
+        background-size: 50%;
+        border-radius: 30px;
+        border: none;
+        &-delete {
+            background-image: url('/img/logo/trash.svg');
+        }
+        &-edit {
+            background-image: url('/img/logo/draw.svg');
+        }
+    }
+    &-btn {
+        background-color: #FF8008;
+        color: #fff;
+        border-radius: 30px;
+        height: 44px;
+        padding: 0 30px 0 30px;
+        min-width: 200px;
+    }
+    &-card {
+        &-icon {
+            width: 44px;
+            &-visa {
+                background: url("/img/logo/card.svg") no-repeat center;
+                background-size: contain;
+            }
+        }
+    }
+    &-empty {
+        &-title {
+
+        }
+        &-description {
+            font-size: 16px;
+        }
+    }
+}
+@media only screen and (max-width: 768px) {
+    .payments {
+        &-icon {
+            width: 30px;
+            height: 30px;
+        }
+        &-card {
+            &-bank {
+                font-size: 12px;
+                margin: 0 0 2px 0;
+            }
+            &-hash {
+                font-size: 11px;
+            }
+        }
+        &-title {
+            font-size: 16px;
+            margin: 20px 0 0 0;
+        }
+        &-description {
+            font-size: 11px;
+            margin: 10px 0 0 0;
+        }
+        &-all {
+            margin: 10px 0 10px 0;
+        }
+        &-btn {
+            height: 30px;
+            padding: 0 10px 0 10px;
+            font-size: 12px !important;
+            min-width: 120px;
+        }
+        &-empty {
+            &-title {
+                font-size: 16px;
+            }
+            &-description {
+                font-size: 12px;
+            }
+        }
+    }
+}

@@ -1,0 +1,228 @@
+.item {
+    &-filter {
+        gap: 10px;
+        position: relative;
+        z-index: 2;
+        &-list {
+            position: absolute;
+            background: #fff;
+            width: 100%;
+            margin: 0;
+            overflow: hidden;
+            font-size: 14px;
+            display: none;
+
+            &-option {
+                padding: 10px 15px 10px 15px;
+                &:hover {
+                    background: #57a283;
+                    color: #fff;
+                }
+            }
+        }
+        &-block, &-btn {
+            background: #fff;
+            font-size: 14px;
+            cursor: pointer;
+            position: relative;
+        }
+        &-block:hover {
+
+            & > .item-filter-list {
+                display: block;
+            }
+        }
+        &-dropdown {
+            padding: 10px 10px 10px 15px;
+            display: flex;
+            gap: 5px;
+            &-text {
+                font-size: 14px;
+            }
+            &-arrow {
+                width: 20px;
+                background: url(/img/logo/arrow-down.svg) no-repeat center;
+                background-size: 50%;
+            }
+        }
+        &-btn {
+            background: #57a283;
+            color: #fff;
+            &-text {
+                padding: 10px 15px 10px 15px;
+                min-width: 100px;
+                text-align: center;
+            }
+        }
+    }
+    &-title {
+        font-size: 20px;
+    }
+    &-bg {
+        background: rgb(245,245,245);
+    }
+    &-shadow {
+        box-shadow: 0 0 2px 0 rgba(0,0,0,.1);
+    }
+    &-radius {
+        border-radius: 15px;
+    }
+    &-description {
+        font-size: 13px;
+        text-align: justify;
+        margin-bottom: 15px !important;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+    &-rating {
+        position: absolute;
+        z-index: 1;
+        right: 0;
+        top: 0;
+        background: #fff;
+        padding: 6px 14px 6px 14px;
+        border-radius: 0 0 0 10px;
+        color: #57A282;
+        font-weight: bold;
+        font-size: 18px;
+    }
+    &-main {
+        max-height: 172px;
+        border-radius: 5px;
+        margin: 10px;
+        position: relative;
+        overflow: hidden;
+        & > img {
+            display: table;
+            width: 100%;
+        }
+    }
+    &-logo {
+        position: relative;
+        margin: -75px auto 0 auto;
+        width: 120px;
+        & > img {
+            border-radius: 80px;
+            border: 10px solid white;
+            background: #fff;
+            width: 100%;
+        }
+        &-default {
+            position: relative;
+            width: 100px;
+            float: left;
+            overflow: hidden;
+            border-radius: 100px;
+            box-shadow: 0 0 0 10px #fff;
+            background: #fff;
+            &:before {
+                content: "";
+                float: left;
+                padding-top: 100%;
+            }
+            & > img {
+                width: 100%;
+                margin: 0;
+            }
+            & > div {
+                width: 100%;
+                height: 100%;
+                background: #fff no-repeat center;
+                background-size: 50%;
+                border-radius: 100px;
+            }
+        }
+    }
+}
+.text {
+    &-desc {
+        font-size: 12px;
+    }
+    &-btn {
+        background: #57a283;
+        border-radius: 50px;
+        height: auto;
+    }
+    &-font {
+        font-size: 14px;
+    }
+}
+@media only screen and (max-width: 768px) {
+    .item {
+        &-filter {
+            &-dropdown {
+                padding: 5px 5px 5px 10px;
+                gap: 2px;
+                &-text {
+                    font-size: 11px;
+                }
+            }
+            &-btn {
+                &-text {
+                    font-size: 11px;
+                    padding: 5px 10px 5px 10px;
+                }
+            }
+            &-list {
+                font-size: 11px;
+                &-option {
+                    padding: 5px 10px 5px 10px;
+                }
+            }
+        }
+        &-main {
+            max-height: 80px;
+        }
+        &-rating {
+            padding: 5px 8px 5px 8px;
+            line-height: 1;
+            font-size: 11px;
+        }
+        &-radius {
+            border-radius: 10px;
+        }
+        &-title {
+            font-size: 12px;
+            margin: 0;
+        }
+        &-description {
+            font-size: 9px;
+            padding: 0 !important;
+            margin: 0 10px 10px 10px !important;
+        }
+        &-logo {
+            margin: -35px auto 0 auto;
+            width: 50px;
+            &-default {
+                box-shadow: 0 0 0 5px #fff;
+            }
+            & > img {
+                border-radius: 80px;
+                border: 4px solid white;
+                background: #fff;
+            }
+        }
+        &-empty {
+            &-title {
+                font-size: 16px;
+            }
+            &-description {
+                font-size: 12px;
+            }
+        }
+    }
+    .text {
+        &-desc {
+
+        }
+        &-btn {
+            background: #57a283;
+            border-radius: 50px;
+            height: 30px;
+        }
+        &-font {
+            font-size: 11px;
+        }
+    }
+}

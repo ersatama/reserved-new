@@ -1,0 +1,463 @@
+@import '../components/loading.scss';
+@import '../components/loading-btn.scss';
+.organization {
+    &-rating {
+        display: table;
+        margin: 10px auto 0 auto;
+        & > div {
+            display: flex;
+            align-items: center;
+            & > div {
+                margin-left: 5px;
+                &:first-child {
+                    margin-left: 0;
+                }
+            }
+        }
+        &-count {
+            font-weight: bold;
+            font-size: 15px;
+            line-height: 1;
+            color: #FF8008;
+            margin-left: 10px !important;
+        }
+        &-star {
+            width: 20px;
+            height: 20px;
+            background: url('/img/logo/star-whitesmoke.svg') no-repeat center;
+            background-size: contain;
+            &-sel {
+                background-image: url('/img/logo/star-orange.svg');
+            }
+        }
+    }
+    &-comment {
+        display: grid;
+        align-items: center;
+        grid-template-columns: 60px auto;
+        grid-gap: 15px;
+        gap: 15px;
+        &-count {
+            font-size: 18px;
+            font-weight: bold;
+        }
+        &-line {
+            border-bottom: 1px solid rgb(230,230,230);
+            &:last-child {
+                border-bottom: none;
+            }
+        }
+        &-text {
+            font-size: 18px;
+        }
+        &-icon {
+            height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #FF8008;
+            color: #fff;
+            font-weight: bold;
+            border-radius: 100px;
+            & > div {
+                font-size: 20px;
+                font-weight: bold;
+            }
+        }
+        &-detail {
+            display: grid;
+            align-content: center;
+            grid-gap: 2px;
+            gap: 2px;
+            &-status {
+                & > div {
+                    background: #00a082;
+                    display: table;
+                    padding: 2px 10px 2px 10px;
+                    border-radius: 10px;
+                    font-size: 11px;
+                    color: white;
+                    font-weight: bold;
+                    margin-top: 5px;
+                }
+            }
+            &-dot {
+                padding: 0 5px 0 5px;
+            }
+            &-name {
+                font-size: 15px;
+                font-weight: bold;
+                display: grid;
+                grid-template-columns: auto auto auto;
+                width: fit-content;
+                &-user {
+                    overflow: hidden;
+                    display: inline-block;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                }
+            }
+            &-stars {
+                display: flex;
+                & > div {
+                    margin-right: 5px;
+                }
+            }
+            &-star, &-star-sel {
+                height: 16px;
+                width: 16px;
+                background: url('/img/logo/star-grey.svg') no-repeat center;
+                background-size: contain;
+                opacity: .5;
+            }
+            &-star-sel {
+                background-image: url('/img/logo/star-orange.svg');
+                opacity: 1;
+            }
+        }
+    }
+    &-empty {
+        &-title {
+
+        }
+        &-description {
+            font-size: 16px;
+        }
+    }
+    &-card {
+        &-main {
+            padding: 15px;
+        }
+    }
+    &-title {
+        margin-top: 20px;
+        font-size: 20px;
+        margin-left: 20px;
+        margin-right: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    &-description {
+        font-size: 14px;
+        margin-top: 20px;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    &-tab {
+        padding: 10px 15px 10px 15px !important;
+        border:  none !important;
+        border-bottom: 4px solid transparent !important;
+        font-size: 14px !important;
+        &-sel {
+            color: #00a082 !important;
+            border-bottom-color: #00a082 !important;
+        }
+    }
+    &-bg {
+        background: #f5f5f5;
+    }
+    &-arr {
+        &-btn {
+            background: #00a082;
+            color: white;
+            border-radius: 30px;
+            cursor: pointer;
+        }
+    }
+    &-date {
+        display: grid;
+        grid-template-columns: 40px auto 40px;
+        grid-gap: 10px;
+        gap: 10px;
+        padding: 5px;
+        background: rgb(250,250,250);
+        border-radius: 40px;
+        margin: 0 .5rem 0 .5rem!important;
+    }
+    &-input {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 14px;
+        & > div {
+
+        }
+    }
+    &-photo {
+
+    }
+    &-card {
+        &-arr {
+            background: url('/img/logo/right-arrow.svg') no-repeat center;
+            background-size: contain;
+        }
+        display: grid;
+        grid-template-columns: auto 40px 15px;
+        grid-gap: 15px;
+        gap: 15px;
+        &-limit {
+            font-size: 12px;
+        }
+        &-title {
+            font-size: 14px;
+        }
+        &-status {
+            font-size: 12px;
+            display: flex;
+            padding: 2px 5px 2px 5px;
+            border-radius: 3px;
+            font-weight: bold;
+            margin-top: 5px;
+            gap: 5px;
+            &-free {
+                background: #00a082;
+                color: #fff;
+            }
+            &-reserved {
+                background: #FF8008;
+                color: #fff;
+            }
+        }
+        &-icon {
+            background: url('/img/logo/table.svg') no-repeat center;
+            background-size: contain;
+            height: 40px;
+        }
+    }
+    &-btn {
+        padding: 10px 25px 10px 25px;
+        border-radius: 30px;
+        height: 44px;
+        color: #000;
+        background: #fff;
+        font-size: 14px;
+        &-sel, &:hover {
+            background: #00a082;
+            color: #fff;
+        }
+    }
+    &-shadow {
+        box-shadow: 0 0 2px 1px rgba(0,0,0,.1);
+        border-radius: 10px;
+        cursor: pointer;
+        &:hover {
+            background: rgb(250,250,250);
+        }
+        &-main {
+            box-shadow: 0 1px 1px rgba(0,0,0,.1);
+            position: relative;
+        }
+    }
+    &-image {
+        width: 100%;
+        border-radius: 10px;
+        background: no-repeat center;
+        background-size: cover;
+        & > div {
+            width: 100%;
+            padding-bottom: 100%;
+        }
+    }
+    &-logo {
+        margin: -150px auto 0 auto;
+        width: 200px;
+        height: 200px;
+        position: relative;
+        overflow: hidden;
+        z-index: 3;
+        border-radius: 200px;
+        box-shadow: 0 0 0 10px white;
+        background: #fff;
+        & > img {
+            width: 100%;
+        }
+
+        &-default {
+            width: 100%;
+            height: 100%;
+            background: no-repeat center;
+            background-size: 50%;
+            &-restaurant {
+                background-image: url('/img/logo/restaurant.svg');
+            }
+            &-cafe {
+                background-image: url('/img/logo/cafe.svg');
+            }
+            &-bar {
+                background-image: url('/img/logo/bar.svg');
+            }
+        }
+    }
+}
+.wallpaper {
+    max-height: 350px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    margin-top: -20px;
+    & > img {
+        width: 100%;
+    }
+    &-screen {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,.5);
+        z-index: 2;
+    }
+}
+@media only screen and (max-width: 768px) {
+    .organization {
+        &-rating {
+            margin: 10px auto 0 auto;
+            & > div {
+                gap: 5px;
+                & > div {
+                    margin-left: 5px;
+                }
+            }
+            &-count {
+                font-size: 11px;
+                margin-left: 10px !important;
+            }
+            &-star {
+                width: 16px;
+                height: 16px;
+            }
+        }
+        &-comment {
+            grid-template-columns: 40px auto;
+            grid-gap: 10px;
+            gap: 10px;
+            &-count {
+                font-size: 12px;
+            }
+            &-line {
+                padding: 10px 0 10px 0 !important;
+            }
+            &-text {
+                font-size: 13px;
+                margin-top: 10px;
+                padding: 0 5px 0 5px;
+            }
+            &-icon {
+                height: 40px;
+                & > div {
+                    font-size: 14px;
+                }
+            }
+            &-detail {
+                display: grid;
+                align-content: center;
+                grid-gap: 2px;
+                gap: 2px;
+                &-status {
+                    & > div {
+                        font-size: 9px;
+                    }
+                }
+                &-dot {
+                    padding: 0 3px 0 3px;
+                }
+                &-name {
+                    font-size: 13px;
+                    &-user {
+
+                    }
+                }
+                &-stars {
+                    display: flex;
+                    & > div {
+                        margin-right: 2px;
+                    }
+                }
+                &-star, &-star-sel {
+                    height: 10px;
+                    width: 10px;
+                    background: url('/img/logo/star-grey.svg') no-repeat center;
+                    background-size: contain;
+                    opacity: .5;
+                }
+                &-star-sel {
+                    background-image: url('/img/logo/star-orange.svg');
+                    opacity: 1;
+                }
+            }
+        }
+        &-card {
+            grid-gap: 5px;
+            gap: 5px;
+            &-main {
+                padding: 5px 8px 5px 8px;
+            }
+            &-title {
+                font-size: 12px;
+            }
+            &-status {
+                font-size: 10px;
+                padding: 1px 4px 1px 4px;
+            }
+            &-icon {
+                height: 30px;
+            }
+            &-limit {
+                font-size: 11px;
+            }
+        }
+        &-btn {
+            padding: 5px 10px 5px 10px;
+            font-size: 11px;
+            height: auto;
+        }
+        &-tab {
+            font-size: 11px !important;
+            padding: 10px !important;
+            &-sel {
+
+            }
+        }
+        &-title {
+            margin-top: 10px;
+            font-size: 14px;
+        }
+        &-description {
+            font-size: 9px;
+            margin-top: 10px
+        }
+        &-logo {
+            width: 80px;
+            margin-top: -40px;
+            height: 80px;
+            box-shadow: 0 0 0 5px white;
+        }
+        &-shadow {
+            box-shadow: 0 0 2px 0 rgba(0,0,0,.15);
+            border-radius: 5px;
+            &-main {
+                box-shadow:0 1px 1px  rgba(0,0,0,.1);
+            }
+        }
+        &-empty {
+            &-title {
+                font-size: 16px;
+            }
+            &-description {
+                font-size: 12px;
+            }
+        }
+    }
+    .wallpaper {
+        max-height: 200px;
+        border-radius: 0;
+        box-shadow: none;
+        margin-top: 0;
+        &-screen {
+
+        }
+    }
+}

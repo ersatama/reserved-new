@@ -1,0 +1,121 @@
+.spinner {
+    width: 25px;
+    height: 25px;
+    border: 4px transparent solid;
+    border-top: 4px #fff solid;
+    border-bottom: 4px #fff solid;
+    border-radius: 50%;
+    animation: sp-anime 0.5s infinite linear;
+    margin: 0 auto 0 auto;
+}
+@keyframes sp-anime {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+.auth {
+    &-error {
+        color: red;
+    }
+    &-phone {
+        padding-left: 34px !important;
+        &-prefix {
+            position: absolute;
+            margin: 10px 0 0 18px;
+            font-size: 1rem;
+        }
+    }
+    &-txt {
+        font-size: 13px;
+    }
+    &-btn, &-register {
+        height: 44px;
+        background: #FF8008;
+        border-radius: 40px;
+    }
+    &-register {
+        background: #00a082;
+    }
+    &-input {
+        height: 44px;
+        border: 2px solid gainsboro !important;
+        border-radius: 30px;
+        outline: none !important;
+        box-shadow: none !important;
+    }
+    &-title {
+        font-family: 'Lobster', cursive;
+    }
+    &-modal {
+        border-radius: 20px;
+    }
+    &-btn {
+        &-close {
+            width: 40px;
+            height: 40px;
+            background: gainsboro;
+            outline: none;
+            border: none;
+            border-radius: 40px;
+            position: relative;
+            display: grid !important;
+            &:before, &:after {
+                content: '';
+                position: absolute;
+                width: 20px;
+                height: 1px;
+                background: #000;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%) rotate(
+                        45deg
+                );
+            }
+            &:after {
+                transform: translate(-50%,-50%) rotate(
+                        -45deg
+                );
+            }
+        }
+    }
+}
+@media only screen and (max-width: 768px) {
+    .auth {
+        &-input {
+            font-size: 12px;
+            height: 36px;
+            border-radius: 36px;
+            background: #fff !important;
+            box-shadow: none !important;
+        }
+        &-phone {
+            padding-left: 30px !important;
+            &-prefix {
+                margin: 9px 0 0 18px;
+                font-size: 12px;
+            }
+        }
+        &-title {
+            font-size: 16px;
+        }
+        &-description {
+            font-size: 13px;
+        }
+        &-error {
+            font-size: 13px;
+            margin-bottom: 10px;
+        }
+        &-row {
+            margin: 5px 0 5px 0;
+        }
+        &-btn, &-register {
+            font-size: 13px;
+            height: 36px;
+        }
+        &-footer {
+            &-title {
+                font-size: 10px;
+            }
+        }
+    }
+}

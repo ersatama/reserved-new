@@ -1,0 +1,399 @@
+#app {
+    margin-bottom: 100px;
+}
+.entity, .entity-block, .entity-single, .entity-footer {
+    margin: 20px 0 0 0;
+    background: #fff;
+    box-shadow: 0 .125rem .25rem rgba(22,28,45,.075)!important;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    justify-content: space-between;
+}
+.entity-filter {
+    width: 32px;
+    height: 32px;
+    background: url('/img/logo/filter.png') rgba(87,162,131,.15) no-repeat center;
+    background-size: 60%;
+    box-shadow: 0 0 0 5px rgba(87,162,131,.15);
+    margin-right: 25px;
+    border-radius: 30px;
+    cursor: pointer;
+}
+.entity-single {
+    padding: 20px;
+    align-items: baseline;
+    justify-content: initial;
+    gap: 20px;
+}
+.entity-single > div {
+    width: 25%;
+}
+.entity-footer {
+    padding: 20px;
+    justify-content: flex-end;
+    gap: 20px;
+}
+.entity-footer-title {
+    color: #57a283;
+    font-weight: bold;
+}
+.entity-footer-btn {
+    overflow: hidden;
+}
+.entity-footer-btn > button {
+    color: #fff;
+    float: right;
+    background: #57a283;
+    border-radius: 50px;
+    border: none;
+    height: 40px;
+    padding: 0 20px 0 20px;
+    outline: none;
+}
+.entity-single-input {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.entity-single-input > select {
+    background: #f4f4f5;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    height: 35px;
+    width: 100%;
+    padding: 0 10px 0 10px;
+    outline: none;
+}
+.entity-single-input > input {
+    background: #f4f4f5;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    height: 35px;
+    width: 100%;
+    padding: 0 10px 0 10px;
+    outline: none;
+}
+.entity-single-input > textarea {
+    height: 125px;
+    border: none;
+    background: #f4f4f5;
+    border-radius: 5px;
+    resize: none;
+    overflow: hidden;
+    font-size: 14px;
+    padding: 10px;
+    outline: none;
+    width: 100%;
+}
+.entity-single-header {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+.entity-blocks {
+    display: flex;
+    gap: 20px;
+}
+.entity-block {
+    display: block;
+    width: 50%;
+}
+.entity-block-title {
+    font-size: 20px;
+    margin: 20px 20px 5px 20px;
+}
+.entity-block-description {
+    font-size: 15px;
+    color: grey;
+    margin: 0 20px 0 20px;
+}
+.entity-block-body {
+    margin: 20px;
+    color: grey;
+}
+.entity-block-item {
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgb(250,250,250);
+    padding-bottom: 10px;
+}
+.entity-block-item:last-child {
+    margin: 0;
+    border: none;
+    padding: 0;
+}
+.entity-block-item-title {
+    width: 50%;
+}
+.entity-block-item-input {
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+}
+.entity-block-item-input > input {
+    background: #f4f4f5;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    height: 35px;
+    width: 100%;
+    padding: 0 10px 0 10px;
+    outline: none;
+}
+.entity-block-item-input > select {
+    height: 35px;
+    width: 100%;
+    background: #f4f4f5;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    padding: 0 10px 0 10px;
+    outline: none;
+    cursor: pointer;
+}
+.entity-block-item-input-double {
+    display: flex;
+    gap: 10px;
+}
+.entity-block-item-input-double-block {
+    display: flex;
+    font-size: 12px;
+    align-items: center;
+    gap: 10px;
+}
+.entity-block-item-input-double-block-switcher {
+    width: 55px;
+    height: 100%;
+    background: #f4f4f5;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all .3s linear;
+    position: relative;
+}
+.entity-block-item-input-double-block-switcher-btn {
+    width: 25px;
+    height: 25px;
+    background: #fff;
+    border-radius: 30px;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    transition: all 1s linear;
+}
+.entity-block-item-input-double-block-switcher-on {
+    background: #57a283;
+}
+.entity-block-item-input-double-block-switcher-on > .entity-block-item-input-double-block-switcher-btn {
+    left: auto;
+    right: 5px;
+}
+.entity-block-item-input-double-text > input {
+    width: 70px;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    height: 35px;
+    background: #f4f4f5;
+    outline: none;
+    padding: 0 10px 0 10px;
+}
+.entity-main {
+    padding: 20px;
+}
+.entity-title {
+    font-size: 24px;
+}
+.entity-header {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.entity-stars {
+    display: flex;
+    gap: 5px;
+}
+.entity-star {
+    background: url("/img/logo/star-whitesmoke.svg") no-repeat center;
+    background-size: contain;
+    width: 20px;
+    height: 20px;
+}
+.entity-star-sel {
+    background-image: url('/img/logo/star-orange.svg');
+}
+.entity-description {
+    color: #57a283;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 30px;
+}
+.entity-link:hover {
+    text-decoration: none;
+}
+.entity-rating {
+    color: #fff;
+    background: #FF8008;
+    padding: 2px 6px 2px 6px;
+    border-radius: 5px;
+    font-size: 12px;
+}
+.entity-wallpaper {
+    width: 318px;
+    height: 100px;
+    background: #f4f4f5 url('/img/logo/wall.png') no-repeat center;
+    background-size: cover;
+    position: relative;
+    cursor: pointer;
+}
+.entity-logo {
+    width: 70px;
+    height: 70px;
+    position: absolute;
+    background: #00a082 url(/img/logo/reserved-logo.png) center no-repeat;
+    background-size: contain;
+    border-radius: 50px;
+    margin: 15px 0 0 -35px;
+    box-shadow: 0 0 0 5px #fff;
+    cursor: pointer;
+}
+@media only screen and (max-width: 768px) {
+    .entity-filter {
+        margin-right: 5px;
+        border-radius: 0;
+    }
+    .entity-block-item-input-double-block-switcher {
+        width: 40px;
+    }
+    .entity-block-item-input-double-block-switcher-btn {
+        width: 15px;
+        height: 15px;
+    }
+    .entity-main {
+        padding: 10px 0 10px 10px;
+    }
+    .entity-wallpaper {
+        width: 118px;
+        height: 54px;
+        background-size: cover;
+    }
+    .entity-logo {
+        width: 30px;
+        height: 30px;
+        margin: 12px 0 0 -14px;
+    }
+    .entity-title {
+        font-size: 14px;
+    }
+    .entity-description {
+        font-size: 9px;
+    }
+    .entity-header {
+        gap: 5px;
+    }
+    .entity-star {
+        width: 10px;
+        height: 10px;
+    }
+    .entity-rating {
+        font-size: 9px;
+        padding: 0 4px 0 4px;
+        border-radius: 2px;
+    }
+    .entity-single {
+        display: block;
+        padding: 10px;
+        padding-top: 5px;
+    }
+    .entity-blocks {
+        display: block;
+    }
+    .entity-block {
+        width: 100%;
+    }
+    .entity-single-title, .entity-single-description {
+        width: 100% !important;
+    }
+    .entity-single-input > textarea {
+        height: 50px;
+        font-size: 12px;
+        border-radius: 2px;
+        padding: 5px;
+    }
+    .entity-single-header {
+        margin-bottom: 5px;
+        margin-top: 5px;
+        font-size: 11px;
+    }
+    .entity-block-title {
+        font-size: 11px;
+        margin: 10px 10px 0 10px;
+    }
+    .entity-block-description {
+        font-size: 11px;
+        margin: 0 10px 0 10px;
+    }
+    .entity-block-body {
+        margin: 10px;
+    }
+    .entity-block-item {
+        font-size: 11px;
+        padding-bottom: 5px;
+        margin-bottom: 5px;
+    }
+    .entity-footer-title {
+        font-size: 11px;
+    }
+    .entity-footer {
+        padding: 10px;
+        gap: 10px;
+    }
+    .entity-footer-btn > button {
+        height: 30px;
+        font-size: 11px;
+        padding: 0 15px 0 15px;
+    }
+    .entity-block-item-input-double-text > input {
+        font-size: 12px;
+        width: 60px;
+        height: 25px;
+        padding: 0 5px 0 5px;
+        border-radius: 2px;
+    }
+    .entity-block-item-input > select {
+        height: 25px;
+        font-size: 11px;
+        padding: 0 5px 0 5px;
+        border-radius: 2px;
+    }
+    .entity-block-item-input > input {
+        height: 25px;
+        padding: 0 5px 0 5px;
+        font-size: 12px;
+        border-radius: 2px;
+    }
+    .entity-single-input > input {
+        height: 25px;
+        font-size: 11px;
+        padding: 0 5px 0 5px;
+        border-radius: 2px;
+        width: 33.3%;
+    }
+    .entity-single-input > select {
+        width: 33.3%;
+        font-size: 11px;
+        height: 25px;
+        padding: 0 5px 0 5px;
+        border-radius: 2px;
+    }
+    .entity-single-input {
+        flex-direction: initial;
+        gap: 5px;
+    }
+}

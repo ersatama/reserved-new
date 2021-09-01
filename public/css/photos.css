@@ -1,0 +1,61 @@
+#app {
+    margin-bottom: 100px;
+}
+.photos {
+    margin: 20px 0 0 0;
+    background: #fff;
+    box-shadow: 0 .125rem .25rem rgba(22,28,45,.075)!important;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.photos-main {
+    overflow: hidden;
+}
+.photos-title {
+    font-size: 24px;
+    margin: 20px;
+    position: relative;
+}
+.photos-btn {
+    position: absolute;
+    font-size: 14px;
+    border: none;
+    right: 0;
+    height: 35px;
+    min-width: 120px;
+    padding: 0 15px 0 15px;
+    border-radius: 35px;
+    background: #57a283;
+    outline: none !important;
+    color: #fff;
+}
+.photos-table {
+    margin: 15px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.photos-item {
+    width: 20%;
+    background: rgba(0,0,0,.02) no-repeat center;
+    background-size: cover;
+    position: relative;
+    border: 5px solid #fff;
+    cursor: pointer;
+    transition: all .2s ease;
+
+}
+.photos-item:hover {
+    transform: scale(1.1);
+    position: relative;
+    z-index: 5;
+}
+.photos-item:before {
+    content: "";
+    float: left;
+    padding-top: 100%;
+}
+.photo-empty {
+    padding: 40px;
+    text-align: center;
+    color: grey;
+}
