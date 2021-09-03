@@ -8,6 +8,7 @@ use Carbon\Carbon;
 
 class MainContract
 {
+    const TAGS_ID   =   'tags_id';
     const TYPE  =   'type';
     const IP    =   'ip';
     const REJECTED  =   'rejected';

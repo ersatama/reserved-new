@@ -33,4 +33,6 @@ Route::group([
     Route::crud('telegram', 'TelegramCrudController');
     Route::crud('menu', 'MenuCrudController');
     Route::crud('organizationrequest', 'OrganizationRequestCrudController');
+    Route::crud('tags', 'TagsCrudController');
+    Route::crud('tags-option', 'TagsOptionCrudController');
 }); // this should be the absolute last line of this file

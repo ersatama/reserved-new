@@ -38,8 +38,12 @@ class MainController extends Controller
         if (!backpack_auth()->user()) {
             return redirect('/admin/login');
         }
-        $organization   =   $this->organizationService->getByUserId(backpack_auth()->user()->id);
-        return view('backpack.dashboard.dashboard',['organization' => $organization]);
+        if (backpack_user()->role === MainContract::TRANSLATE[MainContract::MODERATOR]) {
+            $organization   =   $this->organizationService->getByUserId(backpack_auth()->user()->id);
+            return view('backpack.dashboard.dashboard',['organization' => $organization]);
+        } else {
+            return view('backpack.dashboard.administrator');
+        }
     }
 
     public function entity()

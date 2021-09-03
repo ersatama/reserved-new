@@ -18,7 +18,33 @@
     }
 </style>
 @if(backpack_user()->role === \App\Domain\Contracts\MainContract::TRANSLATE[\App\Domain\Contracts\MainContract::ADMINISTRATOR])
-
+    <li class="nav-item">
+        <a class="nav-link" href="{{ backpack_url('dashboard') }}">
+            <i class='nav-icon las la-code'></i> API
+        </a>
+    </li>
+    <li class="nav-item nav-dropdown">
+        <a class="nav-link nav-dropdown-toggle font-weight-normal" href="#">
+            <i class='nav-icon las la-filter'></i> Фильтры
+        </a>
+        <ul class="nav-dropdown-items">
+            <li class='nav-item'>
+                <a class='nav-link' href='{{ backpack_url('category') }}'>
+                    <i class='nav-icon las la-bars'></i> Категории
+                </a>
+            </li>
+            <li class='nav-item'>
+                <a class='nav-link' href='{{ backpack_url('tags') }}'>
+                    <i class='nav-icon las la-filter'></i> Фильтр
+                </a>
+            </li>
+            <li class='nav-item'>
+                <a class='nav-link' href='{{ backpack_url('tags-option') }}'>
+                    <i class='nav-icon las la-funnel-dollar'></i> Опции
+                </a>
+            </li>
+        </ul>
+    </li>
     <li class='nav-item'>
         <a class='nav-link' href='{{ backpack_url('organizationrequest') }}'>
             <i class='nav-icon lab la-wpforms'></i> Запросы
@@ -27,12 +53,6 @@
     <li class='nav-item'>
         <a class='nav-link' href='{{ backpack_url('user') }}'>
             <i class='nav-icon la la-users'></i> Пользователи
-        </a>
-    </li>
-
-    <li class='nav-item'>
-        <a class='nav-link' href='{{ backpack_url('category') }}'>
-            <i class='nav-icon las la-bars'></i> Категории
         </a>
     </li>
 
@@ -60,9 +80,8 @@
     </li>
 
     <li class="nav-item nav-dropdown">
-
         <a class="nav-link nav-dropdown-toggle font-weight-normal" href="#">
-            <i class="las la-id-card"></i> Контакты
+            <i class="nav-icon las la-id-card"></i> Контакты
         </a>
 
         <ul class="nav-dropdown-items">
@@ -193,5 +212,3 @@
         </a>
     </li>
 @endif
-
-
