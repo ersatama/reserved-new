@@ -20,6 +20,22 @@ use App\Http\Controllers\Api\OrganizationTableController;
 use App\Http\Controllers\Api\OrganizationRequestController;
 use App\Http\Controllers\Api\OrganizationImageController;
 use App\Http\Controllers\Api\WebTrafficController;
+use App\Http\Controllers\Api\TagsController;
+use App\Http\Controllers\Api\TagsOptionOrganizationController;
+use App\Http\Controllers\Api\TagsOptionController;
+
+Route::prefix('tags')->group(function() {
+    Route::get('list',[TagsController::class,'list'])->name('tags.list');
+});
+
+Route::prefix('tagsOption')->group(function() {
+    Route::get('other',[TagsOptionController::class,'other'])->name('tagsOption.other');
+});
+
+Route::prefix('tagsOptionOrganization')->group(function() {
+    Route::post('update',[TagsOptionOrganizationController::class,'update'])->name('tagsOptionOrganization.update');
+    Route::get('getByOrganizationId/{organizationId}',[TagsOptionOrganizationController::class,'getByOrganizationId'])->name('tagsOptionOrganization.getByOrganizationId');
+});
 
 Route::prefix('webTraffic')->group(function() {
 

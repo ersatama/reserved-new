@@ -219,6 +219,7 @@ class MainContract
     const EMAIL_VERIFIED_AT =   'email_verified_at';
     const USER_ID           =   'user_id';
     const CITY_ID           =   'city_id';
+    const TAGS_OPTION_ID    =   'tags_option_id';
     const ORGANIZATION_ID   =   'organization_id';
     const POSITION_ID       =   'position_id';
     const ROLE_ID           =   'role_id';

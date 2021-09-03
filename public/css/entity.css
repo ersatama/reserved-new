@@ -31,6 +31,32 @@
 .entity-single > div {
     width: 25%;
 }
+.entity-single-filter {
+    display: block !important;
+}
+.entity-single-body {
+    margin: 20px 0 0 0;
+    display: flex;
+    width: 100% !important;
+    flex-wrap: wrap;
+    row-gap: 20px;
+}
+.entity-single-title {
+    font-size: 20px;
+    margin-top: 20px;
+}
+.entity-single-title:first-child {
+    margin-top: 0;
+}
+.entity-single-body-item {
+    height: 35px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 16px;
+    color: grey;
+    width: 20%;
+}
 .entity-footer {
     padding: 20px;
     justify-content: flex-end;
@@ -269,7 +295,7 @@
         border-radius: 0;
     }
     .entity-block-item-input-double-block-switcher {
-        width: 40px;
+        width: 35px;
     }
     .entity-block-item-input-double-block-switcher-btn {
         width: 15px;
@@ -320,6 +346,9 @@
     .entity-single-title, .entity-single-description {
         width: 100% !important;
     }
+    .entity-single-title {
+        margin-top: 5px;
+    }
     .entity-single-input > textarea {
         height: 50px;
         font-size: 12px;
@@ -334,6 +363,9 @@
     .entity-block-title {
         font-size: 11px;
         margin: 10px 10px 0 10px;
+    }
+    .entity-single-title {
+        font-size: 11px;
     }
     .entity-block-description {
         font-size: 11px;
@@ -395,5 +427,21 @@
     .entity-single-input {
         flex-direction: initial;
         gap: 5px;
+    }
+    .entity-single-body-item {
+        width: 33.33%;
+        height: 25px;
+        font-size: 10px;
+        gap: 5px;
+    }
+    .entity-single-filter {
+        padding-top: 10px !important;
+    }
+
+    .entity-single-body {
+        row-gap: 5px;
+    }
+    .entity-single-body {
+        margin-top: 10px;
     }
 }

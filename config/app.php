@@ -198,6 +198,9 @@ return [
         App\Providers\Repositories\OrganizationRequestRepositoryProvider::class,
         App\Providers\Repositories\OrganizationImageRepositoryProvider::class,
         App\Providers\Repositories\WebTrafficRepositoryProvider::class,
+        App\Providers\Repositories\TagsRepositoryProvider::class,
+        App\Providers\Repositories\TagsOptionOrganizationRepositoryProvider::class,
+        App\Providers\Repositories\TagsOptionRepositoryProvider::class,
     ],
 
     /*

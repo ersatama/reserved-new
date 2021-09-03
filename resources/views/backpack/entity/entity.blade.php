@@ -288,6 +288,20 @@
                 <button @click="saveOrganization">Сохранить</button>
             </div>
         </div>
+        <div class="entity-single entity-single-filter" v-if="tagStatus">
+            <template v-for="(tag,key) in tags" :key="key">
+                <div class="entity-single-title" v-if="tag.title">@{{ tag.title }}</div>
+                <div class="entity-single-title" v-else>Прочее</div>
+                <div class="entity-single-body">
+                    <div class="entity-single-body-item" v-for="(option,optionKey) in tag.tags_option" key="optionKey">
+                        <div class="entity-block-item-input-double-block-switcher" :class="{'entity-block-item-input-double-block-switcher-on':(option.status === 'on')}" @click="optionSwitch(key,optionKey)">
+                            <div class="entity-block-item-input-double-block-switcher-btn"></div>
+                        </div>
+                        <div class="entity-single-body-item-title">@{{ option.title }}</div>
+                    </div>
+                </div>
+            </template>
+        </div>
         @include('backpack.modal.organization_photos')
     </div>
     @include('backpack.scripts')

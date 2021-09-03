@@ -42,6 +42,8 @@ let app = new Vue({
             organization: '',
             categories: [],
             cities: [],
+            tags: [],
+            tagStatus: false,
             status: true,
             success: false,
         };
@@ -51,8 +53,24 @@ let app = new Vue({
         this.getCountries();
         this.getCategories();
         this.getOrganization();
+        this.getTags();
     },
     methods: {
+        optionSwitch: function(tag,id) {
+            let tags    =   JSON.parse(JSON.stringify(this.tags));
+            let status;
+            if (tags[tag].tags_option[id].status === 'on') {
+                tags[tag].tags_option[id].status   =   status   =   'off';
+            } else {
+                tags[tag].tags_option[id].status   =   status   =   'on';
+            }
+            this.tags   =   tags;
+            axios.post('/api/tagsOptionOrganization/update',{
+                organization_id: this.id,
+                tags_option_id: tags[tag].tags_option[id].id,
+                status: status
+            });
+        },
         workDay: function(key) {
             if (key === 0) {
                 if (this.organization.monday.work === 'on') {
@@ -273,6 +291,37 @@ let app = new Vue({
         getOrganization: function() {
             axios.get('/api/organization/'+this.id).then(response => {
                 this.organization   =   response.data.data;
+            });
+        },
+        getTags: function() {
+            axios.get('/api/tags/list').then(response => {
+                this.tags   =   response.data;
+                this.getOtherTags();
+            });
+        },
+        getOtherTags: function() {
+            axios.get('/api/tagsOption/other').then(response => {
+                this.tags.push({
+                    tags_option: response.data
+                });
+                this.getTagsOrganization();
+            });
+        },
+        getTagsOrganization: function() {
+            axios.get('/api/tagsOptionOrganization/getByOrganizationId/'+this.id).then(response => {
+                let data    =   response.data;
+                let tags    =   JSON.parse(JSON.stringify(this.tags));
+                data.forEach(option => {
+                    tags.forEach(tag => {
+                        tag.tags_option.forEach(tag_option => {
+                            if (tag_option.id === option.tags_option_id) {
+                                tag_option.status   =   option.status;
+                            }
+                        });
+                    });
+                });
+                this.tags   =   tags;
+                this.tagStatus  =   true;
             });
         },
         setOrganizationId: function() {
