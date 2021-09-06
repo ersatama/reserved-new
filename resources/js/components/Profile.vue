@@ -227,7 +227,16 @@ export default {
 
     .top {
         &-bg {
-            background: #00a082;
+            background: #fff;
         }
+    }
+    .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link {
+        border: 1px solid transparent !important;
+        font-size: 12px;
+    }
+    .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+        background: whitesmoke;
+        border: 1px solid gainsboro !important;
+        border-bottom-color: transparent !important;
     }
 </style>

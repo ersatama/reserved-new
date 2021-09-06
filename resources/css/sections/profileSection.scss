@@ -48,13 +48,20 @@
         color: #fff;
     }
 }
+.list {
+    &-group {
+        &-item {
+            background: transparent !important;
+        }
+    }
+}
 .section {
     &-bg {
         background: #fff;
         border-bottom: 1px solid rgba(0,0,0,.08);
         &-main {
-            padding-top: 3rem!important;
-            background: #00a082;
+            background: #fff;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
         }
     }
     &-title {
