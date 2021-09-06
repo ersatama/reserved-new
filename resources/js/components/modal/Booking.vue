@@ -345,9 +345,9 @@ export default {
             if (this.storage.token) {
                 let user;
                 try {
-                    user    =   JSON.parse(sessionStorage.user);
+                    user    =   JSON.parse(sessionStorage.getItem('user'));
                 } catch (e) {
-                    user    =   JSON.parse(sessionStorage.user);
+                    user    =   JSON.parse(sessionStorage.getItem('user'));
                 }
                 this.status =   true;
                 this.user   =   user;
