@@ -363,7 +363,7 @@ export default {
         &-main {
             background: #fff;
             position: relative;
-            top: -50px;
+            top: 20px;
             z-index: 2;
             height: 600px;
             border-radius: 10px;
@@ -382,7 +382,7 @@ export default {
         .form {
             &-main {
                 margin: 0 10px 0 10px;
-                top: -15px;
+                top: 15px;
                 box-shadow: 0 0 3px 0 rgba(0,0,0,.2);
                 border-radius: 8px;
                 height: 430px;
