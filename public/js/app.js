@@ -22813,7 +22813,10 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
                   if (data.hasOwnProperty('data')) {
                     sessionStorage.user = JSON.stringify(data.data);
+                    _this6.status = true;
                     _this6.user = JSON.parse(sessionStorage.user);
+
+                    _this6.cardList();
                   }
                 })["catch"](function (error) {
                   _this6.status = false;

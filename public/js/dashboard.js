@@ -34,6 +34,16 @@ let app = new Vue({
         this.getSections();
     },
     methods: {
+        tableStatus: function(key, tableKey) {
+            if (this.sections[key].organization_tables[tableKey].status === 'FROZEN') {
+                this.sections[key].organization_tables[tableKey].status =   'ENABLED';
+            } else {
+                this.sections[key].organization_tables[tableKey].status =   'FROZEN';
+            }
+            axios.post('/api/table/update/'+this.sections[key].organization_tables[tableKey].id,{
+                status: this.sections[key].organization_tables[tableKey].status
+            });
+        },
         getUser: function() {
             axios.get('/api/user/'+this.user_id)
                 .then(response => {

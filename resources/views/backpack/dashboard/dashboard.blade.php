@@ -175,10 +175,11 @@
                     <div class="dashboard-table" v-for="(table,tableKey) in section.organization_tables" :key="tableKey">
                         <div class="dashboard-table-item" :class="{'dashboard-table-item-checking':(table.booking && table.booking.status === 'CHECKING'),'dashboard-table-item-on':(table.booking && table.booking.status === 'on'),'dashboard-table-item-came':(table.booking && table.booking.status === 'came')}">
                             <div class="dashboard-table-title">
-
                                 <div class="dashboard-table-title-loading" v-if="table.booking === undefined"></div>
-                                <template v-else>@{{ table.title }}</template>
-
+                                <template v-else>@{{ table.title }} </template>
+                                <div class="dashboard-lock" :class="{'dashboard-lock-on':(table.status === 'FROZEN')}" @click="tableStatus(key,tableKey)">
+                                    <div class="dashboard-lock-btn"></div>
+                                </div>
                             </div>
                             <div class="dashboard-table-forms">
 
@@ -233,7 +234,6 @@
                                     </div>
 
                                 </template>
-
                             </div>
                             <div class="dashboard-table-buttons">
                                 <div class="dashboard-table-button-loading" v-if="table.booking === undefined"></div>
