@@ -294,8 +294,7 @@
     max-height: 350px;
     position: relative;
     overflow: hidden;
-    border-radius: 10px;
-    margin-top: -20px;
+    border-radius: 0 0 10px 10px;
     & > img {
         width: 100%;
     }
