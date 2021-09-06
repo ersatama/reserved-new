@@ -342,18 +342,26 @@ export default {
                 });
             }
         },
-        setUser: function() {
+        setUser: async function () {
             if (this.storage.token) {
-                return console.log(sessionStorage.getItem('user'));
-                let user;
-                try {
-                    user    =   JSON.parse(sessionStorage.getItem('user'));
-                } catch (e) {
-                    user    =   JSON.parse(sessionStorage.getItem('user'));
+                let user    =   JSON.parse(sessionStorage.getItem('user'));
+                if (user) {
+                    this.status = true;
+                    this.user = user;
+                    this.cardList();
+                } else {
+                    await axios.get('/api/token/' + this.storage.token)
+                        .then(response => {
+                            let data = response.data;
+                            if (data.hasOwnProperty('data')) {
+                                sessionStorage.user = JSON.stringify(data.data);
+                                this.user = JSON.parse(sessionStorage.user);
+                            }
+                        }).catch(error => {
+                            this.status = false;
+                        });
                 }
-                this.status =   true;
-                this.user   =   user;
-                this.cardList();
+
             }
         },
         cardList: function() {

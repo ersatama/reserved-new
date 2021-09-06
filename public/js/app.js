@@ -22587,11 +22587,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var maska__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! maska */ "./node_modules/maska/dist/maska.esm.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var maska__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! maska */ "./node_modules/maska/dist/maska.esm.js");
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   directives: {
-    maska: maska__WEBPACK_IMPORTED_MODULE_0__.maska
+    maska: maska__WEBPACK_IMPORTED_MODULE_1__.maska
   },
   name: "Booking",
   props: ['organization', 'table', 'date'],
@@ -22771,27 +22779,65 @@ __webpack_require__.r(__webpack_exports__);
         });
       }
     },
-    setUser: function setUser() {
-      if (this.storage.token) {
-        return console.log(sessionStorage.getItem('user'));
+    setUser: function () {
+      var _setUser = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
+        var _this6 = this;
+
         var user;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                if (!this.storage.token) {
+                  _context.next = 10;
+                  break;
+                }
 
-        try {
-          user = JSON.parse(sessionStorage.getItem('user'));
-        } catch (e) {
-          user = JSON.parse(sessionStorage.getItem('user'));
-        }
+                user = JSON.parse(sessionStorage.getItem('user'));
 
-        this.status = true;
-        this.user = user;
-        this.cardList();
+                if (!user) {
+                  _context.next = 8;
+                  break;
+                }
+
+                this.status = true;
+                this.user = user;
+                this.cardList();
+                _context.next = 10;
+                break;
+
+              case 8:
+                _context.next = 10;
+                return axios.get('/api/token/' + this.storage.token).then(function (response) {
+                  var data = response.data;
+
+                  if (data.hasOwnProperty('data')) {
+                    sessionStorage.user = JSON.stringify(data.data);
+                    _this6.user = JSON.parse(sessionStorage.user);
+                  }
+                })["catch"](function (error) {
+                  _this6.status = false;
+                });
+
+              case 10:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee, this);
+      }));
+
+      function setUser() {
+        return _setUser.apply(this, arguments);
       }
-    },
+
+      return setUser;
+    }(),
     cardList: function cardList() {
-      var _this6 = this;
+      var _this7 = this;
 
       axios.get('/api/card/user/' + this.user.id).then(function (response) {
-        _this6.cards = response.data.data;
+        _this7.cards = response.data.data;
       })["catch"](function (error) {
         console.log(error.response.data);
       });
