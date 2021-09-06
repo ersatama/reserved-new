@@ -22773,6 +22773,7 @@ __webpack_require__.r(__webpack_exports__);
     },
     setUser: function setUser() {
       if (this.storage.token) {
+        return console.log(sessionStorage.getItem('user'));
         var user;
 
         try {

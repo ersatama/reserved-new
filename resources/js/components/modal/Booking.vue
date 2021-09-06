@@ -344,6 +344,7 @@ export default {
         },
         setUser: function() {
             if (this.storage.token) {
+                return console.log(sessionStorage.getItem('user'));
                 let user;
                 try {
                     user    =   JSON.parse(sessionStorage.getItem('user'));
