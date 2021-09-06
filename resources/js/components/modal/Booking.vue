@@ -205,12 +205,12 @@ export default {
         }
     },
     created() {
-        console.log(this.organization);
         this.setUser();
         this.setTime();
     },
     mounted() {
         if (this.user) {
+            console.log(this.user);
             window.Echo.private('new.card.'+this.user.id)
                 .listen('.new.card', (e) => {
                     this.cardUpdate(e);

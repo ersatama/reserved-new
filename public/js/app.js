@@ -22626,7 +22626,6 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   created: function created() {
-    console.log(this.organization);
     this.setUser();
     this.setTime();
   },
@@ -22634,6 +22633,7 @@ __webpack_require__.r(__webpack_exports__);
     var _this = this;
 
     if (this.user) {
+      console.log(this.user);
       window.Echo["private"]('new.card.' + this.user.id).listen('.new.card', function (e) {
         _this.cardUpdate(e);
       });
