@@ -31,7 +31,6 @@ class TelegramCrudController extends CrudController
         $this->crud->addField(['type' => 'hidden', 'name' => MainContract::USER_ID]);
         $this->crud->getRequest()->request->add([MainContract::USER_ID  =>  backpack_user()->id]);
         $store  =   $this->traitStore();
-        Log::info('telegram_id',[$this->crud->getCurrentEntry()->{MainContract::ID}]);
         $telegram->setWebhook($this->crud->getCurrentEntry()->{MainContract::ID},$this->crud->getCurrentEntry()->{MainContract::API_TOKEN});
         return $store;
     }

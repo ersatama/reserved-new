@@ -19,4 +19,9 @@ class CategoryRepositoryEloquent implements CategoryRepositoryInterface
     {
         return DB::table(CategoryContract::TABLE)->where(MainContract::SLUG,$slug)->first();
     }
+
+    public function getById($id)
+    {
+        return DB::table(CategoryContract::TABLE)->where(MainContract::ID,$id)->first();
+    }
 }

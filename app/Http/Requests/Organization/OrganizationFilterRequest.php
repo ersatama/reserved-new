@@ -2,14 +2,13 @@
 
 namespace App\Http\Requests\Organization;
 
+use App\Domain\Contracts\MainContract;
 use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\Exceptions\HttpResponseException;
-
-use App\Domain\Contracts\MainContract;
 use Illuminate\Validation\ValidationException;
 
-class OrganizationIdsRequest extends FormRequest
+class OrganizationFilterRequest extends FormRequest
 {
 
     public function authorize(): bool
@@ -20,7 +19,10 @@ class OrganizationIdsRequest extends FormRequest
     public function rules(): array
     {
         return [
-            MainContract::IDS   =>  'required|array'
+            MainContract::PRICE =>  'nullable',
+            MainContract::RATINGS   =>  'nullable',
+            MainContract::TAGS  =>  'nullable',
+            MainContract::SORT  =>  'nullable',
         ];
     }
 

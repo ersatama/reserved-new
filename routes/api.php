@@ -111,42 +111,35 @@ Route::prefix('telegram_chat')->group(function() {
 });
 
 Route::prefix('card')->group(function() {
-
     Route::post('post/booking/{id}',[CardController::class,'booking'])->name('card.booking');
     Route::post('post',[CardController::class,'create'])->name('card.post');
     Route::post('update/{id}',[CardController::class,'update'])->name('card.update');
-
     Route::get('id/{id}',[CardController::class,'getById'])->name('card.id');
     Route::get('user/{userId}',[CardController::class,'getByUserId'])->name('card.user');
-
 });
 
 Route::prefix('booking')->group(function() {
-
     Route::post('guest',[BookingController::class,'guest'])->name('booking.guest');
     Route::post('create',[BookingController::class,'create'])->name('booking.create');
     Route::post('update/{id}',[BookingController::class,'update'])->name('booking.update');
     Route::post('card',[BookingController::class,'card'])->name('booking.card');
     Route::post('ids/{date}',[BookingController::class,'ids'])->name('booking.ids');
-
     Route::get('id/{id}',[BookingController::class,'getById'])->name('booking.id');
     Route::get('user/{userId}',[BookingController::class,'getByUserId'])->name('booking.user');
     Route::get('organization/{organizationId}',[BookingController::class,'getByOrganizationId'])->name('booking.organization');
     Route::get('table/{tableId}',[BookingController::class,'getByTableId'])->name('booking.table');
     Route::get('date/{date}',[BookingController::class,'getByDate'])->name('booking.date');
-    Route::get('completed/{userId}',[BookingController::class,'getCompletedByUserId'])->name('booking.status.user');
-    Route::get('dateBetween/{start}/{end}/{organizationId}',[BookingController::class,'getByBetweenDateAndOrganizationId'])->name('booking.organizationBetweenDate');
-
+    Route::get('completed/{userId}',[BookingController::class,'getCompletedByUserId'])
+        ->name('booking.status.user');
+    Route::get('dateBetween/{start}/{end}/{organizationId}',[BookingController::class,'getByBetweenDateAndOrganizationId'])
+        ->name('booking.organizationBetweenDate');
 });
 
 Route::prefix('payment')->group(function() {
-
     Route::post('card/result',[PaymentController::class,'cardResult'])->name('payment.card.result');
     Route::post('result',[PaymentController::class,'result']);
-
     Route::get('card/result',[PaymentController::class,'cardResult'])->name('payment.card.result');
     Route::get('card/{id}',[PaymentController::class,'card'])->name('payment.card.user');
-
 });
 
 Route::prefix('contacts')->group(function() {
@@ -155,27 +148,23 @@ Route::prefix('contacts')->group(function() {
 });
 
 Route::prefix('review')->group(function () {
-
     Route::post('create',[ReviewController::class,'create'])->name('review.create');
     Route::post('update/{id}',[ReviewController::class,'update']);
-
     Route::get('delete/{id}',[ReviewController::class,'delete']);
     Route::get('count/organization/{organizationId}',[ReviewController::class,'getCountByOrganizationId']);
     Route::get('list/organization/{id}/{paginate}',[ReviewController::class,'getByOrganizationId']);
     Route::get('list/user/{id}',[ReviewController::class,'getByUserId']);
     Route::get('group/{organizationId}',[ReviewController::class,'getGroupByOrganizationId'])->name('group.organizationId');
-
 });
 
 Route::prefix('organization')->group(function() {
-
     Route::post('update/{id}',[OrganizationController::class,'update'])->name('organization.update');
-    Route::get('status/{id}/{date}',[OrganizationController::class,'status'])->name('organization.status');
     Route::post('ids',[OrganizationController::class,'getByIds'])->name('organization.ids');
+    Route::get('status/{id}/{date}',[OrganizationController::class,'status'])->name('organization.status');
     Route::get('section/{id}',[OrganizationController::class,'getSectionsById']);
-    Route::get('{id}',[OrganizationController::class,'getById']);
+    Route::get('filter',[OrganizationController::class,'filter'])->name('organization.filter');
     Route::get('user/{userId}',[OrganizationController::class,'getByUserId'])->name('organization.getByUserId');
-
+    Route::get('{id}',[OrganizationController::class,'getById']);
 });
 
 Route::prefix('user')->group(function() {
@@ -205,6 +194,8 @@ Route::get('/organizations/{search}',[OrganizationController::class,'search']);
 
 
 Route::prefix('category')->group(function() {
+    Route::post('filter/organizations/{id}/{cityId}/{page}',[OrganizationController::class,'getByCategoryIdAndCityIdAndFilter']);
+    Route::post('count/organizations/{id}/{cityId}/{page}',[OrganizationController::class,'getCountByCategoryIdAndCityIdAndFilter']);
     Route::get('organizations/{id}',[OrganizationController::class,'getByCategoryId']);
     Route::get('organizations/{id}/{cityId}',[OrganizationController::class,'getByCategoryIdAndCityId']);
 });

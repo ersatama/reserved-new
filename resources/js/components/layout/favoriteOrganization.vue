@@ -1,23 +1,11 @@
 <template>
     <loading v-if="Loading"></loading>
-    <div class="container-fluid py-3 py-md-4 item-bg" v-else-if="category">
+    <div class="container-fluid py-3 py-md-4 item-bg" v-else-if="organizations.length > 0 && storage.favorite.length > 0">
         <div class="container">
             <div class="row">
                 <div class="result">
                     <div class="result-body">
-                        <div class="result-body-header">
-                            <div class="result-body-header-count" v-if="found >= 0">Найдено заведении <span>{{found}}</span></div>
-                            <div class="result-body-header-sort">
-                                <div class="result-body-header-sort-title">Сортировка:</div>
-                                <div class="result-body-header-sort-dropdown">
-                                    <div class="result-body-header-sort-dropdown-title" @click="selected.show = !selected.show">{{ sort[selected.index].title }}</div>
-                                    <div class="result-body-header-sort-dropdown-list" :class="{'result-body-header-sort-dropdown-list-open':selected.show}">
-                                        <div class="result-body-header-sort-dropdown-list-item" v-for="(item,key) in sort" :key="key" @click=" selectedValue(key); ; selected.show = false">{{item.title}}</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="result-body-main">
+                        <div class="result-body-main result-body-main-single">
                             <div class="result-body-item-main" v-for="(organization,key) in organizations" :key="key">
                                 <div class="result-body-item">
                                     <div class="result-body-item-screen" :style="{'background-image': 'url('+organization.wallpaper+')'}">
@@ -63,9 +51,6 @@
                             </div>
                         </div>
                     </div>
-                    <div class="result-filter">
-                        <Filter :filter="filter" @filterUpdate="filterUpdate"></Filter>
-                    </div>
                 </div>
             </div>
         </div>
@@ -88,113 +73,43 @@ export default {
     data() {
         return  {
             NotFound: {
-                img: '/img/logo/reserved.png',
-                title: 'Не найдено',
-                description: 'Возможно категория которую вы искали называется иначе.'
-            },
-            selected: {
-                index: 0,
-                show: false,
-            },
-            sort: [{title:'По рейтингу'},{title:'Сначала дорогие'},{title:'Сначала дешевые'}],
-            filter: {
-                price: {
-                    status: false,
-                    min: 0,
-                    max: 0,
-                },
-                ratings: {
-                    status: false,
-                    min: 0,
-                    max: 0,
-                },
-                tags: [],
+                img: '/img/logo/favorite-red.svg',
+                title: 'Список пуст',
+                description: 'Здесь будет отображаться список добавленных вами заведении.'
             },
             Loading: true,
-            status: true,
-            city: 1,
-            found: -1,
-            page: 1,
-            init: true,
             organizations: [],
         }
     },
-    watch: {
-        filter: function() {
-            this.getCountOrganizationsByCategoryId();
-            this.getOrganizationsByCategoryId();
-        },
-    },
     created() {
-        this.setFilter();
-        this.getCountOrganizationsByCategoryId();
-        this.getOrganizationsByCategoryId();
-    },
-    mounted() {
-        this.scrollEvent();
+        this.getOrganizations();
     },
     methods: {
-        scrollEvent: function() {
-            let self    =   this;
-            window.document.body.onscroll = function() {
-                let height = Math.max(window.pageYOffset, document.documentElement.scrollTop, document.body.scrollTop) + window.innerHeight;
-                if ((document.documentElement.offsetHeight - height) < 800) {
-                    self.getOrganizationsByCategoryId();
-                }
-            }
-        },
-        selectedValue: function(key) {
-            this.init   =   true;
-            this.page   =   1;
-            this.status =   true;
-            this.selected.index = key;
-            this.getCountOrganizationsByCategoryId();
-            this.getOrganizationsByCategoryId();
-        },
-        filterUpdate: function(data) {
-            this.init   =   true;
-            this.page   =   1;
-            this.status =   true;
-            this.filter =   data;
-        },
-        getCountOrganizationsByCategoryId: function() {
-            axios.post('/api/category/count/organizations/'+this.category.id+'/'+this.city+'/'+this.page,this.filter)
-                .then(response => {
-                    this.found  =   response.data;
-                }).catch(error => {
-                    this.found  =   -1;
-                });
-        },
-        getOrganizationsByCategoryId: function() {
-            if (this.category && this.status) {
-                this.status =   false;
-                this.filter.sort    =   this.selected.index;
-                axios.post('/api/category/filter/organizations/'+this.category.id+'/'+this.city+'/'+this.page,this.filter)
+        getOrganizations: function() {
+            if (this.storage.favorite.length > 0) {
+                axios.post('/api/organization/ids',{
+                    ids: this.storage.favorite
+                })
                     .then(response => {
                         let data    =   response.data.data;
                         for (let i = 0; i < data.length; i++) {
                             data[i].timeTitle   =   this.getTime(data[i]);
+                            this.organizations.push(data[i]);
                         }
-                        if (this.init) {
-                            this.init   =   false;
-                            this.organizations  =   data;
-                        } else {
-                            this.organizations  =   this.organizations.concat(data);
+                        if (data.length === 0) {
+                            this.storage.favorite   =   [];
+                            this.organizations   =   [];
                         }
-                        this.Loading        =   false;
-                        this.page++;
-                        if (data.length === 15) {
-                            this.status         =   true;
-                        }
-                    }).catch(error => {
                         this.Loading    =   false;
-                        this.status     =   true;
+                    }).catch(error => {
+                        this.storage.favorite   =   [];
+                        this.organizations   =   [];
+                        this.Loading    =   false;
                     });
-            }
-        },
-        setFilter: function() {
-            if (this.storage.city) {
-                this.city =   this.storage.city.id;
+            } else {
+                this.storage.favorite   =   [];
+                this.organizations  =   [];
+                this.Loading    =   false;
             }
         },
         favorite: function(id) {

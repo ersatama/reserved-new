@@ -4,7 +4,10 @@
 namespace App\Domain\Repositories\Organization;
 
 use App\Domain\Contracts\MainContract;
+use App\Domain\Contracts\OrganizationContract;
 use App\Models\Organization;
+use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\DB;
 
 class OrganizationRepositoryEloquent implements OrganizationRepositoryInterface
 {
@@ -82,5 +85,12 @@ class OrganizationRepositoryEloquent implements OrganizationRepositoryInterface
             [MainContract::CITY_ID,$cityId],
             [MainContract::STATUS,MainContract::ENABLED]
         ])->get();
+    }
+
+    public function getMinAndMaxPrice(): Collection
+    {
+        return DB::table(OrganizationContract::TABLE)
+            ->select(DB::raw('MIN(price) AS max, MAX(price) AS min'))
+            ->get();
     }
 }

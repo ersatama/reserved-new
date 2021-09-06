@@ -1,7 +1,7 @@
 <template>
     <location :countries="countries"></location>
-    <div class="container-fluid section-bg">
-        <div class="container pt-5 pb-3 pb-md-5">
+    <div class="container-fluid section-bg breadcrumb-main">
+        <div class="container py-0">
             <div class="row">
                 <div class="col-12 col-md-9 p-0 d-flex align-items-center">
                     <ul class="breadcrumb">
@@ -80,9 +80,13 @@ export default {
 <style lang="scss">
 .breadcrumb {
     background: transparent;
-    padding: 0 0 5px 0;
+    padding: 0;
     margin: 0;
-    color: white;
+    color: #57a283;
+    &-main {
+        margin-top: 76px;
+        padding: 15px !important;
+    }
     & > li {
         display: flex;
         align-items: center;
@@ -96,20 +100,35 @@ export default {
     }
     &-link {
         line-height: 1.2;
-        font-size: 16px;
+        font-size: 12px;
         font-weight: bold;
     }
     &-arrow, &-home {
-        background: url('/img/logo/right-arrow-white.svg') no-repeat center;
+        background: url('/img/logo/right-arrow.svg') no-repeat center;
         background-size: contain;
-        width: 20px;
-        height: 20px;
+        width: 16px;
+        height: 16px;
     }
     &-arrow {
         background-size: 50%;
     }
     &-home {
-        background-image: url('/img/logo/home-white.svg');
+        background-image: url('/img/logo/home.svg');
+    }
+}
+@media only screen and (max-width: 768px) {
+    .breadcrumb {
+        color: #fff;
+        &-main {
+            margin-top: 59px !important;
+        }
+        &-arrow, &-home {
+            background-image: url('/img/logo/right-arrow-white.svg');
+        }
+        &-home {
+            background-image: url('/img/logo/home-white.svg');
+        }
+
     }
 }
 </style>

@@ -79,7 +79,7 @@ class UserController extends Controller
         return response(['message'  =>  'Пользователь не найден'],404);
     }
 
-    public function booking(Request $request)
+    public function booking(Request $request): BookingResource
     {
         $user   =   $this->userService->getByPhone($request->input(MainContract::PHONE));
         $password   =   rand(100000,999999);
@@ -95,10 +95,8 @@ class UserController extends Controller
             $status =   true;
         }
 
-        $organization   =   $this->organizationService->getById($request->input(MainContract::ORGANIZATION_ID));
         $table          =   $this->organizationTableListService->getById($request->input(MainContract::ORGANIZATION_TABLE_ID));
-
-        $price          =   $table->{MainContract::PRICE}>0?$table->{MainContract::PRICE}:$organization->{MainContract::PRICE};
+        $price          =   $table->{MainContract::PRICE}>0?$table->{MainContract::PRICE}:0;
 
         $booking    =   [
             MainContract::USER_ID    =>  $user->{MainContract::ID},

@@ -47,7 +47,6 @@
                                                     </div>
                                                     <div class="organization-card-status organization-card-status-free" v-else-if="table.status === 'ENABLED' && (table.bookingStatus === null || table.bookingStatus.status === 'COMPLETED')">
                                                         <span v-if="table.price > 0">Депозит {{table.price}} ₸</span>
-                                                        <span v-else-if="organization.price > 0">Депозит {{organization.price}} ₸</span>
                                                         <span v-else>Свободно</span>
                                                     </div>
                                                     <div class="organization-card-status organization-card-status-reserved" v-else>Занято</div>

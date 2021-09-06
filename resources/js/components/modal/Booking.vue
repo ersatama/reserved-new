@@ -65,7 +65,7 @@
                                     </button>
                                 </div>
                                 <div class="col-12 mt-2 mt-md-4">
-                                    <button class="btn btn-block auth-register text-white" @click="bookingAuthFinish()" :disabled="cards.length === 0">Оплатить {{organization.price}} KZT</button>
+                                    <button class="btn btn-block auth-register text-white" @click="bookingAuthFinish()" :disabled="cards.length === 0">Оплатить {{this.table.price}} KZT</button>
                                 </div>
                                 <div class="col-12 mt-2 mt-md-4 mb-2">
                                     <button class="btn btn-block auth-register text-white" @click="storage.modal = false">Назад</button>
@@ -220,13 +220,11 @@ export default {
         getPrice: function() {
             if (this.table.price > 0) {
                 return this.table.price;
-            } else if (this.organization.price > 0) {
-                return this.organization.price;
             }
             return 0;
         },
         storageModal: function(status) {
-            if (parseInt(this.organization.price) === 0) {
+            if (parseInt(this.table.price) === 0) {
                 this.bookingAuthFinish();
             } else {
                 this.storage.modal = true;

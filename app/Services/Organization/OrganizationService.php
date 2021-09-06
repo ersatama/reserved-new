@@ -3,10 +3,12 @@
 
 namespace App\Services\Organization;
 
+use App\Domain\Contracts\MainContract;
 use App\Domain\Contracts\OrganizationContract;
 use App\Services\BaseService;
 use App\Domain\Repositories\Organization\OrganizationRepositoryInterface;
 use App\Domain\Repositories\Review\ReviewRepositoryInterface;
+use Illuminate\Support\Collection;
 
 class OrganizationService
 {
@@ -65,9 +67,9 @@ class OrganizationService
         return $this->organizationRepository->getByUserId($id);
     }
 
-    public function getIdsByUserId($userId)
+    public function getIdsByUserId($userId): array
     {
-        return $this->clearArray($this->organizationRepository->getIdsByUserId($userId),OrganizationContract::ID);
+        return $this->clearArray($this->organizationRepository->getIdsByUserId($userId), MainContract::ID);
     }
 
     public function clearArray($array, $key): array
@@ -77,5 +79,10 @@ class OrganizationService
             $arr[]  =   $value[$key];
         }
         return $arr;
+    }
+
+    public function getMinAndMaxPrice(): Collection
+    {
+        return $this->organizationRepository->getMinAndMaxPrice();
     }
 }

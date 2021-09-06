@@ -38,7 +38,6 @@ class Telegram
 
     public function setWebhook($id, $token)
     {
-        Log::info('telegram_curl',[$token]);
         $this->curl->getSend($this->urlHook($id, $token));
     }
 
@@ -160,12 +159,12 @@ class Telegram
         return 'https://api.telegram.org/bot'.$telegram->{TelegramContract::API_TOKEN}.'/sendMessage';
     }
 
-    public function urlUpdates($telegram)
+    public function urlUpdates($telegram): string
     {
         return 'https://api.telegram.org/bot'.$telegram->{TelegramContract::API_TOKEN}.'/getUpdates';
     }
 
-    public function urlHook($id,$token)
+    public function urlHook($id,$token): string
     {
         return 'https://api.telegram.org/bot'.$token.'/setWebhook?url=https://reserved-app.kz/api/telegram_chat/create/'.$id;
     }

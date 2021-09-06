@@ -24,4 +24,9 @@ class CategoryService extends BaseService
     {
         return $this->categoryRepository->getBySlug($slug);
     }
+
+    public function getById($id)
+    {
+        return $this->categoryRepository->getById($id);
+    }
 }

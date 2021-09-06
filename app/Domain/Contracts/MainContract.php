@@ -82,6 +82,11 @@ class MainContract
     const TITLE_EN  =   'title_en';
     const TABLES    =   'tables';
     const PRICE     =   'price';
+    const MIN       =   'min';
+    const MAX       =   'max';
+    const TAGS      =   'tags';
+    const SORT      =   'sort';
+    const RATINGS   =   'ratings';
     const STATUS    =   'status';
     const CODE      =   'code';
     const BLOCKED   =   'blocked';
