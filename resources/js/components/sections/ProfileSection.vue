@@ -1,11 +1,6 @@
 <template>
     <breadcrumb :breadcrumb="breadcrumb"></breadcrumb>
     <div class="container-fluid section-bg-main" v-if="end === 'profile'">
-        <style>
-            .section-bg {
-                border-bottom: none !important;
-            }
-        </style>
         <div class="container">
             <div class="row">
                 <div class="col-12">

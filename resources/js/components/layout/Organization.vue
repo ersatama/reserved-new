@@ -50,7 +50,7 @@
                                             <a :href="'tel:'+organization.phone" class="text-dark p-0">{{organization.phone}}</a>
                                         </div>
                                     </div>
-                                    <div class="result-body-item-map">
+                                    <div class="result-body-item-map" v-if="organization.address">
                                         <div>{{organization.address}}</div>
                                     </div>
                                     <a v-if="category" :href="'/home/'+category.slug+'/'+organization.id" class="p-0">
