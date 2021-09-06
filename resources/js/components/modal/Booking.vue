@@ -355,7 +355,9 @@ export default {
                             let data = response.data;
                             if (data.hasOwnProperty('data')) {
                                 sessionStorage.user = JSON.stringify(data.data);
+                                this.status = true;
                                 this.user = JSON.parse(sessionStorage.user);
+                                this.cardList();
                             }
                         }).catch(error => {
                             this.status = false;
