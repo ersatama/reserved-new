@@ -22626,6 +22626,7 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   created: function created() {
+    console.log(this.organization);
     this.setUser();
     this.setTime();
   },

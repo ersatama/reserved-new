@@ -205,6 +205,7 @@ export default {
         }
     },
     created() {
+        console.log(this.organization);
         this.setUser();
         this.setTime();
     },
