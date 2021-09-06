@@ -235,7 +235,7 @@ export default {
         font-size: 12px;
     }
     .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
-        background: whitesmoke;
+        background: whitesmoke !important;
         border: 1px solid gainsboro !important;
         border-bottom-color: transparent !important;
     }

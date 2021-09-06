@@ -3,7 +3,7 @@
     <profile-section :name="organization.title || ''" :id="$route.params.id" :category="category"></profile-section>
     <loading v-if="loading"></loading>
     <template v-else-if="organization">
-        <div class="container-fluid">
+        <div class="container-fluid bg-white">
             <div class="container p-0">
                 <div class="row">
                     <div class="col-12 p-0">
@@ -38,7 +38,7 @@
                 </div>
             </div>
         </div>
-        <div class="container-fluid organization-shadow-main px-0">
+        <div class="container-fluid bg-white organization-shadow-main px-0">
             <div class="container py-0">
                 <div class="row pt-2">
                     <div class="col d-flex justify-content-center">
@@ -151,4 +151,7 @@ export default {
 <style lang="scss">
     @import '../../css/favorite/favorite.scss';
     @import '../../css/organization/organization.scss';
+    .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+
+    }
 </style>
