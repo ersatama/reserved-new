@@ -236,7 +236,7 @@ export default {
     }
     .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
         background: whitesmoke !important;
-        border: 1px solid gainsboro !important;
+        border: 1px solid #e6f1ec !important;
         border-bottom-color: transparent !important;
     }
 </style>
