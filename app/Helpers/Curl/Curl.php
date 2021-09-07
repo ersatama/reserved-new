@@ -50,9 +50,14 @@ class Curl
         return $out;
     }
 
-    public function getContents($url)
+    public function getContents($url, $chatId, $message)
     {
-        return file_get_contents($url);
+        file_get_contents($url, false, stream_context_create(['http' => [
+            'method'  => 'POST',
+            'header'  => 'Content-Type: application/x-www-form-urlencoded',
+            'content' => http_build_query(['chat_id'   =>  $chatId,'text'      =>  $message])
+        ]]));
+        //return file_get_contents($url);
     }
 
     public function postSend($url,$chat)
