@@ -61,9 +61,9 @@ class BookingService extends BaseService
         return $this->bookingRepository->getByBetweenDateAndOrganizationId($start,$end,$organizationId);
     }
 
-    public function create(array $data)
+    public function create(array $data, bool $status = true)
     {
-        return $this->bookingRepository->create($data);
+        return $this->bookingRepository->create($data, $status);
     }
 
     public function ids($date, $ids): array

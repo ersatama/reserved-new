@@ -115,7 +115,7 @@ class UserController extends Controller
             $booking[MainContract::STATUS]  =   MainContract::CHECKING;
         }
 
-        $booking    =   $this->bookingService->create($booking);
+        $booking    =   $this->bookingService->create($booking, false);
         if ($price > 0) {
             BookingPayment::dispatch([
                 MainContract::ID =>  $booking->id,
