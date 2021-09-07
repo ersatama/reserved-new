@@ -8,6 +8,7 @@ use App\Services\BaseService;
 use App\Domain\Repositories\Link\LinkRepositoryInterface;
 
 use App\Helpers\Curl\Curl;
+use App\Helpers\Whatsapp\Whatsapp;
 
 class SmsService extends BaseService
 {
@@ -20,10 +21,12 @@ class SmsService extends BaseService
     protected $userPhone;
     protected $curl;
     protected $linkRepository;
+    protected $whatsapp;
 
-    public function __construct(Curl $curl, LinkRepositoryInterface $linkRepository) {
+    public function __construct(Curl $curl, LinkRepositoryInterface $linkRepository, Whatsapp $whatsapp) {
         $this->curl             =   $curl;
         $this->linkRepository   =   $linkRepository;
+        $this->whatsapp         =   $whatsapp;
     }
 
     public function sendAuth(string $phone, string $password)
@@ -37,7 +40,11 @@ class SmsService extends BaseService
 
     public function sendCode(string $phone, int $code) {
         $this->code =   $code;
-        return $this->curl->get($this->url.'?'.$this->getParameters($phone));
+        $this->whatsapp->send([
+            'phone' =>  $phone,
+            'body'  =>  $this->message()
+        ]);
+        //return $this->curl->get($this->url.'?'.$this->getParameters($phone));
     }
 
     public function sendUser(string $phone, string $password) {
