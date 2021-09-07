@@ -96,7 +96,6 @@ Route::prefix('menu')->group(function() {
 Route::prefix('telegram')->group(function() {
 
     Route::post('webhook/{id}',[TelegramChatController::class,'create'])->name('telegram_chat.create');
-    Route::post('update/{id}',[TelegramController::class,'update'])->name('telegram.update');
 
     Route::get('user/{userId}',[TelegramController::class,'getByUserId'])->name('telegram.user.id');
     Route::get('id/{id}',[TelegramController::class,'getById'])->name('telegram.id');
