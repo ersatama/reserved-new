@@ -251,6 +251,15 @@
     }
 }
 @media only screen and (max-width: 768px) {
+    .dashboard-lock {
+        right: 10px;
+        height: 20px;
+        width: 30px;
+    }
+    .dashboard-lock-btn {
+        width: 14px;
+        height: 14px;
+    }
     .dashboard-calendar-input {
         width: 60px;
         font-size: 11px;
