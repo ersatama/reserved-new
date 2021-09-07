@@ -1,6 +1,6 @@
 <template>
-    <div class="modal fade" id="booking_modal" tabindex="-1" role="dialog" aria-labelledby="booking_modal" aria-hidden="true" v-if="table">
-        <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal fade" id="booking_modal" tabindex="-1" role="dialog" aria-labelledby="booking_modal" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document" v-if="table">
             <div class="modal-content auth-modal">
                 <div class="modal-body" onselectstart="return false">
                     <div class="form-group d-flex justify-content-end">
