@@ -13,14 +13,8 @@ class UserRepositoryEloquent implements UserRepositoryInterface
 
     public function adminCreate(array $data)
     {
-        return User::create([
-            UserContract::USER_ID   =>  array_key_exists(UserContract::USER_ID,$data)?$data[UserContract::USER_ID]:null,
-            UserContract::NAME      =>  $data[UserContract::NAME],
-            UserContract::PHONE     =>  $data[UserContract::PHONE],
-            UserContract::CODE      =>  rand(100000,999999),
-            UserContract::PASSWORD  =>  $data[UserContract::PASSWORD],
-            UserContract::API_TOKEN =>  Str::random(60)
-        ]);
+        $data[MainContract::API_TOKEN]  =   Str::random(60);
+        return User::create($data);
     }
 
     public function create(array $data)

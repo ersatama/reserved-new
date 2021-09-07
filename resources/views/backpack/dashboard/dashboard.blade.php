@@ -177,7 +177,7 @@
                             <div class="dashboard-table-title">
                                 <div class="dashboard-table-title-loading" v-if="table.booking === undefined"></div>
                                 <template v-else>@{{ table.title }} </template>
-                                <div class="dashboard-lock" :class="{'dashboard-lock-on':(table.status === 'FROZEN')}" @click="tableStatus(key,tableKey)">
+                                <div class="dashboard-lock" :class="{'dashboard-lock-on':!(table.status === 'FROZEN')}" @click="tableStatus(key,tableKey)">
                                     <div class="dashboard-lock-btn"></div>
                                 </div>
                             </div>

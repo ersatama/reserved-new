@@ -1,5 +1,6 @@
 <?php
 
+use App\Domain\Contracts\MainContract;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -12,42 +13,42 @@ class CreateUsersTable extends Migration
     {
         Schema::create(UserContract::TABLE, function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger(UserContract::USER_ID)->nullable();
-            $table->enum(UserContract::ROLE,UserContract::ROLES)
-                ->default(UserContract::USER);
-            $table->enum(UserContract::BLOCKED,UserContract::STATE)->default(UserContract::ON);
-            $table->string(UserContract::NAME);
-            $table->string(UserContract::AVATAR)
+            $table->unsignedBigInteger(MainContract::USER_ID)->nullable();
+            $table->enum(MainContract::ROLE,MainContract::ROLES)
+                ->default(MainContract::USER);
+            $table->enum(MainContract::BLOCKED,MainContract::STATE)->default(MainContract::ON);
+            $table->string(MainContract::NAME);
+            $table->string(MainContract::AVATAR)
                 ->nullable();
-            $table->string(UserContract::PHONE)
+            $table->string(MainContract::PHONE)
                 ->nullable()
                 ->unique();
-            $table->char(UserContract::CODE,6)
+            $table->char(MainContract::CODE,6)
                 ->nullable();
-            $table->timestamp(UserContract::PHONE_VERIFIED_AT)
+            $table->timestamp(MainContract::PHONE_VERIFIED_AT)
                 ->nullable();
-            $table->string(UserContract::EMAIL)
+            $table->string(MainContract::EMAIL)
                 ->nullable()
                 ->unique();
-            $table->timestamp(UserContract::EMAIL_VERIFIED_AT)
+            $table->timestamp(MainContract::EMAIL_VERIFIED_AT)
                 ->nullable();
-            $table->string(UserContract::PASSWORD);
-            $table->string(UserContract::API_TOKEN)->unique()
+            $table->string(MainContract::PASSWORD);
+            $table->string(MainContract::API_TOKEN)->unique()
                 ->nullable()
                 ->default(null);
-            $table->bigInteger(UserContract::LANGUAGE_ID)->nullable();
-            $table->enum(UserContract::EMAIL_NOTIFICATION,[
-                UserContract::ON,
-                UserContract::OFF,
-            ])->default(UserContract::ON);
-            $table->enum(UserContract::PUSH_NOTIFICATION,[
-                UserContract::ON,
-                UserContract::OFF,
-            ])->default(UserContract::ON);
+            $table->bigInteger(MainContract::LANGUAGE_ID)->nullable();
+            $table->enum(MainContract::EMAIL_NOTIFICATION,[
+                MainContract::ON,
+                MainContract::OFF,
+            ])->default(MainContract::ON);
+            $table->enum(MainContract::PUSH_NOTIFICATION,[
+                MainContract::ON,
+                MainContract::OFF,
+            ])->default(MainContract::ON);
             $table->rememberToken();
             $table->softDeletes();
             $table->timestamps();
-            $table->index(UserContract::USER_ID);
+            $table->index(MainContract::USER_ID);
         });
     }
 

@@ -90,7 +90,8 @@ class UserController extends Controller
                 MainContract::USER_ID   =>  $request->input(MainContract::USER_ID),
                 MainContract::NAME  =>  $request->input(MainContract::NAME),
                 MainContract::PHONE =>  $request->input(MainContract::PHONE),
-                MainContract::PHONE_VERIFIED_AT =>  Carbon::today()->toDateTimeString(),
+                MainContract::CODE  =>  rand(100000,999999),
+                MainContract::PHONE_VERIFIED_AT =>  now(),
                 MainContract::PASSWORD  =>  $password
             ]);
             $status =   true;
