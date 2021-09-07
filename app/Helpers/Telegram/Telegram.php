@@ -3,6 +3,7 @@
 namespace App\Helpers\Telegram;
 
 use App\Domain\Contracts\BookingContract;
+use App\Domain\Contracts\MainContract;
 use App\Domain\Contracts\OrganizationTableListContract;
 use App\Domain\Contracts\OrganizationTablesContract;
 use App\Domain\Contracts\TelegramChatContract;
@@ -44,7 +45,7 @@ class Telegram
     public function booking($telegrams, Booking $booking)
     {
         foreach ($telegrams as &$telegram) {
-            if ($telegram->{TelegramContract::STATUS}   === TelegramContract::ALL || $telegram->{TelegramContract::STATUS}   === TelegramContract::BOOKINGS) {
+            if ($telegram->{MainContract::STATUS}   === MainContract::ALL || $telegram->{MainContract::STATUS}   === MainContract::BOOKINGS) {
                 $chatIds    =   $this->getChatIds($telegram);
                 foreach ($chatIds as &$chatId) {
                     $this->send($telegram, $chatId, $booking);
@@ -56,7 +57,7 @@ class Telegram
     public function review($telegrams, Review $review, $booking)
     {
         foreach ($telegrams as &$telegram) {
-            if ($telegram->{TelegramContract::STATUS}   === TelegramContract::ALL || $telegram->{TelegramContract::STATUS}   === TelegramContract::REVIEWS) {
+            if ($telegram->{MainContract::STATUS}   === MainContract::ALL || $telegram->{MainContract::STATUS}   === MainContract::REVIEWS) {
                 $chatIds    =   $this->getChatIds($telegram);
                 foreach ($chatIds as &$chatId) {
                     $this->sendReview($telegram, $chatId, $review, $booking);
@@ -81,43 +82,42 @@ class Telegram
         ]);
     }
 
-    public function getChatIds($telegram)
+    public function getChatIds($telegram): array
     {
-        $telegramChats  =   $this->telegramChatService->getByTelegramId($telegram->{TelegramContract::ID});
+        $telegramChats  =   $this->telegramChatService->getByTelegramId($telegram->{MainContract::ID});
         $arr    =   [];
         foreach ($telegramChats as &$telegramChat) {
-            $arr[]  =   $telegramChat->{TelegramChatContract::TELEGRAM_CHAT_ID};
+            $arr[]  =   $telegramChat->{MainContract::TELEGRAM_CHAT_ID};
         }
-        Log::info('chats'.$telegram->{TelegramContract::ID});
         return $arr;
     }
 
-    public function reviewText(Review $review, $booking)
+    public function reviewText(Review $review, $booking): string
     {
-        $message    =   $this->ratingEmoji($review->rating).' Новый отзыв'."\n\n";
+        $message    =   $this->ratingEmoji($review->{MainContract::RATING}).' Новый отзыв'."\n\n";
 
-        $message    .=  '🍽 '.$booking->organizationTables->{BookingContract::TITLE}."\n";
-        $message    .=  '📋 ID: '.$booking->{BookingContract::ID}."\n";
-        $message    .=  '📅 Дата: '.$booking->{BookingContract::DATE}."\n";
-        $message    .=  '⏰ Время: '.$booking->{BookingContract::TIME}."\n";
+        $message    .=  '🍽 '.$booking->organizationTables->{MainContract::TITLE}."\n";
+        $message    .=  '📋 ID: '.$booking->{MainContract::ID}."\n";
+        $message    .=  '📅 Дата: '.$booking->{MainContract::DATE}."\n";
+        $message    .=  '⏰ Время: '.$booking->{MainContract::TIME}."\n";
 
-        $section    =   $this->organizationTableService->getById($booking->organizationTables->{OrganizationTableListContract::ORGANIZATION_TABLE_ID});
+        $section    =   $this->organizationTableService->getById($booking->organizationTables->{MainContract::ORGANIZATION_TABLE_ID});
         if ($section) {
-            $message    .=  '📌 Секция: '.$section->{OrganizationTablesContract::NAME}."\n\n";
+            $message    .=  '📌 Секция: '.$section->{MainContract::NAME}."\n\n";
         }
 
-        $user   =   $this->userService->getById($booking->{BookingContract::USER_ID});
+        $user   =   $this->userService->getById($booking->{MainContract::USER_ID});
 
-        $message    .=  '✏️Имя: '.$user->{UserContract::NAME}."\n";
-        $message    .=  '📞 Телефон: +'.$user->{UserContract::PHONE}."\n\n";
+        $message    .=  '✏️Имя: '.$user->{MainContract::NAME}."\n";
+        $message    .=  '📞 Телефон: +'.$user->{MainContract::PHONE}."\n\n";
 
-        $message    .=  'Рейтинг: '.str_repeat('⭐ ', $review->rating);
+        $message    .=  'Рейтинг: '.str_repeat('⭐ ', $review->{MainContract::RATING});
         $message    .=  "\n\n";
-        $message    .=  'Комментарии: '.$review->comment;
+        $message    .=  'Комментарии: '.$review->{MainContract::COMMENT};
         return $message;
     }
 
-    public function ratingEmoji($rating)
+    public function ratingEmoji($rating): string
     {
         $emoji  =   '😍';
         if (intVal($rating) === 4) {

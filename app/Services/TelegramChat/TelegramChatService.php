@@ -6,7 +6,7 @@ use App\Services\BaseService;
 use App\Domain\Repositories\TelegramChat\TelegramChatRepositoryInterface;
 use Illuminate\Support\Collection;
 
-class TelegramChatService extends BaseService
+class TelegramChatService
 {
     protected $telegramChatRepository;
     public function __construct(TelegramChatRepositoryInterface $telegramChatRepository)
@@ -24,14 +24,14 @@ class TelegramChatService extends BaseService
         return $this->telegramChatRepository->getByTelegramId($telegramId);
     }
 
-    public function getByChatId($chatId)
+    public function getByTelegramIdAndChatId($telegramId, $chatId, $status = 'on')
     {
-        return $this->telegramChatRepository->getByChatId($chatId);
+        return $this->telegramChatRepository->getByTelegramIdAndChatId($telegramId, $chatId, $status = 'on');
     }
 
-    public function update($id,$data):void
+    public function update($telegramId, $chatId, $data):void
     {
-        $this->telegramChatRepository->update($id,$data);
+        $this->telegramChatRepository->update($telegramId, $chatId, $data);
     }
 
 }
