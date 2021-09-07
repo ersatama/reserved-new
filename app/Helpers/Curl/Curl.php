@@ -50,6 +50,11 @@ class Curl
         return $out;
     }
 
+    public function getContents($url)
+    {
+        return file_get_contents($url);
+    }
+
     public function postSend($url,$chat)
     {
         $curl = curl_init();
@@ -58,7 +63,7 @@ class Curl
             CURLOPT_RETURNTRANSFER  =>  true,
             CURLOPT_ENCODING        =>  '',
             CURLOPT_MAXREDIRS       =>  10,
-            CURLOPT_TIMEOUT         =>  20,
+            CURLOPT_TIMEOUT         =>  10,
             CURLOPT_FOLLOWLOCATION  =>  true,
             CURLOPT_HTTP_VERSION    =>  CURL_HTTP_VERSION_1_1,
             CURLOPT_CUSTOMREQUEST   =>  'POST',

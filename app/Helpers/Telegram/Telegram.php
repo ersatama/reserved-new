@@ -68,18 +68,27 @@ class Telegram
 
     public function sendReview($telegram, $chatId, Review $review, $booking)
     {
-        $this->curl->postSend($this->urlMessage($telegram),[
+        /*
+             public function urlMessage($telegram)
+    {
+        return 'https://api.telegram.org/bot'.$telegram->{TelegramContract::API_TOKEN}.'/sendMessage';
+    }
+         */
+        file_get_contents($this->urlMessage($telegram).'?chat_id='.$chatId.'&text='.$this->reviewText($review, $booking));
+        /*$this->curl->postSend($this->urlMessage($telegram),[
             'chat_id'   =>  $chatId,
             'text'      =>  $this->reviewText($review, $booking)
-        ]);
+        ]);*/
     }
 
     public function send($telegram, $chatId, Booking $booking)
     {
-        $this->curl->postSend($this->urlMessage($telegram),[
+        file_get_contents($this->urlMessage($telegram).'?chat_id='.$chatId.'&text='.$this->bookingText($booking));
+
+        /*$this->curl->postSend($this->urlMessage($telegram),[
             'chat_id'   =>  $chatId,
             'text'      =>  $this->bookingText($booking)
-        ]);
+        ]);*/
     }
 
     public function getChatIds($telegram): array
