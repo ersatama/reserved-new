@@ -173,25 +173,34 @@ export default {
                 week    =   this.organization.saturday;
                 this.isWorking = this.organization.saturday.work === 'on';
             }
-            let today   =   new Date();
 
             if (week.start === week.end) {
                 this.date.timeTitle =   'круглосуточно';
             } else {
                 this.date.timeTitle  =   'c '+this.timeConvert(week.start)+' до '+this.timeConvert(week.end);
             }
+            let today   =   new Date();
             let timeToday   =   new Date(today.getFullYear(),today.getMonth(),today.getDate());
             let item;
             let start   =   week.start.split(':');
+            let end     =   week.end.split(':');
             this.date.timeIndex =   0;
             this.date.time  =   [];
             if (timeToday.getTime() === date.getTime()) {
                 this.date.timeList.forEach(element => {
                     item    =   element.time.split(':');
-                    if (parseInt(today.getHours()) < parseInt(item[0]) && parseInt(today.getHours()) > parseInt(start[0])) {
+                    if (parseInt(item[0]) >= parseInt(start[0]) && parseInt(today.getHours()) < parseInt(item[0])) {
                         this.date.time.push(element);
                     }
                 });
+                if (parseInt(end[0]) < parseInt(start[0])) {
+                    this.date.timeList.forEach(element => {
+                        item    =   element.time.split(':');
+                        if (parseInt(item[0]) < parseInt(end[0])) {
+                            this.date.time.push(element);
+                        }
+                    });
+                }
             } else {
                 this.date.time  =   this.date.timeList;
             }

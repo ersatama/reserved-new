@@ -22241,17 +22241,17 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         this.isWorking = this.organization.saturday.work === 'on';
       }
 
-      var today = new Date();
-
       if (week.start === week.end) {
         this.date.timeTitle = 'круглосуточно';
       } else {
         this.date.timeTitle = 'c ' + this.timeConvert(week.start) + ' до ' + this.timeConvert(week.end);
       }
 
+      var today = new Date();
       var timeToday = new Date(today.getFullYear(), today.getMonth(), today.getDate());
       var item;
       var start = week.start.split(':');
+      var end = week.end.split(':');
       this.date.timeIndex = 0;
       this.date.time = [];
 
@@ -22259,10 +22259,20 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         this.date.timeList.forEach(function (element) {
           item = element.time.split(':');
 
-          if (parseInt(today.getHours()) < parseInt(item[0]) && parseInt(today.getHours()) > parseInt(start[0])) {
+          if (parseInt(item[0]) >= parseInt(start[0]) && parseInt(today.getHours()) < parseInt(item[0])) {
             _this3.date.time.push(element);
           }
         });
+
+        if (parseInt(end[0]) < parseInt(start[0])) {
+          this.date.timeList.forEach(function (element) {
+            item = element.time.split(':');
+
+            if (parseInt(item[0]) < parseInt(end[0])) {
+              _this3.date.time.push(element);
+            }
+          });
+        }
       } else {
         this.date.time = this.date.timeList;
       }
@@ -22641,7 +22651,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     var _this = this;
 
     if (this.user) {
-      console.log(this.user);
       window.Echo["private"]('new.card.' + this.user.id).listen('.new.card', function (e) {
         _this.cardUpdate(e);
       });

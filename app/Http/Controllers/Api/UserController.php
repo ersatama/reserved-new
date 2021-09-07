@@ -8,6 +8,7 @@ use App\Domain\Contracts\UserContract;
 
 use App\Http\Controllers\Controller;
 
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Log;
@@ -89,7 +90,7 @@ class UserController extends Controller
                 MainContract::USER_ID   =>  $request->input(MainContract::USER_ID),
                 MainContract::NAME  =>  $request->input(MainContract::NAME),
                 MainContract::PHONE =>  $request->input(MainContract::PHONE),
-                MainContract::PHONE_VERIFIED_AT =>  date('Y-m-d H:i:s'),
+                MainContract::PHONE_VERIFIED_AT =>  Carbon::today()->toDateTimeString(),
                 MainContract::PASSWORD  =>  $password
             ]);
             $status =   true;
