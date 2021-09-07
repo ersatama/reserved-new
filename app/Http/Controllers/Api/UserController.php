@@ -125,11 +125,9 @@ class UserController extends Controller
             ]);
         }
         $booking->{MainContract::USER}  =   $user;
-
         if ($status) {
             UserPassword::dispatch($user,$password,$booking);
         }
-
         return new BookingResource($booking);
     }
 
