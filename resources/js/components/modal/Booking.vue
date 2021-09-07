@@ -1,6 +1,6 @@
 <template>
     <div class="modal fade" id="booking_modal" tabindex="-1" role="dialog" aria-labelledby="booking_modal" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document" v-if="table">
+        <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content auth-modal">
                 <div class="modal-body" onselectstart="return false">
                     <div class="form-group d-flex justify-content-end">
@@ -8,9 +8,9 @@
                     </div>
                     <div class="form-group">
                         <h3 class="auth-title text-center">Бронирование стола</h3>
-                        <h6 class="text-secondary text-center mt-3">{{table.title}}</h6>
+                        <h6 class="text-secondary text-center mt-3"  v-if="table">{{table.title}}</h6>
                     </div>
-                    <template v-if="table.status === 'ENABLED' && (table.bookingStatus === null || table.bookingStatus.status === 'COMPLETED')">
+                    <template v-if="table && table.status === 'ENABLED' && (table.bookingStatus === null || table.bookingStatus.status === 'COMPLETED')">
                         <template v-if="status">
                             <template v-if="!storage.modal">
                                 <template v-if="date.time.length > 0">
