@@ -22065,8 +22065,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         }, {
           time: '03:00'
         }, {
-          time: '03:00'
-        }, {
           time: '04:00'
         }, {
           time: '05:00'
@@ -22211,8 +22209,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       return converted[0] + '.' + converted[1];
     },
     setTime: function setTime() {
-      var _this3 = this;
-
       var date = this.date.data.split('-');
       date = new Date(date[0], date[1] - 1, date[2]);
       var weekDay = date.getDay();
@@ -22256,11 +22252,12 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       this.date.time = [];
 
       if (timeToday.getTime() === date.getTime()) {
+        var arr = [];
         this.date.timeList.forEach(function (element) {
           item = element.time.split(':');
 
           if (parseInt(item[0]) >= parseInt(start[0]) && parseInt(today.getHours()) < parseInt(item[0])) {
-            _this3.date.time.push(element);
+            arr.push(element);
           }
         });
 
@@ -22269,10 +22266,12 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             item = element.time.split(':');
 
             if (parseInt(item[0]) < parseInt(end[0])) {
-              _this3.date.time.push(element);
+              arr.push(element);
             }
           });
         }
+
+        this.date.time = arr;
       } else {
         this.date.time = this.date.timeList;
       }

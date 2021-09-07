@@ -88,7 +88,7 @@ export default {
                 data: '',
                 timeIndex: 0,
                 time: [],
-                timeList: [{time: '00:00',},{time: '01:00',},{time: '02:00',},{time: '03:00',},{time: '03:00',},{time: '04:00',},{time: '05:00',},{time: '06:00',},{time: '07:00',},{time: '08:00',},{time: '09:00',},{time: '11:00',},{time: '12:00',},{time: '13:00',},{time: '14:00',},{time: '15:00',},{time: '16:00',},{time: '17:00',},{time: '18:00',},{time: '19:00',},{time: '20:00',},{time: '21:00',},{time: '22:00',},{time: '23:00',}],
+                timeList: [{time: '00:00',},{time: '01:00',},{time: '02:00',},{time: '03:00',},{time: '04:00',},{time: '05:00',},{time: '06:00',},{time: '07:00',},{time: '08:00',},{time: '09:00',},{time: '11:00',},{time: '12:00',},{time: '13:00',},{time: '14:00',},{time: '15:00',},{time: '16:00',},{time: '17:00',},{time: '18:00',},{time: '19:00',},{time: '20:00',},{time: '21:00',},{time: '22:00',},{time: '23:00',}],
                 monthName: {
                     ru: ['Января','Февраля','Марта','Апреля','Мая','Июня','Июля','Августа','Сентября','Октября','Ноября','Декабря'],
                     en: ['Январь','Февраль','Март','Апрель','Май','Июнь','Июль','Август','Сентябрь','Октябрь','Ноябрь','Декабрь']
@@ -187,20 +187,22 @@ export default {
             this.date.timeIndex =   0;
             this.date.time  =   [];
             if (timeToday.getTime() === date.getTime()) {
+                let arr =   [];
                 this.date.timeList.forEach(element => {
                     item    =   element.time.split(':');
                     if (parseInt(item[0]) >= parseInt(start[0]) && parseInt(today.getHours()) < parseInt(item[0])) {
-                        this.date.time.push(element);
+                        arr.push(element);
                     }
                 });
                 if (parseInt(end[0]) < parseInt(start[0])) {
                     this.date.timeList.forEach(element => {
                         item    =   element.time.split(':');
-                        if (parseInt(item[0]) < parseInt(end[0])) {
-                            this.date.time.push(element);
+                        if (parseInt(item[0]) < parseInt(end[0]) ) {
+                            arr.push(element);
                         }
                     });
                 }
+                this.date.time  =   arr;
             } else {
                 this.date.time  =   this.date.timeList;
             }
