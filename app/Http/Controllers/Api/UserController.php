@@ -82,9 +82,9 @@ class UserController extends Controller
 
     public function booking(Request $request): BookingResource
     {
-        $user   =   $this->userService->getByPhone($request->input(MainContract::PHONE));
+        $user       =   $this->userService->getByPhone($request->input(MainContract::PHONE));
         $password   =   rand(100000,999999);
-        $status =   false;
+        $status     =   false;
         if (!$user) {
             $user   =   $this->userService->adminCreate([
                 MainContract::USER_ID   =>  $request->input(MainContract::USER_ID),
@@ -97,8 +97,8 @@ class UserController extends Controller
             $status =   true;
         }
 
-        $table          =   $this->organizationTableListService->getById($request->input(MainContract::ORGANIZATION_TABLE_ID));
-        $price          =   $table->{MainContract::PRICE}>0?$table->{MainContract::PRICE}:0;
+        $table  =   $this->organizationTableListService->getById($request->input(MainContract::ORGANIZATION_TABLE_ID));
+        $price  =   $table->{MainContract::PRICE}>0?$table->{MainContract::PRICE}:0;
 
         $booking    =   [
             MainContract::USER_ID    =>  $user->{MainContract::ID},
@@ -115,7 +115,7 @@ class UserController extends Controller
             $booking[MainContract::STATUS]  =   MainContract::CHECKING;
         }
 
-        $booking    =   $this->bookingService->create($booking, false);
+        $booking    =   $this->bookingService->create($booking, !$status);
         if ($price > 0) {
             BookingPayment::dispatch([
                 MainContract::ID =>  $booking->id,
