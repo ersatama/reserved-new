@@ -186,18 +186,17 @@ export default {
             let end     =   week.end.split(':');
             this.date.timeIndex =   0;
             this.date.time  =   [];
-            if (week.start === week.end) {
+            if (timeToday.getTime() === date.getTime()) {
                 let arr =   [];
-                this.date.timeList.forEach(element => {
-                    item    =   element.time.split(':');
-                    if (parseInt(today.getHours()) < parseInt(item[0])) {
-                        arr.push(element);
-                    }
-                });
-                this.date.time  =   arr;
-            } else {
-                if (timeToday.getTime() === date.getTime()) {
-                    let arr =   [];
+                if (week.start === week.end) {
+                    this.date.timeList.forEach(element => {
+                        item    =   element.time.split(':');
+                        if (parseInt(today.getHours()) <= parseInt(item[0])) {
+                            arr.push(element);
+                        }
+                    });
+                    this.date.time  =   arr;
+                } else {
                     this.date.timeList.forEach(element => {
                         item    =   element.time.split(':');
                         let status  =   (parseInt(end[0]) < parseInt(start[0]))?true:(parseInt(item[0])<parseInt(end[0]));
@@ -213,9 +212,14 @@ export default {
                             }
                         });
                     }
-                    this.date.time  =   arr;
+                }
+
+                this.date.time  =   arr;
+            } else {
+                let arr =   [];
+                if (week.start === week.end) {
+                    arr =   this.date.timeList;
                 } else {
-                    let arr =   [];
                     this.date.timeList.forEach(element => {
                         item    =   element.time.split(':');
                         let status  =   (parseInt(end[0]) < parseInt(start[0]))?true:(parseInt(item[0])<parseInt(end[0]));
@@ -231,8 +235,8 @@ export default {
                             }
                         });
                     }
-                    this.date.time  =   arr;
                 }
+                this.date.time  =   arr;
             }
 
         },
