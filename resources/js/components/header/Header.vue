@@ -113,8 +113,8 @@ export default {
                             }
                         }
                     }).catch(error => {
-                    console.log(error.response);
-                });
+                        console.log(error.response);
+                    });
             } else {
                 this.countries  =   JSON.parse(sessionStorage.countries);
                 if (this.storage.city === '') {

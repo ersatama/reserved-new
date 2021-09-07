@@ -186,43 +186,55 @@ export default {
             let end     =   week.end.split(':');
             this.date.timeIndex =   0;
             this.date.time  =   [];
-            if (timeToday.getTime() === date.getTime()) {
+            if (week.start === week.end) {
                 let arr =   [];
                 this.date.timeList.forEach(element => {
                     item    =   element.time.split(':');
-                    let status  =   (parseInt(end[0]) < parseInt(start[0]))?true:(parseInt(item[0])<parseInt(end[0]));
-                    if (parseInt(item[0]) >= parseInt(start[0]) && parseInt(today.getHours()) < parseInt(item[0]) && status) {
+                    if (parseInt(today.getHours()) < parseInt(item[0])) {
                         arr.push(element);
                     }
                 });
-                if (parseInt(end[0]) < parseInt(start[0])) {
-                    this.date.timeList.forEach(element => {
-                        item    =   element.time.split(':');
-                        if (parseInt(item[0]) < parseInt(end[0]) ) {
-                            arr.push(element);
-                        }
-                    });
-                }
                 this.date.time  =   arr;
             } else {
-                let arr =   [];
-                this.date.timeList.forEach(element => {
-                    item    =   element.time.split(':');
-                    let status  =   (parseInt(end[0]) < parseInt(start[0]))?true:(parseInt(item[0])<parseInt(end[0]));
-                    if (parseInt(item[0]) >= parseInt(start[0]) && status) {
-                        arr.push(element);
-                    }
-                });
-                if (parseInt(end[0]) < parseInt(start[0])) {
+                if (timeToday.getTime() === date.getTime()) {
+                    let arr =   [];
                     this.date.timeList.forEach(element => {
                         item    =   element.time.split(':');
-                        if (parseInt(item[0]) < parseInt(end[0]) ) {
+                        let status  =   (parseInt(end[0]) < parseInt(start[0]))?true:(parseInt(item[0])<parseInt(end[0]));
+                        if (parseInt(item[0]) >= parseInt(start[0]) && parseInt(today.getHours()) < parseInt(item[0]) && status) {
                             arr.push(element);
                         }
                     });
+                    if (parseInt(end[0]) < parseInt(start[0])) {
+                        this.date.timeList.forEach(element => {
+                            item    =   element.time.split(':');
+                            if (parseInt(item[0]) < parseInt(end[0]) ) {
+                                arr.push(element);
+                            }
+                        });
+                    }
+                    this.date.time  =   arr;
+                } else {
+                    let arr =   [];
+                    this.date.timeList.forEach(element => {
+                        item    =   element.time.split(':');
+                        let status  =   (parseInt(end[0]) < parseInt(start[0]))?true:(parseInt(item[0])<parseInt(end[0]));
+                        if (parseInt(item[0]) >= parseInt(start[0]) && status) {
+                            arr.push(element);
+                        }
+                    });
+                    if (parseInt(end[0]) < parseInt(start[0])) {
+                        this.date.timeList.forEach(element => {
+                            item    =   element.time.split(':');
+                            if (parseInt(item[0]) < parseInt(end[0]) ) {
+                                arr.push(element);
+                            }
+                        });
+                    }
+                    this.date.time  =   arr;
                 }
-                this.date.time  =   arr;
             }
+
         },
         setDateTime: function() {
             let date    =   new Date();
