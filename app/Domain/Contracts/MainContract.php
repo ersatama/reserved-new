@@ -71,6 +71,7 @@ class MainContract
     const SET_NULL  =   'set null';
     const DATE      =   'date';
     const PHONE     =   'phone';
+    const BODY      =   'body';
     const CONTENT   =   'content';
     const SCORE     =   'score';
     const EMAIL     =   'email';

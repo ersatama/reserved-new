@@ -213,7 +213,6 @@ export default {
                         });
                     }
                 }
-
                 this.date.time  =   arr;
             } else {
                 let arr =   [];
@@ -238,7 +237,6 @@ export default {
                 }
                 this.date.time  =   arr;
             }
-
         },
         setDateTime: function() {
             let date    =   new Date();
