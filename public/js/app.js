@@ -22255,8 +22255,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         var arr = [];
         this.date.timeList.forEach(function (element) {
           item = element.time.split(':');
+          var status = parseInt(end[0]) < parseInt(start[0]) ? true : parseInt(item[0]) < parseInt(end[0]);
 
-          if (parseInt(item[0]) >= parseInt(start[0]) && parseInt(today.getHours()) < parseInt(item[0])) {
+          if (parseInt(item[0]) >= parseInt(start[0]) && parseInt(today.getHours()) < parseInt(item[0]) && status) {
             arr.push(element);
           }
         });
@@ -22273,7 +22274,27 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
         this.date.time = arr;
       } else {
-        this.date.time = this.date.timeList;
+        var _arr = [];
+        this.date.timeList.forEach(function (element) {
+          item = element.time.split(':');
+          var status = parseInt(end[0]) < parseInt(start[0]) ? true : parseInt(item[0]) < parseInt(end[0]);
+
+          if (parseInt(item[0]) >= parseInt(start[0]) && status) {
+            _arr.push(element);
+          }
+        });
+
+        if (parseInt(end[0]) < parseInt(start[0])) {
+          this.date.timeList.forEach(function (element) {
+            item = element.time.split(':');
+
+            if (parseInt(item[0]) < parseInt(end[0])) {
+              _arr.push(element);
+            }
+          });
+        }
+
+        this.date.time = _arr;
       }
     },
     setDateTime: function setDateTime() {
