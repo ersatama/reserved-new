@@ -15,7 +15,7 @@
                                 <div class="location-country-item" v-for="(country,key) in countries" :class="{'location-item-sel':(countryId === key)}" :key="key" @click="countryId = key">{{country.title}}</div>
                             </div>
                             <div class="location-city">
-                                <div class="location-city-item" v-for="(city,key) in countries[countryId].city_id" :key="key" :class="{'location-item-sel':(city.id === storage.city.id)}" @click="citySel(city)">{{city.title}}</div>
+                                <div class="location-city-item" v-for="(city,key) in countries[countryId].city_id" :key="key" :class="{'location-item-sel':(city.id === storage.city.id)}" @click="citySel(city)" data-dismiss="modal" aria-label="Close">{{city.title}}</div>
                             </div>
                         </div>
                     </div>

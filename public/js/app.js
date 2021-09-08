@@ -28995,7 +28995,9 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       key: key,
       onClick: function onClick($event) {
         return $options.citySel(city);
-      }
+      },
+      "data-dismiss": "modal",
+      "aria-label": "Close"
     }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(city.title), 11
     /* TEXT, CLASS, PROPS */
     , _hoisted_12);
