@@ -61,7 +61,7 @@ class UserController extends Controller
     /**
      * @throws ValidationException
      */
-    public function guest(UserGuestRequest $userGuestRequest): bool
+    public function guest(UserGuestRequest $userGuestRequest)
     {
         $data   =   $userGuestRequest->validated();
         $user   =   $this->userService->smsResend($data[MainContract::PHONE]);
