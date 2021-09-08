@@ -207,7 +207,7 @@ class MainController extends Controller
     public function form()
     {
         return view('index', [
-            'title  '=> 'Заявка для ресторанов',
+            'title' => 'Заявка для ресторанов',
             'description'   =>  '',
             'keywords'  =>  $this->tagsOptionService->list()
         ]);
