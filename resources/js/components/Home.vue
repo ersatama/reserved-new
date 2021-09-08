@@ -1,6 +1,7 @@
 <template>
     <Header></Header>
     <profile-section></profile-section>
+
     <loading v-if="Loading"></loading>
     <div class="container-fluid p-0 m-0 home-bg-color" v-else-if="menu.length">
         <div class="container p-0">
@@ -45,6 +46,7 @@ import ProfileSection from './sections/ProfileSection';
 import FooterMenu from './footerMenu/FooterMenu';
 import NotFound from './layout/Not-found';
 import Loading from './layout/Loading';
+import Search from './layout/Search';
 export default {
     components: {
         Header,
@@ -52,7 +54,8 @@ export default {
         ProfileSection,
         FooterMenu,
         NotFound,
-        Loading
+        Loading,
+        Search,
     },
     name: "Home",
     data() {

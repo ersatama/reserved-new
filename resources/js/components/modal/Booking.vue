@@ -273,11 +273,12 @@ export default {
             }
         },
         guestAuth: function() {
-            if (this.guest.name.trim().length < 2) {
+            if (String(this.guest.name).length < 2) {
                 return this.$refs.guest_name.focus();
-            } else if (this.guest.phone.trim().length !== 10) {
+            } else if (String(this.guest.phone).length !== 10) {
                 return this.$refs.guest_phone.focus();
             }
+
             axios.post("/api/user/new", {
                 name: this.guest.name,
                 phone: '7'+this.guest.phone

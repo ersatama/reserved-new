@@ -11,6 +11,7 @@ use App\Services\Booking\BookingService;
 use App\Services\User\UserService;
 use App\Services\Category\CategoryService;
 use App\Services\WebTraffic\WebTrafficService;
+use App\Services\TagsOption\TagsOptionService;
 use App\Jobs\WebTraffic;
 
 class MainController extends Controller
@@ -23,8 +24,9 @@ class MainController extends Controller
     protected $userService;
     protected $categoryService;
     protected $webTrafficService;
+    protected $tagsOptionService;
 
-    public function __construct(OrganizationService $organizationService, OrganizationTableService $organizationTableService, OrganizationTableListService $organizationTableListService, BookingService $bookingService, UserService $userService, CategoryService $categoryService, WebTrafficService $webTrafficService) {
+    public function __construct(OrganizationService $organizationService, OrganizationTableService $organizationTableService, OrganizationTableListService $organizationTableListService, BookingService $bookingService, UserService $userService, CategoryService $categoryService, WebTrafficService $webTrafficService, TagsOptionService $tagsOptionService) {
         $this->organizationService  =   $organizationService;
         $this->organizationTableService =   $organizationTableService;
         $this->organizationTableListService =   $organizationTableListService;
@@ -32,6 +34,7 @@ class MainController extends Controller
         $this->userService  =   $userService;
         $this->categoryService  =   $categoryService;
         $this->webTrafficService    =   $webTrafficService;
+        $this->tagsOptionService    =   $tagsOptionService;
     }
 
     public function dashboard() {
@@ -99,32 +102,54 @@ class MainController extends Controller
 
     public function index()
     {
-        return view('index',['title'=>'Reserved | Добро пожаловать']);
+        return view('index',[
+            'title' =>  'Reserved | Добро пожаловать',
+            'description'   =>  '',
+            'keywords'  =>  $this->tagsOptionService->list()
+        ]);
     }
 
     public function favorite()
     {
-        return view('index', ['title'=>'Избранное']);
+        return view('index', [
+            'title' =>  'Избранное',
+            'description'   =>  '',
+            'keywords'  =>  $this->tagsOptionService->list()
+        ]);
     }
 
     public function news()
     {
-        return view('index', ['title'=>'Новости']);
+        return view('index', [
+            'title' =>  'Новости',
+            'description'   =>  'Свежие новости reserved',
+            'keywords'  =>  $this->tagsOptionService->list()
+        ]);
     }
 
     public function home()
     {
-        return view('index', ['title'=>'Категории']);
+        return view('index', [
+            'title' =>  'Категории',
+            'description'   =>  '',
+            'keywords'  =>  $this->tagsOptionService->list()
+        ]);
     }
 
     public function category($slug)
     {
         $category   =   $this->categoryService->getBySlug($slug);
         if ($category) {
-            return view('index', ['title'=>$category->{MainContract::TITLE}]);
+            return view('index', [
+                'title' =>  $category->{MainContract::TITLE},
+                'description'   =>  $category->{MainContract::DESCRIPTION},
+                'keywords'  =>  $this->tagsOptionService->list()
+            ]);
         }
         return view('index',[
-            'title'=>'Не найдено'
+            'title' =>  'Не найдено',
+            'description'   =>  '',
+            'keywords'  =>  ''
         ]);
     }
 
@@ -140,7 +165,14 @@ class MainController extends Controller
                 $this->webTrafficService->getReferer()
             );
             return view('index', [
-                'title' =>  $organization->{MainContract::TITLE}
+                'title' =>  $organization->{MainContract::TITLE},
+                'description'   =>  $organization->{MainContract::DESCRIPTION},
+                'keywords'  =>  implode(', ',[
+                    $organization->{MainContract::TITLE},
+                    $organization->{MainContract::CATEGORY}->{MainContract::TITLE},
+                    $organization->{MainContract::CATEGORY}->{MainContract::DESCRIPTION},
+                    'Забронировать'
+                ])
             ]);
         }
 
@@ -151,32 +183,52 @@ class MainController extends Controller
 
     public function profile()
     {
-        return view('index', ['title'=>'Профиль']);
+        return view('index', [
+            'title' =>  'Профиль',
+            'description'   =>  'Личный кабинет',
+            'keywords'  =>  $this->tagsOptionService->list()
+        ]);
     }
 
     public function upload() {
-        return 'hell';
+        return '';
         //if($request->hasFile('profile_image')) {
     }
 
     public function form()
     {
-        return view('index', ['title'=>'Заявка для ресторанов']);
+        return view('index', [
+            'title  '=> 'Заявка для ресторанов',
+            'description'   =>  '',
+            'keywords'  =>  $this->tagsOptionService->list()
+        ]);
     }
 
     public function profileSettings()
     {
-        return view('index', ['title'=>'Уведомления']);
+        return view('index', [
+            'title'=>'Уведомления',
+            'description'   =>  '',
+            'keywords'  =>  $this->tagsOptionService->list()
+        ]);
     }
 
     public function profilePayments()
     {
-        return view('index', ['title'=>'Способ оплаты']);
+        return view('index', [
+            'title' =>  'Способ оплаты',
+            'description'   =>  '',
+            'keywords'  =>  $this->tagsOptionService->list()
+        ]);
     }
 
     public function profileHistory()
     {
-        return view('index', ['title'=>'История бронирования']);
+        return view('index', [
+            'title' =>  'История бронирования',
+            'description'   =>  '',
+            'keywords'  =>  $this->tagsOptionService->list()
+        ]);
     }
 
 }

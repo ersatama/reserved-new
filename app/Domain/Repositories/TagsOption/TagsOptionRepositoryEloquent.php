@@ -15,4 +15,9 @@ class TagsOptionRepositoryEloquent implements TagsOptionRepositoryInterface
             ->where(MainContract::TAGS_ID,NULL)
             ->get();
     }
+
+    public function list(): array
+    {
+        return DB::table(TagsOptionContract::TABLE)->select(MainContract::TITLE)->get()->toArray();
+    }
 }

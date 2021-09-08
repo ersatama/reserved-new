@@ -94,19 +94,14 @@ Route::prefix('menu')->group(function() {
 });
 
 Route::prefix('telegram')->group(function() {
-
     Route::post('webhook/{id}',[TelegramChatController::class,'create'])->name('telegram_chat.create');
-
     Route::get('user/{userId}',[TelegramController::class,'getByUserId'])->name('telegram.user.id');
     Route::get('id/{id}',[TelegramController::class,'getById'])->name('telegram.id');
-
 });
 
 Route::prefix('telegram_chat')->group(function() {
-
     Route::post('create/{id}',[TelegramChatController::class,'create'])->name('telegram_chat.create');
     Route::post('update/{id}',[TelegramChatController::class,'update'])->name('telegram_chat.update');
-
 });
 
 Route::prefix('card')->group(function() {
@@ -167,17 +162,14 @@ Route::prefix('organization')->group(function() {
 });
 
 Route::prefix('user')->group(function() {
-
     Route::post('update/{id}',[UserController::class,'update'])->name('user.update');
     Route::post('reset/{id}',[UserController::class,'resetPassword'])->name('user.reset.password');
     Route::post('password/{id}',[UserController::class,'updatePassword'])->name('user.update.password');
     Route::post('booking',[UserController::class,'booking'])->name('user.booking');
     Route::post('new',[UserController::class,'guest'])->name('user.guest');
     Route::post('token/{token}',[UserController::class,'authToken'])->name('user.authToken');
-
     Route::get('phone/{phone}',[UserController::class,'getByPhone'])->name('user.phone');
     Route::get('{id}',[UserController::class,'getById'])->name('user.id');
-
 });
 
 Route::prefix('category')->group(function() {
