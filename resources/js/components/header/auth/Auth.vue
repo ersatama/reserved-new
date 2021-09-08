@@ -210,7 +210,7 @@ export default {
     methods: {
         cancel: function() {
             this.reset.check    = false;
-            this.reset.user.false   =   false;
+            this.reset.user   =   false;
             this.reset.error    = false;
             this.reset.status   = true;
             this.reset.checkStatus  =   true;
