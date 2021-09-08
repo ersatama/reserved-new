@@ -110,8 +110,8 @@ export default {
                             sessionStorage.countries    =   JSON.stringify(data);
                             if (this.storage.city === '') {
                                 this.storage.city   =   this.countries[0].city_id[0];
+                                $('#location').modal('toggle');
                             }
-                            $('#location').modal('toggle');
                         }
                     }).catch(error => {
                         console.log(error.response);
