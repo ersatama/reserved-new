@@ -30,6 +30,7 @@ Route::prefix('tags')->group(function() {
 
 Route::prefix('tagsOption')->group(function() {
     Route::get('other',[TagsOptionController::class,'other'])->name('tagsOption.other');
+    Route::get('all',[TagsOptionController::class,'all'])->name('tagsOption.all');
 });
 
 Route::prefix('tagsOptionOrganization')->group(function() {
@@ -158,6 +159,8 @@ Route::prefix('organization')->group(function() {
     Route::get('section/{id}',[OrganizationController::class,'getSectionsById']);
     Route::get('filter',[OrganizationController::class,'filter'])->name('organization.filter');
     Route::get('user/{userId}',[OrganizationController::class,'getByUserId'])->name('organization.getByUserId');
+    Route::get('search/{search}',[OrganizationController::class,'find'])->name('organization.find');
+    Route::get('tag/{tag}',[OrganizationController::class,'getByTag'])->name('organization.tag');
     Route::get('{id}',[OrganizationController::class,'getById']);
 });
 

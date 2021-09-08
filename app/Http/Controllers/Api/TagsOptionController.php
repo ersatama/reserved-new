@@ -19,4 +19,10 @@ class TagsOptionController extends Controller
     {
         return $this->tagsOptionService->other();
     }
+
+    public function all(): Collection
+    {
+        return $this->tagsOptionService->all();
+    }
+
 }

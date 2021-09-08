@@ -67,6 +67,11 @@ class OrganizationService
         return $this->organizationRepository->getByUserId($id);
     }
 
+    public function find($search)
+    {
+        return $this->organizationRepository->find($search);
+    }
+
     public function getIdsByUserId($userId): array
     {
         return $this->clearArray($this->organizationRepository->getIdsByUserId($userId), MainContract::ID);

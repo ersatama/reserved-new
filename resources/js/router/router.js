@@ -13,7 +13,7 @@ import News from "../components/News";
 
 import Home from "../components/Home";
 import Category from '../components/Category';
-
+import SearchGlobal from '../components/SearchGlobal';
 import Organization from '../components/Organization';
 import CardSuccess from '../components/Card/Success';
 import Form from '../components/Form';
@@ -27,6 +27,11 @@ const routes = [
         path: "/card/success",
         name: "CardSuccess",
         component: CardSuccess,
+    },
+    {
+        path: "/search",
+        name: "SearchGlobal",
+        component: SearchGlobal,
     },
     {
         path: '/home',

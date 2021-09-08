@@ -58,15 +58,18 @@ class UserController extends Controller
         $this->organizationTableListService =   $organizationTableListService;
     }
 
-    public function guest(UserGuestRequest $userGuestRequest)
+    /**
+     * @throws ValidationException
+     */
+    public function guest(UserGuestRequest $userGuestRequest): bool
     {
         $data   =   $userGuestRequest->validated();
         $user   =   $this->userService->smsResend($data[MainContract::PHONE]);
+        UserCode::dispatch($user);
         if (!$user) {
             $user   =   $this->userService->create($data);
             UserPassword::dispatch($user,$data[MainContract::PASSWORD]);
         }
-        UserCode::dispatch($user);
         return $user;
     }
 

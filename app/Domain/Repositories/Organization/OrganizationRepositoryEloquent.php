@@ -77,6 +77,14 @@ class OrganizationRepositoryEloquent implements OrganizationRepositoryInterface
         ])->first();
     }
 
+    public function find($search)
+    {
+        return Organization::where([
+            [MainContract::TITLE,'like','%'.$search.'%'],
+            [MainContract::STATUS ,MainContract::ENABLED]
+        ])->limit(6)->get();
+    }
+
     public function getByCategoryIdAndCityId($id, $cityId, $paginate)
     {
         return Organization::with('category')

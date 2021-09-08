@@ -40,7 +40,7 @@ class UserGuestRequest extends FormRequest
     public function validated(): array
     {
         $request    =   $this->validator->validated();
-        $request[MainContract::PASSWORD]    =   Random::generate(8);
+        $request[MainContract::PASSWORD]    =   rand(100000,999999);
         return $request;
     }
 

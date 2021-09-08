@@ -10,5 +10,6 @@ class TagsOptionContract extends MainContract
         self::TITLE,
         self::TITLE_EN,
         self::TITLE_KZ,
+        self::STATUS
     ];
 }

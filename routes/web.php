@@ -39,6 +39,10 @@ Route::prefix('profile')->group(function() {
     Route::get('history',[MainController::class, 'profileHistory'])->name('profile.history');
 });
 
+Route::prefix('search')->group(function() {
+    Route::get('/',[MainController::class,'search'])->name('search');
+});
+
 Route::prefix('favorite')->group(function() {
     Route::get('/',[MainController::class, 'favorite'])->name('favorite');
 });

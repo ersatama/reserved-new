@@ -17,6 +17,10 @@ class CreateTagsOptionsTable extends Migration
             $table->string(MainContract::TITLE);
             $table->string(MainContract::TITLE_KZ)->nullable();
             $table->string(MainContract::TITLE_EN)->nullable();
+            $table->enum(MainContract::STATUS,[
+                MainContract::ON,
+                MainContract::OFF
+            ])->default(MainContract::OFF);
             $table->timestamps();
         });
     }

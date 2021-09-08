@@ -19,6 +19,16 @@ class TagsOptionService
         return $this->tagsOptionRepository->other();
     }
 
+    public function getByTitle($tag)
+    {
+        return $this->tagsOptionRepository->getByTitle($tag);
+    }
+
+    public function all(): Collection
+    {
+        return $this->tagsOptionRepository->all();
+    }
+
     public function list(): string
     {
         $tags   =   $this->tagsOptionRepository->list();

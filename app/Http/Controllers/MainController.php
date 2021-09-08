@@ -109,6 +109,15 @@ class MainController extends Controller
         ]);
     }
 
+    public function search()
+    {
+        return view('index', [
+            'title' =>  'Поиск',
+            'description'   =>  '',
+            'keywords'  =>  $this->tagsOptionService->list()
+        ]);
+    }
+
     public function favorite()
     {
         return view('index', [

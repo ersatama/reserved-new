@@ -58,7 +58,7 @@ class Sms
         if (!$booking) {
             $this->whatsapp->send([
                 MainContract::PHONE =>  $user->{MainContract::PHONE},
-                MainContract::BODY  =>  'Reserved-app ваш пароль: '.$password.' для входа, никому не сообщайте'
+                MainContract::BODY  =>  'Reserved-app Ваш логин: +'.$user->{MainContract::PHONE}.',ваш пароль: '.$password.' для входа, никому не сообщайте. reserved-app.kz'
             ]);
             /*$this->curl->get($this->url.'?'.$this->parameters([
                     'phones'    =>  $user->{MainContract::PHONE},
@@ -67,7 +67,7 @@ class Sms
         } else {
             $this->whatsapp->send([
                 MainContract::PHONE =>  $user->{MainContract::PHONE},
-                MainContract::BODY  =>  'Здравствуйте '.$user->{MainContract::NAME}.', вам забронирован столик в '.$booking->organization->{MainContract::TITLE}.' на '.$booking->{MainContract::TIME}.'. Ваш пароль: '.$password.' для входа на сайт, c уважением reserved-app'
+                MainContract::BODY  =>  'Здравствуйте '.$user->{MainContract::NAME}.', вам забронирован столик в '.$booking->organization->{MainContract::TITLE}.' на '.$booking->{MainContract::TIME}.'. Ваш пароль: '.$password.' для входа на сайт, c уважением reserved-app.kz'
             ]);
            /* $this->curl->get($this->url.'?'.$this->parameters([
                     'phones'    =>  $user->{MainContract::PHONE},

@@ -98,15 +98,20 @@ export default {
         setBreadcrumb: function() {
             this.breadcrumb =   [];
             let link    =   '';
-            if (this.end === 'form') {
+            if (this.end === 'search') {
+                this.breadcrumb.push({
+                  title: 'Поиск',
+                  link: link+this.end
+                });
+            } else if (this.end === 'form') {
                 this.breadcrumb.push({
                     title: 'Заявка для ресторанов',
-                    link: link+'form'
+                    link: link+this.end
                 });
             } else if (this.end === 'profile') {
                 this.breadcrumb.push({
                     title: 'Профиль',
-                    link: link+'profile'
+                    link: link+this.end
                 });
                 link    +=  'profile/';
                 if (this.url === 'settings') {

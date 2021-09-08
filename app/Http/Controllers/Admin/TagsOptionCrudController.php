@@ -28,6 +28,10 @@ class TagsOptionCrudController extends CrudController
         CRUD::column(MainContract::TITLE)->label('Название');
         CRUD::column(MainContract::TITLE_EN)->label('Название на англииском');
         CRUD::column(MainContract::TITLE_KZ)->label('Название на казахском');
+        CRUD::column(MainContract::STATUS)->label('Статус')->type('select_from_array')->options([
+            MainContract::ON    =>  MainContract::TRANSLATE[MainContract::ON],
+            MainContract::OFF   =>  MainContract::TRANSLATE[MainContract::OFF],
+        ]);
 
     }
 
@@ -40,6 +44,10 @@ class TagsOptionCrudController extends CrudController
         CRUD::field(MainContract::TITLE)->label('Название');
         CRUD::field(MainContract::TITLE_EN)->label('Название на англииском');
         CRUD::field(MainContract::TITLE_KZ)->label('Название на казахском');
+        CRUD::field(MainContract::STATUS)->label('Статус')->type('select_from_array')->options([
+            MainContract::ON    =>  MainContract::TRANSLATE[MainContract::ON],
+            MainContract::OFF   =>  MainContract::TRANSLATE[MainContract::OFF],
+        ]);
 
     }
 

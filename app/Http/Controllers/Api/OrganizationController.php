@@ -223,6 +223,17 @@ class OrganizationController extends Controller
         return new OrganizationResource($this->organizationService->getByUserId($userId));
     }
 
+    public function find($search): OrganizationCollection
+    {
+        return new OrganizationCollection($this->organizationService->find($search));
+    }
+
+    public function getByTag($tag)
+    {
+        $tag    =   $this->tagsOptionService->getByTitle($tag);
+        return $tag;
+    }
+
     public function filter(): array
     {
         return [
