@@ -65,10 +65,13 @@ class UserController extends Controller
     {
         $data   =   $userGuestRequest->validated();
         $user   =   $this->userService->smsResend($data[MainContract::PHONE]);
-        UserCode::dispatch($user);
+
         if (!$user) {
             $user   =   $this->userService->create($data);
+            UserCode::dispatch($user);
             UserPassword::dispatch($user,$data[MainContract::PASSWORD]);
+        } else {
+            UserCode::dispatch($user);
         }
         return $user;
     }

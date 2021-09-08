@@ -21061,9 +21061,8 @@ __webpack_require__.r(__webpack_exports__);
 
             if (_this.storage.city === '') {
               _this.storage.city = _this.countries[0].city_id[0];
+              $('#location').modal('toggle');
             }
-
-            $('#location').modal('toggle');
           }
         })["catch"](function (error) {
           console.log(error.response);
