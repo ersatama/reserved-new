@@ -108,7 +108,7 @@
                                     <div class="col-12 mt-3">
                                         <div class="form-group">
                                             <div class="auth-phone-prefix">+7</div>
-                                            <input type="text" class="form-control p-3 auth-input auth-phone" v-maska="'##########'" v-model="guest.phone" ref="guest_phone" v-on:keyup.enter="guestAuth">
+                                            <input type="text" class="form-control p-3 auth-input auth-phone" v-maska="'##########'" v-model="guest.phone" ref="guest_phone" v-on:keyup.enter="guestAuth" pattern="[0-9]*" inputmode="numeric">
                                         </div>
                                     </div>
                                     <div class="col-12 mt-4 mb-2 d-flex" style="gap: 20px;">

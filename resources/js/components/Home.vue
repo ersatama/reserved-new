@@ -1,7 +1,7 @@
 <template>
     <Header></Header>
     <profile-section></profile-section>
-    <Search></Search>
+<!--    <Search></Search>-->
     <loading v-if="Loading"></loading>
     <div class="container-fluid p-0 m-0 home-bg-color" v-else-if="menu.length">
         <div class="container p-0">
