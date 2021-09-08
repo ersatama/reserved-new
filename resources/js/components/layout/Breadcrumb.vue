@@ -22,7 +22,7 @@
                     </ul>
                 </div>
                 <div class="location-main col-md-3 p-0 d-flex justify-content-end">
-                    <div class="location" ref="location" data-toggle="modal" data-target="#location">
+                    <div class="location" id="location" ref="location" data-toggle="modal" data-target="#location">
                         <div class="location-title" v-if="storage.city">{{storage.city.title}}</div>
                         <div class="location-title" v-else>Не выбрано</div>
                         <div class="location-icon"></div>
