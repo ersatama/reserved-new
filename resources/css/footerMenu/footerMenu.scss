@@ -14,7 +14,7 @@
         margin: 0;
         border-radius: 50px;
         &-main {
-
+            padding: 0 8px 0 8px;
         }
     }
     &-img {
@@ -28,7 +28,8 @@
             margin: 3px 0 3px 0;
         }
         &-center {
-            background: whitesmoke;
+            background: #e6f1ec;
+            border-radius: 25px;
             &-notify {
                 & > .title {
                     color: #FF8008 !important;

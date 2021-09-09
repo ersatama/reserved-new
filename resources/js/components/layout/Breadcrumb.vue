@@ -128,7 +128,6 @@ export default {
         &-home {
             background-image: url('/img/logo/home-white.svg');
         }
-
     }
 }
 </style>
