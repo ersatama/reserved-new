@@ -235,6 +235,7 @@ let app = new Vue({
                     description: this.organization.description,
                     description_kz: this.organization.description_kz,
                     description_en: this.organization.description_en,
+                    _2gis: this.organization._2gis,
                     price: this.organization.price,
 
                     start_monday: this.organization.monday.start,

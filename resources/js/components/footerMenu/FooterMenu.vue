@@ -16,7 +16,7 @@
                         </button>
                     </a>
                     <a class="footer-icon p-0 py-1" v-if="storage.token"  @click="view(1)">
-                        <button class="footer-icon-center btn font-weight-bold w-100" :class="{'footer-icon-center-notify': (storage.sidebar.notifications > 0)}">
+                        <button class="btn font-weight-bold w-100" :class="{'footer-icon-center-notify': (storage.sidebar.notifications > 0)}">
                             <img src="/img/logo/notification.svg" class="footer-img" v-if="storage.sidebar.notifications > 0">
                             <img src="/img/logo/bell.svg" class="footer-img" v-else>
                             <div class="title">Уведомления</div>

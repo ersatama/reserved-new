@@ -25509,7 +25509,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       return $options.view(1);
     })
   }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
-    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["footer-icon-center btn font-weight-bold w-100", {
+    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["btn font-weight-bold w-100", {
       'footer-icon-center-notify': _ctx.storage.sidebar.notifications > 0
     }])
   }, [_ctx.storage.sidebar.notifications > 0 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("img", _hoisted_13)) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("img", _hoisted_14)), _hoisted_15], 2

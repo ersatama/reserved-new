@@ -23,6 +23,7 @@ class CreateOrganizationsTable extends Migration
             $table->text(MainContract::DESCRIPTION)->nullable();
             $table->text(MainContract::DESCRIPTION_KZ)->nullable();
             $table->text(MainContract::DESCRIPTION_EN)->nullable();
+            $table->text(MainContract::_2GIS)->nullable();
             $table->string(MainContract::ADDRESS)->nullable();
             $table->string(MainContract::ADDRESS_KZ)->nullable();
             $table->string(MainContract::ADDRESS_EN)->nullable();

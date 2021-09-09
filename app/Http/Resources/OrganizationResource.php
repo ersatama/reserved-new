@@ -25,6 +25,7 @@ class OrganizationResource extends JsonResource
             MainContract::DESCRIPTION       =>  $this->{MainContract::DESCRIPTION},
             MainContract::DESCRIPTION_KZ    =>  $this->{MainContract::DESCRIPTION_KZ},
             MainContract::DESCRIPTION_EN    =>  $this->{MainContract::DESCRIPTION_EN},
+            MainContract::_2GIS     =>  $this->{MainContract::_2GIS},
             MainContract::ADDRESS       =>  $this->{MainContract::ADDRESS},
             MainContract::ADDRESS_KZ    =>  $this->{MainContract::ADDRESS_KZ},
             MainContract::ADDRESS_EN    =>  $this->{MainContract::ADDRESS_EN},

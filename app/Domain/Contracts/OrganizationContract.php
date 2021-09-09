@@ -24,6 +24,7 @@ class OrganizationContract extends MainContract
         self::DESCRIPTION,
         self::DESCRIPTION_KZ,
         self::DESCRIPTION_EN,
+        self::_2GIS,
         self::ADDRESS,
         self::ADDRESS_KZ,
         self::ADDRESS_EN,

@@ -24,6 +24,8 @@ class OrganizationUpdateRequest extends FormRequest
             MainContract::DESCRIPTION_KZ    =>  'nullable',
             MainContract::DESCRIPTION_EN    =>  'nullable',
 
+            MainContract::_2GIS         =>  'nullable',
+
             MainContract::START_MONDAY  =>  'nullable',
             MainContract::END_MONDAY    =>  'nullable',
             MainContract::WORK_MONDAY   =>  'nullable',

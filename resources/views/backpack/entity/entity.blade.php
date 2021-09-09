@@ -250,9 +250,19 @@
                         </div>
                     </div>
                     <div class="entity-block-item">
-                        <div class="entity-block-item-title">Адрес</div>
+                        <div class="entity-block-item-title">
+                            <span>Адрес</span>
+                        </div>
                         <div class="entity-block-item-input">
                             <input type="text" v-model="organization.address">
+                        </div>
+                    </div>
+                    <div class="entity-block-item">
+                        <div class="entity-block-item-title">
+                            <span>2GIS ссылка</span>
+                        </div>
+                        <div class="entity-block-item-input">
+                            <input type="text" v-model="organization._2gis">
                         </div>
                     </div>
                     <div class="entity-block-item">
@@ -271,12 +281,6 @@
                         <div class="entity-block-item-title">Веб-сайт</div>
                         <div class="entity-block-item-input">
                             <input type="text" v-model="organization.website">
-                        </div>
-                    </div>
-                    <div class="entity-block-item">
-                        <div class="entity-block-item-title">Общее количество столов</div>
-                        <div class="entity-block-item-input">
-                            <input type="text" readonly :value="organization.tables">
                         </div>
                     </div>
                 </div>

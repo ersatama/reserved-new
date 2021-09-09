@@ -82,6 +82,7 @@ class MainContract
     const TITLE_KZ  =   'title_kz';
     const TITLE_EN  =   'title_en';
     const TABLES    =   'tables';
+    const _2GIS     =   '_2gis';
     const PRICE     =   'price';
     const MIN       =   'min';
     const MAX       =   'max';

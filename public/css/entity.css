@@ -156,6 +156,8 @@
 }
 .entity-block-item-title {
     width: 50%;
+    display: flex;
+    align-items: center;
 }
 .entity-block-item-input {
     width: 50%;
