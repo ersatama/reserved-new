@@ -44,7 +44,7 @@
                                     <input type="text" class="form-control p-3 auth-input auth-phone" v-maska="'##########'" v-model="reset.phone" ref="reset_phone" v-on:keyup.enter="reset_btn" pattern="[0-9]*" inputmode="numeric">
                                 </div>
                                 <div class="col-12 mt-md-3 auth-row" v-else>
-                                    <input type="text" class="form-control p-3 auth-input" v-maska="'######'" v-model="reset.code" placeholder="код смс" ref="reset_code" v-on:keyup.enter="reset_check" pattern="[0-9]*" inputmode="numeric">
+                                    <input type="text" class="form-control p-3 auth-input" v-maska="'######'" v-model="reset.code" placeholder="whatsapp код" ref="reset_code" v-on:keyup.enter="reset_check" pattern="[0-9]*" inputmode="numeric">
                                 </div>
                                 <div class="col-12 mt-md-4 auth-row">
                                     <button class="btn btn-block auth-btn text-white" @click="reset_btn" v-if="!reset.user">
@@ -63,15 +63,15 @@
                         </template>
                         <template v-else-if="sms.check">
                             <div class="form-group">
-                                <h3 class="auth-title text-center">Смс подтверждение</h3>
+                                <h3 class="auth-title text-center">Whatsapp подтверждение</h3>
                                 <h6 class="text-secondary text-center mt-3 auth-description">На ваш номер был отправлен whatsapp сообщение с кодом.</h6>
                             </div>
                             <div class="form-group p-0" v-if="sms.error">
-                                <div class="auth-error font-weight-bold text-center">Не код правильный код подтверждения.</div>
+                                <div class="auth-error font-weight-bold text-center">Не правильный код подтверждения.</div>
                             </div>
                             <div class="form-row mx-md-3">
                                 <div class="col-12 mt-md-3 auth-row">
-                                    <input type="text" class="form-control p-3 auth-input" v-maska="'######'" v-model="sms.code" placeholder="код смс" ref="phone_code" v-on:keyup.enter="sms_btn" pattern="[0-9]*" inputmode="numeric">
+                                    <input type="text" class="form-control p-3 auth-input" v-maska="'######'" v-model="sms.code" placeholder="whatsapp код" ref="phone_code" v-on:keyup.enter="sms_btn" pattern="[0-9]*" inputmode="numeric">
                                 </div>
                                 <div class="col-12 mt-md-4 auth-row">
                                     <button class="btn btn-block auth-btn text-white" @click="sms_btn">
