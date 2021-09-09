@@ -64,7 +64,7 @@
                         <template v-else-if="sms.check">
                             <div class="form-group">
                                 <h3 class="auth-title text-center">Смс подтверждение</h3>
-                                <h6 class="text-secondary text-center mt-3 auth-description">На ваш номер был отправлен смс код.</h6>
+                                <h6 class="text-secondary text-center mt-3 auth-description">На ваш номер был отправлен whatsapp сообщение с кодом.</h6>
                             </div>
                             <div class="form-group p-0" v-if="sms.error">
                                 <div class="auth-error font-weight-bold text-center">Не код правильный код подтверждения.</div>

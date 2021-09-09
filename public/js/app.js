@@ -25866,7 +25866,7 @@ var _hoisted_30 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
   "class": "auth-title text-center"
 }, "Смс подтверждение"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h6", {
   "class": "text-secondary text-center mt-3 auth-description"
-}, "На ваш номер был отправлен смс код.")], -1
+}, "На ваш номер был отправлен whatsapp сообщение с кодом.")], -1
 /* HOISTED */
 );
 
