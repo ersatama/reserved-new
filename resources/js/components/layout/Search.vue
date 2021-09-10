@@ -169,9 +169,6 @@ export default {
         window.addEventListener('mousedown',function() {
             self.searchView =   false;
         });
-        this.$refs.search.addEventListener('keyup', function(){
-            self.startSearch();
-        });
     },
     methods: {
         startSearch: function() {
