@@ -7,7 +7,7 @@
                         <div class="search-text_input-main">
                             <div class="search-text_input-main-icon"></div>
                             <div class="search-text_input-main-close" v-show="text !== ''" @click="text = ''"></div>
-                            <input type="text" v-model="text" id="search-text" placeholder="Поиск" @focus="searchView = true" @input="startSearch" @mousedown.stop @compositionupdate="compositionUpdate($event)">
+                            <input type="text" v-model="text" placeholder="Поиск" @focus="searchView = true" @input="startSearch" @mousedown.stop @compositionupdate="compositionUpdate($event)">
                             <div class="search-text_input-main-list" v-if="searchView" @mousedown.stop>
                                 <template v-if="text !== ''">
                                     <template v-if="search.length > 0">

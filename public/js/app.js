@@ -22398,11 +22398,11 @@ __webpack_require__.r(__webpack_exports__);
     window.addEventListener('mousedown', function () {
       self.searchView = false;
     });
-    document.getElementById('search-text').addEventListener('keyup', function () {
-      self.startSearch();
-    });
   },
   methods: {
+    compositionUpdate: function compositionUpdate(event) {
+      this.text = event.data;
+    },
     startSearch: function startSearch() {
       if (this.text.trim() !== '') {
         clearTimeout(this.timer);
@@ -27996,7 +27996,6 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     "onUpdate:modelValue": _cache[1] || (_cache[1] = function ($event) {
       return $data.text = $event;
     }),
-    id: "search-text",
     placeholder: "Поиск",
     onFocus: _cache[2] || (_cache[2] = function ($event) {
       return $data.searchView = true;
@@ -28006,7 +28005,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     }),
     onMousedown: _cache[4] || (_cache[4] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {}, ["stop"])),
     onCompositionupdate: _cache[5] || (_cache[5] = function ($event) {
-      return _ctx.compositionUpdate($event);
+      return $options.compositionUpdate($event);
     })
   }, null, 544
   /* HYDRATE_EVENTS, NEED_PATCH */
