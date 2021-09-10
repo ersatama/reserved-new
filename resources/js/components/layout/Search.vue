@@ -3,6 +3,32 @@
         <div class="container p-0">
             <div class="row">
                 <div class="col-12 p-2">
+                    <div class="search-text_input">
+                        <div class="search-text_input-main">
+                            <div class="search-text_input-main-icon"></div>
+                            <div class="search-text_input-main-close" v-show="text !== ''" @click="text = ''"></div>
+                            <input type="text" v-model="text" placeholder="Поиск" @focus="searchView = true" @mousedown.stop>
+                            <div class="search-text_input-main-list" v-if="searchView" @mousedown.stop>
+                                <template v-if="text !== ''">
+                                    <template v-if="search.length > 0">
+                                        <a :href="'/home/'+item.category_id.slug+'/'+item.id" class="search-text_input-main-list-option" v-for="(item,key) in search" :key="key">
+                                            <div class="search-text_input-main-list-option-icon" :style="{'background-image': 'url('+item.image+')'}"></div>
+                                            <div class="search-text_input-main-list-option-detail">
+                                                <div class="search-text_input-main-list-option-detail-title">{{item.title}}</div>
+                                                <div class="search-text_input-main-list-option-detail-desc">{{item.description}}</div>
+                                            </div>
+                                        </a>
+                                    </template>
+                                    <template v-else>
+                                        <div class="search-text_input-main-list-start">По вашему запросу ничего не найдено</div>
+                                    </template>
+                                </template>
+                                <template v-else>
+                                    <div class="search-text_input-main-list-start">Здесь будет отображаться список найденных заведений</div>
+                                </template>
+                            </div>
+                        </div>
+                    </div>
                     <div class="search-layout">
                         <div class="search-layout-item">
                             <div class="search-layout-item-title" @click="price = !price">Средний чек</div>
@@ -90,7 +116,7 @@
                         </div>
                         <div class="search-layout-item">
                             <div class="search-layout-item-button" @click="setFilter()">
-                                <div>Пойск</div>
+                                <div>Поиск</div>
                             </div>
                         </div>
                     </div>
@@ -130,13 +156,39 @@ export default {
                     max: 0,
                 },
                 tags: [],
-            }
+            },
+            timer: null,
+            search: [],
+            searchView: false,
+            text: ''
         }
     },
     created() {
         this.getFilter();
+        let self    =   this;
+        window.addEventListener('mousedown',function() {
+            self.searchView =   false;
+        });
+    },
+    watch: {
+        text: function() {
+            clearTimeout(this.null);
+            if (this.text.trim() !== '') {
+                let self    =   this;
+                this.timer  =   setTimeout(function() {
+                    self.getSearchOrganizations();
+                },500);
+            } else {
+                this.search =   [];
+            }
+        },
     },
     methods: {
+        getSearchOrganizations: function() {
+            axios.get('/api/organization/search/'+this.text.trim()).then(response => {
+                this.search =   response.data.data;
+            });
+        },
         setOtherValue: function(key) {
             this.others[key].checked    =   !this.others[key].checked;
         },

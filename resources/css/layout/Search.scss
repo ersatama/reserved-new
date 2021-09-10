@@ -1,4 +1,109 @@
 .search {
+    &-text_input {
+        margin: 20px auto 0 auto;
+        &-main {
+            margin: 0 auto 0 auto;
+            padding: 10px;
+            background: #fff;
+            border-radius: 10px;
+            width: 400px;
+            border: 1px solid #e6f1ec;
+            position: relative;
+            &-list {
+                position: absolute;
+                background: #fff;
+                left: 10px;
+                right: 10px;
+                top: 60px;
+                border-radius: 10px;
+                z-index: 4;
+                box-shadow: 0 0 10px 2px rgba(0,0,0,.1);
+                overflow: hidden;
+                &-start {
+                    padding: 15px;
+                    text-align: center;
+                    font-size: 12px;
+                    color: grey;
+                }
+                &-option {
+                    padding: 10px 15px 10px 15px;
+                    display: flex;
+                    gap: 10px;
+                    align-items: center;
+                    cursor: pointer;
+                    text-decoration: none !important;
+                    &:first-child {
+                        padding-top: 15px;
+                    }
+                    &:last-child {
+                        padding-bottom: 15px;
+                    }
+                    &:hover {
+                        background: #e6f1ec;
+                    }
+                    &-icon {
+                        width: 40px;
+                        height: 40px;
+                        background: #e6f1ec no-repeat center;
+                        background-size: contain;
+                        border-radius: 50px;
+                    }
+                    &-detail {
+                        font-size: 12px;
+                        text-overflow: ellipsis;
+                        overflow: hidden;
+                        white-space: nowrap;
+                        width: 80%;
+                        &-title {
+                            font-weight: bold;
+                            text-overflow: ellipsis;
+                            overflow: hidden;
+                            white-space: nowrap;
+                            color: #000;
+                        }
+                        &-desc {
+                            color: grey;
+                            text-overflow: ellipsis;
+                            overflow: hidden;
+                            white-space: nowrap;
+                        }
+                    }
+                }
+            }
+            &-close {
+                width: 20px;
+                height: 20px;
+                background: url(/img/logo/close.svg) no-repeat center;
+                background-size: 50%;
+                opacity: .5;
+                position: absolute;
+                right: 20px;
+                top: 50%;
+                transform: translate(0, -50%);
+                cursor: pointer;
+            }
+            &-icon {
+                position: absolute;
+                width: 16px;
+                height: 16px;
+                background: url(/img/logo/search.png) no-repeat center;
+                background-size: contain;
+                top: 50%;
+                left: 18px;
+                transform: translate(0, -50%);
+            }
+            & > input {
+                background: #e6f1ec;
+                width: 100%;
+                border-radius: 5px;
+                border: none;
+                height: 40px;
+                padding: 0 40px 0 40px;
+                outline: none !important;
+                font-size: 12px;
+            }
+        }
+    }
     &-layout {
         width: 100%;
         height: auto;
@@ -130,14 +235,35 @@
 }
 @media only screen and (max-width: 768px) {
     .search {
+        &-text_input {
+            margin-top: 0;
+            &-main {
+                padding: 5px;
+                width: 100%;
+                &-list {
+                    top: 50px;
+                    left: 5px;
+                    right: 5px;
+                    border-radius: 5px;
+                }
+            }
+        }
         &-layout {
+            margin-top: 10px;
             &-item {
                 width: 100%;
                 &-title {
-                    margin: 10px 10px 0 10px;
+                    margin: 5px 5px 0 5px;
                 }
                 &-select {
-                    right: 10px;
+                    right: 0;
+                    position: relative;
+                    top: 5px;
+                    left: 5px;
+                    margin: 0 10px 5px 0;
+                }
+                &-button {
+                    margin: 5px;
                 }
             }
             &-text {

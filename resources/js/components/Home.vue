@@ -7,7 +7,7 @@
         <div class="container p-0">
             <div class="row home-main">
                 <div class="col-12 col-md-6 d-flex justify-content-center p-0" v-for="(item,key) in menu" :key="key">
-                    <a :href="'/home/'+item.slug" class="d-block w-100 text-decoration-none p-2">
+                    <a :href="'/home/'+item.slug" class="d-block w-100 text-decoration-none p-0 px-2 p-md-2">
                         <div class="home-category">
                             <div class="home-category-shadow">
                                 <div class="home-category-shadow-layer">
