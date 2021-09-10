@@ -7,7 +7,7 @@
                         <div class="search-text_input-main">
                             <div class="search-text_input-main-icon"></div>
                             <div class="search-text_input-main-close" v-show="text !== ''" @click="text = ''"></div>
-                            <input type="text" v-model="text" placeholder="Поиск" @focus="searchView = true" @mousedown.stop>
+                            <input type="text" v-model="text" placeholder="Поиск" @focus="searchView = true" @keyup="startSearch" @mousedown.stop>
                             <div class="search-text_input-main-list" v-if="searchView" @mousedown.stop>
                                 <template v-if="text !== ''">
                                     <template v-if="search.length > 0">
@@ -170,20 +170,18 @@ export default {
             self.searchView =   false;
         });
     },
-    watch: {
-        text: function() {
+    methods: {
+        startSearch: function() {
             clearTimeout(this.null);
             if (this.text.trim() !== '') {
                 let self    =   this;
                 this.timer  =   setTimeout(function() {
                     self.getSearchOrganizations();
-                },500);
+                },300);
             } else {
                 this.search =   [];
             }
         },
-    },
-    methods: {
         getSearchOrganizations: function() {
             axios.get('/api/organization/search/'+this.text.trim()).then(response => {
                 this.search =   response.data.data;
