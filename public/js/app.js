@@ -22401,7 +22401,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     startSearch: function startSearch() {
-      clearTimeout(this["null"]);
+      clearTimeout(this.timer);
 
       if (this.text.trim() !== '') {
         var self = this;
@@ -27998,7 +27998,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     onFocus: _cache[2] || (_cache[2] = function ($event) {
       return $data.searchView = true;
     }),
-    onKeyup: _cache[3] || (_cache[3] = function () {
+    onInput: _cache[3] || (_cache[3] = function () {
       return $options.startSearch && $options.startSearch.apply($options, arguments);
     }),
     onMousedown: _cache[4] || (_cache[4] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {}, ["stop"]))
