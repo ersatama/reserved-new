@@ -10,6 +10,31 @@
             align-items: center;
             color: grey;
             font-size: 12px;
+            &-return  {
+                margin-right: 15px;
+                position: relative;
+                background: #fff;
+                display: flex;
+                align-items: center;
+                padding: 8px 8px 8px 25px;
+                border-radius: 5px;
+                box-shadow: 0 0 2px 0 rgba(0,0,0,.1);
+                cursor: pointer;
+                &:before {
+                    content: '';
+                    position: absolute;
+                    border: 2px solid #57a283;
+                    border-left: none;
+                    border-top: none;
+                    width: 8px;
+                    height: 8px;
+                    left: 12px;
+                    top: 12px;
+                    transform: rotate(
+                            135deg
+                    );
+                }
+            }
             &-count {
                 & > span {
                     color: #000;
@@ -88,7 +113,7 @@
         }
         &-item {
             &-main {
-                width: 33.33%;
+                width: 25%;
                 direction: ltr;
             }
             margin: 0 10px 20px 10px;
@@ -336,6 +361,13 @@
     }
     .result {
         &-body {
+            &-header {
+                &-sort {
+                    &-title {
+                        display: none;
+                    }
+                }
+            }
             &-main {
                 &-single {
                     & > div {

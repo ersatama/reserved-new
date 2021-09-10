@@ -111,6 +111,49 @@ class OrganizationController extends Controller
         return new OrganizationCollection($this->organizationService->getByCategoryIdAndCityId($id, $cityId, $this->paginate));
     }
 
+    /**
+     * @throws ValidationException
+     */
+    public function getCountByCityIdAndFilter($cityId, $page, OrganizationFilterRequest $organizationFilterRequest)
+    {
+        $data   =   $organizationFilterRequest->validated();
+        $sql    =   DB::table(OrganizationContract::TABLE)
+            ->select(OrganizationContract::TABLE.'.*');
+        if (array_key_exists(MainContract::TAGS, $data) && sizeof($data[MainContract::TAGS]) > 0) {
+
+            $sql->join(TagsOptionOrganizationContract::TABLE, TagsOptionOrganizationContract::TABLE.'.'.MainContract::ORGANIZATION_ID, '=', OrganizationContract::TABLE.'.'.MainContract::ID);
+            $sql->whereIn(TagsOptionOrganizationContract::TABLE.'.'.MainContract::TAGS_OPTION_ID, $data[MainContract::TAGS]);
+
+        }
+
+        if (array_key_exists(MainContract::PRICE, $data) && $data[MainContract::PRICE][MainContract::STATUS]) {
+            if ((int) $data[MainContract::PRICE][MainContract::MAX] === 0) {
+                $sql->where(OrganizationContract::TABLE.'.'.MainContract::PRICE,'>=',$data[MainContract::PRICE][MainContract::MIN]);
+            } else {
+                $sql->whereBetween(MainContract::PRICE,[
+                    $data[MainContract::PRICE][MainContract::MIN],
+                    $data[MainContract::PRICE][MainContract::MAX]
+                ]);
+            }
+        }
+
+        if (array_key_exists(MainContract::RATINGS, $data) &&  $data[MainContract::RATINGS][MainContract::STATUS]) {
+            $sql->whereBetween(MainContract::RATING,[
+                $data[MainContract::RATINGS][MainContract::MIN],
+                $data[MainContract::RATINGS][MainContract::MAX]
+            ]);
+        }
+
+        $sql->where([
+            [OrganizationContract::TABLE.'.'.MainContract::CITY_ID,'=',$cityId],
+        ]);
+
+        return $sql->count();
+    }
+
+    /**
+     * @throws ValidationException
+     */
     public function getCountByCategoryIdAndCityIdAndFilter($id, $cityId, $page, OrganizationFilterRequest $organizationFilterRequest)
     {
         $data   =   $organizationFilterRequest->validated();
@@ -147,6 +190,66 @@ class OrganizationController extends Controller
         ]);
 
         return $sql->count();
+    }
+
+    /**
+     * @throws ValidationException
+     */
+    public function getByCityIdAndFilter($cityId, $page, OrganizationFilterRequest $organizationFilterRequest): OrganizationCollection
+    {
+        $data   =   $organizationFilterRequest->validated();
+        $sql    =   DB::table(OrganizationContract::TABLE)
+            ->select(OrganizationContract::TABLE.'.*');
+        if (array_key_exists(MainContract::TAGS, $data) && sizeof($data[MainContract::TAGS]) > 0) {
+
+            $sql->join(TagsOptionOrganizationContract::TABLE, TagsOptionOrganizationContract::TABLE.'.'.MainContract::ORGANIZATION_ID, '=', OrganizationContract::TABLE.'.'.MainContract::ID);
+            $sql->whereIn(TagsOptionOrganizationContract::TABLE.'.'.MainContract::TAGS_OPTION_ID, $data[MainContract::TAGS]);
+
+        }
+
+        if (array_key_exists(MainContract::PRICE, $data) && $data[MainContract::PRICE][MainContract::STATUS]) {
+            if ((int) $data[MainContract::PRICE][MainContract::MAX] === 0) {
+                $sql->where(OrganizationContract::TABLE.'.'.MainContract::PRICE,'>=',$data[MainContract::PRICE][MainContract::MIN]);
+            } else {
+                $sql->whereBetween(MainContract::PRICE,[
+                    $data[MainContract::PRICE][MainContract::MIN],
+                    $data[MainContract::PRICE][MainContract::MAX]
+                ]);
+            }
+        }
+
+        if (array_key_exists(MainContract::RATINGS, $data) &&  $data[MainContract::RATINGS][MainContract::STATUS]) {
+            $sql->whereBetween(MainContract::RATING,[
+                $data[MainContract::RATINGS][MainContract::MIN],
+                $data[MainContract::RATINGS][MainContract::MAX]
+            ]);
+        }
+
+        $sql->where([
+            [OrganizationContract::TABLE.'.'.MainContract::CITY_ID,'=',$cityId],
+        ]);
+
+        if (array_key_exists(MainContract::SORT,$data)) {
+            if ((int)$data[MainContract::SORT] === 0) {
+                $sql->orderBy(MainContract::RATING,MainContract::DESC);
+            } elseif ((int)$data[MainContract::SORT] === 1) {
+                $sql->orderBy(MainContract::PRICE,MainContract::DESC);
+            } elseif ((int)$data[MainContract::SORT] === 2) {
+                $sql->orderBy(MainContract::PRICE);
+            } else {
+                $sql->orderBy(MainContract::RATING,MainContract::DESC);
+            }
+        } else {
+            $sql->orderBy(MainContract::RATING,MainContract::DESC);
+        }
+        $organizations  =   $sql->skip( ($page - 1) * $this->take)
+            ->take($this->take)
+            ->get();
+
+        foreach ($organizations as &$organization) {
+            $organization->{MainContract::CATEGORY} =   $this->categoryService->getById($organization->{MainContract::CATEGORY_ID});
+        }
+        return new OrganizationCollection($organizations);
     }
 
     /**

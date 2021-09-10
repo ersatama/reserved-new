@@ -189,7 +189,9 @@ Route::get('/organizations/{search}',[OrganizationController::class,'search']);
 
 Route::prefix('category')->group(function() {
     Route::post('filter/organizations/{id}/{cityId}/{page}',[OrganizationController::class,'getByCategoryIdAndCityIdAndFilter']);
+    Route::post('filter/city/{cityId}/{page}',[OrganizationController::class,'getByCityIdAndFilter']);
     Route::post('count/organizations/{id}/{cityId}/{page}',[OrganizationController::class,'getCountByCategoryIdAndCityIdAndFilter']);
+    Route::post('count/city/{cityId}/{page}',[OrganizationController::class,'getCountByCityIdAndFilter']);
     Route::get('organizations/{id}',[OrganizationController::class,'getByCategoryId']);
     Route::get('organizations/{id}/{cityId}',[OrganizationController::class,'getByCategoryIdAndCityId']);
 });

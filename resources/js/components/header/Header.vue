@@ -93,9 +93,9 @@ export default {
             countries: [],
         }
     },
-    created() {
+    async created() {
         this.notificationView();
-        this.auth();
+        await this.auth();
         this.getCountry();
     },
     methods: {
@@ -139,25 +139,25 @@ export default {
             this.user   =   false;
             window.location.href    = '/';
         },
-        auth: function() {
+        auth: async function () {
             if (this.storage.token) {
                 if (sessionStorage.user) {
-                    this.user   =   JSON.parse(sessionStorage.user);
+                    this.user = JSON.parse(sessionStorage.user);
                 } else {
-                    axios.get('/api/token/'+this.storage.token)
-                    .then(response => {
-                        let data    =   response.data;
-                        if (data.hasOwnProperty('data')) {
-                            sessionStorage.user =   JSON.stringify(data.data);
-                            this.user   =   JSON.parse(sessionStorage.user);
-                        }
-                    }).catch(error => {
-                        this.login   =   true;
-                        this.storage.token   =   '';
-                    });
+                    await axios.get('/api/token/' + this.storage.token)
+                        .then(response => {
+                            let data = response.data;
+                            if (data.hasOwnProperty('data')) {
+                                sessionStorage.user = JSON.stringify(data.data);
+                                this.user = JSON.parse(sessionStorage.user);
+                            }
+                        }).catch(error => {
+                            this.login = true;
+                            this.storage.token = '';
+                        });
                 }
             } else {
-                this.login   =   true;
+                this.login = true;
             }
         }
     }

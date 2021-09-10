@@ -28,7 +28,6 @@
                                     <div class="result-body-item-logo">
                                         <img :src="organization.image" width="60">
                                     </div>
-
                                     <div class="result-body-item-favorite" @click="favorite(organization.id)">
                                         <div :class="{'result-body-item-favorite-sel': storage.favorite.includes(organization.id)}"></div>
                                     </div>
@@ -63,9 +62,6 @@
                             </div>
                         </div>
                     </div>
-                    <div class="result-filter">
-                        <Filter :filter="filter" @filterUpdate="filterUpdate"></Filter>
-                    </div>
                 </div>
             </div>
         </div>
@@ -76,14 +72,12 @@
 <script>
 import Loading from '../layout/Loading';
 import NotFound from '../layout/Not-found';
-import Filter from '../layout/Filter';
 export default {
     props: ['category'],
     name: "Organization",
     components: {
         Loading,
         NotFound,
-        Filter
     },
     data() {
         return  {
@@ -96,7 +90,6 @@ export default {
                 index: 0,
                 show: false,
             },
-            sort: [{title:'По рейтингу'},{title:'Сначала дорогие'},{title:'Сначала дешевые'}],
             filter: {
                 price: {
                     status: false,
@@ -110,6 +103,7 @@ export default {
                 },
                 tags: [],
             },
+            sort: [{title:'По рейтингу'},{title:'Сначала дорогие'},{title:'Сначала дешевые'}],
             Loading: true,
             status: true,
             city: 1,
@@ -118,12 +112,6 @@ export default {
             init: true,
             organizations: [],
         }
-    },
-    watch: {
-        filter: function() {
-            this.getCountOrganizationsByCategoryId();
-            this.getOrganizationsByCategoryId();
-        },
     },
     created() {
         this.setFilter();
