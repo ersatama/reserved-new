@@ -22398,12 +22398,14 @@ __webpack_require__.r(__webpack_exports__);
     window.addEventListener('mousedown', function () {
       self.searchView = false;
     });
+    this.$refs.search.addEventListener('keyup', function () {
+      self.startSearch();
+    });
   },
   methods: {
     startSearch: function startSearch() {
-      clearTimeout(this.timer);
-
       if (this.text.trim() !== '') {
+        clearTimeout(this.timer);
         var self = this;
         this.timer = setTimeout(function () {
           self.getSearchOrganizations();
@@ -27994,6 +27996,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     "onUpdate:modelValue": _cache[1] || (_cache[1] = function ($event) {
       return $data.text = $event;
     }),
+    ref: "search",
     placeholder: "Поиск",
     onFocus: _cache[2] || (_cache[2] = function ($event) {
       return $data.searchView = true;

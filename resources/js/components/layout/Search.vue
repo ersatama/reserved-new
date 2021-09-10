@@ -7,7 +7,7 @@
                         <div class="search-text_input-main">
                             <div class="search-text_input-main-icon"></div>
                             <div class="search-text_input-main-close" v-show="text !== ''" @click="text = ''"></div>
-                            <input type="text" v-model="text" placeholder="Поиск" @focus="searchView = true" @input="startSearch" @mousedown.stop>
+                            <input type="text" v-model="text" ref="search" placeholder="Поиск" @focus="searchView = true" @input="startSearch" @mousedown.stop>
                             <div class="search-text_input-main-list" v-if="searchView" @mousedown.stop>
                                 <template v-if="text !== ''">
                                     <template v-if="search.length > 0">
@@ -169,11 +169,14 @@ export default {
         window.addEventListener('mousedown',function() {
             self.searchView =   false;
         });
+        this.$refs.search.addEventListener('keyup', function(){
+            self.startSearch();
+        });
     },
     methods: {
         startSearch: function() {
-            clearTimeout(this.timer);
             if (this.text.trim() !== '') {
+                clearTimeout(this.timer);
                 let self    =   this;
                 this.timer  =   setTimeout(function() {
                     self.getSearchOrganizations();
