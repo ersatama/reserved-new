@@ -181,7 +181,7 @@ export default {
                 let self    =   this;
                 this.timer  =   setTimeout(function() {
                     self.getSearchOrganizations();
-                },300);
+                },200);
             } else {
                 this.search =   [];
             }
