@@ -4,33 +4,38 @@
     <loading v-if="loading"></loading>
     <template v-else-if="organization">
         <div class="container-fluid bg-white">
+            <div class="row">
+                <div class="wallpaper" :style="{'background-image':'url('+organization.wallpaper+')'}">
+                    <div class="wallpaper-screen">
+                        <div class="organization-description text-center text-white">{{organization.address}}</div>
+                        <div class="organization-description text-center text-white"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid bg-white">
             <div class="container p-0">
                 <div class="row">
                     <div class="col-12 p-0">
-                        <div class="wallpaper">
-                            <div class="wallpaper-screen">
-                                <div class="organization-description text-center text-white">{{organization.address}}</div>
-                                <div class="organization-description text-center text-white"></div>
+                        <div class="organization-main">
+                            <div class="d-flex organization-photo">
+                                <div class="organization-logo">
+                                    <img v-if="organization.image" :src="organization.image">
+                                </div>
                             </div>
-                            <img v-if="organization.wallpaper" :src="organization.wallpaper">
-                        </div>
-                        <div class="d-flex justify-content-center organization-photo">
-                            <div class="organization-logo">
-                                <img v-if="organization.image" :src="organization.image">
+                            <div class="organization-title text-dark font-weight-bold text-center">
+                                <div>{{organization.title}}</div>
+                                <div class="favorite-main" :class="{'favorite-main-off':(!storage.favorite.includes(organization.id)),'favorite-main-on':(storage.favorite.includes(organization.id))}" @click="favorite(organization.id)"></div>
                             </div>
-                        </div>
-                        <div class="organization-title text-dark font-weight-bold text-center">
-                            <div>{{organization.title}}</div>
-                            <div class="favorite-main" :class="{'favorite-main-off':(!storage.favorite.includes(organization.id)),'favorite-main-on':(storage.favorite.includes(organization.id))}" @click="favorite(organization.id)"></div>
-                        </div>
-                        <div class="organization-rating">
-                            <div>
-                                <div class="organization-rating-star" :class="{'organization-rating-star-sel':(organization.rating >= 0.5)}"></div>
-                                <div class="organization-rating-star" :class="{'organization-rating-star-sel':(organization.rating >= 1.5)}"></div>
-                                <div class="organization-rating-star" :class="{'organization-rating-star-sel':(organization.rating >= 2.5)}"></div>
-                                <div class="organization-rating-star" :class="{'organization-rating-star-sel':(organization.rating >= 3.5)}"></div>
-                                <div class="organization-rating-star" :class="{'organization-rating-star-sel':(organization.rating >= 4.5)}"></div>
-                                <div class="organization-rating-count" v-if="organization.rating">{{organization.rating}}</div>
+                            <div class="organization-rating">
+                                <div>
+                                    <div class="organization-rating-star" :class="{'organization-rating-star-sel':(organization.rating >= 0.5)}"></div>
+                                    <div class="organization-rating-star" :class="{'organization-rating-star-sel':(organization.rating >= 1.5)}"></div>
+                                    <div class="organization-rating-star" :class="{'organization-rating-star-sel':(organization.rating >= 2.5)}"></div>
+                                    <div class="organization-rating-star" :class="{'organization-rating-star-sel':(organization.rating >= 3.5)}"></div>
+                                    <div class="organization-rating-star" :class="{'organization-rating-star-sel':(organization.rating >= 4.5)}"></div>
+                                    <div class="organization-rating-count" v-if="organization.rating">{{organization.rating}}</div>
+                                </div>
                             </div>
                         </div>
                         <div class="organization-description text-secondary text-center">{{organization.description}}</div>

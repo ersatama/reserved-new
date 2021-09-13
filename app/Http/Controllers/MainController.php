@@ -94,6 +94,16 @@ class MainController extends Controller
         return view('backpack.room.room',['id'=>$organization->id]);
     }
 
+    public function news_main()
+    {
+        if (!backpack_auth()->user()) {
+            return redirect('/admin/login');
+        } elseif ($organization   =   $this->organizationService->getByUserId(backpack_auth()->user()->id)) {
+            return view('backpack.news.news',['id'=>$organization->id]);
+        }
+        return response('',404);
+    }
+
     public function dashboardBooking($id)
     {
         $table  =   $this->organizationTableListService->getById($id);

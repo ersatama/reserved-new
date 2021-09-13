@@ -83,6 +83,7 @@ Route::prefix('admin')->group(function () {
     Route::get('dashboard/booking/{id}',[MainController::class, 'dashboardBooking'])->name('dashboard.booking');
     Route::get('entity',[MainController::class,'entity'])->name('entity');
     Route::get('room',[MainController::class,'room'])->name('room');
+    Route::get('news_main',[MainController::class,'news_main'])->name('news');
     Route::get('photos',[MainController::class,'photos'])->name('photos');
     Route::get('menus',[MainController::class,'menus'])->name('menus');
     Route::get('statistics',[MainController::class,'statistics'])->name('statistics');

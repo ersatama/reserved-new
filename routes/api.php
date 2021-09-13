@@ -23,6 +23,26 @@ use App\Http\Controllers\Api\WebTrafficController;
 use App\Http\Controllers\Api\TagsController;
 use App\Http\Controllers\Api\TagsOptionOrganizationController;
 use App\Http\Controllers\Api\TagsOptionController;
+use App\Http\Controllers\Api\NewsController;
+use App\Http\Controllers\Api\NewsImageController;
+
+Route::prefix('news')->group(function() {
+    Route::post('create',[NewsController::class,'create'])->name('news.create');
+    Route::post('update/{id}',[NewsController::class,'update'])->name('news.update');
+    Route::get('list/{page}',[NewsController::class,'list'])->name('news.list');
+    Route::get('getByOrganizationId/{organizationId}',[NewsController::class,'getByOrganizationId'])
+        ->name('news.getByOrganizationId');
+    Route::get('getByOrganizationIdAndStatus/{organizationId}/{status}',[NewsController::class,'getByOrganizationIdAndStatus'])->name('news.getByOrganizationIdAndStatus');
+    Route::get('getById/{id}',[NewsController::class,'getById'])->name('news.getById');
+    Route::get('getByIdAndStatus/{id}/{status}',[NewsController::class,'getByIdAndStatus'])->name('news.getByIdAndStatus');
+});
+
+Route::prefix('newsImage')->group(function() {
+    Route::post('create',[NewsImageController::class,'create'])->name('newsImage.create');
+    Route::post('update/{id}',[NewsImageController::class,'update'])->name('newsImage.update');
+    Route::get('getByNewsId/{newsId}',[NewsImageController::class,'getByNewsId'])->name('newsImage.getByNewsId');
+    Route::get('getById/{id}',[NewsImageController::class,'getById'])->name('newsImage.getById');
+});
 
 Route::prefix('tags')->group(function() {
     Route::get('list',[TagsController::class,'list'])->name('tags.list');
@@ -77,21 +97,15 @@ Route::prefix('table')->group(function() {
 });
 
 Route::prefix('image')->group(function() {
-
     Route::post('create',[OrganizationImageController::class,'create'])->name('image.create');
     Route::post('update/{id}',[OrganizationImageController::class,'update'])->name('image.update');
-
     Route::get('organization/{organizationId}',[OrganizationImageController::class,'getByOrganizationId'])->name('image.organization');
-
 });
 
 Route::prefix('menu')->group(function() {
-
     Route::post('update/{id}',[MenuController::class,'update'])->name('menu.update');
     Route::post('create',[MenuController::class,'create'])->name('menu.create');
-
     Route::get('list/{organizationId}',[MenuController::class,'getByOrganizationId'])->name('menu.organization.id');
-
 });
 
 Route::prefix('telegram')->group(function() {

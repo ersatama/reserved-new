@@ -20595,6 +20595,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _footer_Footer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./footer/Footer */ "./resources/js/components/footer/Footer.vue");
 /* harmony import */ var _sections_ProfileSection__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./sections/ProfileSection */ "./resources/js/components/sections/ProfileSection.vue");
 /* harmony import */ var _footerMenu_FooterMenu__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./footerMenu/FooterMenu */ "./resources/js/components/footerMenu/FooterMenu.vue");
+/* harmony import */ var _layout_Loading__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./layout/Loading */ "./resources/js/components/layout/Loading.vue");
+
 
 
 
@@ -20604,9 +20606,58 @@ __webpack_require__.r(__webpack_exports__);
     Header: _header_Header__WEBPACK_IMPORTED_MODULE_0__.default,
     Footer: _footer_Footer__WEBPACK_IMPORTED_MODULE_1__.default,
     ProfileSection: _sections_ProfileSection__WEBPACK_IMPORTED_MODULE_2__.default,
-    FooterMenu: _footerMenu_FooterMenu__WEBPACK_IMPORTED_MODULE_3__.default
+    FooterMenu: _footerMenu_FooterMenu__WEBPACK_IMPORTED_MODULE_3__.default,
+    Loading: _layout_Loading__WEBPACK_IMPORTED_MODULE_4__.default
   },
-  name: "News"
+  name: "News",
+  data: function data() {
+    return {
+      Loading: true,
+      status: true,
+      page: 1,
+      news: []
+    };
+  },
+  created: function created() {
+    this.getNews();
+  },
+  mounted: function mounted() {
+    this.scrollEvent();
+  },
+  methods: {
+    scrollEvent: function scrollEvent() {
+      var self = this;
+
+      window.document.body.onscroll = function () {
+        var height = Math.max(window.pageYOffset, document.documentElement.scrollTop, document.body.scrollTop) + window.innerHeight;
+
+        if (document.documentElement.offsetHeight - height < 800) {
+          self.getNews();
+        }
+      };
+    },
+    getNews: function getNews() {
+      var _this = this;
+
+      if (this.status) {
+        this.status = false;
+        axios.get('/api/news/list/' + this.page).then(function (response) {
+          var data = response.data.data;
+
+          if (data.length === 15) {
+            _this.page = 2;
+            _this.status = true;
+          }
+
+          _this.news = _this.news.concat(data);
+          _this.Loading = false;
+        })["catch"](function (error) {
+          _this.status = false;
+          _this.Loading = false;
+        });
+      }
+    }
+  }
 });
 
 /***/ }),
@@ -22409,7 +22460,7 @@ __webpack_require__.r(__webpack_exports__);
         var self = this;
         this.timer = setTimeout(function () {
           self.getSearchOrganizations();
-        }, 300);
+        }, 200);
       } else {
         this.search = [];
       }
@@ -23714,6 +23765,11 @@ __webpack_require__.r(__webpack_exports__);
           title: 'Поиск',
           link: link + this.end
         });
+      } else if (this.end === 'news') {
+        this.breadcrumb.push({
+          title: 'Новости',
+          link: link + this.end
+        });
       } else if (this.end === 'form') {
         this.breadcrumb.push({
           title: 'Заявка для ресторанов',
@@ -24936,16 +24992,96 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
+var _hoisted_1 = {
+  key: 1,
+  "class": "container-fluid p-0 m-0 home-bg-color"
+};
+var _hoisted_2 = {
+  "class": "container p-0"
+};
+var _hoisted_3 = {
+  "class": "row m-0"
+};
+var _hoisted_4 = {
+  "class": "col-12"
+};
+var _hoisted_5 = {
+  "class": "news"
+};
+var _hoisted_6 = {
+  "class": "news-item-header"
+};
+var _hoisted_7 = {
+  "class": "news-item-header-icon"
+};
+var _hoisted_8 = ["src", "alt"];
+var _hoisted_9 = {
+  "class": "news-item-header-detail"
+};
+var _hoisted_10 = ["href"];
+var _hoisted_11 = {
+  "class": "news-item-header-detail-time"
+};
+var _hoisted_12 = {
+  key: 0,
+  "class": "news-header"
+};
+var _hoisted_13 = {
+  key: 1,
+  "class": "news-description"
+};
+var _hoisted_14 = {
+  key: 2,
+  "class": "news-item-screen"
+};
+var _hoisted_15 = ["src"];
+var _hoisted_16 = ["href"];
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_Header = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Header");
 
   var _component_profile_section = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("profile-section");
 
+  var _component_loading = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("loading");
+
   var _component_Footer_menu = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Footer-menu");
 
   var _component_Footer = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Footer");
 
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Header), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_profile_section), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Footer_menu), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Footer)], 64
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Header), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_profile_section), $data.Loading ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_loading, {
+    key: 0
+  })) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($data.news, function (item, key) {
+    return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", {
+      "class": "news-item",
+      key: key
+    }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
+      src: item.organization.image,
+      alt: item.organization.title
+    }, null, 8
+    /* PROPS */
+    , _hoisted_8)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+      href: '/home/' + item.organization.category_id.slug + '/' + item.organization.id,
+      "class": "news-item-header-detail-title"
+    }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(item.organization.title), 9
+    /* TEXT, PROPS */
+    , _hoisted_10), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_11, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(item.created_at), 1
+    /* TEXT */
+    )])]), item.title.trim() !== '' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_12, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(item.title), 1
+    /* TEXT */
+    )) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), item.description.trim() !== '' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_13, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(item.description), 1
+    /* TEXT */
+    )) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), item.images.length > 0 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_14, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
+      src: item.images[0].image
+    }, null, 8
+    /* PROPS */
+    , _hoisted_15)])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+      href: '/home/' + item.organization.category_id.slug + '/' + item.organization.id,
+      "class": "news-item-header-btn"
+    }, "Забронировать", 8
+    /* PROPS */
+    , _hoisted_16)]);
+  }), 128
+  /* KEYED_FRAGMENT */
+  ))])])])])])), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Footer_menu), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Footer)], 64
   /* STABLE_FRAGMENT */
   );
 }
@@ -24969,74 +25105,76 @@ var _hoisted_1 = {
   "class": "container-fluid bg-white"
 };
 var _hoisted_2 = {
-  "class": "container p-0"
-};
-var _hoisted_3 = {
   "class": "row"
 };
-var _hoisted_4 = {
-  "class": "col-12 p-0"
-};
-var _hoisted_5 = {
-  "class": "wallpaper"
-};
-var _hoisted_6 = {
+var _hoisted_3 = {
   "class": "wallpaper-screen"
 };
-var _hoisted_7 = {
+var _hoisted_4 = {
   "class": "organization-description text-center text-white"
 };
 
-var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "organization-description text-center text-white"
 }, null, -1
 /* HOISTED */
 );
 
-var _hoisted_9 = ["src"];
+var _hoisted_6 = {
+  "class": "container-fluid bg-white"
+};
+var _hoisted_7 = {
+  "class": "container p-0"
+};
+var _hoisted_8 = {
+  "class": "row"
+};
+var _hoisted_9 = {
+  "class": "col-12 p-0"
+};
 var _hoisted_10 = {
-  "class": "d-flex justify-content-center organization-photo"
+  "class": "organization-main"
 };
 var _hoisted_11 = {
+  "class": "d-flex organization-photo"
+};
+var _hoisted_12 = {
   "class": "organization-logo"
 };
-var _hoisted_12 = ["src"];
-var _hoisted_13 = {
+var _hoisted_13 = ["src"];
+var _hoisted_14 = {
   "class": "organization-title text-dark font-weight-bold text-center"
 };
-var _hoisted_14 = {
+var _hoisted_15 = {
   "class": "organization-rating"
 };
-var _hoisted_15 = {
+var _hoisted_16 = {
   key: 0,
   "class": "organization-rating-count"
 };
-var _hoisted_16 = {
+var _hoisted_17 = {
   "class": "organization-description text-secondary text-center"
 };
-var _hoisted_17 = {
+var _hoisted_18 = {
   "class": "container-fluid bg-white organization-shadow-main px-0"
 };
-var _hoisted_18 = {
+var _hoisted_19 = {
   "class": "container py-0"
 };
-var _hoisted_19 = {
+var _hoisted_20 = {
   "class": "row pt-2"
 };
-var _hoisted_20 = {
+var _hoisted_21 = {
   "class": "col d-flex justify-content-center"
 };
-var _hoisted_21 = {
+var _hoisted_22 = {
   "class": "card text-center bg-transparent border-0"
 };
-var _hoisted_22 = {
+var _hoisted_23 = {
   "class": "card-header bg-transparent d-flex justify-content-center border-0"
 };
-var _hoisted_23 = {
-  "class": "nav nav-tabs card-header-tabs margin-0 border-0"
-};
 var _hoisted_24 = {
-  "class": "nav-item"
+  "class": "nav nav-tabs card-header-tabs margin-0 border-0"
 };
 var _hoisted_25 = {
   "class": "nav-item"
@@ -25045,6 +25183,9 @@ var _hoisted_26 = {
   "class": "nav-item"
 };
 var _hoisted_27 = {
+  "class": "nav-item"
+};
+var _hoisted_28 = {
   "class": "nav-item"
 };
 function render(_ctx, _cache, $props, $setup, $data, $options) {
@@ -25076,19 +25217,21 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     key: 0
   })) : $data.organization ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
     key: 1
-  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_7, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.organization.address), 1
+  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+    "class": "wallpaper",
+    style: (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeStyle)({
+      'background-image': 'url(' + $data.organization.wallpaper + ')'
+    })
+  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.organization.address), 1
   /* TEXT */
-  ), _hoisted_8]), $data.organization.wallpaper ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("img", {
-    key: 0,
-    src: $data.organization.wallpaper
-  }, null, 8
-  /* PROPS */
-  , _hoisted_9)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_10, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_11, [$data.organization.image ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("img", {
+  ), _hoisted_5])], 4
+  /* STYLE */
+  )])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_10, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_11, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_12, [$data.organization.image ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("img", {
     key: 0,
     src: $data.organization.image
   }, null, 8
   /* PROPS */
-  , _hoisted_12)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_13, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.organization.title), 1
+  , _hoisted_13)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_14, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.organization.title), 1
   /* TEXT */
   ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
     "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["favorite-main", {
@@ -25100,7 +25243,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     })
   }, null, 2
   /* CLASS */
-  )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_14, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_15, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
     "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["organization-rating-star", {
       'organization-rating-star-sel': $data.organization.rating >= 0.5
     }])
@@ -25130,11 +25273,11 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     }])
   }, null, 2
   /* CLASS */
-  ), $data.organization.rating ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_15, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.organization.rating), 1
+  ), $data.organization.rating ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_16, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.organization.rating), 1
   /* TEXT */
-  )) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_16, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.organization.description), 1
+  )) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_17, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.organization.description), 1
   /* TEXT */
-  )])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_17, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_18, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_19, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_20, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_21, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_22, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", _hoisted_23, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", _hoisted_24, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+  )])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_18, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_19, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_20, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_21, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_22, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_23, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", _hoisted_24, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", _hoisted_25, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
     "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["nav-link h6 text-secondary bg-transparent organization-tab py-3 px-0 d-block", {
       active: $data.tab === 1,
       'organization-tab-sel': $data.tab === 1
@@ -25145,7 +25288,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     })
   }, "Бронирование", 2
   /* CLASS */
-  )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", _hoisted_25, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+  )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", _hoisted_26, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
     "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["nav-link h6 text-secondary bg-transparent organization-tab py-3 px-0 d-block", {
       active: $data.tab === 2,
       'organization-tab-sel': $data.tab === 2
@@ -25156,7 +25299,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     })
   }, "Галлерея", 2
   /* CLASS */
-  )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", _hoisted_26, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+  )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", _hoisted_27, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
     "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["nav-link h6 text-secondary bg-transparent organization-tab py-3 px-0 d-block", {
       active: $data.tab === 3,
       'organization-tab-sel': $data.tab === 3
@@ -25167,7 +25310,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     })
   }, "Отзывы", 2
   /* CLASS */
-  )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", _hoisted_27, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+  )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", _hoisted_28, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
     "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["nav-link h6 text-secondary bg-transparent organization-tab py-3 px-0 d-block", {
       active: $data.tab === 4,
       'organization-tab-sel': $data.tab === 4
@@ -30385,6 +30528,30 @@ ___CSS_LOADER_EXPORT___.push([module.id, ".card-img {\n  border-radius: 100%;\n 
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-12.use[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/News.vue?vue&type=style&index=0&id=12793f84&lang=scss":
+/*!******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-12.use[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/News.vue?vue&type=style&index=0&id=12793f84&lang=scss ***!
+  \******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
+// Imports
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, ".news {\n  display: flex;\n  flex-direction: column;\n  width: 600px;\n  margin: 50px auto 50px auto;\n  gap: 20px;\n}\n.news-header {\n  font-size: 14px;\n  font-weight: bold;\n  color: #000;\n  padding: 0 25px 0 25px;\n}\n.news-description {\n  font-size: 13px;\n  color: grey;\n  padding: 0 25px 0 25px;\n}\n.news-item {\n  background: #fff;\n  border-radius: 10px;\n  border: 1px solid #e6f1ec;\n  display: flex;\n  flex-direction: column;\n  gap: 15px;\n}\n.news-item-header {\n  display: flex;\n  gap: 20px;\n  align-items: center;\n  border-bottom: 1px solid #e6f1ec;\n  padding: 20px;\n  position: relative;\n}\n.news-item-header-btn {\n  outline: none;\n  border: none;\n  background: #e6f1ec;\n  color: #57a283 !important;\n  font-size: 12px;\n  padding: 10px 15px 10px 15px;\n  border-radius: 30px;\n  font-weight: bold;\n  text-decoration: none !important;\n  text-align: center;\n  margin: 0 25px 25px 25px;\n}\n.news-item-header-btn:hover {\n  color: #fff !important;\n  background: #57a283;\n}\n.news-item-header-icon {\n  overflow: hidden;\n  border-radius: 30px;\n}\n.news-item-header-icon > img {\n  width: 50px;\n  height: 50px;\n}\n.news-item-header-detail-title {\n  font-size: 14px;\n  font-weight: bold;\n  padding: 0;\n  display: block;\n  text-decoration: none !important;\n  color: #000 !important;\n}\n.news-item-header-detail-time {\n  font-size: 12px;\n  color: grey;\n}\n.news-item-screen {\n  margin: 0 20px 10px 20px;\n  border-radius: 10px;\n  overflow: hidden;\n  position: relative;\n}\n.news-item-screen > img {\n  width: 100%;\n  display: block;\n}\n@media only screen and (max-width: 768px) {\n.news {\n    width: auto;\n    margin: 20px auto 20px auto;\n}\n.news-header {\n    font-size: 12px;\n    padding: 0 20px 0 20px;\n}\n.news-description {\n    font-size: 11px;\n    padding: 0 20px 0 20px;\n}\n.news-item {\n    gap: 10px;\n}\n.news-item-screen {\n    margin: 0 20px 20px 20px;\n    border-radius: 5px;\n}\n.news-item-header {\n    gap: 10px;\n}\n.news-item-header-icon {\n    width: 40px;\n    height: 40px;\n}\n.news-item-header-btn {\n    font-size: 11px;\n    right: 20px;\n    margin: 0 20px 20px 20px;\n}\n}\n", ""]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-12.use[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Organization.vue?vue&type=style&index=0&id=046ee0c4&lang=scss":
 /*!**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-12.use[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Organization.vue?vue&type=style&index=0&id=046ee0c4&lang=scss ***!
@@ -30402,7 +30569,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".favorite-main, .favorite-category {\n  background: no-repeat center;\n  background-size: contain;\n  width: 30px;\n  height: 30px;\n  cursor: pointer;\n}\n.favorite-main-on, .favorite-category-on {\n  background-image: url(\"/img/logo/favorite-red.svg\");\n}\n.favorite-main-off, .favorite-category-off {\n  background-image: url(\"/img/logo/favorite-grey.svg\");\n  opacity: .3;\n}\n.favorite-main {\n  margin-left: 5px;\n  background-size: 70%;\n}\n.favorite-category {\n  position: absolute;\n  z-index: 2;\n  left: 5px;\n  top: 5px;\n  background-color: #fff;\n  box-shadow: 0 0 0 10px #fff;\n  border-radius: 0 0 10px 0;\n  opacity: 1;\n}\n@media only screen and (max-width: 768px) {\n.favorite-main {\n    width: 16px;\n    height: 16px;\n}\n.favorite-category {\n    width: 10px;\n    height: 10px;\n    border-radius: 0 0 2px 0;\n    box-shadow: 0 0 0 8px #fff;\n}\n}\n.loading {\n  display: inline-block;\n  position: relative;\n  width: 80px;\n  height: 40px;\n}\n.loading-text {\n  font-size: 20px !important;\n  color: #00a082 !important;\n  margin: 0;\n  font-weight: bold;\n  padding: 0 !important;\n}\n.loading div {\n  position: absolute;\n  top: 16px;\n  width: 13px;\n  height: 13px;\n  border-radius: 50%;\n  background: #00a082;\n  -webkit-animation-timing-function: cubic-bezier(0, 1, 1, 0);\n          animation-timing-function: cubic-bezier(0, 1, 1, 0);\n}\n.loading div:nth-child(1) {\n  left: 8px;\n  -webkit-animation: lds-ellipsis1 0.6s infinite;\n          animation: lds-ellipsis1 0.6s infinite;\n}\n.loading div:nth-child(2) {\n  left: 8px;\n  -webkit-animation: lds-ellipsis2 0.6s infinite;\n          animation: lds-ellipsis2 0.6s infinite;\n}\n.loading div:nth-child(3) {\n  left: 32px;\n  -webkit-animation: lds-ellipsis2 0.6s infinite;\n          animation: lds-ellipsis2 0.6s infinite;\n}\n.loading div:nth-child(4) {\n  left: 56px;\n  -webkit-animation: lds-ellipsis3 0.6s infinite;\n          animation: lds-ellipsis3 0.6s infinite;\n}\n@-webkit-keyframes lds-ellipsis1 {\n0% {\n    transform: scale(0);\n}\n100% {\n    transform: scale(1);\n}\n}\n@keyframes lds-ellipsis1 {\n0% {\n    transform: scale(0);\n}\n100% {\n    transform: scale(1);\n}\n}\n@-webkit-keyframes lds-ellipsis3 {\n0% {\n    transform: scale(1);\n}\n100% {\n    transform: scale(0);\n}\n}\n@keyframes lds-ellipsis3 {\n0% {\n    transform: scale(1);\n}\n100% {\n    transform: scale(0);\n}\n}\n@-webkit-keyframes lds-ellipsis2 {\n0% {\n    transform: translate(0, 0);\n}\n100% {\n    transform: translate(24px, 0);\n}\n}\n@keyframes lds-ellipsis2 {\n0% {\n    transform: translate(0, 0);\n}\n100% {\n    transform: translate(24px, 0);\n}\n}\n@media only screen and (max-width: 768px) {\n.loading {\n    transform: scale(0.7);\n}\n.loading-text {\n    font-size: 13px !important;\n}\n}\n.loading-btn {\n  display: block;\n  position: relative;\n  width: 80px;\n  height: 13px;\n  transform: scale(0.5);\n  margin: 0 auto 0 auto;\n}\n.loading-btn div {\n  position: absolute;\n  top: 0;\n  width: 13px;\n  height: 13px;\n  border-radius: 50%;\n  background: #fff;\n  -webkit-animation-timing-function: cubic-bezier(0, 1, 1, 0);\n          animation-timing-function: cubic-bezier(0, 1, 1, 0);\n}\n.loading-btn div:nth-child(1) {\n  left: 8px;\n  -webkit-animation: lds-ellipsis1 0.6s infinite;\n          animation: lds-ellipsis1 0.6s infinite;\n}\n.loading-btn div:nth-child(2) {\n  left: 8px;\n  -webkit-animation: lds-ellipsis2 0.6s infinite;\n          animation: lds-ellipsis2 0.6s infinite;\n}\n.loading-btn div:nth-child(3) {\n  left: 32px;\n  -webkit-animation: lds-ellipsis2 0.6s infinite;\n          animation: lds-ellipsis2 0.6s infinite;\n}\n.loading-btn div:nth-child(4) {\n  left: 56px;\n  -webkit-animation: lds-ellipsis3 0.6s infinite;\n          animation: lds-ellipsis3 0.6s infinite;\n}\n@keyframes lds-ellipsis1 {\n0% {\n    transform: scale(0);\n}\n100% {\n    transform: scale(1);\n}\n}\n@keyframes lds-ellipsis3 {\n0% {\n    transform: scale(1);\n}\n100% {\n    transform: scale(0);\n}\n}\n@keyframes lds-ellipsis2 {\n0% {\n    transform: translate(0, 0);\n}\n100% {\n    transform: translate(24px, 0);\n}\n}\n.organization-rating {\n  display: table;\n  margin: 10px auto 0 auto;\n}\n.organization-rating > div {\n  display: flex;\n  align-items: center;\n}\n.organization-rating > div > div {\n  margin-left: 5px;\n}\n.organization-rating > div > div:first-child {\n  margin-left: 0;\n}\n.organization-rating-count {\n  font-weight: bold;\n  font-size: 15px;\n  line-height: 1;\n  color: #FF8008;\n  margin-left: 10px !important;\n}\n.organization-rating-star {\n  width: 20px;\n  height: 20px;\n  background: url(\"/img/logo/star-whitesmoke.svg\") no-repeat center;\n  background-size: contain;\n}\n.organization-rating-star-sel {\n  background-image: url(\"/img/logo/star-orange.svg\");\n}\n.organization-comment {\n  display: grid;\n  align-items: center;\n  grid-template-columns: 60px auto;\n  grid-gap: 15px;\n  gap: 15px;\n}\n.organization-comment-count {\n  font-size: 18px;\n  font-weight: bold;\n}\n.organization-comment-line {\n  border-bottom: 1px solid #e6e6e6;\n}\n.organization-comment-line:last-child {\n  border-bottom: none;\n}\n.organization-comment-text {\n  font-size: 18px;\n}\n.organization-comment-icon {\n  height: 60px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  background: #FF8008;\n  color: #fff;\n  font-weight: bold;\n  border-radius: 100px;\n}\n.organization-comment-icon > div {\n  font-size: 20px;\n  font-weight: bold;\n}\n.organization-comment-detail {\n  display: grid;\n  align-content: center;\n  grid-gap: 2px;\n  gap: 2px;\n}\n.organization-comment-detail-status > div {\n  background: #00a082;\n  display: table;\n  padding: 2px 10px 2px 10px;\n  border-radius: 10px;\n  font-size: 11px;\n  color: white;\n  font-weight: bold;\n  margin-top: 5px;\n}\n.organization-comment-detail-dot {\n  padding: 0 5px 0 5px;\n}\n.organization-comment-detail-name {\n  font-size: 15px;\n  font-weight: bold;\n  display: grid;\n  grid-template-columns: auto auto auto;\n  width: -webkit-fit-content;\n  width: -moz-fit-content;\n  width: fit-content;\n}\n.organization-comment-detail-name-user {\n  overflow: hidden;\n  display: inline-block;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n}\n.organization-comment-detail-stars {\n  display: flex;\n}\n.organization-comment-detail-stars > div {\n  margin-right: 5px;\n}\n.organization-comment-detail-star, .organization-comment-detail-star-sel {\n  height: 16px;\n  width: 16px;\n  background: url(\"/img/logo/star-grey.svg\") no-repeat center;\n  background-size: contain;\n  opacity: .5;\n}\n.organization-comment-detail-star-sel {\n  background-image: url(\"/img/logo/star-orange.svg\");\n  opacity: 1;\n}\n.organization-empty-description {\n  font-size: 16px;\n}\n.organization-card-main {\n  padding: 15px;\n}\n.organization-title {\n  margin-top: 20px;\n  font-size: 20px;\n  margin-left: 20px;\n  margin-right: 20px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.organization-description {\n  font-size: 14px;\n  margin-top: 20px;\n  margin-left: 20px;\n  margin-right: 20px;\n}\n.organization-tab {\n  padding: 10px 15px 10px 15px !important;\n  border: none !important;\n  border-bottom: 4px solid transparent !important;\n  font-size: 14px !important;\n}\n.organization-tab-sel {\n  color: #00a082 !important;\n  border-bottom-color: #00a082 !important;\n}\n.organization-bg {\n  background: #f5f5f5;\n}\n.organization-arr-btn {\n  background: #00a082;\n  color: white;\n  border-radius: 30px;\n  cursor: pointer;\n}\n.organization-date {\n  display: grid;\n  grid-template-columns: 40px auto 40px;\n  grid-gap: 10px;\n  gap: 10px;\n  padding: 5px;\n  background: #fafafa;\n  border-radius: 40px;\n  margin: 0 0.5rem 0 0.5rem !important;\n}\n.organization-input {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  font-size: 14px;\n}\n.organization-card {\n  display: grid;\n  grid-template-columns: auto 40px 15px;\n  grid-gap: 15px;\n  gap: 15px;\n}\n.organization-card-arr {\n  background: url(\"/img/logo/right-arrow.svg\") no-repeat center;\n  background-size: contain;\n}\n.organization-card-limit {\n  font-size: 12px;\n}\n.organization-card-title {\n  font-size: 14px;\n}\n.organization-card-status {\n  font-size: 12px;\n  display: flex;\n  padding: 2px 5px 2px 5px;\n  border-radius: 3px;\n  font-weight: bold;\n  margin-top: 5px;\n  gap: 5px;\n}\n.organization-card-status-free {\n  background: #00a082;\n  color: #fff;\n}\n.organization-card-status-reserved {\n  background: #FF8008;\n  color: #fff;\n}\n.organization-card-icon {\n  background: url(\"/img/logo/table.svg\") no-repeat center;\n  background-size: contain;\n  height: 40px;\n}\n.organization-btn {\n  padding: 10px 25px 10px 25px;\n  border-radius: 30px;\n  height: 44px;\n  color: #000;\n  background: #fff;\n  font-size: 14px;\n}\n.organization-btn-sel, .organization-btn:hover {\n  background: #00a082;\n  color: #fff;\n}\n.organization-shadow {\n  box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.1);\n  border-radius: 10px;\n  cursor: pointer;\n}\n.organization-shadow:hover {\n  background: #fafafa;\n}\n.organization-shadow-main {\n  border-bottom: 1px solid #e6f1ec;\n  position: relative;\n}\n.organization-image {\n  width: 100%;\n  border-radius: 10px;\n  background: no-repeat center;\n  background-size: cover;\n}\n.organization-image > div {\n  width: 100%;\n  padding-bottom: 100%;\n}\n.organization-logo {\n  margin: -150px auto 0 auto;\n  width: 200px;\n  height: 200px;\n  position: relative;\n  overflow: hidden;\n  z-index: 3;\n  border-radius: 200px;\n  box-shadow: 0 0 0 10px white;\n  background: #fff;\n}\n.organization-logo > img {\n  width: 100%;\n}\n.organization-logo-default {\n  width: 100%;\n  height: 100%;\n  background: no-repeat center;\n  background-size: 50%;\n}\n.organization-logo-default-restaurant {\n  background-image: url(\"/img/logo/restaurant.svg\");\n}\n.organization-logo-default-cafe {\n  background-image: url(\"/img/logo/cafe.svg\");\n}\n.organization-logo-default-bar {\n  background-image: url(\"/img/logo/bar.svg\");\n}\n.wallpaper {\n  max-height: 350px;\n  position: relative;\n  overflow: hidden;\n  border-radius: 0 0 10px 10px;\n}\n.wallpaper > img {\n  width: 100%;\n}\n.wallpaper-screen {\n  position: absolute;\n  top: 0;\n  left: 0;\n  bottom: 0;\n  right: 0;\n  width: 100%;\n  height: 100%;\n  background: rgba(0, 0, 0, 0.5);\n  z-index: 2;\n}\n@media only screen and (max-width: 768px) {\n.organization-rating {\n    margin: 10px auto 0 auto;\n}\n.organization-rating > div {\n    gap: 5px;\n}\n.organization-rating > div > div {\n    margin-left: 5px;\n}\n.organization-rating-count {\n    font-size: 11px;\n    margin-left: 10px !important;\n}\n.organization-rating-star {\n    width: 16px;\n    height: 16px;\n}\n.organization-comment {\n    grid-template-columns: 40px auto;\n    grid-gap: 10px;\n    gap: 10px;\n}\n.organization-comment-count {\n    font-size: 12px;\n}\n.organization-comment-line {\n    padding: 10px 0 10px 0 !important;\n}\n.organization-comment-text {\n    font-size: 13px;\n    margin-top: 10px;\n    padding: 0 5px 0 5px;\n}\n.organization-comment-icon {\n    height: 40px;\n}\n.organization-comment-icon > div {\n    font-size: 14px;\n}\n.organization-comment-detail {\n    display: grid;\n    align-content: center;\n    grid-gap: 2px;\n    gap: 2px;\n}\n.organization-comment-detail-status > div {\n    font-size: 9px;\n}\n.organization-comment-detail-dot {\n    padding: 0 3px 0 3px;\n}\n.organization-comment-detail-name {\n    font-size: 13px;\n}\n.organization-comment-detail-stars {\n    display: flex;\n}\n.organization-comment-detail-stars > div {\n    margin-right: 2px;\n}\n.organization-comment-detail-star, .organization-comment-detail-star-sel {\n    height: 10px;\n    width: 10px;\n    background: url(\"/img/logo/star-grey.svg\") no-repeat center;\n    background-size: contain;\n    opacity: .5;\n}\n.organization-comment-detail-star-sel {\n    background-image: url(\"/img/logo/star-orange.svg\");\n    opacity: 1;\n}\n.organization-card {\n    grid-gap: 5px;\n    gap: 5px;\n}\n.organization-card-main {\n    padding: 5px 8px 5px 8px;\n}\n.organization-card-title {\n    font-size: 12px;\n}\n.organization-card-status {\n    font-size: 10px;\n    padding: 1px 4px 1px 4px;\n}\n.organization-card-icon {\n    height: 30px;\n}\n.organization-card-limit {\n    font-size: 11px;\n}\n.organization-btn {\n    padding: 5px 10px 5px 10px;\n    font-size: 11px;\n    height: auto;\n}\n.organization-tab {\n    font-size: 11px !important;\n    padding: 10px !important;\n}\n.organization-title {\n    margin-top: 10px;\n    font-size: 14px;\n}\n.organization-description {\n    font-size: 9px;\n    margin-top: 10px;\n}\n.organization-logo {\n    width: 80px;\n    margin-top: -40px;\n    height: 80px;\n    box-shadow: 0 0 0 5px white;\n}\n.organization-shadow {\n    box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.15);\n    border-radius: 5px;\n}\n.organization-empty-title {\n    font-size: 16px;\n}\n.organization-empty-description {\n    font-size: 12px;\n}\n.wallpaper {\n    max-height: 200px;\n    border-radius: 0;\n    box-shadow: none;\n    margin-top: 0;\n}\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".favorite-main, .favorite-category {\n  background: no-repeat center;\n  background-size: contain;\n  width: 30px;\n  height: 30px;\n  cursor: pointer;\n}\n.favorite-main-on, .favorite-category-on {\n  background-image: url(\"/img/logo/favorite-red.svg\");\n}\n.favorite-main-off, .favorite-category-off {\n  background-image: url(\"/img/logo/favorite-grey.svg\");\n  opacity: .3;\n}\n.favorite-main {\n  margin-left: 5px;\n  background-size: 70%;\n}\n.favorite-category {\n  position: absolute;\n  z-index: 2;\n  left: 5px;\n  top: 5px;\n  background-color: #fff;\n  box-shadow: 0 0 0 10px #fff;\n  border-radius: 0 0 10px 0;\n  opacity: 1;\n}\n@media only screen and (max-width: 768px) {\n.favorite-main {\n    width: 16px;\n    height: 16px;\n}\n.favorite-category {\n    width: 10px;\n    height: 10px;\n    border-radius: 0 0 2px 0;\n    box-shadow: 0 0 0 8px #fff;\n}\n}\n.loading {\n  display: inline-block;\n  position: relative;\n  width: 80px;\n  height: 40px;\n}\n.loading-text {\n  font-size: 20px !important;\n  color: #00a082 !important;\n  margin: 0;\n  font-weight: bold;\n  padding: 0 !important;\n}\n.loading div {\n  position: absolute;\n  top: 16px;\n  width: 13px;\n  height: 13px;\n  border-radius: 50%;\n  background: #00a082;\n  -webkit-animation-timing-function: cubic-bezier(0, 1, 1, 0);\n          animation-timing-function: cubic-bezier(0, 1, 1, 0);\n}\n.loading div:nth-child(1) {\n  left: 8px;\n  -webkit-animation: lds-ellipsis1 0.6s infinite;\n          animation: lds-ellipsis1 0.6s infinite;\n}\n.loading div:nth-child(2) {\n  left: 8px;\n  -webkit-animation: lds-ellipsis2 0.6s infinite;\n          animation: lds-ellipsis2 0.6s infinite;\n}\n.loading div:nth-child(3) {\n  left: 32px;\n  -webkit-animation: lds-ellipsis2 0.6s infinite;\n          animation: lds-ellipsis2 0.6s infinite;\n}\n.loading div:nth-child(4) {\n  left: 56px;\n  -webkit-animation: lds-ellipsis3 0.6s infinite;\n          animation: lds-ellipsis3 0.6s infinite;\n}\n@-webkit-keyframes lds-ellipsis1 {\n0% {\n    transform: scale(0);\n}\n100% {\n    transform: scale(1);\n}\n}\n@keyframes lds-ellipsis1 {\n0% {\n    transform: scale(0);\n}\n100% {\n    transform: scale(1);\n}\n}\n@-webkit-keyframes lds-ellipsis3 {\n0% {\n    transform: scale(1);\n}\n100% {\n    transform: scale(0);\n}\n}\n@keyframes lds-ellipsis3 {\n0% {\n    transform: scale(1);\n}\n100% {\n    transform: scale(0);\n}\n}\n@-webkit-keyframes lds-ellipsis2 {\n0% {\n    transform: translate(0, 0);\n}\n100% {\n    transform: translate(24px, 0);\n}\n}\n@keyframes lds-ellipsis2 {\n0% {\n    transform: translate(0, 0);\n}\n100% {\n    transform: translate(24px, 0);\n}\n}\n@media only screen and (max-width: 768px) {\n.loading {\n    transform: scale(0.7);\n}\n.loading-text {\n    font-size: 13px !important;\n}\n}\n.loading-btn {\n  display: block;\n  position: relative;\n  width: 80px;\n  height: 13px;\n  transform: scale(0.5);\n  margin: 0 auto 0 auto;\n}\n.loading-btn div {\n  position: absolute;\n  top: 0;\n  width: 13px;\n  height: 13px;\n  border-radius: 50%;\n  background: #fff;\n  -webkit-animation-timing-function: cubic-bezier(0, 1, 1, 0);\n          animation-timing-function: cubic-bezier(0, 1, 1, 0);\n}\n.loading-btn div:nth-child(1) {\n  left: 8px;\n  -webkit-animation: lds-ellipsis1 0.6s infinite;\n          animation: lds-ellipsis1 0.6s infinite;\n}\n.loading-btn div:nth-child(2) {\n  left: 8px;\n  -webkit-animation: lds-ellipsis2 0.6s infinite;\n          animation: lds-ellipsis2 0.6s infinite;\n}\n.loading-btn div:nth-child(3) {\n  left: 32px;\n  -webkit-animation: lds-ellipsis2 0.6s infinite;\n          animation: lds-ellipsis2 0.6s infinite;\n}\n.loading-btn div:nth-child(4) {\n  left: 56px;\n  -webkit-animation: lds-ellipsis3 0.6s infinite;\n          animation: lds-ellipsis3 0.6s infinite;\n}\n@keyframes lds-ellipsis1 {\n0% {\n    transform: scale(0);\n}\n100% {\n    transform: scale(1);\n}\n}\n@keyframes lds-ellipsis3 {\n0% {\n    transform: scale(1);\n}\n100% {\n    transform: scale(0);\n}\n}\n@keyframes lds-ellipsis2 {\n0% {\n    transform: translate(0, 0);\n}\n100% {\n    transform: translate(24px, 0);\n}\n}\n.organization-rating {\n  display: table;\n  margin: 10px auto 0 auto;\n}\n.organization-rating > div {\n  display: flex;\n  align-items: center;\n}\n.organization-rating > div > div {\n  margin-left: 5px;\n}\n.organization-rating > div > div:first-child {\n  margin-left: 0;\n}\n.organization-rating-count {\n  font-weight: bold;\n  font-size: 15px;\n  line-height: 1;\n  color: #FF8008;\n  margin-left: 10px !important;\n}\n.organization-rating-star {\n  width: 20px;\n  height: 20px;\n  background: url(\"/img/logo/star-whitesmoke.svg\") no-repeat center;\n  background-size: contain;\n}\n.organization-rating-star-sel {\n  background-image: url(\"/img/logo/star-orange.svg\");\n}\n.organization-comment {\n  display: grid;\n  align-items: center;\n  grid-template-columns: 60px auto;\n  grid-gap: 15px;\n  gap: 15px;\n}\n.organization-comment-count {\n  font-size: 18px;\n  font-weight: bold;\n}\n.organization-comment-line {\n  border-bottom: 1px solid #e6e6e6;\n}\n.organization-comment-line:last-child {\n  border-bottom: none;\n}\n.organization-comment-text {\n  font-size: 18px;\n}\n.organization-comment-icon {\n  height: 60px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  background: #FF8008;\n  color: #fff;\n  font-weight: bold;\n  border-radius: 100px;\n}\n.organization-comment-icon > div {\n  font-size: 20px;\n  font-weight: bold;\n}\n.organization-comment-detail {\n  display: grid;\n  align-content: center;\n  grid-gap: 2px;\n  gap: 2px;\n}\n.organization-comment-detail-status > div {\n  background: #00a082;\n  display: table;\n  padding: 2px 10px 2px 10px;\n  border-radius: 10px;\n  font-size: 11px;\n  color: white;\n  font-weight: bold;\n  margin-top: 5px;\n}\n.organization-comment-detail-dot {\n  padding: 0 5px 0 5px;\n}\n.organization-comment-detail-name {\n  font-size: 15px;\n  font-weight: bold;\n  display: grid;\n  grid-template-columns: auto auto auto;\n  width: -webkit-fit-content;\n  width: -moz-fit-content;\n  width: fit-content;\n}\n.organization-comment-detail-name-user {\n  overflow: hidden;\n  display: inline-block;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n}\n.organization-comment-detail-stars {\n  display: flex;\n}\n.organization-comment-detail-stars > div {\n  margin-right: 5px;\n}\n.organization-comment-detail-star, .organization-comment-detail-star-sel {\n  height: 16px;\n  width: 16px;\n  background: url(\"/img/logo/star-grey.svg\") no-repeat center;\n  background-size: contain;\n  opacity: .5;\n}\n.organization-comment-detail-star-sel {\n  background-image: url(\"/img/logo/star-orange.svg\");\n  opacity: 1;\n}\n.organization-empty-description {\n  font-size: 16px;\n}\n.organization-card-main {\n  padding: 15px;\n}\n.organization-title {\n  margin-top: 20px;\n  font-size: 20px;\n  margin-left: 20px;\n  margin-right: 20px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.organization-description {\n  font-size: 14px;\n  margin-top: 20px;\n  margin-left: 20px;\n  margin-right: 20px;\n}\n.organization-tab {\n  padding: 10px 15px 10px 15px !important;\n  border: none !important;\n  border-bottom: 4px solid transparent !important;\n  font-size: 14px !important;\n}\n.organization-tab-sel {\n  color: #00a082 !important;\n  border-bottom-color: #00a082 !important;\n}\n.organization-bg {\n  background: #f5f5f5;\n}\n.organization-arr-btn {\n  background: #00a082;\n  color: white;\n  border-radius: 30px;\n  cursor: pointer;\n}\n.organization-date {\n  display: grid;\n  grid-template-columns: 40px auto 40px;\n  grid-gap: 10px;\n  gap: 10px;\n  padding: 5px;\n  background: #fafafa;\n  border-radius: 40px;\n  margin: 0 0.5rem 0 0.5rem !important;\n}\n.organization-input {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  font-size: 14px;\n}\n.organization-card {\n  display: grid;\n  grid-template-columns: auto 40px 15px;\n  grid-gap: 15px;\n  gap: 15px;\n}\n.organization-card-arr {\n  background: url(\"/img/logo/right-arrow.svg\") no-repeat center;\n  background-size: contain;\n}\n.organization-card-limit {\n  font-size: 12px;\n}\n.organization-card-title {\n  font-size: 14px;\n}\n.organization-card-status {\n  font-size: 12px;\n  display: flex;\n  padding: 2px 5px 2px 5px;\n  border-radius: 3px;\n  font-weight: bold;\n  margin-top: 5px;\n  gap: 5px;\n}\n.organization-card-status-free {\n  background: #00a082;\n  color: #fff;\n}\n.organization-card-status-reserved {\n  background: #FF8008;\n  color: #fff;\n}\n.organization-card-icon {\n  background: url(\"/img/logo/table.svg\") no-repeat center;\n  background-size: contain;\n  height: 40px;\n}\n.organization-btn {\n  padding: 10px 25px 10px 25px;\n  border-radius: 30px;\n  height: 44px;\n  color: #000;\n  background: #fff;\n  font-size: 14px;\n}\n.organization-btn-sel, .organization-btn:hover {\n  background: #00a082;\n  color: #fff;\n}\n.organization-shadow {\n  box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.1);\n  border-radius: 10px;\n  cursor: pointer;\n}\n.organization-shadow:hover {\n  background: #fafafa;\n}\n.organization-shadow-main {\n  border-bottom: 1px solid #e6f1ec;\n  position: relative;\n}\n.organization-image {\n  width: 100%;\n  border-radius: 10px;\n  background: no-repeat center;\n  background-size: cover;\n}\n.organization-image > div {\n  width: 100%;\n  padding-bottom: 100%;\n}\n.organization-logo {\n  margin: -100px 0 0 100px;\n  width: 200px;\n  height: 200px;\n  position: relative;\n  overflow: hidden;\n  z-index: 3;\n  border-radius: 200px;\n  box-shadow: 0 0 0 10px white;\n  background: #fff;\n}\n.organization-logo > img {\n  width: 100%;\n}\n.organization-logo-default {\n  width: 100%;\n  height: 100%;\n  background: no-repeat center;\n  background-size: 50%;\n}\n.organization-logo-default-restaurant {\n  background-image: url(\"/img/logo/restaurant.svg\");\n}\n.organization-logo-default-cafe {\n  background-image: url(\"/img/logo/cafe.svg\");\n}\n.organization-logo-default-bar {\n  background-image: url(\"/img/logo/bar.svg\");\n}\n.wallpaper {\n  height: 380px;\n  position: relative;\n  overflow: hidden;\n  width: 100%;\n  background: no-repeat center;\n  background-size: cover;\n}\n.wallpaper > img {\n  width: 100%;\n}\n.wallpaper-screen {\n  position: absolute;\n  top: 0;\n  left: 0;\n  bottom: 0;\n  right: 0;\n  width: 100%;\n  height: 100%;\n  background: rgba(0, 0, 0, 0.5);\n  z-index: 2;\n}\n@media only screen and (max-width: 768px) {\n.organization-rating {\n    margin: 10px auto 0 auto;\n}\n.organization-rating > div {\n    gap: 5px;\n}\n.organization-rating > div > div {\n    margin-left: 5px;\n}\n.organization-rating-count {\n    font-size: 11px;\n    margin-left: 10px !important;\n}\n.organization-rating-star {\n    width: 16px;\n    height: 16px;\n}\n.organization-comment {\n    grid-template-columns: 40px auto;\n    grid-gap: 10px;\n    gap: 10px;\n}\n.organization-comment-count {\n    font-size: 12px;\n}\n.organization-comment-line {\n    padding: 10px 0 10px 0 !important;\n}\n.organization-comment-text {\n    font-size: 13px;\n    margin-top: 10px;\n    padding: 0 5px 0 5px;\n}\n.organization-comment-icon {\n    height: 40px;\n}\n.organization-comment-icon > div {\n    font-size: 14px;\n}\n.organization-comment-detail {\n    display: grid;\n    align-content: center;\n    grid-gap: 2px;\n    gap: 2px;\n}\n.organization-comment-detail-status > div {\n    font-size: 9px;\n}\n.organization-comment-detail-dot {\n    padding: 0 3px 0 3px;\n}\n.organization-comment-detail-name {\n    font-size: 13px;\n}\n.organization-comment-detail-stars {\n    display: flex;\n}\n.organization-comment-detail-stars > div {\n    margin-right: 2px;\n}\n.organization-comment-detail-star, .organization-comment-detail-star-sel {\n    height: 10px;\n    width: 10px;\n    background: url(\"/img/logo/star-grey.svg\") no-repeat center;\n    background-size: contain;\n    opacity: .5;\n}\n.organization-comment-detail-star-sel {\n    background-image: url(\"/img/logo/star-orange.svg\");\n    opacity: 1;\n}\n.organization-card {\n    grid-gap: 5px;\n    gap: 5px;\n}\n.organization-card-main {\n    padding: 5px 8px 5px 8px;\n}\n.organization-card-title {\n    font-size: 12px;\n}\n.organization-card-status {\n    font-size: 10px;\n    padding: 1px 4px 1px 4px;\n}\n.organization-card-icon {\n    height: 30px;\n}\n.organization-card-limit {\n    font-size: 11px;\n}\n.organization-btn {\n    padding: 5px 10px 5px 10px;\n    font-size: 11px;\n    height: auto;\n}\n.organization-tab {\n    font-size: 11px !important;\n    padding: 10px !important;\n}\n.organization-title {\n    margin-top: 10px;\n    font-size: 14px;\n}\n.organization-description {\n    font-size: 9px;\n    margin-top: 10px;\n}\n.organization-logo {\n    width: 80px;\n    margin-top: -40px;\n    height: 80px;\n    box-shadow: 0 0 0 5px white;\n}\n.organization-shadow {\n    box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.15);\n    border-radius: 5px;\n}\n.organization-empty-title {\n    font-size: 16px;\n}\n.organization-empty-description {\n    font-size: 12px;\n}\n.wallpaper {\n    max-height: 200px;\n    border-radius: 0;\n    box-shadow: none;\n    margin-top: 0;\n}\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -30906,7 +31073,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".location {\n  background: #e6f1ec;\n  padding: 10px 10px 10px 15px;\n  border-radius: 30px;\n  color: #57a283;\n  cursor: pointer;\n  display: flex;\n  gap: 5px;\n  width: -webkit-max-content;\n  width: -moz-max-content;\n  width: max-content;\n}\n.location-title {\n  font-size: 12px;\n  font-weight: bold;\n}\n.location-icon {\n  background: url(\"/img/logo/location-pin-green.svg\") no-repeat center;\n  background-size: contain;\n  width: 20px;\n}\n.location-body {\n  display: flex;\n}\n.location-country {\n  width: 50%;\n  border-right: 1px solid #e6e6e6;\n}\n.location-city {\n  width: 50%;\n}\n.location-country-item, .location-city-item {\n  padding: 10px 15px 10px 15px;\n  font-size: 14px;\n  color: #00a082;\n  font-weight: bold;\n  margin: 0 5px 5px 5px;\n  cursor: pointer;\n  border-radius: 30px;\n}\n.location-country-item:last-child, .location-city-item:last-child {\n  margin-bottom: 0;\n}\n.location-country-item:hover, .location-city-item:hover, .location-item-sel {\n  background: #00a082;\n  color: #fff;\n}\n.list-group-item {\n  background: transparent !important;\n}\n.section-bg {\n  background: #fff;\n  border-bottom: 1px solid #e6f1ec;\n}\n.section-bg-main {\n  background: #fff;\n  border-bottom: 1px solid #e6f1ec;\n}\n.section-title {\n  font-family: 'Lobster', cursive;\n  margin: 0;\n}\n@media only screen and (max-width: 768px) {\n.location-main {\n    display: none !important;\n}\n.location-country-item, .location-city-item {\n    font-size: 11px;\n    padding: 5px 10px 5px 10px;\n}\n.section-bg {\n    background: #57a283;\n}\n.section-bg-main {\n    padding-top: 0 !important;\n}\n.section-title {\n    font-size: 16px;\n    text-align: center;\n}\n.breadcrumb > li {\n    margin: 0 1px 0 1px;\n    line-height: 1;\n}\n.breadcrumb-link {\n    font-size: 13px;\n}\n.breadcrumb-arrow, .breadcrumb-home {\n    width: 14px;\n    height: 14px;\n}\n.breadcrumb-arrow {\n    background-size: 60%;\n}\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".location {\n  background: #e6f1ec;\n  padding: 10px 10px 10px 15px;\n  border-radius: 30px;\n  color: #57a283;\n  cursor: pointer;\n  display: flex;\n  gap: 5px;\n  width: -webkit-max-content;\n  width: -moz-max-content;\n  width: max-content;\n}\n.location-title {\n  font-size: 12px;\n  font-weight: bold;\n}\n.location-icon {\n  background: url(\"/img/logo/location-pin-green.svg\") no-repeat center;\n  background-size: contain;\n  width: 20px;\n}\n.location-body {\n  display: flex;\n}\n.location-country {\n  width: 50%;\n  border-right: 1px solid #e6e6e6;\n}\n.location-city {\n  width: 50%;\n}\n.location-country-item, .location-city-item {\n  padding: 10px 15px 10px 15px;\n  font-size: 14px;\n  color: #00a082;\n  font-weight: bold;\n  margin: 0 5px 5px 5px;\n  cursor: pointer;\n  border-radius: 30px;\n}\n.location-country-item:last-child, .location-city-item:last-child {\n  margin-bottom: 0;\n}\n.location-country-item:hover, .location-city-item:hover, .location-item-sel {\n  background: #00a082;\n  color: #fff;\n}\n.list-group-item {\n  background: transparent !important;\n}\n.section-bg {\n  background: #fff;\n}\n.section-bg-main {\n  background: #fff;\n  border-bottom: 1px solid #e6f1ec;\n}\n.section-title {\n  font-family: 'Lobster', cursive;\n  margin: 0;\n}\n@media only screen and (max-width: 768px) {\n.location-main {\n    display: none !important;\n}\n.location-country-item, .location-city-item {\n    font-size: 11px;\n    padding: 5px 10px 5px 10px;\n}\n.section-bg {\n    background: #57a283;\n}\n.section-bg-main {\n    padding-top: 0 !important;\n}\n.section-title {\n    font-size: 16px;\n    text-align: center;\n}\n.breadcrumb > li {\n    margin: 0 1px 0 1px;\n    line-height: 1;\n}\n.breadcrumb-link {\n    font-size: 13px;\n}\n.breadcrumb-arrow, .breadcrumb-home {\n    width: 14px;\n    height: 14px;\n}\n.breadcrumb-arrow {\n    background-size: 60%;\n}\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -55532,6 +55699,36 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 
 /***/ }),
 
+/***/ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-12.use[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/News.vue?vue&type=style&index=0&id=12793f84&lang=scss":
+/*!**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-12.use[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/News.vue?vue&type=style&index=0&id=12793f84&lang=scss ***!
+  \**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_clonedRuleSet_12_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_12_use_2_node_modules_sass_loader_dist_cjs_js_clonedRuleSet_12_use_3_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_News_vue_vue_type_style_index_0_id_12793f84_lang_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!../../../node_modules/vue-loader/dist/stylePostLoader.js!../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!../../../node_modules/sass-loader/dist/cjs.js??clonedRuleSet-12.use[3]!../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./News.vue?vue&type=style&index=0&id=12793f84&lang=scss */ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-12.use[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/News.vue?vue&type=style&index=0&id=12793f84&lang=scss");
+
+            
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_clonedRuleSet_12_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_12_use_2_node_modules_sass_loader_dist_cjs_js_clonedRuleSet_12_use_3_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_News_vue_vue_type_style_index_0_id_12793f84_lang_scss__WEBPACK_IMPORTED_MODULE_1__.default, options);
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_clonedRuleSet_12_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_12_use_2_node_modules_sass_loader_dist_cjs_js_clonedRuleSet_12_use_3_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_News_vue_vue_type_style_index_0_id_12793f84_lang_scss__WEBPACK_IMPORTED_MODULE_1__.default.locals || {});
+
+/***/ }),
+
 /***/ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-12.use[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Organization.vue?vue&type=style&index=0&id=046ee0c4&lang=scss":
 /*!******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-12.use[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Organization.vue?vue&type=style&index=0&id=046ee0c4&lang=scss ***!
@@ -56727,9 +56924,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _News_vue_vue_type_template_id_12793f84__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./News.vue?vue&type=template&id=12793f84 */ "./resources/js/components/News.vue?vue&type=template&id=12793f84");
 /* harmony import */ var _News_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./News.vue?vue&type=script&lang=js */ "./resources/js/components/News.vue?vue&type=script&lang=js");
+/* harmony import */ var _News_vue_vue_type_style_index_0_id_12793f84_lang_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./News.vue?vue&type=style&index=0&id=12793f84&lang=scss */ "./resources/js/components/News.vue?vue&type=style&index=0&id=12793f84&lang=scss");
 
 
 
+
+;
 _News_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__.default.render = _News_vue_vue_type_template_id_12793f84__WEBPACK_IMPORTED_MODULE_0__.render
 /* hot reload */
 if (false) {}
@@ -58676,6 +58876,19 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_clonedRuleSet_12_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_12_use_2_node_modules_sass_loader_dist_cjs_js_clonedRuleSet_12_use_3_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Main_vue_vue_type_style_index_0_id_b9c20fb8_lang_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/style-loader/dist/cjs.js!../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!../../../node_modules/vue-loader/dist/stylePostLoader.js!../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!../../../node_modules/sass-loader/dist/cjs.js??clonedRuleSet-12.use[3]!../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Main.vue?vue&type=style&index=0&id=b9c20fb8&lang=scss */ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-12.use[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Main.vue?vue&type=style&index=0&id=b9c20fb8&lang=scss");
+
+
+/***/ }),
+
+/***/ "./resources/js/components/News.vue?vue&type=style&index=0&id=12793f84&lang=scss":
+/*!***************************************************************************************!*\
+  !*** ./resources/js/components/News.vue?vue&type=style&index=0&id=12793f84&lang=scss ***!
+  \***************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_clonedRuleSet_12_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_12_use_2_node_modules_sass_loader_dist_cjs_js_clonedRuleSet_12_use_3_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_News_vue_vue_type_style_index_0_id_12793f84_lang_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/style-loader/dist/cjs.js!../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!../../../node_modules/vue-loader/dist/stylePostLoader.js!../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!../../../node_modules/sass-loader/dist/cjs.js??clonedRuleSet-12.use[3]!../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./News.vue?vue&type=style&index=0&id=12793f84&lang=scss */ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-12.use[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/News.vue?vue&type=style&index=0&id=12793f84&lang=scss");
 
 
 /***/ }),

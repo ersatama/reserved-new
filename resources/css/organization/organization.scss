@@ -1,6 +1,8 @@
 @import '../components/loading.scss';
 @import '../components/loading-btn.scss';
 .organization {
+    &-main {
+    }
     &-rating {
         display: table;
         margin: 10px auto 0 auto;
@@ -260,7 +262,7 @@
         }
     }
     &-logo {
-        margin: -150px auto 0 auto;
+        margin: -100px 0 0 100px;
         width: 200px;
         height: 200px;
         position: relative;
@@ -291,10 +293,12 @@
     }
 }
 .wallpaper {
-    max-height: 350px;
+    height: 380px;
     position: relative;
     overflow: hidden;
-    border-radius: 0 0 10px 10px;
+    width: 100%;
+    background: no-repeat center;
+    background-size: cover;
     & > img {
         width: 100%;
     }

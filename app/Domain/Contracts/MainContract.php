@@ -61,6 +61,7 @@ class MainContract
     const ID        =   'id';
     const KEY       =   'key';
     const PARENT_ID =   'parent_id';
+    const NEWS_ID   =   'news_id';
     const ORDER     =   'order';
     const NAME      =   'name';
     const SLUG      =   'slug';
@@ -194,6 +195,7 @@ class MainContract
     const API_TOKEN     =   'api_token';
     const SETTINGS      =   'settings';
     const DESCRIPTION   =   'description';
+    const NEWS_IMAGES   =   'newsImages';
     const PG_SITE_URL   =   'pg_site_url';
     const MINIMAL_PRICE =   'minimal_price';
     const IS_AVAILABLE  =   'is_available';

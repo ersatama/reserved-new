@@ -201,6 +201,8 @@ return [
         App\Providers\Repositories\TagsRepositoryProvider::class,
         App\Providers\Repositories\TagsOptionOrganizationRepositoryProvider::class,
         App\Providers\Repositories\TagsOptionRepositoryProvider::class,
+        App\Providers\Repositories\NewsRepositoryProvider::class,
+        App\Providers\Repositories\NewsImageRepositoryProvider::class,
     ],
 
     /*

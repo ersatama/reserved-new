@@ -35,4 +35,5 @@ Route::group([
     Route::crud('organizationrequest', 'OrganizationRequestCrudController');
     Route::crud('tags', 'TagsCrudController');
     Route::crud('tags-option', 'TagsOptionCrudController');
+    Route::crud('news', 'NewsCrudController');
 }); // this should be the absolute last line of this file

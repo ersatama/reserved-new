@@ -46,6 +46,11 @@
         </ul>
     </li>
     <li class='nav-item'>
+        <a class='nav-link' href='{{ backpack_url('news') }}'>
+            <i class='nav-icon las la-newspaper'></i> Новости
+        </a>
+    </li>
+    <li class='nav-item'>
         <a class='nav-link' href='{{ backpack_url('organizationrequest') }}'>
             <i class='nav-icon lab la-wpforms'></i> Запросы
         </a>
@@ -154,6 +159,12 @@
 
     <li class="nav-title">
         <span class="color-reserved">Основное</span>
+    </li>
+
+    <li class='nav-item'>
+        <a class='nav-link text-reserved' style="color: #57a283 !important;" href='{{ backpack_url('news_main') }}'>
+            <img src="/img/logo/newspaper.png" class="reserved-icon" width="24" height="24"> Новости
+        </a>
     </li>
 
     <li class='nav-item'>

@@ -96,7 +96,12 @@ export default {
             let link    =   '';
             if (this.end === 'search') {
                 this.breadcrumb.push({
-                  title: 'Поиск',
+                    title: 'Поиск',
+                    link: link+this.end
+                });
+            } else if (this.end === 'news') {
+                this.breadcrumb.push({
+                  title: 'Новости',
                   link: link+this.end
                 });
             } else if (this.end === 'form') {
