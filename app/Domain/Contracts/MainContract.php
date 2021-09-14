@@ -113,6 +113,10 @@ class MainContract
     const IMAGES    =   'images';
     const MENUS     =   'menus';
     const WEBSITE   =   'website';
+    const INSTAGRAM =   'instagram';
+    const FACEBOOK  =   'facebook';
+    const YOUTUBE   =   'youtube';
+    const VK        =   'vk';
     const CATEGORY  =   'category';
     const VALUE     =   'value';
     const URL       =   'url';

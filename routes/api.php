@@ -25,10 +25,18 @@ use App\Http\Controllers\Api\TagsOptionOrganizationController;
 use App\Http\Controllers\Api\TagsOptionController;
 use App\Http\Controllers\Api\NewsController;
 use App\Http\Controllers\Api\NewsImageController;
+use App\Http\Controllers\Api\NewsSubscribeController;
+
+Route::prefix('newsSubscribe')->group(function() {
+    Route::post('create',[NewsSubscribeController::class,'create'])->name('newsSubscribe.create');
+    Route::post('update/{id}',[NewsSubscribeController::class,'update'])->name('newsSubscribe.update');
+    Route::get('getByOrganizationIdAndUserId/{organizationId}/{userId}',[NewsSubscribeController::class,'getByOrganizationIdAndUserId'])->name('newsSubscribe.getByOrganizationIdAndUserId');
+});
 
 Route::prefix('news')->group(function() {
     Route::post('create',[NewsController::class,'create'])->name('news.create');
     Route::post('update/{id}',[NewsController::class,'update'])->name('news.update');
+    Route::get('subscribes/{userId}/{page}',[NewsController::class,'subscribes'])->name('news.subscribes');
     Route::get('list/{page}',[NewsController::class,'list'])->name('news.list');
     Route::get('getByOrganizationId/{organizationId}',[NewsController::class,'getByOrganizationId'])
         ->name('news.getByOrganizationId');

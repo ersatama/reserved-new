@@ -8,7 +8,6 @@
                 <div class="wallpaper" :style="{'background-image':'url('+organization.wallpaper+')'}">
                     <div class="wallpaper-screen">
                         <div class="organization-description text-center text-white">{{organization.address}}</div>
-                        <div class="organization-description text-center text-white"></div>
                     </div>
                 </div>
             </div>
@@ -37,6 +36,17 @@
                                     <div class="organization-rating-count" v-if="organization.rating">{{organization.rating}}</div>
                                 </div>
                             </div>
+                            <div class="wallpaper-icons">
+                                <a :href="organization.vk" v-show="organization.vk" target="_blank" class="wallpaper-icon wallpaper-icon-vk"></a>
+                                <a :href="organization.youtube" v-show="organization.youtube" target="_blank" class="wallpaper-icon wallpaper-icon-youtube"></a>
+                                <a :href="organization.facebook" v-show="organization.facebook" target="_blank" class="wallpaper-icon wallpaper-icon-facebook"></a>
+                                <a :href="organization.instagram" v-show="organization.instagram" target="_blank" class="wallpaper-icon wallpaper-icon-instagram"></a>
+                            </div>
+                            <template v-if="user">
+                                <div class="organization-subscribed" v-if="subscribe && subscribe.status === 'on'" @click="subscribeNow()">Вы подписаны</div>
+                                <div class="organization-subscribe" v-else @click="subscribeNow()">Подписаться</div>
+                            </template>
+                            <div v-else class="organization-subscribe" data-toggle="modal" data-target="#auth_modal">Подписаться</div>
                         </div>
                         <div class="organization-description text-secondary text-center">{{organization.description}}</div>
                     </div>
@@ -114,13 +124,61 @@ export default {
             status: 0,
             tab: 1,
             organization: false,
+            subscribe: false,
+            user: false
         }
     },
     created() {
+        this.setUser();
         this.getCategoryBySlug();
         this.getOrganization();
     },
     methods: {
+        subscribeNow: function() {
+            if (!this.subscribe) {
+                axios.post('/api/newsSubscribe/create',{
+                    organization_id: this.organization.id,
+                    user_id: this.user.id
+                }).then(response => {
+                    this.subscribe  =   response.data.data;
+                });
+            } else if (this.subscribe.status === 'on') {
+                this.subscribe.status   =   'off';
+                axios.post('/api/newsSubscribe/update/'+this.subscribe.id,{
+                    organization_id: this.organization.id,
+                    user_id: this.user.id,
+                    status: 'off'
+                });
+            } else {
+                this.subscribe.status   =   'on';
+                axios.post('/api/newsSubscribe/update/'+this.subscribe.id,{
+                    organization_id: this.organization.id,
+                    user_id: this.user.id,
+                    status: 'on'
+                });
+            }
+        },
+        setUser: async function () {
+            if (this.storage.token) {
+                let user    =   JSON.parse(sessionStorage.getItem('user'));
+                if (user) {
+                    this.status = true;
+                    this.user = user;
+                } else {
+                    await axios.get('/api/token/' + this.storage.token)
+                        .then(response => {
+                            let data = response.data;
+                            if (data.hasOwnProperty('data')) {
+                                sessionStorage.user = JSON.stringify(data.data);
+                                this.status = true;
+                                this.user = JSON.parse(sessionStorage.user);
+                            }
+                        }).catch(error => {
+                            this.status = false;
+                        });
+                }
+            }
+        },
         getCategoryBySlug: function() {
             axios.get('/api/category/slug/'+this.$route.params.category)
                 .then(response => {
@@ -145,10 +203,21 @@ export default {
                 .then(response => {
                     this.organization   =   response.data.data;
                     this.loading    =   false;
+                    this.getSubscribe();
                 }).catch(error => {
                     this.loading    =   false;
                 });
         },
+        getSubscribe: function() {
+            if (this.user) {
+                axios.get('/api/newsSubscribe/getByOrganizationIdAndUserId/'+this.organization.id+'/'+this.user.id)
+                    .then(response => {
+                        this.subscribe  =   response.data.data;
+                    }).catch(error => {
+                        this.subscribe  =   false;
+                    });
+            }
+        }
     }
 }
 </script>
@@ -156,7 +225,4 @@ export default {
 <style lang="scss">
     @import '../../css/favorite/favorite.scss';
     @import '../../css/organization/organization.scss';
-    .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
-
-    }
 </style>

@@ -270,6 +270,10 @@ let app = new Vue({
                     phone: this.organization.phone,
                     email: this.organization.email,
                     website: this.organization.website,
+                    instagram: this.organization.instagram,
+                    youtube: this.organization.youtube,
+                    facebook: this.organization.facebook,
+                    vk: this.organization.vk,
                     city_id: this.organization.city_id,
                     category_id: this.organization.category
                 }).then(response => {

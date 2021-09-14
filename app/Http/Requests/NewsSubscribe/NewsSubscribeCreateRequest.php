@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Requests\NewsImage;
+namespace App\Http\Requests\NewsSubscribe;
 
 use App\Domain\Contracts\MainContract;
 use Illuminate\Contracts\Validation\Validator;
@@ -8,7 +8,7 @@ use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\Exceptions\HttpResponseException;
 use Illuminate\Validation\ValidationException;
 
-class NewsImageCreateRequest extends FormRequest
+class NewsSubscribeCreateRequest extends FormRequest
 {
 
     public function authorize(): bool
@@ -19,10 +19,12 @@ class NewsImageCreateRequest extends FormRequest
     public function rules(): array
     {
         return [
-            MainContract::NEWS_ID   =>  'required',
-            MainContract::IMAGE     =>  'required',
+            MainContract::ORGANIZATION_ID   =>  'required|exists:organizations,id',
+            MainContract::USER_ID   =>  'required|exists:users,id',
+            MainContract::STATUS    =>  'nullable'
         ];
     }
+
 
     /**
      * @throws ValidationException
@@ -45,5 +47,4 @@ class NewsImageCreateRequest extends FormRequest
         ];
         throw new HttpResponseException(response()->json($response, 400));
     }
-
 }

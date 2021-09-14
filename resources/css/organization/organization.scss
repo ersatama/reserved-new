@@ -3,9 +3,27 @@
 .organization {
     &-main {
     }
+    &-subscribe, &-subscribed {
+        position: absolute;
+        top: 30px;
+        right: 0;
+        background: #57a283;
+        padding: 8px 20px 8px 20px;
+        border-radius: 30px;
+        font-size: 14px;
+        font-weight: bold;
+        cursor: pointer;
+        color: #fff;
+    }
+    &-subscribed {
+        background: #e6f1ec;
+        color: #57a283;
+    }
     &-rating {
         display: table;
-        margin: 10px auto 0 auto;
+        position: absolute;
+        top: 60px;
+        left: 230px;
         & > div {
             display: flex;
             align-items: center;
@@ -24,8 +42,8 @@
             margin-left: 10px !important;
         }
         &-star {
-            width: 20px;
-            height: 20px;
+            width: 16px;
+            height: 16px;
             background: url('/img/logo/star-whitesmoke.svg') no-repeat center;
             background-size: contain;
             &-sel {
@@ -132,13 +150,13 @@
         }
     }
     &-title {
-        margin-top: 20px;
-        font-size: 20px;
-        margin-left: 20px;
-        margin-right: 20px;
+        font-size: 24px;
         display: flex;
         justify-content: center;
         align-items: center;
+        position: absolute;
+        top: 20px;
+        left: 230px;
     }
     &-description {
         font-size: 14px;
@@ -262,7 +280,7 @@
         }
     }
     &-logo {
-        margin: -100px auto 0 auto;
+        margin: -100px 0 0 0;
         width: 200px;
         height: 200px;
         position: relative;
@@ -313,13 +331,49 @@
         background: rgba(0,0,0,.5);
         z-index: 2;
     }
+    &-icons {
+        position: absolute;
+        display: flex;
+        height: 50px;
+        gap: 15px;
+        right: 0;
+        top: -80px;
+        z-index: 5;
+    }
+    &-icon {
+        width: 40px;
+        height: 40px;
+        background: no-repeat center;
+        background-size: contain;
+        cursor: pointer;
+        &-instagram {
+            background-image: url('/img/logo/instagram.png');
+        }
+        &-facebook {
+            background-image: url('/img/logo/facebook.png');
+        }
+        &-youtube {
+            background-image: url('/img/logo/-youtube.png');
+        }
+        &-vk {
+            background-image: url('/img/logo/vk.png');
+        }
+    }
 }
 @media only screen and (max-width: 768px) {
     .organization {
+        &-subscribe, &-subscribed {
+            font-size: 9px;
+            top: 15px;
+            padding: 5px 10px 5px 10px;
+            right: 20px;
+        }
         &-rating {
-            margin: 10px auto 0 auto;
+            margin: 0;
+            top: 30px;
+            left: 105px;
             & > div {
-                gap: 5px;
+                gap: 2px;
                 & > div {
                     margin-left: 5px;
                 }
@@ -329,8 +383,8 @@
                 margin-left: 10px !important;
             }
             &-star {
-                width: 16px;
-                height: 16px;
+                width: 12px;
+                height: 12px;
             }
         }
         &-comment {
@@ -413,8 +467,8 @@
             }
         }
         &-btn {
-            padding: 5px 10px 5px 10px;
-            font-size: 11px;
+            padding: 4px 8px 4px 8px;
+            font-size: 10px;
             height: auto;
         }
         &-tab {
@@ -426,16 +480,25 @@
         }
         &-title {
             margin-top: 10px;
-            font-size: 14px;
+            font-size: 12px;
+            top: 0;
+            left: 105px;
+            max-width: 1200px;
+            & > div:first-child {
+                text-overflow: ellipsis;
+                overflow: hidden;
+                white-space: nowrap;
+            }
         }
         &-description {
             font-size: 9px;
-            margin-top: 10px
+            margin-top: 25px;
         }
         &-logo {
-            width: 80px;
-            margin-top: -40px;
-            height: 80px;
+            width: 70px;
+            margin-top: -35px;
+            margin-left: 25px;
+            height: 70px;
             box-shadow: 0 0 0 5px white;
         }
         &-shadow {
@@ -452,12 +515,21 @@
         }
     }
     .wallpaper {
-        max-height: 200px;
+        max-height: 150px;
         border-radius: 0;
         box-shadow: none;
         margin-top: 0;
         &-screen {
 
+        }
+        &-icons {
+            gap: 5px;
+            right: 20px;
+            top: -40px;
+        }
+        &-icon {
+            width: 20px;
+            height: 20px;
         }
     }
 }

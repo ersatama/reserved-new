@@ -2,7 +2,7 @@
     <Header></Header>
     <profile-section></profile-section>
     <loading v-if="Loading"></loading>
-    <div v-else class="container-fluid p-0 m-0 home-bg-color">
+    <div v-else-if="news.length > 0" class="container-fluid p-0 m-0 home-bg-color">
         <div class="container p-0">
             <div class="row m-0">
                 <div class="col-12">
@@ -29,6 +29,7 @@
             </div>
         </div>
     </div>
+    <not-found v-else :params="NotFound" ></not-found>
     <Footer-menu></Footer-menu>
     <Footer></Footer>
 </template>
@@ -39,30 +40,60 @@ import Footer from "./footer/Footer";
 import ProfileSection from './sections/ProfileSection';
 import FooterMenu from './footerMenu/FooterMenu';
 import Loading from './layout/Loading';
+import NotFound from './layout/Not-found';
 export default {
     components: {
         Header,
         Footer,
         ProfileSection,
         FooterMenu,
-        Loading
+        Loading,
+        NotFound
     },
     name: "News",
     data() {
         return {
+            NotFound: {
+                img: '/img/logo/reserved.png',
+                title: 'Не найдено',
+                description: 'Подпишитесь на заведение чтобы получать последние новости, акции.'
+            },
             Loading: true,
             status: true,
             page: 1,
-            news: []
+            news: [],
+            user: false
         }
     },
     created() {
+        this.setUser();
         this.getNews();
     },
     mounted() {
         this.scrollEvent();
     },
     methods: {
+        setUser: async function () {
+            if (this.storage.token) {
+                let user    =   JSON.parse(sessionStorage.getItem('user'));
+                if (user) {
+                    this.status = true;
+                    this.user = user;
+                } else {
+                    await axios.get('/api/token/' + this.storage.token)
+                        .then(response => {
+                            let data = response.data;
+                            if (data.hasOwnProperty('data')) {
+                                sessionStorage.user = JSON.stringify(data.data);
+                                this.status = true;
+                                this.user = JSON.parse(sessionStorage.user);
+                            }
+                        }).catch(error => {
+                            this.status = false;
+                        });
+                }
+            }
+        },
         scrollEvent: function() {
             let self    =   this;
             window.document.body.onscroll = function() {
@@ -75,18 +106,33 @@ export default {
         getNews: function() {
             if (this.status) {
                 this.status =   false;
-                axios.get('/api/news/list/'+this.page).then(response => {
-                    let data    =   response.data.data;
-                    if (data.length === 15) {
-                        this.page   =   2;
-                        this.status =   true;
-                    }
-                    this.news       =   this.news.concat(data);
-                    this.Loading    =   false;
-                }).catch(error => {
-                    this.status     =   false;
-                    this.Loading    =   false;
-                });
+                if (!this.user) {
+                    axios.get('/api/news/list/'+this.page).then(response => {
+                        let data    =   response.data.data;
+                        if (data.length === 15) {
+                            this.page   =   2;
+                            this.status =   true;
+                        }
+                        this.news       =   this.news.concat(data);
+                        this.Loading    =   false;
+                    }).catch(error => {
+                        this.status     =   false;
+                        this.Loading    =   false;
+                    });
+                } else {
+                    axios.get('/api/news/subscribes/'+this.user.id+'/'+this.page).then(response => {
+                        let data    =   response.data.data;
+                        if (data.length === 15) {
+                            this.page   =   2;
+                            this.status =   true;
+                        }
+                        this.news       =   this.news.concat(data);
+                        this.Loading    =   false;
+                    }).catch(error => {
+                        this.status     =   false;
+                        this.Loading    =   false;
+                    });
+                }
             }
         }
     }

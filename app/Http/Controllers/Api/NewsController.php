@@ -6,6 +6,7 @@ use App\Domain\Contracts\MainContract;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Services\News\NewsService;
+use App\Services\NewsSubscribe\NewsSubscribeService;
 use App\Services\NewsImage\NewsImageService;
 use App\Http\Requests\News\NewsCreateRequest;
 use App\Http\Requests\News\NewsUpdateRequest;
@@ -17,10 +18,12 @@ class NewsController extends Controller
 {
     protected $newsService;
     protected $newsImageService;
-    public function __construct(NewsService $newsService, NewsImageService $newsImageService)
+    protected $newsSubscribeService;
+    public function __construct(NewsService $newsService, NewsImageService $newsImageService, NewsSubscribeService $newsSubscribeService)
     {
         $this->newsService  =   $newsService;
         $this->newsImageService =   $newsImageService;
+        $this->newsSubscribeService =   $newsSubscribeService;
     }
 
     /**
@@ -45,6 +48,12 @@ class NewsController extends Controller
     public function update($id, NewsUpdateRequest $newsUpdateRequest)
     {
         $this->newsService->update($id, $newsUpdateRequest->validated());
+    }
+
+    public function subscribes($userId, $page): NewsCollection
+    {
+        $ids    =   $this->newsSubscribeService->getOrganizationIdsByUserId($userId);
+        return new NewsCollection($this->newsService->getByOrganizationIds($ids));
     }
 
     public function list($page): NewsCollection

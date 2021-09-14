@@ -32,6 +32,10 @@ class CreateOrganizationsTable extends Migration
             $table->string(MainContract::EMAIL)->nullable();
             $table->string(MainContract::PHONE)->nullable();
             $table->string(MainContract::WEBSITE)->nullable();
+            $table->string(MainContract::INSTAGRAM)->nullable();
+            $table->string(MainContract::YOUTUBE)->nullable();
+            $table->string(MainContract::FACEBOOK)->nullable();
+            $table->string(MainContract::VK)->nullable();
             $table->integer(MainContract::TABLES)->nullable();
             $table->time(MainContract::START_MONDAY)->nullable()->default('00:00:00');
             $table->time(MainContract::END_MONDAY)->nullable()->default('00:00:00');

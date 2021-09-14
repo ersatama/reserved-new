@@ -56,9 +56,25 @@
         </div>
         <div class="entity-blocks">
             <div class="entity-block">
-                <div class="entity-block-title">Время работы</div>
+                <div class="entity-block-title">Категория и время работы</div>
                 <div class="entity-block-description">Настройте время работы вашего заведения</div>
                 <div class="entity-block-body">
+                    <div class="entity-block-item">
+                        <div class="entity-block-item-title">Категория</div>
+                        <div class="entity-block-item-input">
+                            <select v-model="organization.category" ref="category" @change="categoryChange()">
+                                <option v-for="(category,key) in categories" :key="key" :value="category.id" :selected="category.id === organization.category">@{{category.title}}</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="entity-block-item">
+                        <div class="entity-block-item-title">Город</div>
+                        <div class="entity-block-item-input">
+                            <select v-model="organization.city_id" ref="city">
+                                <option v-for="(city,key) in cities" :key="key" :value="city.id" :selected="key === organization.city_id">@{{city.title}}</option>
+                            </select>
+                        </div>
+                    </div>
                     <div class="entity-block-item">
                         <div class="entity-block-item-title">Понедельник</div>
                         <div class="entity-block-item-input">
@@ -233,22 +249,7 @@
                 <div class="entity-block-title">Контакты</div>
                 <div class="entity-block-description">Заполните контактные данные вашего заведения</div>
                 <div class="entity-block-body">
-                    <div class="entity-block-item">
-                        <div class="entity-block-item-title">Категория</div>
-                        <div class="entity-block-item-input">
-                            <select v-model="organization.category" ref="category" @change="categoryChange()">
-                                <option v-for="(category,key) in categories" :key="key" :value="category.id" :selected="category.id === organization.category">@{{category.title}}</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="entity-block-item">
-                        <div class="entity-block-item-title">Город</div>
-                        <div class="entity-block-item-input">
-                            <select v-model="organization.city_id" ref="city">
-                                <option v-for="(city,key) in cities" :key="key" :value="city.id" :selected="key === organization.city_id">@{{city.title}}</option>
-                            </select>
-                        </div>
-                    </div>
+
                     <div class="entity-block-item">
                         <div class="entity-block-item-title">
                             <span>Адрес</span>
@@ -281,6 +282,30 @@
                         <div class="entity-block-item-title">Веб-сайт</div>
                         <div class="entity-block-item-input">
                             <input type="text" v-model="organization.website">
+                        </div>
+                    </div>
+                    <div class="entity-block-item">
+                        <div class="entity-block-item-title">Instagram</div>
+                        <div class="entity-block-item-input">
+                            <input type="text" v-model="organization.instagram">
+                        </div>
+                    </div>
+                    <div class="entity-block-item">
+                        <div class="entity-block-item-title">Facebook</div>
+                        <div class="entity-block-item-input" >
+                            <input type="text" v-model="organization.facebook">
+                        </div>
+                    </div>
+                    <div class="entity-block-item">
+                        <div class="entity-block-item-title">Youtube</div>
+                        <div class="entity-block-item-input">
+                            <input type="text" v-model="organization.youtube">
+                        </div>
+                    </div>
+                    <div class="entity-block-item">
+                        <div class="entity-block-item-title">VK</div>
+                        <div class="entity-block-item-input">
+                            <input type="text" v-model="organization.vk">
                         </div>
                     </div>
                 </div>

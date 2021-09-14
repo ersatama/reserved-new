@@ -27,6 +27,11 @@ class NewsService
         return $this->newsRepository->list($page);
     }
 
+    public function getByOrganizationIds($organizationIds)
+    {
+        return $this->newsRepository->getByOrganizationIds($organizationIds);
+    }
+
     public function getByOrganizationId($organizationId)
     {
         return $this->newsRepository->getByOrganizationId($organizationId);

@@ -1,4 +1,4 @@
-scrollEvent<template>
+<template>
     <Header></Header>
     <profile-section :category="category"></profile-section>
     <organization v-if="category" :category="category"></organization>

@@ -32,6 +32,9 @@ class OrganizationIdsRequest extends FormRequest
         return $this->validator->validated();
     }
 
+    /**
+     * @throws HttpResponseException
+     */
     protected function failedValidation(Validator $validator)
     {
         $response = [

@@ -203,6 +203,7 @@ return [
         App\Providers\Repositories\TagsOptionRepositoryProvider::class,
         App\Providers\Repositories\NewsRepositoryProvider::class,
         App\Providers\Repositories\NewsImageRepositoryProvider::class,
+        App\Providers\Repositories\NewsSubscribeRepositoryProvider::class,
     ],
 
     /*

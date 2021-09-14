@@ -33,6 +33,10 @@ class OrganizationContract extends MainContract
         self::EMAIL,
         self::PHONE,
         self::WEBSITE,
+        self::INSTAGRAM,
+        self::FACEBOOK,
+        self::YOUTUBE,
+        self::VK,
         self::TABLES,
 
         self::START_MONDAY,

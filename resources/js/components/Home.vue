@@ -53,45 +53,7 @@
                             </div>
                         </div>
                         <div class="result-body-main">
-                            <div class="result-body-item-main" v-for="(organization,key) in organizations" :key="key">
-                                <div class="result-body-item">
-                                    <div class="result-body-item-screen" :style="{'background-image': 'url('+organization.wallpaper+')'}">
-                                        <div class="result-body-item-time">
-                                            {{organization.timeTitle}}
-                                        </div>
-                                    </div>
-                                    <div class="result-body-item-logo">
-                                        <img :src="organization.image" width="60">
-                                    </div>
-                                    <div class="result-body-item-favorite" @click="favorite(organization.id)">
-                                        <div :class="{'result-body-item-favorite-sel': storage.favorite.includes(organization.id)}"></div>
-                                    </div>
-                                    <a :href="'/home/'+organization.category_id.slug+'/'+organization.id" class="p-0 result-body-item-name-link">
-                                        <div class="result-body-item-name">{{organization.title}}</div>
-                                    </a>
-                                    <div class="result-body-item-stars">
-                                        <div class="result-body-item-star" :class="{'result-body-item-star-sel':(organization.rating >= 0.5)}"></div>
-                                        <div class="result-body-item-star" :class="{'result-body-item-star-sel':(organization.rating >= 1.5)}"></div>
-                                        <div class="result-body-item-star" :class="{'result-body-item-star-sel':(organization.rating >= 2.5)}"></div>
-                                        <div class="result-body-item-star" :class="{'result-body-item-star-sel':(organization.rating >= 3.5)}"></div>
-                                        <div class="result-body-item-star" :class="{'result-body-item-star-sel':(organization.rating >= 4.5)}"></div>
-                                        <div class="result-body-item-rating" v-if="organization.rating">{{organization.rating}}</div>
-                                    </div>
-                                    <div class="result-body-item-description" v-snip="3">{{organization.description}}</div>
-                                    <div class="result-body-item-detail">
-                                        <div class="result-body-item-detail-price" v-if="organization.price > 0">{{organization.price}} KZT</div>
-                                        <div class="result-body-item-detail-tel">
-                                            <a :href="'tel:'+organization.phone" class="text-dark p-0">{{organization.phone}}</a>
-                                        </div>
-                                    </div>
-                                    <div class="result-body-item-map" v-if="organization.address">
-                                        <div>{{organization.address}}</div>
-                                    </div>
-                                    <a :href="'/home/'+organization.category_id.slug+'/'+organization.id" class="p-0">
-                                        <div class="result-body-item-btn">Забронировать</div>
-                                    </a>
-                                </div>
-                            </div>
+                            <Card :organization="organization" v-for="(organization,key) in organizations" :key="key"></Card>
                         </div>
                     </div>
                 </div>
@@ -111,6 +73,7 @@ import FooterMenu from './footerMenu/FooterMenu';
 import NotFound from './layout/Not-found';
 import Loading from './layout/Loading';
 import Search from './layout/Search';
+import Card from './layout/Card';
 export default {
     components: {
         Header,
@@ -120,6 +83,7 @@ export default {
         NotFound,
         Loading,
         Search,
+        Card
     },
     name: "Home",
     data() {

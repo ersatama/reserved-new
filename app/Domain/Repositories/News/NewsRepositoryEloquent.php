@@ -33,6 +33,15 @@ class NewsRepositoryEloquent implements NewsRepositoryInterface
             ->get();
     }
 
+    public function getByOrganizationIds($organizationIds)
+    {
+        return News::with('organization','newsImages')
+            ->whereIn(MainContract::ORGANIZATION_ID,$organizationIds)
+            ->where(MainContract::STATUS,MainContract::ON)
+            ->orderBy(MainContract::ID,MainContract::DESC)
+            ->get();
+    }
+
     public function getByOrganizationId($organizationId)
     {
         return News::with('organization','newsImages')
