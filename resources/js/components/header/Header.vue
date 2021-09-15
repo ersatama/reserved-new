@@ -116,6 +116,9 @@ export default {
                                 if (vrs_.city === '') {
                                     this.storage.city = this.countries[0].city_id[0];
                                     $('#location').modal('toggle');
+                                } else {
+                                    console.log(vrs_);
+                                    console.log(vrs_.city);
                                 }
                             }
                         }

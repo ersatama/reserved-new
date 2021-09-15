@@ -21545,6 +21545,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                       if (vrs_.city === '') {
                         _this2.storage.city = _this2.countries[0].city_id[0];
                         $('#location').modal('toggle');
+                      } else {
+                        console.log(vrs_);
+                        console.log(vrs_.city);
                       }
                     }
                   }
