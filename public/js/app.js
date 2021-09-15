@@ -21507,8 +21507,13 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             data = data.data;
             _this2.countries = data;
             sessionStorage.countries = JSON.stringify(data);
-            _this2.storage.city = _this2.countries[0].city_id[0];
-            $('#location').modal('toggle');
+
+            if (!localStorage.getItem('city')) {
+              _this2.storage.city = _this2.countries[0].city_id[0];
+              $('#location').modal('toggle');
+            } else {
+              console.log(_this2.storage.city);
+            }
           }
         })["catch"](function (error) {
           console.log(error.response);
