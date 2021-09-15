@@ -21552,20 +21552,15 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
                     if (localStorage.getItem('vrs_') === null) {
                       _this2.storage.city = _this2.countries[0].city_id[0];
-                      setTimeout(function () {
-                        $('#location').modal('toggle');
-                      }, 100);
+                      $('#location').modal('toggle');
                     } else {
                       var vrs_ = JSON.parse(localStorage.getItem('vrs_'));
 
                       if (vrs_.city === '') {
                         _this2.storage.city = _this2.countries[0].city_id[0];
-                        setTimeout(function () {
-                          $('#location').modal('toggle');
-                        }, 100);
+                        $('#location').modal('toggle');
                       } else {
-                        console.log(vrs_);
-                        console.log(vrs_.city);
+                        $('#location').modal('toggle');
                       }
                     }
                   }
@@ -21582,9 +21577,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
                 if (this.storage.city === '') {
                   this.storage.city = this.countries[0].city_id[0];
-                  setTimeout(function () {
-                    $('#location').modal('toggle');
-                  }, 100);
+                  $('#location').modal('toggle');
                 }
 
               case 7:
