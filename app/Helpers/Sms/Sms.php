@@ -32,7 +32,7 @@ class Sms
         $user   =   $this->userService->getById($booking->{MainContract::USER_ID});
         $address    =   $booking->{MainContract::ORGANIZATION}->{MainContract::PHONE}?'Телефон для справок: '.$booking->{MainContract::ORGANIZATION}->{MainContract::PHONE}:'';
         $link       =   $booking->{MainContract::ORGANIZATION}->{MainContract::_2GIS}?'Доехать до нас: '.$booking->{MainContract::ORGANIZATION}->{MainContract::_2GIS}:'';
-        $this->whatsapp->sendBooking([
+        $this->whatsapp->send([
             MainContract::PHONE =>  $user->{MainContract::PHONE},
             MainContract::CAPTION  =>  'Здравствуйте '.$user->{MainContract::NAME}.'!'."\n"."\n".'Вам забронирован столик в '.$booking->{MainContract::ORGANIZATION}->{MainContract::TITLE}.' на '.$booking->{MainContract::TIME}.'.'."\n"."\n".$address."\n"."\n".$link."\n"."\n".' С уважением reserved-app.kz'
         ]);
@@ -68,7 +68,7 @@ class Sms
         } else {
             $address    =   $booking->{MainContract::ORGANIZATION}->{MainContract::PHONE}?' Контакты '.$booking->{MainContract::ORGANIZATION}->{MainContract::PHONE}:'';
             $link       =   $booking->{MainContract::ORGANIZATION}->{MainContract::_2GIS}?' '.$booking->{MainContract::ORGANIZATION}->{MainContract::_2GIS}:'';
-            $this->whatsapp->sendBooking([
+            $this->whatsapp->send([
                 MainContract::PHONE =>  $user->{MainContract::PHONE},
                 MainContract::CAPTION  =>  'Здравствуйте '.$user->{MainContract::NAME}.'!'."\n"."\n".'Вам забронирован столик в '.$booking->{MainContract::ORGANIZATION}->{MainContract::TITLE}.' на '.$booking->{MainContract::TIME}.'.'.$address.$link."\n"."\n".' Ваш пароль: '.$password.' для входа на сайт.'."\n"."\n".' С уважением reserved-app.kz'
             ]);

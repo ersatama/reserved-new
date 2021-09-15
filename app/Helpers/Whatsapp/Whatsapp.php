@@ -27,15 +27,15 @@ class Whatsapp
 
     public function sendBooking($data)
     {
-        $data['body']       =   'data:image/gif;base64,'.file_get_contents('https://reserved-app.kz/img/logo/meme.gif');
+/*        $data['body']       =   'data:image/gif;base64,'.file_get_contents('https://reserved-app.kz/img/logo/meme.gif');
         $data['filename']   =   'meme.gif';
         file_get_contents('https://api.chat-api.com/instance'.$this->instance.'/message?token='.$this->token,false,stream_context_create(['http' => [
                 'method'  => 'POST',
                 'header'  => 'Content-type: application/json',
                 'content' => json_encode($data)
             ]])
-        );
-        /*$curl = curl_init();
+        );*/
+        $curl = curl_init();
         curl_setopt_array($curl, array(
             CURLOPT_URL => 'https://api.chat-api.com/instance'.$this->instance.'/message?token='.$this->token,
             CURLOPT_RETURNTRANSFER => true,
@@ -48,6 +48,6 @@ class Whatsapp
             CURLOPT_POSTFIELDS => $data,
         ));
         $response = curl_exec($curl);
-        curl_close($curl);*/
+        curl_close($curl);
     }
 }
