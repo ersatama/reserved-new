@@ -10,6 +10,7 @@ class CityContract extends MainContract
 
     const FILLABLE  =   [
         self::COUNTRY_ID,
+        self::TIMEZONE,
         self::TITLE,
         self::TITLE_KZ,
         self::TITLE_EN

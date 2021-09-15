@@ -14,5 +14,9 @@ class CityService extends BaseService
         $this->cityRepository   =   $cityRepository;
     }
 
+    public function getById($id)
+    {
+        return $this->cityRepository->getById($id);
+    }
 
 }

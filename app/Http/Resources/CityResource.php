@@ -3,19 +3,21 @@
 namespace App\Http\Resources;
 
 use App\Domain\Contracts\CityContract;
+use App\Domain\Contracts\MainContract;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class CityResource extends JsonResource
 {
 
-    public function toArray($request)
+    public function toArray($request): array
     {
         return [
-            CityContract::ID         =>  $this->id,
-            CityContract::COUNTRY_ID    =>  $this->country_id,
-            CityContract::TITLE      =>  $this->title,
-            CityContract::TITLE_KZ   =>  $this->title_kz,
-            CityContract::TITLE_EN   =>  $this->title_en,
+            MainContract::ID         =>  $this->{MainContract::ID},
+            MainContract::COUNTRY_ID    =>  $this->{MainContract::COUNTRY_ID},
+            MainContract::TIMEZONE  =>  $this->{MainContract::TIMEZONE},
+            MainContract::TITLE      =>  $this->{MainContract::TITLE},
+            MainContract::TITLE_KZ   =>  $this->{MainContract::TITLE_KZ},
+            MainContract::TITLE_EN   =>  $this->{MainContract::TITLE_EN},
         ];
     }
 }

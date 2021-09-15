@@ -21507,11 +21507,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             data = data.data;
             _this2.countries = data;
             sessionStorage.countries = JSON.stringify(data);
-
-            if (_this2.storage.city === '') {
-              _this2.storage.city = _this2.countries[0].city_id[0];
-              $('#location').modal('toggle');
-            }
+            _this2.storage.city = _this2.countries[0].city_id[0];
+            $('#location').modal('toggle');
           }
         })["catch"](function (error) {
           console.log(error.response);

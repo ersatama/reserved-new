@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Domain\Contracts\CityContract;
 use App\Domain\Contracts\CountryContract;
+use App\Domain\Contracts\MainContract;
 use App\Http\Requests\CityRequest;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;
@@ -26,20 +27,22 @@ class CityCrudController extends CrudController
     protected function setupShowOperation()
     {
         $this->crud->set('show.setFromDb', false);
-        CRUD::column(CityContract::COUNTRY_ID)->type('select')->label('Страна')
-            ->entity('country')->model('App\Models\Country')->attribute(CountryContract::TITLE);
-        CRUD::column(CityContract::TITLE)->label('Название');
-        CRUD::column(CityContract::TITLE_KZ)->label('Название на казахском');
-        CRUD::column(CityContract::TITLE_EN)->label('Название на англииском');
+        CRUD::column(MainContract::COUNTRY_ID)->type('select')->label('Страна')
+            ->entity('country')->model('App\Models\Country')->attribute(MainContract::TITLE);
+        CRUD::column(MainContract::TIMEZONE)->label('Часовой пояс');
+        CRUD::column(MainContract::TITLE)->label('Название');
+        CRUD::column(MainContract::TITLE_KZ)->label('Название на казахском');
+        CRUD::column(MainContract::TITLE_EN)->label('Название на англииском');
     }
 
     protected function setupListOperation()
     {
-        CRUD::column(CityContract::COUNTRY_ID)->type('select')->label('Страна')
-            ->entity('country')->model('App\Models\Country')->attribute(CountryContract::TITLE);
-        CRUD::column(CityContract::TITLE)->label('Название');
-        CRUD::column(CityContract::TITLE_KZ)->label('Название на казахском');
-        CRUD::column(CityContract::TITLE_EN)->label('Название на англииском');
+        CRUD::column(MainContract::COUNTRY_ID)->type('select')->label('Страна')
+            ->entity('country')->model('App\Models\Country')->attribute(MainContract::TITLE);
+        CRUD::column(MainContract::TIMEZONE)->label('Часовой пояс');
+        CRUD::column(MainContract::TITLE)->label('Название');
+        CRUD::column(MainContract::TITLE_KZ)->label('Название на казахском');
+        CRUD::column(MainContract::TITLE_EN)->label('Название на англииском');
     }
 
     protected function setupCreateOperation()
@@ -48,20 +51,22 @@ class CityCrudController extends CrudController
 
         $this->crud->addFields([
             [
-                'name'  => CityContract::COUNTRY_ID,
+                'name'  => MainContract::COUNTRY_ID,
                 'label' => 'Страна',
                 'type'  => 'select',
                 'entity'    => 'country',
                 'model'     => "App\Models\Country",
-                'attribute' => CountryContract::TITLE,
+                'attribute' => MainContract::TITLE,
             ]
         ]);
-
-        CRUD::field(CityContract::TITLE)->label('Название на русском (обязательное поле)')->type('text')->attributes([
+        CRUD::field(MainContract::TIMEZONE)->label('Часовой пояс')->type('text')->attributes([
             'required'  =>  'required'
         ]);
-        CRUD::field(CityContract::TITLE_KZ)->label('Название на казахском')->type('text');
-        CRUD::field(CityContract::TITLE_EN)->label('Название на англииском')->type('text');
+        CRUD::field(MainContract::TITLE)->label('Название на русском (обязательное поле)')->type('text')->attributes([
+            'required'  =>  'required'
+        ]);
+        CRUD::field(MainContract::TITLE_KZ)->label('Название на казахском')->type('text');
+        CRUD::field(MainContract::TITLE_EN)->label('Название на англииском')->type('text');
 
     }
 

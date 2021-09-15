@@ -108,10 +108,8 @@ export default {
                             data    =   data.data;
                             this.countries  =   data;
                             sessionStorage.countries    =   JSON.stringify(data);
-                            if (this.storage.city === '') {
-                                this.storage.city   =   this.countries[0].city_id[0];
-                                $('#location').modal('toggle');
-                            }
+                            this.storage.city   =   this.countries[0].city_id[0];
+                            $('#location').modal('toggle');
                         }
                     }).catch(error => {
                         console.log(error.response);
@@ -119,6 +117,7 @@ export default {
             } else {
                 this.countries  =   JSON.parse(sessionStorage.countries);
                 if (this.storage.city === '') {
+
                     this.storage.city   =   this.countries[0].city_id[0];
                 }
             }
