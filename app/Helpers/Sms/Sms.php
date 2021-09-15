@@ -30,8 +30,8 @@ class Sms
     public function booking($booking)
     {
         $user   =   $this->userService->getById($booking->{MainContract::USER_ID});
-        $address    =   $booking->{MainContract::ORGANIZATION}->{MainContract::PHONE}?'Телефон для справок: '.$booking->{MainContract::ORGANIZATION}->{MainContract::PHONE}:'';
-        $link       =   $booking->{MainContract::ORGANIZATION}->{MainContract::_2GIS}?'Доехать до нас: '.$booking->{MainContract::ORGANIZATION}->{MainContract::_2GIS}:'';
+        $address    =   $booking->{MainContract::ORGANIZATION}->{MainContract::PHONE}?'Телефон для справок: '."\n".$booking->{MainContract::ORGANIZATION}->{MainContract::PHONE}:'';
+        $link       =   $booking->{MainContract::ORGANIZATION}->{MainContract::_2GIS}?'Доехать до нас: '."\n".$booking->{MainContract::ORGANIZATION}->{MainContract::_2GIS}:'';
         $this->whatsapp->send([
             MainContract::PHONE =>  $user->{MainContract::PHONE},
             MainContract::BODY  =>  'Здравствуйте '.$user->{MainContract::NAME}.'!'."\n"."\n".'Вам забронирован столик в '.$booking->{MainContract::ORGANIZATION}->{MainContract::TITLE}.' на '.$booking->{MainContract::TIME}.'.'."\n"."\n".$address."\n"."\n".$link."\n"."\n".' С уважением reserved-app.kz'
