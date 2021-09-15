@@ -23778,8 +23778,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             _this.cardUpdate(e);
           });
         } else {
+          var self = this;
           setTimeout(function () {
-            this.setSocket();
+            self.setSocket();
           }, 100);
         }
       }

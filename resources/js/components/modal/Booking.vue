@@ -220,8 +220,9 @@ export default {
                             this.cardUpdate(e);
                         });
                 } else {
+                    let self    =   this;
                     setTimeout(function() {
-                        this.setSocket()
+                        self.setSocket()
                     },100);
                 }
             }
