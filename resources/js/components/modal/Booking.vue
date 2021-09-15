@@ -209,14 +209,23 @@ export default {
         this.setTime();
     },
     mounted() {
-        if (this.user) {
-            window.Echo.private('new.card.'+this.user.id)
-                .listen('.new.card', (e) => {
-                    this.cardUpdate(e);
-                });
-        }
+        this.setSocket();
     },
     methods: {
+        setSocket: function() {
+            if (this.user) {
+                if (window.Echo) {
+                    window.Echo.private('new.card.'+this.user.id)
+                        .listen('.new.card', (e) => {
+                            this.cardUpdate(e);
+                        });
+                } else {
+                    setTimeout(function() {
+                        this.setSocket()
+                    },100);
+                }
+            }
+        },
         getPrice: function() {
             if (this.table.price > 0) {
                 return this.table.price;

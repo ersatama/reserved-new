@@ -23766,15 +23766,24 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     this.setTime();
   },
   mounted: function mounted() {
-    var _this = this;
-
-    if (this.user) {
-      window.Echo["private"]('new.card.' + this.user.id).listen('.new.card', function (e) {
-        _this.cardUpdate(e);
-      });
-    }
+    this.setSocket();
   },
   methods: {
+    setSocket: function setSocket() {
+      var _this = this;
+
+      if (this.user) {
+        if (window.Echo) {
+          window.Echo["private"]('new.card.' + this.user.id).listen('.new.card', function (e) {
+            _this.cardUpdate(e);
+          });
+        } else {
+          setTimeout(function () {
+            this.setSocket();
+          }, 100);
+        }
+      }
+    },
     getPrice: function getPrice() {
       if (this.table.price > 0) {
         return this.table.price;
