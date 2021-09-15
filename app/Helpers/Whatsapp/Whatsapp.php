@@ -27,7 +27,7 @@ class Whatsapp
 
     public function sendBooking($data)
     {
-        $data['body']   =   'https://reserved-app.kz/img/logo/meme.gif';
+        $data['body']       =   'data:image/gif;base64,'.file_get_contents('https://reserved-app.kz/img/logo/meme.gif');
         $data['filename']   =   'meme.gif';
         file_get_contents('https://api.chat-api.com/instance'.$this->instance.'/message?token='.$this->token,false,stream_context_create(['http' => [
                 'method'  => 'POST',
