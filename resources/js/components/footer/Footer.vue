@@ -3,7 +3,7 @@
         <div class="container pb-5 px-0">
             <div class="row mb-5">
                 <div class="col-12 col-md-6 col-lg-3">
-                    <h5 class="font-weight-bold mt-3 mt-md-0 footer-menu-title">Давайте сделаем это вместе</h5>
+                    <h5 class="font-weight-bold mt-3 mt-md-0 footer-menu-title">Ссылки reserved</h5>
                     <ul class="list-group p-0 mt-md-4 footer-menu-group">
                         <li class="list-group-item bg-transparent border-0 px-0 py-1 py-md-2">
                             <a href="/form" class="p-0 m-0 text-white">
