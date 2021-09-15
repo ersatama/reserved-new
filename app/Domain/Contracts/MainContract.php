@@ -77,6 +77,7 @@ class MainContract
     const SCORE     =   'score';
     const EMAIL     =   'email';
     const PASSWORD  =   'password';
+    const CAPTION   =   'caption';
     const CONFIRM   =   'confirm';
     const AVATAR    =   'avatar';
     const TITLE     =   'title';
