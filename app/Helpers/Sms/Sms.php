@@ -34,7 +34,7 @@ class Sms
         $link       =   $booking->{MainContract::ORGANIZATION}->{MainContract::_2GIS}?'Доехать до нас: '.$booking->{MainContract::ORGANIZATION}->{MainContract::_2GIS}:'';
         $this->whatsapp->send([
             MainContract::PHONE =>  $user->{MainContract::PHONE},
-            MainContract::CAPTION  =>  'Здравствуйте '.$user->{MainContract::NAME}.'!'."\n"."\n".'Вам забронирован столик в '.$booking->{MainContract::ORGANIZATION}->{MainContract::TITLE}.' на '.$booking->{MainContract::TIME}.'.'."\n"."\n".$address."\n"."\n".$link."\n"."\n".' С уважением reserved-app.kz'
+            MainContract::BODY  =>  'Здравствуйте '.$user->{MainContract::NAME}.'!'."\n"."\n".'Вам забронирован столик в '.$booking->{MainContract::ORGANIZATION}->{MainContract::TITLE}.' на '.$booking->{MainContract::TIME}.'.'."\n"."\n".$address."\n"."\n".$link."\n"."\n".' С уважением reserved-app.kz'
         ]);
         /*$this->curl->get($this->url.'?'.$this->parameters([
             'phones'    =>  $user->{MainContract::PHONE},
@@ -70,7 +70,7 @@ class Sms
             $link       =   $booking->{MainContract::ORGANIZATION}->{MainContract::_2GIS}?' '.$booking->{MainContract::ORGANIZATION}->{MainContract::_2GIS}:'';
             $this->whatsapp->send([
                 MainContract::PHONE =>  $user->{MainContract::PHONE},
-                MainContract::CAPTION  =>  'Здравствуйте '.$user->{MainContract::NAME}.'!'."\n"."\n".'Вам забронирован столик в '.$booking->{MainContract::ORGANIZATION}->{MainContract::TITLE}.' на '.$booking->{MainContract::TIME}.'.'.$address.$link."\n"."\n".' Ваш пароль: '.$password.' для входа на сайт.'."\n"."\n".' С уважением reserved-app.kz'
+                MainContract::BODY  =>  'Здравствуйте '.$user->{MainContract::NAME}.'!'."\n"."\n".'Вам забронирован столик в '.$booking->{MainContract::ORGANIZATION}->{MainContract::TITLE}.' на '.$booking->{MainContract::TIME}.'.'.$address.$link."\n"."\n".' Ваш пароль: '.$password.' для входа на сайт.'."\n"."\n".' С уважением reserved-app.kz'
             ]);
            /* $this->curl->get($this->url.'?'.$this->parameters([
                     'phones'    =>  $user->{MainContract::PHONE},
