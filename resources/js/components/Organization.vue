@@ -79,12 +79,10 @@
                 </div>
             </div>
         </div>
-        <template v-if="organization">
-            <Sections v-if="tab === 1" :id="organization.id" :organization="organization"></Sections>
-            <Photos v-if="tab === 2" :api="'/api/image/organization/'+organization.id"></Photos>
-            <Reviews v-if="tab === 3" :id="organization.id"></Reviews>
-            <Photos v-if="tab === 4" :api="'/api/menu/list/'+organization.id"></Photos>
-        </template>
+        <Sections v-if="tab === 1" :id="organization.id" :organization="organization"></Sections>
+        <Photos v-if="tab === 2" :api="'/api/image/organization/'+organization.id"></Photos>
+        <Reviews v-if="tab === 3" :id="organization.id"></Reviews>
+        <Photos v-if="tab === 4" :api="'/api/menu/list/'+organization.id"></Photos>
     </template>
     <not-found v-else :params="notFound"></not-found>
     <Footer-menu></Footer-menu>

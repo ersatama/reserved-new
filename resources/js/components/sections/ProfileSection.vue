@@ -94,7 +94,12 @@ export default {
         setBreadcrumb: function() {
             this.breadcrumb =   [];
             let link    =   '';
-            if (this.end === 'search') {
+            if (this.end === 'support') {
+                this.breadcrumb.push({
+                    title: 'Поддержка',
+                    link: link+this.end
+                });
+            } else if (this.end === 'search') {
                 this.breadcrumb.push({
                     title: 'Поиск',
                     link: link+this.end

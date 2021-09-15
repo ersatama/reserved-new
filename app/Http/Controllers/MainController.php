@@ -146,6 +146,15 @@ class MainController extends Controller
         ]);
     }
 
+    public function support()
+    {
+        return view('index', [
+            'title' =>  'Служба поддержки',
+            'description'   =>  '',
+            'keywords'  =>  $this->tagsOptionService->list()
+        ]);
+    }
+
     public function home()
     {
         return view('index', [
