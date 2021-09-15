@@ -96,33 +96,30 @@ export default {
     async created() {
         this.notificationView();
         await this.auth();
-        this.getCountry();
+        await this.getCountry();
     },
     methods: {
-        getCountry: function() {
+        getCountry: async function () {
             if (!sessionStorage.countries) {
-                axios.get('/api/countries')
+                await axios.get('/api/countries')
                     .then(response => {
-                        let data    =   response.data;
+                        let data = response.data;
                         if (data.hasOwnProperty('data')) {
-                            data    =   data.data;
-                            this.countries  =   data;
-                            sessionStorage.countries    =   JSON.stringify(data);
-                            if (!localStorage.getItem('city')) {
-                                this.storage.city   =   this.countries[0].city_id[0];
+                            data = data.data;
+                            this.countries = data;
+                            sessionStorage.countries = JSON.stringify(data);
+                            if (localStorage.getItem('_vrs') === null) {
+                                this.storage.city = this.countries[0].city_id[0];
                                 $('#location').modal('toggle');
-                            } else {
-                                console.log(this.storage.city);
                             }
                         }
                     }).catch(error => {
                         console.log(error.response);
                     });
             } else {
-                this.countries  =   JSON.parse(sessionStorage.countries);
+                this.countries = JSON.parse(sessionStorage.countries);
                 if (this.storage.city === '') {
-
-                    this.storage.city   =   this.countries[0].city_id[0];
+                    this.storage.city = this.countries[0].city_id[0];
                 }
             }
         },

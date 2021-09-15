@@ -21485,9 +21485,10 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
               return _this.auth();
 
             case 3:
-              _this.getCountry();
+              _context.next = 5;
+              return _this.getCountry();
 
-            case 4:
+            case 5:
             case "end":
               return _context.stop();
           }
@@ -21496,36 +21497,62 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     }))();
   },
   methods: {
-    getCountry: function getCountry() {
-      var _this2 = this;
+    getCountry: function () {
+      var _getCountry = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee2() {
+        var _this2 = this;
 
-      if (!sessionStorage.countries) {
-        axios.get('/api/countries').then(function (response) {
-          var data = response.data;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee2$(_context2) {
+          while (1) {
+            switch (_context2.prev = _context2.next) {
+              case 0:
+                if (sessionStorage.countries) {
+                  _context2.next = 5;
+                  break;
+                }
 
-          if (data.hasOwnProperty('data')) {
-            data = data.data;
-            _this2.countries = data;
-            sessionStorage.countries = JSON.stringify(data);
+                _context2.next = 3;
+                return axios.get('/api/countries').then(function (response) {
+                  var data = response.data;
 
-            if (!localStorage.getItem('city')) {
-              _this2.storage.city = _this2.countries[0].city_id[0];
-              $('#location').modal('toggle');
-            } else {
-              console.log(_this2.storage.city);
+                  if (data.hasOwnProperty('data')) {
+                    data = data.data;
+                    _this2.countries = data;
+                    sessionStorage.countries = JSON.stringify(data);
+
+                    if (localStorage.getItem('_vrs') === null) {
+                      _this2.storage.city = _this2.countries[0].city_id[0];
+                      $('#location').modal('toggle');
+                    }
+                  }
+                })["catch"](function (error) {
+                  console.log(error.response);
+                });
+
+              case 3:
+                _context2.next = 7;
+                break;
+
+              case 5:
+                this.countries = JSON.parse(sessionStorage.countries);
+
+                if (this.storage.city === '') {
+                  this.storage.city = this.countries[0].city_id[0];
+                }
+
+              case 7:
+              case "end":
+                return _context2.stop();
             }
           }
-        })["catch"](function (error) {
-          console.log(error.response);
-        });
-      } else {
-        this.countries = JSON.parse(sessionStorage.countries);
+        }, _callee2, this);
+      }));
 
-        if (this.storage.city === '') {
-          this.storage.city = this.countries[0].city_id[0];
-        }
+      function getCountry() {
+        return _getCountry.apply(this, arguments);
       }
-    },
+
+      return getCountry;
+    }(),
     notificationView: function notificationView() {
       if (window.location.pathname !== '/profile/history') {
         this.notification = true;
@@ -21543,29 +21570,29 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       window.location.href = '/';
     },
     auth: function () {
-      var _auth = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee2() {
+      var _auth = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee3() {
         var _this3 = this;
 
-        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee2$(_context2) {
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee3$(_context3) {
           while (1) {
-            switch (_context2.prev = _context2.next) {
+            switch (_context3.prev = _context3.next) {
               case 0:
                 if (!this.storage.token) {
-                  _context2.next = 9;
+                  _context3.next = 9;
                   break;
                 }
 
                 if (!sessionStorage.user) {
-                  _context2.next = 5;
+                  _context3.next = 5;
                   break;
                 }
 
                 this.user = JSON.parse(sessionStorage.user);
-                _context2.next = 7;
+                _context3.next = 7;
                 break;
 
               case 5:
-                _context2.next = 7;
+                _context3.next = 7;
                 return axios.get('/api/token/' + this.storage.token).then(function (response) {
                   var data = response.data;
 
@@ -21579,7 +21606,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 });
 
               case 7:
-                _context2.next = 10;
+                _context3.next = 10;
                 break;
 
               case 9:
@@ -21587,10 +21614,10 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
               case 10:
               case "end":
-                return _context2.stop();
+                return _context3.stop();
             }
           }
-        }, _callee2, this);
+        }, _callee3, this);
       }));
 
       function auth() {
