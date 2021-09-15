@@ -34,7 +34,7 @@ class Sms
         $link       =   $booking->{MainContract::ORGANIZATION}->{MainContract::_2GIS}?' '.$booking->{MainContract::ORGANIZATION}->{MainContract::_2GIS}:'';
         $this->whatsapp->send([
             MainContract::PHONE =>  $user->{MainContract::PHONE},
-            MainContract::BODY  =>  'Здравствуйте '.$user->{MainContract::NAME}.', вам забронирован столик в '.$booking->{MainContract::ORGANIZATION}->{MainContract::TITLE}.' на '.$booking->{MainContract::TIME}.'.'.$address.$link.' c уважением reserved-app.kz'
+            MainContract::BODY  =>  'Здравствуйте '.$user->{MainContract::NAME}."\n".', вам забронирован столик в '.$booking->{MainContract::ORGANIZATION}->{MainContract::TITLE}.' на '.$booking->{MainContract::TIME}."\n".'.'.$address.$link.' c уважением reserved-app.kz'
         ]);
         /*$this->curl->get($this->url.'?'.$this->parameters([
             'phones'    =>  $user->{MainContract::PHONE},
@@ -59,7 +59,7 @@ class Sms
         if (!$booking) {
             $this->whatsapp->send([
                 MainContract::PHONE =>  $user->{MainContract::PHONE},
-                MainContract::BODY  =>  'Reserved-app Ваш логин: +'.$user->{MainContract::PHONE}.',ваш пароль: '.$password.' для входа, никому не сообщайте. reserved-app.kz'
+                MainContract::BODY  =>  'Reserved-app Ваш логин: +'.$user->{MainContract::PHONE}."\n".'ваш пароль: '.$password.' для входа, никому не сообщайте. reserved-app.kz'
             ]);
             /*$this->curl->get($this->url.'?'.$this->parameters([
                     'phones'    =>  $user->{MainContract::PHONE},
@@ -70,7 +70,7 @@ class Sms
             $link       =   $booking->{MainContract::ORGANIZATION}->{MainContract::_2GIS}?' '.$booking->{MainContract::ORGANIZATION}->{MainContract::_2GIS}:'';
             $this->whatsapp->send([
                 MainContract::PHONE =>  $user->{MainContract::PHONE},
-                MainContract::BODY  =>  'Здравствуйте '.$user->{MainContract::NAME}.', вам забронирован столик в '.$booking->{MainContract::ORGANIZATION}->{MainContract::TITLE}.' на '.$booking->{MainContract::TIME}.'.'.$address.$link.' Ваш пароль: '.$password.' для входа на сайт, c уважением reserved-app.kz'
+                MainContract::BODY  =>  'Здравствуйте '.$user->{MainContract::NAME}."\n".', вам забронирован столик в '.$booking->{MainContract::ORGANIZATION}->{MainContract::TITLE}.' на '.$booking->{MainContract::TIME}.'.'.$address.$link."\n".' Ваш пароль: '.$password.' для входа на сайт, c уважением reserved-app.kz'
             ]);
            /* $this->curl->get($this->url.'?'.$this->parameters([
                     'phones'    =>  $user->{MainContract::PHONE},
