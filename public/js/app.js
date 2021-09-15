@@ -20824,7 +20824,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
   created: function created() {
     this.setUser();
     this.getCategoryBySlug();
-    this.getOrganization();
   },
   methods: {
     subscribeNow: function subscribeNow() {
@@ -20912,6 +20911,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
       axios.get('/api/category/slug/' + this.$route.params.category).then(function (response) {
         _this3.category = response.data.data;
+
+        _this3.getOrganization();
       });
     },
     favorite: function favorite(id) {
@@ -23089,11 +23090,18 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     getSections: function getSections() {
       var _this2 = this;
 
-      axios.get('/api/organization/section/' + this.id).then(function (response) {
-        _this2.sections = response.data.data;
+      if (this.id) {
+        axios.get('/api/organization/section/' + this.id).then(function (response) {
+          _this2.sections = response.data.data;
 
-        _this2.updateStatus();
-      });
+          _this2.updateStatus();
+        });
+      } else {
+        var self = this;
+        setTimeout(function () {
+          self.getSections();
+        }, 100);
+      }
     },
     selTable: function () {
       var _selTable = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee2(key, tableKey) {

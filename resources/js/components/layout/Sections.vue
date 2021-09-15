@@ -130,11 +130,18 @@ export default {
                 });
         },
         getSections: function() {
-            axios.get('/api/organization/section/'+this.id)
-                .then(response => {
-                    this.sections   =   response.data.data;
-                    this.updateStatus();
-                });
+            if (this.id) {
+                axios.get('/api/organization/section/'+this.id)
+                    .then(response => {
+                        this.sections   =   response.data.data;
+                        this.updateStatus();
+                    });
+            } else {
+                let self    =   this;
+                setTimeout(function() {
+                    self.getSections();
+                },100);
+            }
         },
         selTable: async function (key, tableKey) {
             await this.updateStatus();

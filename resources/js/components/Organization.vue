@@ -131,7 +131,6 @@ export default {
     created() {
         this.setUser();
         this.getCategoryBySlug();
-        this.getOrganization();
     },
     methods: {
         subscribeNow: function() {
@@ -183,6 +182,7 @@ export default {
             axios.get('/api/category/slug/'+this.$route.params.category)
                 .then(response => {
                     this.category   =   response.data.data;
+                    this.getOrganization();
                 });
         },
         favorite: function(id) {
