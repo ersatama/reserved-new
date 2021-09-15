@@ -53,6 +53,10 @@ Route::prefix('home')->group(function() {
     Route::get('{slug}/{id}',[MainController::class, 'getOrganizationById'])->name('home.organization');
 });
 
+Route::prefix('support')->group(function() {
+    Route::get('/',[MainController::class,'support'])->name('support');
+});
+
 Route::prefix('news')->group(function() {
     Route::get('/',[MainController::class, 'news'])->name('news');
 });

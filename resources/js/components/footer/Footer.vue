@@ -15,7 +15,11 @@
                                 Контакты
                             </a>
                         </li>
-                        <li class="list-group-item bg-transparent border-0 px-0 py-1 py-md-2">Поддержка</li>
+                        <li class="list-group-item bg-transparent border-0 px-0 py-1 py-md-2">
+                            <a href="/support" class="p-0 m-0 text-white">
+                                Поддержка
+                            </a>
+                        </li>
                     </ul>
                 </div>
 <!--                <div class="col-12 col-md-6 col-lg-3">

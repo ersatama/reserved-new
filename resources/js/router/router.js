@@ -17,11 +17,17 @@ import SearchGlobal from '../components/SearchGlobal';
 import Organization from '../components/Organization';
 import CardSuccess from '../components/Card/Success';
 import Form from '../components/Form';
+import Support from '../components/Support';
 const routes = [
     {
         path: "/",
         name: "Main",
         component: Main,
+    },
+    {
+        path: "/",
+        name: "Support",
+        component: Support,
     },
     {
         path: "/card/success",

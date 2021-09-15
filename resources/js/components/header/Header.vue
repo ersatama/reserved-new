@@ -108,9 +108,15 @@ export default {
                             data = data.data;
                             this.countries = data;
                             sessionStorage.countries = JSON.stringify(data);
-                            if (localStorage.getItem('_vrs') === null) {
+                            if (localStorage.getItem('vrs_') === null) {
                                 this.storage.city = this.countries[0].city_id[0];
                                 $('#location').modal('toggle');
+                            } else {
+                                let vrs_    =   JSON.parse(localStorage.getItem('vrs_'));
+                                if (vrs_.city === '') {
+                                    this.storage.city = this.countries[0].city_id[0];
+                                    $('#location').modal('toggle');
+                                }
                             }
                         }
                     }).catch(error => {
@@ -120,6 +126,7 @@ export default {
                 this.countries = JSON.parse(sessionStorage.countries);
                 if (this.storage.city === '') {
                     this.storage.city = this.countries[0].city_id[0];
+                    $('#location').modal('toggle');
                 }
             }
         },
