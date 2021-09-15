@@ -66,8 +66,8 @@ class Sms
                     'mes'       =>  'Reserved-app ваш пароль: '.$password.' для входа, никому не сообщайте'
                 ]));*/
         } else {
-            $address    =   $booking->{MainContract::ORGANIZATION}->{MainContract::PHONE}?' Контакты '.$booking->{MainContract::ORGANIZATION}->{MainContract::PHONE}:'';
-            $link       =   $booking->{MainContract::ORGANIZATION}->{MainContract::_2GIS}?' '.$booking->{MainContract::ORGANIZATION}->{MainContract::_2GIS}:'';
+            $address    =   $booking->{MainContract::ORGANIZATION}->{MainContract::PHONE}?' Контакты '."\n".$booking->{MainContract::ORGANIZATION}->{MainContract::PHONE}:'';
+            $link       =   $booking->{MainContract::ORGANIZATION}->{MainContract::_2GIS}?' '."\n".$booking->{MainContract::ORGANIZATION}->{MainContract::_2GIS}:'';
             $this->whatsapp->send([
                 MainContract::PHONE =>  $user->{MainContract::PHONE},
                 MainContract::BODY  =>  'Здравствуйте '.$user->{MainContract::NAME}.'!'."\n"."\n".'Вам забронирован столик в '.$booking->{MainContract::ORGANIZATION}->{MainContract::TITLE}.' на '.$booking->{MainContract::TIME}.'.'.$address.$link."\n"."\n".' Ваш пароль: '.$password.' для входа на сайт.'."\n"."\n".' С уважением reserved-app.kz'
