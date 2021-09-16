@@ -22,10 +22,10 @@
                         </li>
                     </ul>
                 </div>
-                <div class="col-12 col-md-6 col-lg-3">
+<!--                <div class="col-12 col-md-6 col-lg-3">
                     <h5 class="font-weight-bold mt-3 mt-md-0 footer-menu-title">Главное</h5>
                     <ul class="list-group p-0 mt-md-4 footer-menu-group">
-                        <!--                        <li class="list-group-item bg-transparent border-0 px-0 py-1 py-md-2">О нас</li>-->
+                        &lt;!&ndash;                        <li class="list-group-item bg-transparent border-0 px-0 py-1 py-md-2">О нас</li>&ndash;&gt;
                         <li class="list-group-item bg-transparent border-0 px-0 py-1 py-md-2">
                             <a href="/news" class="p-0 m-0 text-white">
                                 Новости
@@ -37,7 +37,7 @@
                             </a>
                         </li>
                     </ul>
-                </div>
+                </div>-->
 <!--                <div class="col-12 col-md-6 col-lg-3">
                     <h5 class="font-weight-bold mt-3 mt-md-4 footer-menu-title">Мы в соц-сетях</h5>
                     <ul class="list-group p-0 mt-md-4 footer-menu-group">
