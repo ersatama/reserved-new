@@ -18,6 +18,9 @@ import Organization from '../components/Organization';
 import CardSuccess from '../components/Card/Success';
 import Form from '../components/Form';
 import Support from '../components/Support';
+import Contacts from '../components/Contacts';
+import Politics from '../components/Politics';
+
 const routes = [
     {
         path: "/",
@@ -25,9 +28,19 @@ const routes = [
         component: Main,
     },
     {
+        path: "/politics",
+        name: "Politics",
+        component: Politics,
+    },
+    {
         path: "/support",
         name: "Support",
         component: Support,
+    },
+    {
+        path: "/contacts",
+        name: "Contacts",
+        component: Contacts,
     },
     {
         path: "/card/success",

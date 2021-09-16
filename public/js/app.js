@@ -19987,6 +19987,37 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Contacts.vue?vue&type=script&lang=js":
+/*!**************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Contacts.vue?vue&type=script&lang=js ***!
+  \**************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _header_Header__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./header/Header */ "./resources/js/components/header/Header.vue");
+/* harmony import */ var _sections_ProfileSection__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./sections/ProfileSection */ "./resources/js/components/sections/ProfileSection.vue");
+/* harmony import */ var _footerMenu_FooterMenu__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./footerMenu/FooterMenu */ "./resources/js/components/footerMenu/FooterMenu.vue");
+/* harmony import */ var _footer_Footer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./footer/Footer */ "./resources/js/components/footer/Footer.vue");
+
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  name: "Contacts",
+  components: {
+    Header: _header_Header__WEBPACK_IMPORTED_MODULE_0__.default,
+    ProfileSection: _sections_ProfileSection__WEBPACK_IMPORTED_MODULE_1__.default,
+    FooterMenu: _footerMenu_FooterMenu__WEBPACK_IMPORTED_MODULE_2__.default,
+    Footer: _footer_Footer__WEBPACK_IMPORTED_MODULE_3__.default
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Favorite.vue?vue&type=script&lang=js":
 /*!**************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Favorite.vue?vue&type=script&lang=js ***!
@@ -21091,6 +21122,37 @@ __webpack_require__.r(__webpack_exports__);
         window.location.href = '/home';
       }
     }
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Politics.vue?vue&type=script&lang=js":
+/*!**************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Politics.vue?vue&type=script&lang=js ***!
+  \**************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _header_Header__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./header/Header */ "./resources/js/components/header/Header.vue");
+/* harmony import */ var _sections_ProfileSection__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./sections/ProfileSection */ "./resources/js/components/sections/ProfileSection.vue");
+/* harmony import */ var _footerMenu_FooterMenu__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./footerMenu/FooterMenu */ "./resources/js/components/footerMenu/FooterMenu.vue");
+/* harmony import */ var _footer_Footer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./footer/Footer */ "./resources/js/components/footer/Footer.vue");
+
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  name: "Politics",
+  components: {
+    Header: _header_Header__WEBPACK_IMPORTED_MODULE_0__.default,
+    ProfileSection: _sections_ProfileSection__WEBPACK_IMPORTED_MODULE_1__.default,
+    FooterMenu: _footerMenu_FooterMenu__WEBPACK_IMPORTED_MODULE_2__.default,
+    Footer: _footer_Footer__WEBPACK_IMPORTED_MODULE_3__.default
   }
 });
 
@@ -24170,7 +24232,17 @@ __webpack_require__.r(__webpack_exports__);
       this.breadcrumb = [];
       var link = '';
 
-      if (this.end === 'support') {
+      if (this.end === 'politics') {
+        this.breadcrumb.push({
+          title: 'Политика конфеденциальности',
+          link: link + this.end
+        });
+      } else if (this.end === 'contacts') {
+        this.breadcrumb.push({
+          title: 'Контакты',
+          link: link + this.end
+        });
+      } else if (this.end === 'support') {
         this.breadcrumb.push({
           title: 'Поддержка',
           link: link + this.end
@@ -24344,6 +24416,38 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   }, null, 8
   /* PROPS */
   , ["category"])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Footer_menu), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Footer)], 64
+  /* STABLE_FRAGMENT */
+  );
+}
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Contacts.vue?vue&type=template&id=6766143e":
+/*!******************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Contacts.vue?vue&type=template&id=6766143e ***!
+  \******************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render)
+/* harmony export */ });
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
+
+
+var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"container-fluid p-0\"><div class=\"container\"><div class=\"row\"><div class=\"col-12\"><h1 class=\"mt-5 mx-3 text-center font-weight-bold support-main-title\">Контакты</h1><h6 class=\"mt-3 mb-5 mx-md-5 text-center text-secondary support-main-desc\">Добро пожаловать! В разделе &quot;Службы поддержки&quot; вы также можете читать сообщения от Службы поддержки. Кроме того, сюда вы получаете важные сообщения, связанные с вашим аккаунтом.</h6><div class=\"contacts\"><div class=\"contacts-main\"><div class=\"contacts-item\"><div class=\"contacts-icon contacts-icon-phone\"></div><a href=\"tel:+77052395112\" class=\"contacts-title\">+77052395112</a></div><div class=\"contacts-item\"><div class=\"contacts-icon contacts-icon-email\"></div><a href=\"mailto:antechnology@bk.ru\" class=\"contacts-title\">antechnology@bk.ru</a></div><div class=\"contacts-item\"><div class=\"contacts-icon contacts-icon-whatsapp\"></div><a target=\"_blank\" href=\"https://wa.me/77052395112?text=Здравствуйте!\" class=\"contacts-title\">+77052395112</a></div></div></div></div></div></div></div>", 1);
+
+function render(_ctx, _cache, $props, $setup, $data, $options) {
+  var _component_Header = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Header");
+
+  var _component_profile_section = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("profile-section");
+
+  var _component_Footer_menu = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Footer-menu");
+
+  var _component_Footer = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Footer");
+
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Header), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_profile_section), _hoisted_1, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Footer_menu), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Footer)], 64
   /* STABLE_FRAGMENT */
   );
 }
@@ -25860,6 +25964,38 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Politics.vue?vue&type=template&id=5a01284c":
+/*!******************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Politics.vue?vue&type=template&id=5a01284c ***!
+  \******************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render)
+/* harmony export */ });
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
+
+
+var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"container-fluid p-0\"><div class=\"container\"><div class=\"row\"><div class=\"col-12\"><h1 class=\"mt-5 mx-3 text-center font-weight-bold politics-main-title\">Политика конфеденциальности</h1><h6 class=\"mt-3 mb-5 mx-md-5 text-center text-secondary politics-main-desc\">Добро пожаловать! В разделе &quot;Службы поддержки&quot; вы также можете читать сообщения от Службы поддержки. Кроме того, сюда вы получаете важные сообщения, связанные с вашим аккаунтом.</h6><div class=\"politics\"><div class=\"politics-main\"><div class=\"politics-item\"><div class=\"politics-header\"><div class=\"politics-icon politics-icon-phone\"></div><div class=\"politics-title\">1. Общие положения</div></div><div class=\"politics-body\"> Настоящая политика обработки персональных данных составлена в соответствии с требованиями Федерального закона от 27.07.2006. №152-ФЗ «О персональных данных» и определяет порядок обработки персональных данных и меры по обеспечению безопасности персональных данных АО “ЛеКлик» (далее – Оператор).<br><br> Оператор ставит своей важнейшей целью и условием осуществления своей деятельности соблюдение прав и свобод человека и гражданина при обработке его персональных данных, в том числе защиты прав на неприкосновенность частной жизни, личную и семейную тайну.<br><br> Настоящая политика Оператора в отношении обработки персональных данных (далее – Политика) применяется ко всей информации, которую Оператор может получить о посетителях веб-сайта https://leclick.ru. </div></div><div class=\"politics-item\"><div class=\"politics-header\"><div class=\"politics-icon politics-icon-phone\"></div><div class=\"politics-title\">2. Основные понятия, используемые в Политике</div></div><div class=\"politics-body\"> Автоматизированная обработка персональных данных – обработка персональных данных с помощью средств вычислительной техники;<br><br> Блокирование персональных данных – временное прекращение обработки персональных данных (за исключением случаев, если обработка необходима для уточнения персональных данных);<br><br> Веб-сайт – совокупность графических и информационных материалов, а также программ для ЭВМ и баз данных, обеспечивающих их доступность в сети интернет по сетевому адресу https://Leclick.ru;<br><br> Информационная система персональных данных — совокупность содержащихся в базах данных персональных данных, и обеспечивающих их обработку информационных технологий и технических средств;<br><br> Обезличивание персональных данных — действия, в результате которых невозможно определить без использования дополнительной информации принадлежность персональных данных конкретному Пользователю или иному субъекту персональных данных;<br><br> Обработка персональных данных – любое действие (операция) или совокупность действий (операций), совершаемых с использованием средств автоматизации или без использования таких средств с персональными данными, включая сбор, запись, систематизацию, накопление, хранение, уточнение (обновление, изменение), извлечение, использование, передачу (распространение, предоставление, доступ), обезличивание, блокирование, удаление, уничтожение персональных данных;<br><br> Оператор – государственный орган, муниципальный орган, юридическое или физическое лицо, самостоятельно или совместно с другими лицами организующие и (или) осуществляющие обработку персональных данных, а также определяющие цели обработки персональных данных, состав персональных данных, подлежащих обработке, действия (операции), совершаемые с персональными данными;<br><br> Персональные данные – любая информация, относящаяся прямо или косвенно к определенному или определяемому Пользователю веб-сайта https://Leclick.ru;<br><br> Пользователь – любой посетитель веб-сайта https://Leclick.ru;<br><br> Предоставление персональных данных – действия, направленные на раскрытие персональных данных определенному лицу или определенному кругу лиц;<br><br> Распространение персональных данных – любые действия, направленные на раскрытие персональных данных неопределенному кругу лиц (передача персональных данных) или на ознакомление с персональными данными неограниченного круга лиц, в том числе обнародование персональных данных в средствах массовой информации, размещение в информационно-телекоммуникационных сетях или предоставление доступа к персональным данным каким-либо иным способом;<br><br> Трансграничная передача персональных данных – передача персональных данных на территорию иностранного государства органу власти иностранного государства, иностранному физическому или иностранному юридическому лицу;<br><br> Уничтожение персональных данных – любые действия, в результате которых персональные данные уничтожаются безвозвратно с невозможностью дальнейшего восстановления содержания персональных данных в информационной системе персональных данных и (или) результате которых уничтожаются материальные носители персональных данных. </div></div><div class=\"politics-item\"><div class=\"politics-header\"><div class=\"politics-icon politics-icon-phone\"></div><div class=\"politics-title\">3. Оператор может обрабатывать следующие персональные данные Пользователя</div></div><div class=\"politics-body\"> Фамилия, имя, отчество;<br><br> Электронный адрес;<br><br> Номера телефонов;<br><br> Также на сайте происходит сбор и обработка обезличенных данных о посетителях (в т.ч. файлов «cookie») с помощью сервисов интернет-статистики (Яндекс Метрика и Гугл Аналитика и других).<br><br> Вышеперечисленные данные далее по тексту Политики объединены общим понятием Персональные данные. </div></div><div class=\"politics-item\"><div class=\"politics-header\"><div class=\"politics-icon politics-icon-phone\"></div><div class=\"politics-title\">4. Цели обработки персональных данных</div></div><div class=\"politics-body\"> Цель обработки персональных данных Пользователя — информирование Пользователя посредством отправки электронных писем; предоставление доступа Пользователю к сервисам, информации и/или материалам, содержащимся на веб-сайте.<br><br> Также Оператор имеет право направлять Пользователю уведомления о новых продуктах и услугах, специальных предложениях и различных событиях. Пользователь всегда может отказаться от получения информационных сообщений, направив Оператору письмо на адрес электронной почты info@leclick.ru с пометкой «Отказ от уведомлениях о новых продуктах и услугах и специальных предложениях».<br><br> Обезличенные данные Пользователей, собираемые с помощью сервисов интернет-статистики, служат для сбора информации о действиях Пользователей на сайте, улучшения качества сайта и его содержания. </div></div><div class=\"politics-item\"><div class=\"politics-header\"><div class=\"politics-icon politics-icon-phone\"></div><div class=\"politics-title\">5. Правовые основания обработки персональных данных</div></div><div class=\"politics-body\"> Оператор обрабатывает персональные данные Пользователя только в случае их заполнения и/или отправки Пользователем самостоятельно через специальные формы, расположенные на сайте  https://leclick.ru. <br><br>Заполняя соответствующие формы и/или отправляя свои персональные данные Оператору, Пользователь выражает свое согласие с данной Политикой.<br><br> Оператор обрабатывает обезличенные данные о Пользователе в случае, если это разрешено в настройках браузера Пользователя (включено сохранение файлов «cookie» и использование технологии JavaScript). </div></div><div class=\"politics-item\"><div class=\"politics-header\"><div class=\"politics-icon politics-icon-phone\"></div><div class=\"politics-title\">6. Порядок сбора, хранения, передачи и других видов обработки персональных данных</div></div><div class=\"politics-body\"> Оператор обеспечивает сохранность персональных данных и принимает все возможные меры, исключающие доступ к персональным данным неуполномоченных лиц.<br><br> Персональные данные Пользователя никогда, ни при каких условиях не будут переданы третьим лицам, за исключением случаев, связанных с исполнением действующего законодательства.<br><br> В случае выявления неточностей в персональных данных, Пользователь может актуализировать их самостоятельно, путем направления Оператору уведомление на адрес электронной почты Оператора  info@leclick.ru  с пометкой «Актуализация персональных данных».<br><br> Срок обработки персональных данных является неограниченным. Пользователь может в любой момент отозвать свое согласие на обработку персональных данных, направив Оператору уведомление посредством электронной почты на электронный адрес Оператора  info@leclick.ru  с пометкой «Отзыв согласия на обработку персональных данных». </div></div><div class=\"politics-item\"><div class=\"politics-header\"><div class=\"politics-icon politics-icon-phone\"></div><div class=\"politics-title\">7. Трансграничная передача персональных данных</div></div><div class=\"politics-body\"> Оператор до начала осуществления трансграничной передачи персональных данных обязан убедиться в том, что иностранным государством, на территорию которого предполагается осуществлять передачу персональных данных, обеспечивается надежная защита прав субъектов персональных данных.<br><br> Трансграничная передача персональных данных на территории иностранных государств, не отвечающих вышеуказанным требованиям, может осуществляться только в случае наличия согласия в письменной форме субъекта персональных данных на трансграничную передачу его персональных данных и/или исполнения договора, стороной которого является субъект персональных данных. </div></div><div class=\"politics-item\"><div class=\"politics-header\"><div class=\"politics-icon politics-icon-phone\"></div><div class=\"politics-title\">7. Трансграничная передача персональных данных</div></div><div class=\"politics-body\"> Оператор до начала осуществления трансграничной передачи персональных данных обязан убедиться в том, что иностранным государством, на территорию которого предполагается осуществлять передачу персональных данных, обеспечивается надежная защита прав субъектов персональных данных.<br><br> Трансграничная передача персональных данных на территории иностранных государств, не отвечающих вышеуказанным требованиям, может осуществляться только в случае наличия согласия в письменной форме субъекта персональных данных на трансграничную передачу его персональных данных и/или исполнения договора, стороной которого является субъект персональных данных. </div></div><div class=\"politics-item\"><div class=\"politics-header\"><div class=\"politics-icon politics-icon-phone\"></div><div class=\"politics-title\">8. Заключительные положения</div></div><div class=\"politics-body\"> Пользователь может получить любые разъяснения по интересующим вопросам, касающимся обработки его персональных данных, обратившись к Оператору с помощью электронной почты  info@leclick.ru.<br><br> В данном документе будут отражены любые изменения политики обработки персональных данных Оператором. Политика действует бессрочно до замены ее новой версией.<br><br> Актуальная версия Политики в свободном доступе расположена в сети Интернет по адресу  https://leclick.ru/policy. </div></div></div></div></div></div></div></div>", 1);
+
+function render(_ctx, _cache, $props, $setup, $data, $options) {
+  var _component_Header = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Header");
+
+  var _component_profile_section = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("profile-section");
+
+  var _component_Footer_menu = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Footer-menu");
+
+  var _component_Footer = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Footer");
+
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Header), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_profile_section), _hoisted_1, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Footer_menu), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Footer)], 64
+  /* STABLE_FRAGMENT */
+  );
+}
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Profile.vue?vue&type=template&id=3bd692e4":
 /*!*****************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Profile.vue?vue&type=template&id=3bd692e4 ***!
@@ -26424,7 +26560,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
 
-var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"container-fluid\"><div class=\"container\"><div class=\"row\"><div class=\"col-12\"><h1 class=\"mt-5 mx-3 text-center font-weight-bold support-main-title\">Справочный центр</h1><h6 class=\"mt-3 mb-5 mx-md-5 text-center text-secondary support-main-desc\">Добро пожаловать! В разделе &quot;Службы поддержки&quot; вы также можете читать сообщения от Службы поддержки. Кроме того, сюда вы получаете важные сообщения, связанные с вашим аккаунтом.</h6><div class=\"support mb-5\"><div class=\"support-item\"><div class=\"support-header\"><div class=\"support-item-icon\"></div><div class=\"support-item-title\">Безопасность</div></div><div class=\"support-body\">Наши Нормы и правила призваны создать среду, в которой все могут бронировать места в заведениях.</div></div><div class=\"support-item\"><div class=\"support-header\"><div class=\"support-item-icon\"></div><div class=\"support-item-title\">Бронирование</div></div><div class=\"support-body\">Для бронирования стола в заведениях, вам необходимо зайти на страницу заведения, выбрать стол, затем выбрать время на которую вы хотели бы посетить данное заведение</div></div></div><a target=\"_blank\" href=\"https://wa.me/77052395112?text=Мне%20нужна%20помощь!\" class=\"support-btn\">Написать в служббу поддержки</a></div></div></div></div>", 1);
+var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"container-fluid p-0\"><div class=\"container\"><div class=\"row\"><div class=\"col-12\"><h1 class=\"mt-5 mx-3 text-center font-weight-bold support-main-title\">Справочный центр</h1><h6 class=\"mt-3 mb-5 mx-md-5 text-center text-secondary support-main-desc\">Добро пожаловать! В разделе &quot;Службы поддержки&quot; вы также можете читать сообщения от Службы поддержки. Кроме того, сюда вы получаете важные сообщения, связанные с вашим аккаунтом.</h6><div class=\"support mb-5\"><div class=\"support-item\"><div class=\"support-header\"><div class=\"support-item-icon\"></div><div class=\"support-item-title\">Безопасность</div></div><div class=\"support-body\">Наши Нормы и правила призваны создать среду, в которой все могут бронировать места в заведениях.</div></div><div class=\"support-item\"><div class=\"support-header\"><div class=\"support-item-icon\"></div><div class=\"support-item-title\">Бронирование</div></div><div class=\"support-body\">Для бронирования стола в заведениях, вам необходимо зайти на страницу заведения, выбрать стол, затем выбрать время на которую вы хотели бы посетить данное заведение</div></div></div><a target=\"_blank\" href=\"https://wa.me/77052395112?text=Мне%20нужна%20помощь!\" class=\"support-btn\">Написать в служббу поддержки</a></div></div></div></div>", 1);
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_Header = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Header");
@@ -26462,7 +26598,7 @@ var _hoisted_1 = {
   }
 };
 
-var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"container pb-5 px-0\"><div class=\"row mb-5\"><div class=\"col-12 col-md-6 col-lg-3\"><h5 class=\"font-weight-bold mt-3 mt-md-0 footer-menu-title\">Ссылки reserved</h5><ul class=\"list-group p-0 mt-md-4 footer-menu-group\"><li class=\"list-group-item bg-transparent border-0 px-0 py-1 py-md-2\"><a href=\"/form\" class=\"p-0 m-0 text-white\"> Для ресторанов </a></li><li class=\"list-group-item bg-transparent border-0 px-0 py-1 py-md-2\"><a class=\"p-0 m-0 text-white\"> Контакты </a></li><li class=\"list-group-item bg-transparent border-0 px-0 py-1 py-md-2\"><a href=\"/support\" class=\"p-0 m-0 text-white\"> Поддержка </a></li></ul></div><!--                &lt;div class=&quot;col-12 col-md-6 col-lg-3&quot;&gt;\n                    &lt;h5 class=&quot;font-weight-bold mt-3 mt-md-4 footer-menu-title&quot;&gt;Ссылки Reserved&lt;/h5&gt;\n                    &lt;ul class=&quot;list-group p-0 mt-md-4 footer-menu-group&quot;&gt;\n                        &lt;li class=&quot;list-group-item bg-transparent border-0 px-0 py-1 py-md-2&quot;&gt;Контакты&lt;/li&gt;\n                        &lt;li class=&quot;list-group-item bg-transparent border-0 px-0 py-1 py-md-2&quot;&gt;Поддержка&lt;/li&gt;\n                        &lt;li class=&quot;list-group-item bg-transparent border-0 px-0 py-1 py-md-2&quot;&gt;Безопасность&lt;/li&gt;\n                        &lt;li class=&quot;list-group-item bg-transparent border-0 px-0 py-1 py-md-2&quot;&gt;О нас&lt;/li&gt;\n                        &lt;li class=&quot;list-group-item bg-transparent border-0 px-0 py-1 py-md-2&quot;&gt;Блог&lt;/li&gt;\n                    &lt;/ul&gt;\n                &lt;/div&gt;--><!--                &lt;div class=&quot;col-12 col-md-6 col-lg-3&quot;&gt;\n                    &lt;h5 class=&quot;font-weight-bold mt-3 mt-md-4 footer-menu-title&quot;&gt;Мы в соц-сетях&lt;/h5&gt;\n                    &lt;ul class=&quot;list-group p-0 mt-md-4 footer-menu-group&quot;&gt;\n                        &lt;li class=&quot;list-group-item bg-transparent border-0 px-0 py-2&quot;&gt;Facebook&lt;/li&gt;\n                        &lt;li class=&quot;list-group-item bg-transparent border-0 px-0 py-2&quot;&gt;Instagram&lt;/li&gt;\n                        &lt;li class=&quot;list-group-item bg-transparent border-0 px-0 py-2&quot;&gt;Youtube&lt;/li&gt;\n                        &lt;li class=&quot;list-group-item bg-transparent border-0 px-0 py-2&quot;&gt;Twitter&lt;/li&gt;\n                        &lt;li class=&quot;list-group-item bg-transparent border-0 px-0 py-2&quot;&gt;LinkedIn&lt;/li&gt;\n                    &lt;/ul&gt;\n                &lt;/div&gt;--><div class=\"col-12 col-md-6 col-lg-3\"><!--\n&lt;h3 class=&quot;font-weight-bold footer-title&quot;&gt;Reserved&lt;/h3&gt;\n&lt;h6 class=&quot;mt-3 footer-title-sub&quot;&gt;Скачайте приложение&lt;/h6&gt;\n                    &lt;div class=&quot;footer-mobile-main&quot;&gt;\n                        &lt;div class=&quot;mt-1 mt-md-4 main-thumbnail overflow-hidden footer-mobile&quot;&gt;\n                            &lt;img src=&quot;/img/main/img-11.png&quot; class=&quot;img-thumbnail bg-white p-0 footer-mobile-icon&quot;&gt;\n                        &lt;/div&gt;\n                        &lt;div class=&quot;mt-1 mt-md-3 main-thumbnail overflow-hidden footer-mobile&quot;&gt;\n                            &lt;img src=&quot;/img/main/img-10.png&quot; class=&quot;img-thumbnail bg-white p-0 footer-mobile-icon&quot;&gt;\n                        &lt;/div&gt;\n                    &lt;/div&gt;--><h6 class=\"pt-1 mt-md-0 footer-company\">© Reserved 2020 - 2021</h6></div></div></div>", 1);
+var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"container pb-5 px-0\"><div class=\"row mb-5\"><div class=\"col-12 col-md-6 col-lg-3\"><h5 class=\"font-weight-bold mt-3 mt-md-0 footer-menu-title\">Главное</h5><ul class=\"list-group p-0 mt-md-4 footer-menu-group\"><li class=\"list-group-item bg-transparent border-0 px-0 py-1 py-md-2\">О нас</li><li class=\"list-group-item bg-transparent border-0 px-0 py-1 py-md-2\"><a href=\"/news\" class=\"p-0 m-0 text-white\"> Новости </a></li><li class=\"list-group-item bg-transparent border-0 px-0 py-1 py-md-2\"><a href=\"/politics\" class=\"p-0 m-0 text-white\"> Политика конфеденциальности </a></li></ul></div><div class=\"col-12 col-md-6 col-lg-3\"><h5 class=\"font-weight-bold mt-3 mt-md-0 footer-menu-title\">Ссылки reserved</h5><ul class=\"list-group p-0 mt-md-4 footer-menu-group\"><li class=\"list-group-item bg-transparent border-0 px-0 py-1 py-md-2\"><a href=\"/form\" class=\"p-0 m-0 text-white\"> Для ресторанов </a></li><li class=\"list-group-item bg-transparent border-0 px-0 py-1 py-md-2\"><a href=\"/contacts\" class=\"p-0 m-0 text-white\"> Контакты </a></li><li class=\"list-group-item bg-transparent border-0 px-0 py-1 py-md-2\"><a href=\"/support\" class=\"p-0 m-0 text-white\"> Поддержка </a></li></ul></div><!--                &lt;div class=&quot;col-12 col-md-6 col-lg-3&quot;&gt;\n                    &lt;h5 class=&quot;font-weight-bold mt-3 mt-md-4 footer-menu-title&quot;&gt;Мы в соц-сетях&lt;/h5&gt;\n                    &lt;ul class=&quot;list-group p-0 mt-md-4 footer-menu-group&quot;&gt;\n                        &lt;li class=&quot;list-group-item bg-transparent border-0 px-0 py-2&quot;&gt;Facebook&lt;/li&gt;\n                        &lt;li class=&quot;list-group-item bg-transparent border-0 px-0 py-2&quot;&gt;Instagram&lt;/li&gt;\n                        &lt;li class=&quot;list-group-item bg-transparent border-0 px-0 py-2&quot;&gt;Youtube&lt;/li&gt;\n                        &lt;li class=&quot;list-group-item bg-transparent border-0 px-0 py-2&quot;&gt;Twitter&lt;/li&gt;\n                        &lt;li class=&quot;list-group-item bg-transparent border-0 px-0 py-2&quot;&gt;LinkedIn&lt;/li&gt;\n                    &lt;/ul&gt;\n                &lt;/div&gt;--><div class=\"mt-4 mt-md-0 col-12 col-md-6 col-lg-3\"><!--\n&lt;h3 class=&quot;font-weight-bold footer-title&quot;&gt;Reserved&lt;/h3&gt;\n&lt;h6 class=&quot;mt-3 footer-title-sub&quot;&gt;Скачайте приложение&lt;/h6&gt;\n                    &lt;div class=&quot;footer-mobile-main&quot;&gt;\n                        &lt;div class=&quot;mt-1 mt-md-4 main-thumbnail overflow-hidden footer-mobile&quot;&gt;\n                            &lt;img src=&quot;/img/main/img-11.png&quot; class=&quot;img-thumbnail bg-white p-0 footer-mobile-icon&quot;&gt;\n                        &lt;/div&gt;\n                        &lt;div class=&quot;mt-1 mt-md-3 main-thumbnail overflow-hidden footer-mobile&quot;&gt;\n                            &lt;img src=&quot;/img/main/img-10.png&quot; class=&quot;img-thumbnail bg-white p-0 footer-mobile-icon&quot;&gt;\n                        &lt;/div&gt;\n                    &lt;/div&gt;--><h6 class=\"pt-1 mt-md-0 footer-company\">© Reserved 2020 - 2021</h6></div></div></div>", 1);
 
 var _hoisted_3 = [_hoisted_2];
 function render(_ctx, _cache, $props, $setup, $data, $options) {
@@ -30435,7 +30571,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm-bundler.js");
+/* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm-bundler.js");
 /* harmony import */ var _components_Main__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/Main */ "./resources/js/components/Main.vue");
 /* harmony import */ var _components_Profile__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/Profile */ "./resources/js/components/Profile.vue");
 /* harmony import */ var _components_Settings__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/Settings */ "./resources/js/components/Settings.vue");
@@ -30450,6 +30586,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_Card_Success__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../components/Card/Success */ "./resources/js/components/Card/Success.vue");
 /* harmony import */ var _components_Form__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../components/Form */ "./resources/js/components/Form.vue");
 /* harmony import */ var _components_Support__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../components/Support */ "./resources/js/components/Support.vue");
+/* harmony import */ var _components_Contacts__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../components/Contacts */ "./resources/js/components/Contacts.vue");
+/* harmony import */ var _components_Politics__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../components/Politics */ "./resources/js/components/Politics.vue");
+
+
 
 
 
@@ -30470,9 +30610,17 @@ var routes = [{
   name: "Main",
   component: _components_Main__WEBPACK_IMPORTED_MODULE_0__.default
 }, {
+  path: "/politics",
+  name: "Politics",
+  component: _components_Politics__WEBPACK_IMPORTED_MODULE_15__.default
+}, {
   path: "/support",
   name: "Support",
   component: _components_Support__WEBPACK_IMPORTED_MODULE_13__.default
+}, {
+  path: "/contacts",
+  name: "Contacts",
+  component: _components_Contacts__WEBPACK_IMPORTED_MODULE_14__.default
 }, {
   path: "/card/success",
   name: "CardSuccess",
@@ -30522,8 +30670,8 @@ var routes = [{
   name: 'Profile/History',
   component: _components_History__WEBPACK_IMPORTED_MODULE_4__.default
 }];
-var router = (0,vue_router__WEBPACK_IMPORTED_MODULE_14__.createRouter)({
-  history: (0,vue_router__WEBPACK_IMPORTED_MODULE_14__.createWebHistory)(),
+var router = (0,vue_router__WEBPACK_IMPORTED_MODULE_16__.createRouter)({
+  history: (0,vue_router__WEBPACK_IMPORTED_MODULE_16__.createWebHistory)(),
   routes: routes
 });
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (router);
@@ -30548,6 +30696,30 @@ __webpack_require__.r(__webpack_exports__);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, ".card-icon {\n  width: 100px;\n}\n", ""]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-12.use[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Contacts.vue?vue&type=style&index=0&id=6766143e&lang=scss":
+/*!**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-12.use[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Contacts.vue?vue&type=style&index=0&id=6766143e&lang=scss ***!
+  \**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
+// Imports
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, ".contacts {\n  margin: 0 0 50px 0;\n}\n.contacts-main {\n  background: #fff;\n  border-radius: 10px;\n  border: 1px solid #e6f1ec;\n}\n.contacts-item {\n  border-bottom: 1px solid #e6f1ec;\n  display: flex;\n  padding: 20px;\n  gap: 20px;\n  align-items: center;\n}\n.contacts-item:last-child {\n  border-bottom: none;\n}\n.contacts-icon {\n  height: 30px;\n  width: 30px;\n  background: no-repeat center;\n  background-size: contain;\n}\n.contacts-icon-email {\n  background-image: url(\"/img/logo/envelope.png\");\n}\n.contacts-icon-phone {\n  background-image: url(\"/img/logo/call.png\");\n}\n.contacts-icon-whatsapp {\n  background-image: url(\"/img/logo/whatsapp.png\");\n}\n.contacts-title {\n  font-size: 20px;\n  font-weight: bold;\n  cursor: pointer;\n  color: #000 !important;\n  text-decoration: none !important;\n  padding: 0;\n}\n@media only screen and (max-width: 768px) {\n.contacts-icon {\n    width: 20px;\n    height: 20px;\n}\n.contacts-title {\n    font-size: 12px;\n}\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -30740,6 +30912,30 @@ __webpack_require__.r(__webpack_exports__);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, ".loading {\n  display: inline-block;\n  position: relative;\n  width: 80px;\n  height: 40px;\n}\n.loading-text {\n  font-size: 20px !important;\n  color: #00a082 !important;\n  margin: 0;\n  font-weight: bold;\n  padding: 0 !important;\n}\n.loading div {\n  position: absolute;\n  top: 16px;\n  width: 13px;\n  height: 13px;\n  border-radius: 50%;\n  background: #00a082;\n  -webkit-animation-timing-function: cubic-bezier(0, 1, 1, 0);\n          animation-timing-function: cubic-bezier(0, 1, 1, 0);\n}\n.loading div:nth-child(1) {\n  left: 8px;\n  -webkit-animation: lds-ellipsis1 0.6s infinite;\n          animation: lds-ellipsis1 0.6s infinite;\n}\n.loading div:nth-child(2) {\n  left: 8px;\n  -webkit-animation: lds-ellipsis2 0.6s infinite;\n          animation: lds-ellipsis2 0.6s infinite;\n}\n.loading div:nth-child(3) {\n  left: 32px;\n  -webkit-animation: lds-ellipsis2 0.6s infinite;\n          animation: lds-ellipsis2 0.6s infinite;\n}\n.loading div:nth-child(4) {\n  left: 56px;\n  -webkit-animation: lds-ellipsis3 0.6s infinite;\n          animation: lds-ellipsis3 0.6s infinite;\n}\n@-webkit-keyframes lds-ellipsis1 {\n0% {\n    transform: scale(0);\n}\n100% {\n    transform: scale(1);\n}\n}\n@keyframes lds-ellipsis1 {\n0% {\n    transform: scale(0);\n}\n100% {\n    transform: scale(1);\n}\n}\n@-webkit-keyframes lds-ellipsis3 {\n0% {\n    transform: scale(1);\n}\n100% {\n    transform: scale(0);\n}\n}\n@keyframes lds-ellipsis3 {\n0% {\n    transform: scale(1);\n}\n100% {\n    transform: scale(0);\n}\n}\n@-webkit-keyframes lds-ellipsis2 {\n0% {\n    transform: translate(0, 0);\n}\n100% {\n    transform: translate(24px, 0);\n}\n}\n@keyframes lds-ellipsis2 {\n0% {\n    transform: translate(0, 0);\n}\n100% {\n    transform: translate(24px, 0);\n}\n}\n@media only screen and (max-width: 768px) {\n.loading {\n    transform: scale(0.7);\n}\n.loading-text {\n    font-size: 13px !important;\n}\n}\n.loading-btn {\n  display: block;\n  position: relative;\n  width: 80px;\n  height: 13px;\n  transform: scale(0.5);\n  margin: 0 auto 0 auto;\n}\n.loading-btn div {\n  position: absolute;\n  top: 0;\n  width: 13px;\n  height: 13px;\n  border-radius: 50%;\n  background: #fff;\n  -webkit-animation-timing-function: cubic-bezier(0, 1, 1, 0);\n          animation-timing-function: cubic-bezier(0, 1, 1, 0);\n}\n.loading-btn div:nth-child(1) {\n  left: 8px;\n  -webkit-animation: lds-ellipsis1 0.6s infinite;\n          animation: lds-ellipsis1 0.6s infinite;\n}\n.loading-btn div:nth-child(2) {\n  left: 8px;\n  -webkit-animation: lds-ellipsis2 0.6s infinite;\n          animation: lds-ellipsis2 0.6s infinite;\n}\n.loading-btn div:nth-child(3) {\n  left: 32px;\n  -webkit-animation: lds-ellipsis2 0.6s infinite;\n          animation: lds-ellipsis2 0.6s infinite;\n}\n.loading-btn div:nth-child(4) {\n  left: 56px;\n  -webkit-animation: lds-ellipsis3 0.6s infinite;\n          animation: lds-ellipsis3 0.6s infinite;\n}\n@keyframes lds-ellipsis1 {\n0% {\n    transform: scale(0);\n}\n100% {\n    transform: scale(1);\n}\n}\n@keyframes lds-ellipsis3 {\n0% {\n    transform: scale(1);\n}\n100% {\n    transform: scale(0);\n}\n}\n@keyframes lds-ellipsis2 {\n0% {\n    transform: translate(0, 0);\n}\n100% {\n    transform: translate(24px, 0);\n}\n}\n.payments-card-bank {\n  font-size: 1.25rem;\n  font-weight: bold;\n  margin: 0 0 5px 0;\n}\n.payments-card-hash {\n  font-size: 1rem;\n  margin: 0;\n}\n.payments-title {\n  margin: 50px 0 10px 0;\n  font-weight: bold;\n  font-size: 24px;\n}\n.payments-description {\n  font-size: 16px;\n  margin: 0;\n}\n.payments-all {\n  margin: 30px 0 30px 0;\n}\n.payments-list {\n  display: flex;\n  gap: 10px;\n}\n.payments-icon {\n  width: 40px;\n  height: 40px;\n  background: #00a082 no-repeat center;\n  background-size: 50%;\n  border-radius: 30px;\n  border: none;\n}\n.payments-icon-delete {\n  background-image: url(\"/img/logo/trash.svg\");\n}\n.payments-icon-edit {\n  background-image: url(\"/img/logo/draw.svg\");\n}\n.payments-btn {\n  background-color: #FF8008;\n  color: #fff;\n  border-radius: 30px;\n  height: 44px;\n  padding: 0 30px 0 30px;\n  min-width: 200px;\n}\n.payments-card-icon {\n  width: 44px;\n}\n.payments-card-icon-visa {\n  background: url(\"/img/logo/card.svg\") no-repeat center;\n  background-size: contain;\n}\n.payments-empty-description {\n  font-size: 16px;\n}\n@media only screen and (max-width: 768px) {\n.payments-icon {\n    width: 30px;\n    height: 30px;\n}\n.payments-card-bank {\n    font-size: 12px;\n    margin: 0 0 2px 0;\n}\n.payments-card-hash {\n    font-size: 11px;\n}\n.payments-title {\n    font-size: 16px;\n    margin: 20px 0 0 0;\n}\n.payments-description {\n    font-size: 11px;\n    margin: 10px 0 0 0;\n}\n.payments-all {\n    margin: 10px 0 10px 0;\n}\n.payments-btn {\n    height: 30px;\n    padding: 0 10px 0 10px;\n    font-size: 12px !important;\n    min-width: 120px;\n}\n.payments-empty-title {\n    font-size: 16px;\n}\n.payments-empty-description {\n    font-size: 12px;\n}\n}\n", ""]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-12.use[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Politics.vue?vue&type=style&index=0&id=5a01284c&lang=scss":
+/*!**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-12.use[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Politics.vue?vue&type=style&index=0&id=5a01284c&lang=scss ***!
+  \**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
+// Imports
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, ".politics {\n  background: #fff;\n  border: 1px solid #e6f1ec;\n  border-radius: 10px;\n  margin-bottom: 50px;\n}\n.politics-main {\n  overflow: hidden;\n}\n.politics-main-title {\n  font-size: 20px;\n}\n.politics-main-desc {\n  font-size: 14px;\n}\n.politics-header {\n  overflow: hidden;\n  display: flex;\n  margin: 20px;\n}\n.politics-title {\n  font-size: 20px;\n  font-weight: bold;\n}\n.politics-body {\n  margin: 20px;\n  color: grey;\n  font-size: 14px;\n}\n.politics-item {\n  border-bottom: 1px solid #e6f1ec;\n}\n.politics-item:last-child {\n  border-bottom: none;\n}\n@media only screen and (max-width: 768px) {\n.politics {\n    margin-bottom: 20px;\n}\n.politics-title {\n    font-size: 12px;\n}\n.politics-header {\n    margin: 15px;\n}\n.politics-body {\n    margin: 15px;\n    font-size: 10px;\n}\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -55719,6 +55915,36 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 
 /***/ }),
 
+/***/ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-12.use[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Contacts.vue?vue&type=style&index=0&id=6766143e&lang=scss":
+/*!**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-12.use[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Contacts.vue?vue&type=style&index=0&id=6766143e&lang=scss ***!
+  \**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_clonedRuleSet_12_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_12_use_2_node_modules_sass_loader_dist_cjs_js_clonedRuleSet_12_use_3_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Contacts_vue_vue_type_style_index_0_id_6766143e_lang_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!../../../node_modules/vue-loader/dist/stylePostLoader.js!../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!../../../node_modules/sass-loader/dist/cjs.js??clonedRuleSet-12.use[3]!../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Contacts.vue?vue&type=style&index=0&id=6766143e&lang=scss */ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-12.use[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Contacts.vue?vue&type=style&index=0&id=6766143e&lang=scss");
+
+            
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_clonedRuleSet_12_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_12_use_2_node_modules_sass_loader_dist_cjs_js_clonedRuleSet_12_use_3_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Contacts_vue_vue_type_style_index_0_id_6766143e_lang_scss__WEBPACK_IMPORTED_MODULE_1__.default, options);
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_clonedRuleSet_12_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_12_use_2_node_modules_sass_loader_dist_cjs_js_clonedRuleSet_12_use_3_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Contacts_vue_vue_type_style_index_0_id_6766143e_lang_scss__WEBPACK_IMPORTED_MODULE_1__.default.locals || {});
+
+/***/ }),
+
 /***/ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-12.use[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Favorite.vue?vue&type=style&index=0&id=3982b107&lang=scss":
 /*!**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-12.use[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Favorite.vue?vue&type=style&index=0&id=3982b107&lang=scss ***!
@@ -55956,6 +56182,36 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_clonedRuleSet_12_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_12_use_2_node_modules_sass_loader_dist_cjs_js_clonedRuleSet_12_use_3_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Payments_vue_vue_type_style_index_0_id_04c873d0_lang_scss__WEBPACK_IMPORTED_MODULE_1__.default.locals || {});
+
+/***/ }),
+
+/***/ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-12.use[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Politics.vue?vue&type=style&index=0&id=5a01284c&lang=scss":
+/*!**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-12.use[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Politics.vue?vue&type=style&index=0&id=5a01284c&lang=scss ***!
+  \**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_clonedRuleSet_12_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_12_use_2_node_modules_sass_loader_dist_cjs_js_clonedRuleSet_12_use_3_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Politics_vue_vue_type_style_index_0_id_5a01284c_lang_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!../../../node_modules/vue-loader/dist/stylePostLoader.js!../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!../../../node_modules/sass-loader/dist/cjs.js??clonedRuleSet-12.use[3]!../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Politics.vue?vue&type=style&index=0&id=5a01284c&lang=scss */ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-12.use[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Politics.vue?vue&type=style&index=0&id=5a01284c&lang=scss");
+
+            
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_clonedRuleSet_12_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_12_use_2_node_modules_sass_loader_dist_cjs_js_clonedRuleSet_12_use_3_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Politics_vue_vue_type_style_index_0_id_5a01284c_lang_scss__WEBPACK_IMPORTED_MODULE_1__.default, options);
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_clonedRuleSet_12_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_12_use_2_node_modules_sass_loader_dist_cjs_js_clonedRuleSet_12_use_3_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Politics_vue_vue_type_style_index_0_id_5a01284c_lang_scss__WEBPACK_IMPORTED_MODULE_1__.default.locals || {});
 
 /***/ }),
 
@@ -56966,6 +57222,35 @@ _Category_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__.default.__fil
 
 /***/ }),
 
+/***/ "./resources/js/components/Contacts.vue":
+/*!**********************************************!*\
+  !*** ./resources/js/components/Contacts.vue ***!
+  \**********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _Contacts_vue_vue_type_template_id_6766143e__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Contacts.vue?vue&type=template&id=6766143e */ "./resources/js/components/Contacts.vue?vue&type=template&id=6766143e");
+/* harmony import */ var _Contacts_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Contacts.vue?vue&type=script&lang=js */ "./resources/js/components/Contacts.vue?vue&type=script&lang=js");
+/* harmony import */ var _Contacts_vue_vue_type_style_index_0_id_6766143e_lang_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Contacts.vue?vue&type=style&index=0&id=6766143e&lang=scss */ "./resources/js/components/Contacts.vue?vue&type=style&index=0&id=6766143e&lang=scss");
+
+
+
+
+;
+_Contacts_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__.default.render = _Contacts_vue_vue_type_template_id_6766143e__WEBPACK_IMPORTED_MODULE_0__.render
+/* hot reload */
+if (false) {}
+
+_Contacts_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__.default.__file = "resources/js/components/Contacts.vue"
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_Contacts_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__.default);
+
+/***/ }),
+
 /***/ "./resources/js/components/Favorite.vue":
 /*!**********************************************!*\
   !*** ./resources/js/components/Favorite.vue ***!
@@ -57195,6 +57480,35 @@ if (false) {}
 _Payments_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__.default.__file = "resources/js/components/Payments.vue"
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_Payments_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__.default);
+
+/***/ }),
+
+/***/ "./resources/js/components/Politics.vue":
+/*!**********************************************!*\
+  !*** ./resources/js/components/Politics.vue ***!
+  \**********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _Politics_vue_vue_type_template_id_5a01284c__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Politics.vue?vue&type=template&id=5a01284c */ "./resources/js/components/Politics.vue?vue&type=template&id=5a01284c");
+/* harmony import */ var _Politics_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Politics.vue?vue&type=script&lang=js */ "./resources/js/components/Politics.vue?vue&type=script&lang=js");
+/* harmony import */ var _Politics_vue_vue_type_style_index_0_id_5a01284c_lang_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Politics.vue?vue&type=style&index=0&id=5a01284c&lang=scss */ "./resources/js/components/Politics.vue?vue&type=style&index=0&id=5a01284c&lang=scss");
+
+
+
+
+;
+_Politics_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__.default.render = _Politics_vue_vue_type_template_id_5a01284c__WEBPACK_IMPORTED_MODULE_0__.render
+/* hot reload */
+if (false) {}
+
+_Politics_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__.default.__file = "resources/js/components/Politics.vue"
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_Politics_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__.default);
 
 /***/ }),
 
@@ -57985,6 +58299,22 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/Contacts.vue?vue&type=script&lang=js":
+/*!**********************************************************************!*\
+  !*** ./resources/js/components/Contacts.vue?vue&type=script&lang=js ***!
+  \**********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Contacts_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__.default)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Contacts_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Contacts.vue?vue&type=script&lang=js */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Contacts.vue?vue&type=script&lang=js");
+ 
+
+/***/ }),
+
 /***/ "./resources/js/components/Favorite.vue?vue&type=script&lang=js":
 /*!**********************************************************************!*\
   !*** ./resources/js/components/Favorite.vue?vue&type=script&lang=js ***!
@@ -58109,6 +58439,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Payments_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__.default)
 /* harmony export */ });
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Payments_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Payments.vue?vue&type=script&lang=js */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Payments.vue?vue&type=script&lang=js");
+ 
+
+/***/ }),
+
+/***/ "./resources/js/components/Politics.vue?vue&type=script&lang=js":
+/*!**********************************************************************!*\
+  !*** ./resources/js/components/Politics.vue?vue&type=script&lang=js ***!
+  \**********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Politics_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__.default)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Politics_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Politics.vue?vue&type=script&lang=js */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Politics.vue?vue&type=script&lang=js");
  
 
 /***/ }),
@@ -58577,6 +58923,22 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/Contacts.vue?vue&type=template&id=6766143e":
+/*!****************************************************************************!*\
+  !*** ./resources/js/components/Contacts.vue?vue&type=template&id=6766143e ***!
+  \****************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Contacts_vue_vue_type_template_id_6766143e__WEBPACK_IMPORTED_MODULE_0__.render)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Contacts_vue_vue_type_template_id_6766143e__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Contacts.vue?vue&type=template&id=6766143e */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Contacts.vue?vue&type=template&id=6766143e");
+
+
+/***/ }),
+
 /***/ "./resources/js/components/Favorite.vue?vue&type=template&id=3982b107":
 /*!****************************************************************************!*\
   !*** ./resources/js/components/Favorite.vue?vue&type=template&id=3982b107 ***!
@@ -58701,6 +59063,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "render": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Payments_vue_vue_type_template_id_04c873d0__WEBPACK_IMPORTED_MODULE_0__.render)
 /* harmony export */ });
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Payments_vue_vue_type_template_id_04c873d0__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Payments.vue?vue&type=template&id=04c873d0 */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Payments.vue?vue&type=template&id=04c873d0");
+
+
+/***/ }),
+
+/***/ "./resources/js/components/Politics.vue?vue&type=template&id=5a01284c":
+/*!****************************************************************************!*\
+  !*** ./resources/js/components/Politics.vue?vue&type=template&id=5a01284c ***!
+  \****************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Politics_vue_vue_type_template_id_5a01284c__WEBPACK_IMPORTED_MODULE_0__.render)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Politics_vue_vue_type_template_id_5a01284c__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Politics.vue?vue&type=template&id=5a01284c */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Politics.vue?vue&type=template&id=5a01284c");
 
 
 /***/ }),
@@ -59134,6 +59512,19 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/Contacts.vue?vue&type=style&index=0&id=6766143e&lang=scss":
+/*!*******************************************************************************************!*\
+  !*** ./resources/js/components/Contacts.vue?vue&type=style&index=0&id=6766143e&lang=scss ***!
+  \*******************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_clonedRuleSet_12_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_12_use_2_node_modules_sass_loader_dist_cjs_js_clonedRuleSet_12_use_3_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Contacts_vue_vue_type_style_index_0_id_6766143e_lang_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/style-loader/dist/cjs.js!../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!../../../node_modules/vue-loader/dist/stylePostLoader.js!../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!../../../node_modules/sass-loader/dist/cjs.js??clonedRuleSet-12.use[3]!../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Contacts.vue?vue&type=style&index=0&id=6766143e&lang=scss */ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-12.use[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Contacts.vue?vue&type=style&index=0&id=6766143e&lang=scss");
+
+
+/***/ }),
+
 /***/ "./resources/js/components/Favorite.vue?vue&type=style&index=0&id=3982b107&lang=scss":
 /*!*******************************************************************************************!*\
   !*** ./resources/js/components/Favorite.vue?vue&type=style&index=0&id=3982b107&lang=scss ***!
@@ -59234,6 +59625,19 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_clonedRuleSet_12_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_12_use_2_node_modules_sass_loader_dist_cjs_js_clonedRuleSet_12_use_3_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Payments_vue_vue_type_style_index_0_id_04c873d0_lang_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/style-loader/dist/cjs.js!../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!../../../node_modules/vue-loader/dist/stylePostLoader.js!../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!../../../node_modules/sass-loader/dist/cjs.js??clonedRuleSet-12.use[3]!../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Payments.vue?vue&type=style&index=0&id=04c873d0&lang=scss */ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-12.use[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Payments.vue?vue&type=style&index=0&id=04c873d0&lang=scss");
+
+
+/***/ }),
+
+/***/ "./resources/js/components/Politics.vue?vue&type=style&index=0&id=5a01284c&lang=scss":
+/*!*******************************************************************************************!*\
+  !*** ./resources/js/components/Politics.vue?vue&type=style&index=0&id=5a01284c&lang=scss ***!
+  \*******************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_clonedRuleSet_12_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_12_use_2_node_modules_sass_loader_dist_cjs_js_clonedRuleSet_12_use_3_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Politics_vue_vue_type_style_index_0_id_5a01284c_lang_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/style-loader/dist/cjs.js!../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!../../../node_modules/vue-loader/dist/stylePostLoader.js!../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!../../../node_modules/sass-loader/dist/cjs.js??clonedRuleSet-12.use[3]!../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Politics.vue?vue&type=style&index=0&id=5a01284c&lang=scss */ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-12.use[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Politics.vue?vue&type=style&index=0&id=5a01284c&lang=scss");
 
 
 /***/ }),

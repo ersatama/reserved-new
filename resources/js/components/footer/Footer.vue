@@ -3,6 +3,22 @@
         <div class="container pb-5 px-0">
             <div class="row mb-5">
                 <div class="col-12 col-md-6 col-lg-3">
+                    <h5 class="font-weight-bold mt-3 mt-md-0 footer-menu-title">Главное</h5>
+                    <ul class="list-group p-0 mt-md-4 footer-menu-group">
+                        <li class="list-group-item bg-transparent border-0 px-0 py-1 py-md-2">О нас</li>
+                        <li class="list-group-item bg-transparent border-0 px-0 py-1 py-md-2">
+                            <a href="/news" class="p-0 m-0 text-white">
+                                Новости
+                            </a>
+                        </li>
+                        <li class="list-group-item bg-transparent border-0 px-0 py-1 py-md-2">
+                            <a href="/politics" class="p-0 m-0 text-white">
+                                Политика конфеденциальности
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3">
                     <h5 class="font-weight-bold mt-3 mt-md-0 footer-menu-title">Ссылки reserved</h5>
                     <ul class="list-group p-0 mt-md-4 footer-menu-group">
                         <li class="list-group-item bg-transparent border-0 px-0 py-1 py-md-2">
@@ -11,7 +27,7 @@
                             </a>
                         </li>
                         <li class="list-group-item bg-transparent border-0 px-0 py-1 py-md-2">
-                            <a class="p-0 m-0 text-white">
+                            <a href="/contacts" class="p-0 m-0 text-white">
                                 Контакты
                             </a>
                         </li>
@@ -23,16 +39,6 @@
                     </ul>
                 </div>
 <!--                <div class="col-12 col-md-6 col-lg-3">
-                    <h5 class="font-weight-bold mt-3 mt-md-4 footer-menu-title">Ссылки Reserved</h5>
-                    <ul class="list-group p-0 mt-md-4 footer-menu-group">
-                        <li class="list-group-item bg-transparent border-0 px-0 py-1 py-md-2">Контакты</li>
-                        <li class="list-group-item bg-transparent border-0 px-0 py-1 py-md-2">Поддержка</li>
-                        <li class="list-group-item bg-transparent border-0 px-0 py-1 py-md-2">Безопасность</li>
-                        <li class="list-group-item bg-transparent border-0 px-0 py-1 py-md-2">О нас</li>
-                        <li class="list-group-item bg-transparent border-0 px-0 py-1 py-md-2">Блог</li>
-                    </ul>
-                </div>-->
-<!--                <div class="col-12 col-md-6 col-lg-3">
                     <h5 class="font-weight-bold mt-3 mt-md-4 footer-menu-title">Мы в соц-сетях</h5>
                     <ul class="list-group p-0 mt-md-4 footer-menu-group">
                         <li class="list-group-item bg-transparent border-0 px-0 py-2">Facebook</li>
@@ -42,7 +48,7 @@
                         <li class="list-group-item bg-transparent border-0 px-0 py-2">LinkedIn</li>
                     </ul>
                 </div>-->
-                <div class="col-12 col-md-6 col-lg-3">
+                <div class="mt-4 mt-md-0 col-12 col-md-6 col-lg-3">
 
 <!--
 <h3 class="font-weight-bold footer-title">Reserved</h3>

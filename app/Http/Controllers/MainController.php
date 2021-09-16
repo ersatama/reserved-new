@@ -146,6 +146,24 @@ class MainController extends Controller
         ]);
     }
 
+    public function politics()
+    {
+        return view('index', [
+            'title' =>  'Политика конфеденциальности',
+            'description'   =>  '',
+            'keywords'  =>  $this->tagsOptionService->list()
+        ]);
+    }
+
+    public function contacts()
+    {
+        return view('index', [
+            'title' =>  'Контакты',
+            'description'   =>  '',
+            'keywords'  =>  $this->tagsOptionService->list()
+        ]);
+    }
+
     public function support()
     {
         return view('index', [

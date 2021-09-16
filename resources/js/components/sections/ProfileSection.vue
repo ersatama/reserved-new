@@ -94,7 +94,17 @@ export default {
         setBreadcrumb: function() {
             this.breadcrumb =   [];
             let link    =   '';
-            if (this.end === 'support') {
+            if (this.end === 'politics') {
+                this.breadcrumb.push({
+                    title: 'Политика конфеденциальности',
+                    link: link+this.end
+                });
+            } else if (this.end === 'contacts') {
+                this.breadcrumb.push({
+                    title: 'Контакты',
+                    link: link+this.end
+                });
+            } else if (this.end === 'support') {
                 this.breadcrumb.push({
                     title: 'Поддержка',
                     link: link+this.end

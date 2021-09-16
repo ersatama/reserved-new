@@ -53,6 +53,14 @@ Route::prefix('home')->group(function() {
     Route::get('{slug}/{id}',[MainController::class, 'getOrganizationById'])->name('home.organization');
 });
 
+Route::prefix('politics')->group(function() {
+    Route::get('/',[MainController::class,'politics'])->name('politics');
+});
+
+Route::prefix('contacts')->group(function() {
+    Route::get('/',[MainController::class,'contacts'])->name('contacts');
+});
+
 Route::prefix('support')->group(function() {
     Route::get('/',[MainController::class,'support'])->name('support');
 });
