@@ -26598,7 +26598,7 @@ var _hoisted_1 = {
   }
 };
 
-var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"container pb-5 px-0\"><div class=\"row mb-5\"><div class=\"col-12 col-md-6 col-lg-3\"><h5 class=\"font-weight-bold mt-3 mt-md-0 footer-menu-title\">Ссылки reserved</h5><ul class=\"list-group p-0 mt-md-4 footer-menu-group\"><li class=\"list-group-item bg-transparent border-0 px-0 py-1 py-md-2\"><a href=\"/form\" class=\"p-0 m-0 text-white\"> Для ресторанов </a></li><li class=\"list-group-item bg-transparent border-0 px-0 py-1 py-md-2\"><a href=\"/contacts\" class=\"p-0 m-0 text-white\"> Контакты </a></li><li class=\"list-group-item bg-transparent border-0 px-0 py-1 py-md-2\"><a href=\"/support\" class=\"p-0 m-0 text-white\"> Поддержка </a></li></ul></div><div class=\"col-12 col-md-6 col-lg-3\"><h5 class=\"font-weight-bold mt-3 mt-md-0 footer-menu-title\">Главное</h5><ul class=\"list-group p-0 mt-md-4 footer-menu-group\"><!--                        &lt;li class=&quot;list-group-item bg-transparent border-0 px-0 py-1 py-md-2&quot;&gt;О нас&lt;/li&gt;--><li class=\"list-group-item bg-transparent border-0 px-0 py-1 py-md-2\"><a href=\"/news\" class=\"p-0 m-0 text-white\"> Новости </a></li><li class=\"list-group-item bg-transparent border-0 px-0 py-1 py-md-2\"><a href=\"/politics\" class=\"p-0 m-0 text-white\"> Политика конфеденциальности </a></li></ul></div><!--                &lt;div class=&quot;col-12 col-md-6 col-lg-3&quot;&gt;\n                    &lt;h5 class=&quot;font-weight-bold mt-3 mt-md-4 footer-menu-title&quot;&gt;Мы в соц-сетях&lt;/h5&gt;\n                    &lt;ul class=&quot;list-group p-0 mt-md-4 footer-menu-group&quot;&gt;\n                        &lt;li class=&quot;list-group-item bg-transparent border-0 px-0 py-2&quot;&gt;Facebook&lt;/li&gt;\n                        &lt;li class=&quot;list-group-item bg-transparent border-0 px-0 py-2&quot;&gt;Instagram&lt;/li&gt;\n                        &lt;li class=&quot;list-group-item bg-transparent border-0 px-0 py-2&quot;&gt;Youtube&lt;/li&gt;\n                        &lt;li class=&quot;list-group-item bg-transparent border-0 px-0 py-2&quot;&gt;Twitter&lt;/li&gt;\n                        &lt;li class=&quot;list-group-item bg-transparent border-0 px-0 py-2&quot;&gt;LinkedIn&lt;/li&gt;\n                    &lt;/ul&gt;\n                &lt;/div&gt;--><div class=\"mt-4 mt-md-0 col-12 col-md-6 col-lg-3\"><!--\n&lt;h3 class=&quot;font-weight-bold footer-title&quot;&gt;Reserved&lt;/h3&gt;\n&lt;h6 class=&quot;mt-3 footer-title-sub&quot;&gt;Скачайте приложение&lt;/h6&gt;\n                    &lt;div class=&quot;footer-mobile-main&quot;&gt;\n                        &lt;div class=&quot;mt-1 mt-md-4 main-thumbnail overflow-hidden footer-mobile&quot;&gt;\n                            &lt;img src=&quot;/img/main/img-11.png&quot; class=&quot;img-thumbnail bg-white p-0 footer-mobile-icon&quot;&gt;\n                        &lt;/div&gt;\n                        &lt;div class=&quot;mt-1 mt-md-3 main-thumbnail overflow-hidden footer-mobile&quot;&gt;\n                            &lt;img src=&quot;/img/main/img-10.png&quot; class=&quot;img-thumbnail bg-white p-0 footer-mobile-icon&quot;&gt;\n                        &lt;/div&gt;\n                    &lt;/div&gt;--><h6 class=\"pt-1 mt-md-0 footer-company\">© Reserved 2020 - 2021</h6></div></div></div>", 1);
+var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"container pb-5 px-0\"><div class=\"row mb-5\"><div class=\"col-12 col-md-6 col-lg-3\"><h5 class=\"font-weight-bold mt-3 mt-md-0 footer-menu-title\">Ссылки reserved</h5><ul class=\"list-group p-0 mt-md-4 footer-menu-group\"><li class=\"list-group-item bg-transparent border-0 px-0 py-1 py-md-2\"><a href=\"/form\" class=\"p-0 m-0 text-white\"> Для ресторанов </a></li><li class=\"list-group-item bg-transparent border-0 px-0 py-1 py-md-2\"><a href=\"/contacts\" class=\"p-0 m-0 text-white\"> Контакты </a></li><li class=\"list-group-item bg-transparent border-0 px-0 py-1 py-md-2\"><a href=\"/support\" class=\"p-0 m-0 text-white\"> Поддержка </a></li></ul></div><!--                &lt;div class=&quot;col-12 col-md-6 col-lg-3&quot;&gt;\n                    &lt;h5 class=&quot;font-weight-bold mt-3 mt-md-0 footer-menu-title&quot;&gt;Главное&lt;/h5&gt;\n                    &lt;ul class=&quot;list-group p-0 mt-md-4 footer-menu-group&quot;&gt;\n                        &amp;lt;!&amp;ndash;                        &lt;li class=&quot;list-group-item bg-transparent border-0 px-0 py-1 py-md-2&quot;&gt;О нас&lt;/li&gt;&amp;ndash;&amp;gt;\n                        &lt;li class=&quot;list-group-item bg-transparent border-0 px-0 py-1 py-md-2&quot;&gt;\n                            &lt;a href=&quot;/news&quot; class=&quot;p-0 m-0 text-white&quot;&gt;\n                                Новости\n                            &lt;/a&gt;\n                        &lt;/li&gt;\n                        &lt;li class=&quot;list-group-item bg-transparent border-0 px-0 py-1 py-md-2&quot;&gt;\n                            &lt;a href=&quot;/politics&quot; class=&quot;p-0 m-0 text-white&quot;&gt;\n                                Политика конфеденциальности\n                            &lt;/a&gt;\n                        &lt;/li&gt;\n                    &lt;/ul&gt;\n                &lt;/div&gt;--><!--                &lt;div class=&quot;col-12 col-md-6 col-lg-3&quot;&gt;\n                    &lt;h5 class=&quot;font-weight-bold mt-3 mt-md-4 footer-menu-title&quot;&gt;Мы в соц-сетях&lt;/h5&gt;\n                    &lt;ul class=&quot;list-group p-0 mt-md-4 footer-menu-group&quot;&gt;\n                        &lt;li class=&quot;list-group-item bg-transparent border-0 px-0 py-2&quot;&gt;Facebook&lt;/li&gt;\n                        &lt;li class=&quot;list-group-item bg-transparent border-0 px-0 py-2&quot;&gt;Instagram&lt;/li&gt;\n                        &lt;li class=&quot;list-group-item bg-transparent border-0 px-0 py-2&quot;&gt;Youtube&lt;/li&gt;\n                        &lt;li class=&quot;list-group-item bg-transparent border-0 px-0 py-2&quot;&gt;Twitter&lt;/li&gt;\n                        &lt;li class=&quot;list-group-item bg-transparent border-0 px-0 py-2&quot;&gt;LinkedIn&lt;/li&gt;\n                    &lt;/ul&gt;\n                &lt;/div&gt;--><div class=\"mt-4 mt-md-0 col-12 col-md-6 col-lg-3\"><!--\n&lt;h3 class=&quot;font-weight-bold footer-title&quot;&gt;Reserved&lt;/h3&gt;\n&lt;h6 class=&quot;mt-3 footer-title-sub&quot;&gt;Скачайте приложение&lt;/h6&gt;\n                    &lt;div class=&quot;footer-mobile-main&quot;&gt;\n                        &lt;div class=&quot;mt-1 mt-md-4 main-thumbnail overflow-hidden footer-mobile&quot;&gt;\n                            &lt;img src=&quot;/img/main/img-11.png&quot; class=&quot;img-thumbnail bg-white p-0 footer-mobile-icon&quot;&gt;\n                        &lt;/div&gt;\n                        &lt;div class=&quot;mt-1 mt-md-3 main-thumbnail overflow-hidden footer-mobile&quot;&gt;\n                            &lt;img src=&quot;/img/main/img-10.png&quot; class=&quot;img-thumbnail bg-white p-0 footer-mobile-icon&quot;&gt;\n                        &lt;/div&gt;\n                    &lt;/div&gt;--><h6 class=\"pt-1 mt-md-0 footer-company\">© Reserved 2020 - 2021</h6></div></div></div>", 1);
 
 var _hoisted_3 = [_hoisted_2];
 function render(_ctx, _cache, $props, $setup, $data, $options) {
@@ -26867,74 +26867,83 @@ var _hoisted_11 = {
 var _hoisted_12 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<li class=\"nav-item mx-3 \"><a href=\"/home\" class=\"btn nav-link font-weight-bold font-menu\"><div>Категории</div></a></li><li class=\"nav-item mx-3\"><a href=\"/news\" class=\"btn nav-link font-weight-bold font-menu\"><div>Новости</div></a></li><li class=\"nav-item mx-3\"><a href=\"/favorite\" class=\"btn nav-link font-weight-bold font-menu\"><div>Избранное</div></a></li>", 3);
 
 var _hoisted_15 = {
-  "class": "nav-item mx-3"
+  "class": "nav-item mx-3 account-top"
 };
-
-var _hoisted_16 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, "Войти", -1
-/* HOISTED */
-);
-
-var _hoisted_17 = [_hoisted_16];
+var _hoisted_16 = {
+  "class": "account"
+};
+var _hoisted_17 = {
+  "class": "account-main"
+};
 var _hoisted_18 = {
-  "class": "nav-item"
+  "class": "account-list"
 };
 
-var _hoisted_19 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, "Регистрация", -1
+var _hoisted_19 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "account-list-title"
+}, "Добро пожаловать", -1
 /* HOISTED */
 );
 
-var _hoisted_20 = [_hoisted_19];
-var _hoisted_21 = {
-  key: 1,
-  "class": "ml-3 d-flex"
+var _hoisted_20 = {
+  "class": "account-list-items"
 };
-var _hoisted_22 = {
-  "class": "header-main position-relative"
-};
-var _hoisted_23 = {
-  key: 0,
-  "class": "header-profile"
-};
-var _hoisted_24 = {
-  "class": "header-profile-main font-weight-bold text-capitalize"
-};
-var _hoisted_25 = {
-  "class": "header-profile-main-content"
-};
-var _hoisted_26 = {
-  "class": "header-profile-icon"
-};
+
+var _hoisted_21 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "account-list-item-icon account-list-item-icon-account"
+}, null, -1
+/* HOISTED */
+);
+
+var _hoisted_22 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "account-list-item-title"
+}, "Войти", -1
+/* HOISTED */
+);
+
+var _hoisted_23 = [_hoisted_21, _hoisted_22];
+
+var _hoisted_24 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "account-list-item-icon account-list-item-icon-register"
+}, null, -1
+/* HOISTED */
+);
+
+var _hoisted_25 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "account-list-item-title"
+}, "Регистрация", -1
+/* HOISTED */
+);
+
+var _hoisted_26 = [_hoisted_24, _hoisted_25];
 var _hoisted_27 = {
-  "class": "text-white font-weight-bold"
+  "class": "account-info"
 };
 var _hoisted_28 = {
-  "class": "header-dropdown overflow-hidden"
+  "class": "account-info-logo"
 };
 var _hoisted_29 = {
-  "class": "list-group list-group-flush header-dropdown-ul"
+  "class": "account-info-name"
+};
+var _hoisted_30 = {
+  "class": "account-list-items"
 };
 
-var _hoisted_30 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-  href: "/profile",
-  "class": "list-group-item text-decoration-none"
-}, "Мой профиль", -1
+var _hoisted_31 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<a href=\"/profile\" class=\"account-list-item\"><div class=\"account-list-item-icon account-list-item-icon-account\"></div><div class=\"account-list-item-title\">Профиль</div></a><a href=\"/profile/settings\" class=\"account-list-item\"><div class=\"account-list-item-icon account-list-item-icon-settings\"></div><div class=\"account-list-item-title\">Настройки</div></a><a href=\"/profile/history\" class=\"account-list-item\"><div class=\"account-list-item-icon account-list-item-icon-history\"></div><div class=\"account-list-item-title\">История бронирований</div></a><a href=\"/profile/payments\" class=\"account-list-item\"><div class=\"account-list-item-icon account-list-item-icon-payments\"></div><div class=\"account-list-item-title\">Платежи</div></a>", 4);
+
+var _hoisted_35 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "account-list-item-icon account-list-item-icon-sign_out"
+}, null, -1
 /* HOISTED */
 );
 
-var _hoisted_31 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-  href: "/profile/settings",
-  "class": "list-group-item text-decoration-none"
-}, "Настройки", -1
+var _hoisted_36 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "account-list-item-title"
+}, "Выйти", -1
 /* HOISTED */
 );
 
-var _hoisted_32 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-  href: "/profile/history",
-  "class": "list-group-item text-decoration-none"
-}, "История", -1
-/* HOISTED */
-);
-
+var _hoisted_37 = [_hoisted_35, _hoisted_36];
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_Auth = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Auth");
 
@@ -26948,44 +26957,38 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     onClick: _cache[0] || (_cache[0] = function () {
       return $options.exit && $options.exit.apply($options, arguments);
     })
-  })) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_10, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", _hoisted_11, [_hoisted_12, $data.login ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
+  })) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_10, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", _hoisted_11, [_hoisted_12, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", _hoisted_15, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_16, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_17, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_18, [$data.login ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
     key: 0
-  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", _hoisted_15, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-    "class": "btn nav-link font-weight-bold font-menu",
+  }, [_hoisted_19, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_20, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+    "class": "account-list-item",
     "data-toggle": "modal",
     "data-target": "#auth_modal",
     onClick: _cache[1] || (_cache[1] = function ($event) {
       return _ctx.storage.auth = true;
     })
-  }, _hoisted_17)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", _hoisted_18, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-    "class": "btn btn-register nav-link font-weight-bold rounded-100 text-white px-3 font-menu register-btn",
+  }, _hoisted_23), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+    "class": "account-list-item",
     "data-toggle": "modal",
     "data-target": "#auth_modal",
     onClick: _cache[2] || (_cache[2] = function ($event) {
       return _ctx.storage.auth = false;
     })
-  }, _hoisted_20)])], 64
+  }, _hoisted_26)])], 64
   /* STABLE_FRAGMENT */
-  )) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("li", _hoisted_21, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["header-notification", {
-      'header-notification-icon-message': _ctx.storage.sidebar.notifications > 0,
-      'header-notification-icon': _ctx.storage.sidebar.notifications === 0
-    }]),
-    onClick: _cache[3] || (_cache[3] = function ($event) {
-      return $options.view(1);
-    })
-  }, null, 2
-  /* CLASS */
-  ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_22, [$data.user.name ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_23, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_24, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_25, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.user.name), 1
+  )) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
+    key: 1
+  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_27, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_28, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.user.name[0]), 1
   /* TEXT */
-  )])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_26, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_27, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.user.name[0]), 1
+  )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_29, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.user.name), 1
   /* TEXT */
-  )])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_28, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_29, [_hoisted_30, _hoisted_31, _hoisted_32, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-    "class": "list-group-item text-decoration-none",
-    onClick: _cache[4] || (_cache[4] = function () {
+  )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_30, [_hoisted_31, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+    "class": "account-list-item",
+    onClick: _cache[3] || (_cache[3] = function () {
       return $options.exit && $options.exit.apply($options, arguments);
     })
-  }, "Выйти")])])])]))])])])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Auth), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_sidebar)], 64
+  }, _hoisted_37)])], 64
+  /* STABLE_FRAGMENT */
+  ))])])])])])])])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Auth), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_sidebar)], 64
   /* STABLE_FRAGMENT */
   );
 }
@@ -31103,7 +31106,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "body {\n  background: whitesmoke;\n}\n.navbar {\n  background: #57a283;\n}\n.fixed-top {\n  z-index: 500 !important;\n}\n.header-notification {\n  cursor: pointer;\n  width: 44px;\n  height: 100%;\n  border-radius: 50px;\n  margin-right: 15px;\n  background: no-repeat center #fff;\n  background-size: 40%;\n}\n.header-notification-icon {\n  background-image: url(\"/img/logo/bell.svg\");\n}\n.header-notification-icon-message {\n  background-image: url(\"/img/logo/notification.svg\");\n}\n.header-sign-out, .header-location {\n  background: url(\"/img/logo/sign-out.svg\") no-repeat center whitesmoke;\n  background-size: 40%;\n  width: 40px;\n  height: 40px;\n  position: absolute;\n  right: 12px;\n  border-radius: 30px;\n  cursor: pointer;\n}\n.header-reserved {\n  background: url(\"/favicon/favicon.ico\") no-repeat center whitesmoke;\n  background-size: cover;\n  width: 40px;\n  height: 40px;\n  position: absolute;\n  left: 12px;\n  border-radius: 30px;\n  cursor: pointer;\n}\n.header-location {\n  background-image: url(\"/img/logo/location-pin-green.svg\");\n  left: 12px;\n}\n.header-text {\n  font-size: 20px;\n}\n.header-dropdown {\n  background: #fff;\n  box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.1);\n  position: absolute;\n  top: 44px;\n  right: 0;\n  width: -webkit-max-content;\n  width: -moz-max-content;\n  width: max-content;\n  border-radius: 10px;\n  font-size: 14px;\n  display: none;\n}\n.header-dropdown-ul > a {\n  cursor: pointer;\n  border-color: #f0f0f0;\n  color: grey;\n  font-weight: bold;\n}\n.header-dropdown-ul > a:hover {\n  background: #FF8008;\n  color: #fff;\n}\n.header-main {\n  cursor: pointer;\n}\n.header-main:hover > .header-dropdown {\n  display: block;\n}\n.header-profile {\n  display: grid;\n  justify-content: center;\n  align-content: center;\n  grid-template-columns: auto 30px;\n  grid-gap: 5px;\n  height: 100%;\n  font-size: 14px;\n  color: #FF8008;\n  padding: 0 5px 0 10px;\n  background: #fff;\n  border-radius: 30px;\n}\n.header-profile-main-content {\n  display: grid;\n  justify-content: center;\n  align-content: center;\n  height: 100%;\n}\n.header-profile-icon {\n  height: 30px;\n  width: 30px;\n  background: #FF8008;\n  border-radius: 30px;\n  display: grid;\n  justify-content: center;\n  align-content: center;\n}\n.header-profile-icon > div {\n  text-transform: uppercase;\n}\n@media only screen and (max-width: 768px) {\n.header-text {\n    font-size: 14px;\n    margin: 3px auto 3px auto;\n    padding: 0;\n}\n}\n.btn {\n  outline: none !important;\n  box-shadow: none !important;\n}\n.btn-menu > a {\n  padding-right: 15px !important;\n  position: relative;\n  cursor: pointer;\n}\n.btn-menu > a:after {\n  content: '';\n  position: absolute;\n  width: 8px;\n  height: 8px;\n  border: 2px solid #fff;\n  border-top: none;\n  border-left: none;\n  border-radius: 2px;\n  right: 0;\n  top: 16px;\n  transform: rotate(45deg);\n}\n.btn, .btn-group {\n  outline: none;\n}\n.register-btn {\n  border-radius: 100px;\n  text-align: center;\n}\n.font-menu {\n  font-size: 14px;\n  font-weight: 500;\n  height: 44px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n.font-menu-item {\n  color: #000;\n  font-weight: normal;\n}\n.font-menu-item:hover, .font-menu-item:active {\n  background-color: #4ca1af;\n  color: #FFF;\n}\n.logo {\n  font-weight: bold;\n  width: 34px;\n  height: 34px;\n  border-radius: 20px;\n  margin: 0 2px 0 0;\n  border: none;\n  background: #fff;\n  color: #2193b0;\n}\n.logo-blue {\n  background: #2193b0;\n  color: #fff;\n}\n@media only screen and (max-width: 992px) {\n.logo {\n    background: #2193b0 !important;\n    color: #fff !important;\n}\n.logo-text {\n    color: #2193b0;\n}\n}\n.btn-register {\n  background: #FF8008;\n}\n.navbar {\n  transition: all 0.4s;\n}\n.navbar .nav-link {\n  color: #fff;\n}\n.navbar .nav-link:hover,\n.navbar .nav-link:focus {\n  color: #fff;\n  text-decoration: none;\n}\n.navbar .navbar-brand {\n  color: #fff;\n}\n\n/* Change navbar styling on scroll */\n.navbar.active {\n  background: #fff;\n  box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.1);\n}\n.navbar.active .nav-link {\n  color: #555;\n}\n.navbar.active .nav-link:hover,\n.navbar.active .nav-link:focus {\n  color: #555;\n  text-decoration: none;\n}\n.navbar.active .navbar-brand {\n  color: #555;\n}\n\n/* Change navbar styling on small viewports */\n@media (max-width: 991.98px) {\n.navbar {\n    background: #fff;\n}\n.navbar .navbar-brand, .navbar .nav-link {\n    color: #555;\n}\n}\n\n/*\n*\n* ==========================================\n* FOR DEMO PURPOSES\n* ==========================================\n*\n*/\n.text-small {\n  font-size: 0.9rem !important;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "body {\n  background: whitesmoke;\n}\n.navbar {\n  background: #57a283;\n}\n.fixed-top {\n  z-index: 500 !important;\n}\nnav.active > .container-fluid > .container > #navbarSupportedContent > ul > li.account-top > .account {\n  background-image: url(\"/img/logo/shopping-bag.png\");\n}\n.account {\n  width: 24px;\n  height: 24px;\n  background: url(\"/img/logo/shopping-bag-white.png\") no-repeat center;\n  background-size: contain;\n  position: relative;\n  -webkit-user-select: none;\n  -ms-user-select: none;\n  -moz-user-select: none;\n       user-select: none;\n  cursor: pointer;\n}\n.account-list {\n  width: 100%;\n  min-height: 150px;\n  border-radius: 10px;\n  background: #fff;\n  position: relative;\n  overflow: hidden;\n}\n.account-list-title {\n  font-size: 14px;\n  text-align: center;\n  padding: 25px 0 25px 0;\n  color: grey;\n}\n.account-list-items {\n  margin: 0 15px 15px 15px;\n  font-size: 14px;\n  color: #57a283;\n}\n.account-list-item {\n  border-top: 1px solid #e6f1ec;\n  padding: 10px 0 10px 0;\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  text-decoration: none !important;\n  color: inherit !important;\n}\n.account-list-item:hover {\n  background: #fafafa;\n}\n.account-list-item-icon {\n  width: 18px;\n  height: 18px;\n  background: no-repeat center;\n  background-size: contain;\n}\n.account-list-item-icon-account {\n  background-image: url(\"/img/logo/profile-user.png\");\n}\n.account-list-item-icon-register {\n  background-image: url(\"/img/logo/writing.png\");\n}\n.account-list-item-icon-settings {\n  background-image: url(\"/img/logo/settings.svg\");\n}\n.account-list-item-icon-history {\n  background-image: url(\"/img/logo/history.svg\");\n}\n.account-list-item-icon-payments {\n  background-image: url(\"/img/logo/card.svg\");\n}\n.account-list-item-icon-sign_out {\n  background-image: url(\"/img/logo/sign-out.svg\");\n}\n.account-info-logo {\n  background: #e6f1ec;\n  margin: 25px auto 10px auto;\n  height: 40px;\n  width: 40px;\n  text-align: center;\n  color: #57a283;\n  font-weight: bold;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  border-radius: 30px;\n  font-size: 22px;\n}\n.account-info-name {\n  text-align: center;\n  color: #57a283;\n  margin: 10px 15px 21px 15px;\n  font-size: 14px;\n  font-weight: bold;\n}\n.account-main {\n  position: absolute;\n  width: 300px;\n  left: 50%;\n  top: 55px;\n  transform: translate(-50%, 0);\n  box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.1);\n  border-radius: 10px;\n  transition: all 0.2s ease;\n  visibility: hidden;\n  opacity: 0;\n}\n.account-main:before {\n  content: '';\n  position: absolute;\n  width: 16px;\n  height: 16px;\n  background: #fff;\n  transform: translate(-50%, 0) rotate(45deg);\n  left: 50%;\n  top: -8px;\n  box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.1);\n}\n.account-top {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.account-top:hover > .account > .account-main {\n  visibility: visible;\n  opacity: 1;\n  top: 45px;\n}\n.header-notification {\n  cursor: pointer;\n  width: 44px;\n  height: 100%;\n  border-radius: 50px;\n  margin-right: 15px;\n  background: no-repeat center #fff;\n  background-size: 40%;\n}\n.header-notification-icon {\n  background-image: url(\"/img/logo/bell.svg\");\n}\n.header-notification-icon-message {\n  background-image: url(\"/img/logo/notification.svg\");\n}\n.header-sign-out, .header-location {\n  background: url(\"/img/logo/sign-out.svg\") no-repeat center whitesmoke;\n  background-size: 40%;\n  width: 40px;\n  height: 40px;\n  position: absolute;\n  right: 12px;\n  border-radius: 30px;\n  cursor: pointer;\n}\n.header-reserved {\n  background: url(\"/favicon/favicon.ico\") no-repeat center whitesmoke;\n  background-size: cover;\n  width: 40px;\n  height: 40px;\n  position: absolute;\n  left: 12px;\n  border-radius: 30px;\n  cursor: pointer;\n}\n.header-location {\n  background-image: url(\"/img/logo/location-pin-green.svg\");\n  left: 12px;\n}\n.header-text {\n  font-size: 20px;\n}\n.header-dropdown {\n  background: #fff;\n  box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.1);\n  position: absolute;\n  top: 44px;\n  right: 0;\n  width: -webkit-max-content;\n  width: -moz-max-content;\n  width: max-content;\n  border-radius: 10px;\n  font-size: 14px;\n  display: none;\n}\n.header-dropdown-ul > a {\n  cursor: pointer;\n  border-color: #f0f0f0;\n  color: grey;\n  font-weight: bold;\n}\n.header-dropdown-ul > a:hover {\n  background: #FF8008;\n  color: #fff;\n}\n.header-main {\n  cursor: pointer;\n}\n.header-main:hover > .header-dropdown {\n  display: block;\n}\n.header-profile {\n  display: grid;\n  justify-content: center;\n  align-content: center;\n  grid-template-columns: auto 30px;\n  grid-gap: 5px;\n  height: 100%;\n  font-size: 14px;\n  color: #FF8008;\n  padding: 0 5px 0 10px;\n  background: #fff;\n  border-radius: 30px;\n}\n.header-profile-main-content {\n  display: grid;\n  justify-content: center;\n  align-content: center;\n  height: 100%;\n}\n.header-profile-icon {\n  height: 30px;\n  width: 30px;\n  background: #FF8008;\n  border-radius: 30px;\n  display: grid;\n  justify-content: center;\n  align-content: center;\n}\n.header-profile-icon > div {\n  text-transform: uppercase;\n}\n@media only screen and (max-width: 1400px) {\n.account-main {\n    left: auto;\n    right: -15px;\n    transform: translate(10px, 0);\n}\n.account-main:before {\n    left: auto;\n    right: 20px;\n}\n}\n@media only screen and (max-width: 768px) {\n.header-text {\n    font-size: 14px;\n    margin: 3px auto 3px auto;\n    padding: 0;\n}\n}\n.btn {\n  outline: none !important;\n  box-shadow: none !important;\n}\n.btn-menu > a {\n  padding-right: 15px !important;\n  position: relative;\n  cursor: pointer;\n}\n.btn-menu > a:after {\n  content: '';\n  position: absolute;\n  width: 8px;\n  height: 8px;\n  border: 2px solid #fff;\n  border-top: none;\n  border-left: none;\n  border-radius: 2px;\n  right: 0;\n  top: 16px;\n  transform: rotate(45deg);\n}\n.btn, .btn-group {\n  outline: none;\n}\n.register-btn {\n  border-radius: 100px;\n  text-align: center;\n}\n.font-menu {\n  font-size: 14px;\n  font-weight: 500;\n  height: 44px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n.font-menu-item {\n  color: #000;\n  font-weight: normal;\n}\n.font-menu-item:hover, .font-menu-item:active {\n  background-color: #4ca1af;\n  color: #FFF;\n}\n.logo {\n  font-weight: bold;\n  width: 34px;\n  height: 34px;\n  border-radius: 20px;\n  margin: 0 2px 0 0;\n  border: none;\n  background: #fff;\n  color: #2193b0;\n}\n.logo-blue {\n  background: #2193b0;\n  color: #fff;\n}\n@media only screen and (max-width: 992px) {\n.logo {\n    background: #2193b0 !important;\n    color: #fff !important;\n}\n.logo-text {\n    color: #2193b0;\n}\n}\n.btn-register {\n  background: #FF8008;\n}\n.navbar {\n  transition: all 0.4s;\n}\n.navbar .nav-link {\n  color: #fff;\n}\n.navbar .nav-link:hover,\n.navbar .nav-link:focus {\n  color: #fff;\n  text-decoration: none;\n}\n.navbar .navbar-brand {\n  color: #fff;\n}\n\n/* Change navbar styling on scroll */\n.navbar.active {\n  background: #fff;\n  box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.1);\n}\n.navbar.active .nav-link {\n  color: #555;\n}\n.navbar.active .nav-link:hover,\n.navbar.active .nav-link:focus {\n  color: #555;\n  text-decoration: none;\n}\n.navbar.active .navbar-brand {\n  color: #555;\n}\n\n/* Change navbar styling on small viewports */\n@media (max-width: 991.98px) {\n.navbar {\n    background: #fff;\n}\n.navbar .navbar-brand, .navbar .nav-link {\n    color: #555;\n}\n}\n\n/*\n*\n* ==========================================\n* FOR DEMO PURPOSES\n* ==========================================\n*\n*/\n.text-small {\n  font-size: 0.9rem !important;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

@@ -29,43 +29,57 @@
                                     <div>Избранное</div>
                                 </a>
                             </li>
-                            <template v-if="login">
-                                <li class="nav-item mx-3">
-                                    <a class="btn nav-link font-weight-bold font-menu" data-toggle="modal" data-target="#auth_modal" @click="storage.auth = true">
-                                        <div>Войти</div>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="btn btn-register nav-link font-weight-bold rounded-100 text-white px-3 font-menu register-btn" data-toggle="modal" data-target="#auth_modal" @click="storage.auth = false">
-                                        <div>Регистрация</div>
-                                    </a>
-                                </li>
-                            </template>
-                            <template v-else>
-                                <li class="ml-3 d-flex">
-                                    <div class="header-notification" :class="{'header-notification-icon-message':(storage.sidebar.notifications > 0),'header-notification-icon':(storage.sidebar.notifications === 0)}"  @click="view(1)"></div>
-                                    <div class="header-main position-relative">
-                                        <div class="header-profile" v-if="user.name">
-                                            <div class="header-profile-main font-weight-bold text-capitalize">
-                                                <div class="header-profile-main-content">
-                                                    <div>{{user.name}}</div>
+                            <li class="nav-item mx-3 account-top">
+                                <div class="account">
+                                    <div class="account-main">
+                                        <div class="account-list">
+                                            <template v-if="login">
+                                                <div class="account-list-title">Добро пожаловать</div>
+                                                <div class="account-list-items">
+                                                    <div class="account-list-item" data-toggle="modal" data-target="#auth_modal" @click="storage.auth = true">
+                                                        <div class="account-list-item-icon account-list-item-icon-account"></div>
+                                                        <div class="account-list-item-title">Войти</div>
+                                                    </div>
+                                                    <div class="account-list-item" data-toggle="modal" data-target="#auth_modal" @click="storage.auth = false">
+                                                        <div class="account-list-item-icon account-list-item-icon-register"></div>
+                                                        <div class="account-list-item-title">Регистрация</div>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div class="header-profile-icon">
-                                                <div class="text-white font-weight-bold">{{user.name[0]}}</div>
-                                            </div>
-                                        </div>
-                                        <div class="header-dropdown overflow-hidden">
-                                            <div class="list-group list-group-flush header-dropdown-ul">
-                                                <a href="/profile" class="list-group-item text-decoration-none">Мой профиль</a>
-                                                <a href="/profile/settings" class="list-group-item text-decoration-none">Настройки</a>
-                                                <a href="/profile/history" class="list-group-item text-decoration-none">История</a>
-                                                <a class="list-group-item text-decoration-none" @click="exit">Выйти</a>
-                                            </div>
+                                            </template>
+                                            <template v-else>
+                                                <div class="account-info">
+                                                    <div class="account-info-logo">
+                                                        <div>{{user.name[0]}}</div>
+                                                    </div>
+                                                    <div class="account-info-name">{{user.name}}</div>
+                                                </div>
+                                                <div class="account-list-items">
+                                                    <a href="/profile" class="account-list-item">
+                                                        <div class="account-list-item-icon account-list-item-icon-account"></div>
+                                                        <div class="account-list-item-title">Профиль</div>
+                                                    </a>
+                                                    <a href="/profile/settings" class="account-list-item">
+                                                        <div class="account-list-item-icon account-list-item-icon-settings"></div>
+                                                        <div class="account-list-item-title">Настройки</div>
+                                                    </a>
+                                                    <a href="/profile/history" class="account-list-item">
+                                                        <div class="account-list-item-icon account-list-item-icon-history"></div>
+                                                        <div class="account-list-item-title">История бронирований</div>
+                                                    </a>
+                                                    <a href="/profile/payments" class="account-list-item">
+                                                        <div class="account-list-item-icon account-list-item-icon-payments"></div>
+                                                        <div class="account-list-item-title">Платежи</div>
+                                                    </a>
+                                                    <a class="account-list-item" @click="exit">
+                                                        <div class="account-list-item-icon account-list-item-icon-sign_out"></div>
+                                                        <div class="account-list-item-title">Выйти</div>
+                                                    </a>
+                                                </div>
+                                            </template>
                                         </div>
                                     </div>
-                                </li>
-                            </template>
+                                </div>
+                            </li>
                         </ul>
                     </div>
                 </div>
