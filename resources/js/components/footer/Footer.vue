@@ -3,22 +3,6 @@
         <div class="container pb-5 px-0">
             <div class="row mb-5">
                 <div class="col-12 col-md-6 col-lg-3">
-                    <h5 class="font-weight-bold mt-3 mt-md-0 footer-menu-title">Главное</h5>
-                    <ul class="list-group p-0 mt-md-4 footer-menu-group">
-                        <li class="list-group-item bg-transparent border-0 px-0 py-1 py-md-2">О нас</li>
-                        <li class="list-group-item bg-transparent border-0 px-0 py-1 py-md-2">
-                            <a href="/news" class="p-0 m-0 text-white">
-                                Новости
-                            </a>
-                        </li>
-                        <li class="list-group-item bg-transparent border-0 px-0 py-1 py-md-2">
-                            <a href="/politics" class="p-0 m-0 text-white">
-                                Политика конфеденциальности
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-12 col-md-6 col-lg-3">
                     <h5 class="font-weight-bold mt-3 mt-md-0 footer-menu-title">Ссылки reserved</h5>
                     <ul class="list-group p-0 mt-md-4 footer-menu-group">
                         <li class="list-group-item bg-transparent border-0 px-0 py-1 py-md-2">
@@ -34,6 +18,22 @@
                         <li class="list-group-item bg-transparent border-0 px-0 py-1 py-md-2">
                             <a href="/support" class="p-0 m-0 text-white">
                                 Поддержка
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3">
+                    <h5 class="font-weight-bold mt-3 mt-md-0 footer-menu-title">Главное</h5>
+                    <ul class="list-group p-0 mt-md-4 footer-menu-group">
+                        <!--                        <li class="list-group-item bg-transparent border-0 px-0 py-1 py-md-2">О нас</li>-->
+                        <li class="list-group-item bg-transparent border-0 px-0 py-1 py-md-2">
+                            <a href="/news" class="p-0 m-0 text-white">
+                                Новости
+                            </a>
+                        </li>
+                        <li class="list-group-item bg-transparent border-0 px-0 py-1 py-md-2">
+                            <a href="/politics" class="p-0 m-0 text-white">
+                                Политика конфеденциальности
                             </a>
                         </li>
                     </ul>
