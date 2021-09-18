@@ -119,7 +119,7 @@
         </nav>
     </header>
     <Auth></Auth>
-
+    <sidebar></sidebar>
 </template>
 
 <script>
