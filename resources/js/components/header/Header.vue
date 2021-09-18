@@ -29,8 +29,17 @@
                                     <div>Избранное</div>
                                 </a>
                             </li>
+<!--                            <li class="nav-item mx-3 account-top" v-show="!login">
+                                <div class="account account-notification">
+                                    <div class="account-main">
+                                        <div class="account-list">
+                                            <sidebar></sidebar>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>-->
                             <li class="nav-item mx-3 account-top">
-                                <div class="account">
+                                <div class="account account-bag">
                                     <div class="account-main">
                                         <div class="account-list">
                                             <template v-if="login">
@@ -46,7 +55,7 @@
                                                     </div>
                                                 </div>
                                             </template>
-                                            <template v-else>
+                                            <template v-else-if="user">
                                                 <div class="account-info">
                                                     <div class="account-info-logo">
                                                         <div>{{user.name[0]}}</div>
@@ -80,6 +89,29 @@
                                     </div>
                                 </div>
                             </li>
+                            <!--<li class="ml-3 d-flex">
+                                    <div class="header-notification" :class="{'header-notification-icon-message':(storage.sidebar.notifications > 0),'header-notification-icon':(storage.sidebar.notifications === 0)}"  @click="view(1)"></div>
+                                    <div class="header-main position-relative">
+                                        <div class="header-profile" v-if="user.name">
+                                            <div class="header-profile-main font-weight-bold text-capitalize">
+                                                <div class="header-profile-main-content">
+                                                    <div>{{user.name}}</div>
+                                                </div>
+                                            </div>
+                                            <div class="header-profile-icon">
+                                                <div class="text-white font-weight-bold">{{user.name[0]}}</div>
+                                            </div>
+                                        </div>
+                                        <div class="header-dropdown overflow-hidden">
+                                            <div class="list-group list-group-flush header-dropdown-ul">
+                                                <a href="/profile" class="list-group-item text-decoration-none">Мой профиль</a>
+                                                <a href="/profile/settings" class="list-group-item text-decoration-none">Настройки</a>
+                                                <a href="/profile/history" class="list-group-item text-decoration-none">История</a>
+                                                <a class="list-group-item text-decoration-none" @click="exit">Выйти</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>-->
                         </ul>
                     </div>
                 </div>
@@ -87,7 +119,7 @@
         </nav>
     </header>
     <Auth></Auth>
-    <sidebar></sidebar>
+
 </template>
 
 <script>

@@ -7,19 +7,31 @@ body {
 .fixed-top {
     z-index: 500 !important;
 }
-nav.active > .container-fluid > .container > #navbarSupportedContent > ul > li.account-top > .account {
+nav.active > .container-fluid > .container > #navbarSupportedContent > ul > li.account-top > .account-bag {
     background-image: url('/img/logo/shopping-bag.png');
+}
+nav.active > .container-fluid > .container > #navbarSupportedContent > ul > li.account-top > .account-notification {
+    background-image: url('/img/logo/bell-green.png');
+}
+.notification {
+
 }
 .account {
     width: 24px;
     height: 24px;
-    background: url('/img/logo/shopping-bag-white.png') no-repeat center;
+    background: no-repeat center;
     background-size: contain;
     position: relative;
     -webkit-user-select: none;
     -ms-user-select: none;
     user-select: none;
     cursor: pointer;
+    &-bag {
+        background-image: url('/img/logo/shopping-bag-white.png');
+    }
+    &-notification {
+        background-image: url('/img/logo/bell.png');
+    }
     &-list {
         width: 100%;
         min-height: 150px;
