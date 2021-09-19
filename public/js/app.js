@@ -20328,12 +20328,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _header_Header__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./header/Header */ "./resources/js/components/header/Header.vue");
 /* harmony import */ var _footer_Footer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./footer/Footer */ "./resources/js/components/footer/Footer.vue");
 /* harmony import */ var _sections_ProfileSection__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./sections/ProfileSection */ "./resources/js/components/sections/ProfileSection.vue");
-/* harmony import */ var _footerMenu_FooterMenu__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./footerMenu/FooterMenu */ "./resources/js/components/footerMenu/FooterMenu.vue");
-/* harmony import */ var _layout_Not_found__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./layout/Not-found */ "./resources/js/components/layout/Not-found.vue");
-/* harmony import */ var _layout_Loading__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./layout/Loading */ "./resources/js/components/layout/Loading.vue");
-/* harmony import */ var _layout_Search__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./layout/Search */ "./resources/js/components/layout/Search.vue");
-/* harmony import */ var _layout_Card__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./layout/Card */ "./resources/js/components/layout/Card.vue");
-
+/* harmony import */ var _layout_Not_found__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./layout/Not-found */ "./resources/js/components/layout/Not-found.vue");
+/* harmony import */ var _layout_Loading__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./layout/Loading */ "./resources/js/components/layout/Loading.vue");
+/* harmony import */ var _layout_Search__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./layout/Search */ "./resources/js/components/layout/Search.vue");
+/* harmony import */ var _layout_Card__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./layout/Card */ "./resources/js/components/layout/Card.vue");
 
 
 
@@ -20346,11 +20344,10 @@ __webpack_require__.r(__webpack_exports__);
     Header: _header_Header__WEBPACK_IMPORTED_MODULE_0__.default,
     Footer: _footer_Footer__WEBPACK_IMPORTED_MODULE_1__.default,
     ProfileSection: _sections_ProfileSection__WEBPACK_IMPORTED_MODULE_2__.default,
-    FooterMenu: _footerMenu_FooterMenu__WEBPACK_IMPORTED_MODULE_3__.default,
-    NotFound: _layout_Not_found__WEBPACK_IMPORTED_MODULE_4__.default,
-    Loading: _layout_Loading__WEBPACK_IMPORTED_MODULE_5__.default,
-    Search: _layout_Search__WEBPACK_IMPORTED_MODULE_6__.default,
-    Card: _layout_Card__WEBPACK_IMPORTED_MODULE_7__.default
+    NotFound: _layout_Not_found__WEBPACK_IMPORTED_MODULE_3__.default,
+    Loading: _layout_Loading__WEBPACK_IMPORTED_MODULE_4__.default,
+    Search: _layout_Search__WEBPACK_IMPORTED_MODULE_5__.default,
+    Card: _layout_Card__WEBPACK_IMPORTED_MODULE_6__.default
   },
   name: "Home",
   data: function data() {
@@ -21140,9 +21137,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _header_Header__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./header/Header */ "./resources/js/components/header/Header.vue");
 /* harmony import */ var _sections_ProfileSection__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./sections/ProfileSection */ "./resources/js/components/sections/ProfileSection.vue");
-/* harmony import */ var _footerMenu_FooterMenu__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./footerMenu/FooterMenu */ "./resources/js/components/footerMenu/FooterMenu.vue");
-/* harmony import */ var _footer_Footer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./footer/Footer */ "./resources/js/components/footer/Footer.vue");
-
+/* harmony import */ var _footer_Footer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./footer/Footer */ "./resources/js/components/footer/Footer.vue");
 
 
 
@@ -21151,8 +21146,7 @@ __webpack_require__.r(__webpack_exports__);
   components: {
     Header: _header_Header__WEBPACK_IMPORTED_MODULE_0__.default,
     ProfileSection: _sections_ProfileSection__WEBPACK_IMPORTED_MODULE_1__.default,
-    FooterMenu: _footerMenu_FooterMenu__WEBPACK_IMPORTED_MODULE_2__.default,
-    Footer: _footer_Footer__WEBPACK_IMPORTED_MODULE_3__.default
+    Footer: _footer_Footer__WEBPACK_IMPORTED_MODULE_2__.default
   }
 });
 
@@ -21542,6 +21536,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _auth_Auth__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./auth/Auth */ "./resources/js/components/header/auth/Auth.vue");
 /* harmony import */ var _layout_Sidebar__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../layout/Sidebar */ "./resources/js/components/layout/Sidebar.vue");
+/* harmony import */ var _footerMenu_FooterMenu__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../footerMenu/FooterMenu */ "./resources/js/components/footerMenu/FooterMenu.vue");
 
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
@@ -21550,11 +21545,13 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
 
 
+
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "Header",
   components: {
     Auth: _auth_Auth__WEBPACK_IMPORTED_MODULE_1__.default,
-    Sidebar: _layout_Sidebar__WEBPACK_IMPORTED_MODULE_2__.default
+    Sidebar: _layout_Sidebar__WEBPACK_IMPORTED_MODULE_2__.default,
+    FooterMenu: _footerMenu_FooterMenu__WEBPACK_IMPORTED_MODULE_3__.default
   },
   data: function data() {
     return {
@@ -25087,8 +25084,6 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
   var _component_not_found = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("not-found");
 
-  var _component_Footer_menu = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Footer-menu");
-
   var _component_Footer = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Footer");
 
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Header), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_profile_section), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Search, {
@@ -25175,7 +25170,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     params: $data.notFound
   }, null, 8
   /* PROPS */
-  , ["params"])), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Footer_menu), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Footer)], 64
+  , ["params"])), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Footer)], 64
   /* STABLE_FRAGMENT */
   );
 }
@@ -25985,11 +25980,9 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
   var _component_profile_section = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("profile-section");
 
-  var _component_Footer_menu = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Footer-menu");
-
   var _component_Footer = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Footer");
 
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Header), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_profile_section), _hoisted_1, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Footer_menu), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Footer)], 64
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Header), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_profile_section), _hoisted_1, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Footer)], 64
   /* STABLE_FRAGMENT */
   );
 }
@@ -26947,6 +26940,10 @@ var _hoisted_37 = [_hoisted_35, _hoisted_36];
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_Auth = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Auth");
 
+  var _component_sidebar = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("sidebar");
+
+  var _component_Footer_menu = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Footer-menu");
+
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("header", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("nav", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [_hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", _hoisted_6, [_ctx.storage.city ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_7, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.storage.city.title), 1
   /* TEXT */
   )) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_8, "Не выбрано"))]), _hoisted_9, !$data.login ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", {
@@ -26986,7 +26983,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     })
   }, _hoisted_37)])], 64
   /* STABLE_FRAGMENT */
-  )) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("<li class=\"ml-3 d-flex\">\n                                    <div class=\"header-notification\" :class=\"{'header-notification-icon-message':(storage.sidebar.notifications > 0),'header-notification-icon':(storage.sidebar.notifications === 0)}\"  @click=\"view(1)\"></div>\n                                    <div class=\"header-main position-relative\">\n                                        <div class=\"header-profile\" v-if=\"user.name\">\n                                            <div class=\"header-profile-main font-weight-bold text-capitalize\">\n                                                <div class=\"header-profile-main-content\">\n                                                    <div>{{user.name}}</div>\n                                                </div>\n                                            </div>\n                                            <div class=\"header-profile-icon\">\n                                                <div class=\"text-white font-weight-bold\">{{user.name[0]}}</div>\n                                            </div>\n                                        </div>\n                                        <div class=\"header-dropdown overflow-hidden\">\n                                            <div class=\"list-group list-group-flush header-dropdown-ul\">\n                                                <a href=\"/profile\" class=\"list-group-item text-decoration-none\">Мой профиль</a>\n                                                <a href=\"/profile/settings\" class=\"list-group-item text-decoration-none\">Настройки</a>\n                                                <a href=\"/profile/history\" class=\"list-group-item text-decoration-none\">История</a>\n                                                <a class=\"list-group-item text-decoration-none\" @click=\"exit\">Выйти</a>\n                                            </div>\n                                        </div>\n                                    </div>\n                                </li>")])])])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Auth)], 64
+  )) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("<li class=\"ml-3 d-flex\">\n                                    <div class=\"header-notification\" :class=\"{'header-notification-icon-message':(storage.sidebar.notifications > 0),'header-notification-icon':(storage.sidebar.notifications === 0)}\"  @click=\"view(1)\"></div>\n                                    <div class=\"header-main position-relative\">\n                                        <div class=\"header-profile\" v-if=\"user.name\">\n                                            <div class=\"header-profile-main font-weight-bold text-capitalize\">\n                                                <div class=\"header-profile-main-content\">\n                                                    <div>{{user.name}}</div>\n                                                </div>\n                                            </div>\n                                            <div class=\"header-profile-icon\">\n                                                <div class=\"text-white font-weight-bold\">{{user.name[0]}}</div>\n                                            </div>\n                                        </div>\n                                        <div class=\"header-dropdown overflow-hidden\">\n                                            <div class=\"list-group list-group-flush header-dropdown-ul\">\n                                                <a href=\"/profile\" class=\"list-group-item text-decoration-none\">Мой профиль</a>\n                                                <a href=\"/profile/settings\" class=\"list-group-item text-decoration-none\">Настройки</a>\n                                                <a href=\"/profile/history\" class=\"list-group-item text-decoration-none\">История</a>\n                                                <a class=\"list-group-item text-decoration-none\" @click=\"exit\">Выйти</a>\n                                            </div>\n                                        </div>\n                                    </div>\n                                </li>")])])])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Auth), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_sidebar), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Footer_menu)], 64
   /* STABLE_FRAGMENT */
   );
 }

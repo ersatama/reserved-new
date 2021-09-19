@@ -14,7 +14,7 @@ class TelegramCrudController extends CrudController
 {
     use \Backpack\CRUD\app\Http\Controllers\Operations\ListOperation;
     use \Backpack\CRUD\app\Http\Controllers\Operations\CreateOperation { store as traitStore; }
-    use \Backpack\CRUD\app\Http\Controllers\Operations\UpdateOperation;
+    use \Backpack\CRUD\app\Http\Controllers\Operations\UpdateOperation { update as traitUpdate; }
     use \Backpack\CRUD\app\Http\Controllers\Operations\ShowOperation;
 
     public function setup()
@@ -26,6 +26,14 @@ class TelegramCrudController extends CrudController
             $this->crud->addClause('where', TelegramContract::USER_ID, '=',backpack_user()->id);
         }
     }
+
+    public function update(Telegram $telegram)
+    {
+        $response   =   $this->traitUpdate();
+        $telegram->setWebhook($this->crud->getCurrentEntry()->{MainContract::ID},$this->crud->getCurrentEntry()->{MainContract::API_TOKEN});
+        return $response;
+    }
+
     public function store(Telegram $telegram)
     {
         $this->crud->addField(['type' => 'hidden', 'name' => MainContract::USER_ID]);

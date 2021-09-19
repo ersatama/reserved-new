@@ -120,16 +120,19 @@
     </header>
     <Auth></Auth>
     <sidebar></sidebar>
+    <Footer-menu></Footer-menu>
 </template>
 
 <script>
 import Auth from "./auth/Auth";
 import Sidebar from '../layout/Sidebar';
+import FooterMenu from '../footerMenu/FooterMenu';
 export default {
     name: "Header",
     components: {
         Auth,
-        Sidebar
+        Sidebar,
+        FooterMenu
     },
     data() {
         return {
