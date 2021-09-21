@@ -2,7 +2,6 @@
     <Header></Header>
     <profile-section :category="category"></profile-section>
     <organization v-if="category" :category="category"></organization>
-    <Footer-menu></Footer-menu>
     <Footer></Footer>
 </template>
 
@@ -10,7 +9,6 @@
 import Header from "./header/Header";
 import Footer from "./footer/Footer";
 import ProfileSection from './sections/ProfileSection';
-import FooterMenu from './footerMenu/FooterMenu';
 
 import Organization from './layout/Organization';
 
@@ -20,7 +18,6 @@ export default {
         Header,
         Footer,
         ProfileSection,
-        FooterMenu,
         Organization,
     },
     data() {

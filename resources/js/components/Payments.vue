@@ -60,7 +60,6 @@
             </template>
         </div>
     </div>
-    <Footer-menu></Footer-menu>
     <Footer></Footer>
 </template>
 
@@ -68,7 +67,6 @@
 import Header from "./header/Header";
 import Footer from "./footer/Footer";
 import ProfileSection from "./sections/ProfileSection";
-import FooterMenu from "./footerMenu/FooterMenu";
 import CardModal from '././modal/Card';
 import NotFound from './layout/Not-found';
 import Loading from './layout/Loading';
@@ -78,7 +76,6 @@ export default {
         Header,
         Footer,
         ProfileSection,
-        FooterMenu,
         CardModal,
         NotFound,
         Loading

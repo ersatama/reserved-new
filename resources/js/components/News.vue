@@ -30,7 +30,6 @@
         </div>
     </div>
     <not-found v-else :params="NotFound" ></not-found>
-    <Footer-menu></Footer-menu>
     <Footer></Footer>
 </template>
 
@@ -38,7 +37,6 @@
 import Header from "./header/Header";
 import Footer from "./footer/Footer";
 import ProfileSection from './sections/ProfileSection';
-import FooterMenu from './footerMenu/FooterMenu';
 import Loading from './layout/Loading';
 import NotFound from './layout/Not-found';
 export default {
@@ -46,7 +44,6 @@ export default {
         Header,
         Footer,
         ProfileSection,
-        FooterMenu,
         Loading,
         NotFound
     },

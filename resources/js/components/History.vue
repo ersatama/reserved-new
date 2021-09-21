@@ -49,7 +49,6 @@
             </template>
         </div>
     </div>
-    <Footer-menu></Footer-menu>
     <Footer></Footer>
 </template>
 
@@ -57,7 +56,6 @@
 import Header from "./header/Header";
 import Footer from "./footer/Footer";
 import ProfileSection from './sections/ProfileSection';
-import FooterMenu from './footerMenu/FooterMenu';
 import Comment from './modal/comment';
 import NotFound from './layout/Not-found';
 export default {
@@ -65,7 +63,6 @@ export default {
         Header,
         Footer,
         ProfileSection,
-        FooterMenu,
         Comment,
         NotFound
     },

@@ -85,7 +85,6 @@
         <Photos v-if="tab === 4" :api="'/api/menu/list/'+organization.id"></Photos>
     </template>
     <not-found v-else :params="notFound"></not-found>
-    <Footer-menu></Footer-menu>
     <Footer></Footer>
 </template>
 
@@ -93,7 +92,6 @@
 import Header from "./header/Header";
 import Footer from "./footer/Footer";
 import ProfileSection from './sections/ProfileSection';
-import FooterMenu from './footerMenu/FooterMenu';
 import NotFound from './layout/Not-found'
 import Loading from './layout/Loading';
 import Reviews from './layout/Reviews';
@@ -104,7 +102,6 @@ export default {
         Header,
         Footer,
         ProfileSection,
-        FooterMenu,
         NotFound,
         Loading,
         Reviews,

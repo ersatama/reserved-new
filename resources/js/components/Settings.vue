@@ -58,7 +58,6 @@
             <loading></loading>
         </template>
     </div>
-    <Footer-menu></Footer-menu>
     <Footer></Footer>
 </template>
 
@@ -66,7 +65,6 @@
 import Header from "./header/Header";
 import Footer from "./footer/Footer";
 import ProfileSection from "./sections/ProfileSection";
-import FooterMenu from './footerMenu/FooterMenu';
 import Loading from './layout/Loading';
 export default {
     name: "Settings",
@@ -74,7 +72,6 @@ export default {
         Header,
         Footer,
         ProfileSection,
-        FooterMenu,
         Loading
     },
     data() {

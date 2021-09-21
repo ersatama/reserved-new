@@ -187,6 +187,7 @@ Route::prefix('organization')->group(function() {
 });
 
 Route::prefix('user')->group(function() {
+    Route::post('register',[UserController::class,'register'])->name('user.create');
     Route::post('update/{id}',[UserController::class,'update'])->name('user.update');
     Route::post('reset/{id}',[UserController::class,'resetPassword'])->name('user.reset.password');
     Route::post('password/{id}',[UserController::class,'updatePassword'])->name('user.update.password');
@@ -225,7 +226,6 @@ Route::prefix('languages')->group(function() {
 Route::prefix('sms')->group(function() {
     Route::get('reset/{phone}',[UserController::class,'smsResend']);
     Route::get('{phone}/{code}',[UserController::class,'smsVerify']);
-
 });
 
 Route::get('/sms_resend/{phone}',[UserController::class,'smsResend']);
@@ -239,3 +239,4 @@ Route::post('/token/{token}', [UserController::class,'token']);
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+

@@ -20,7 +20,6 @@
             </div>
         </div>
     </template>
-    <Footer-menu></Footer-menu>
     <Footer></Footer>
 </template>
 
@@ -28,7 +27,6 @@
 import Header from "./header/Header";
 import Footer from "./footer/Footer";
 import ProfileSection from './sections/ProfileSection';
-import FooterMenu from './footerMenu/FooterMenu';
 import Search from './layout/Search';
 import SearchOrganization from './layout/searchOrganization';
 export default {
@@ -36,7 +34,6 @@ export default {
     components: {
         Header,
         Footer,
-        FooterMenu,
         ProfileSection,
         Search,
         SearchOrganization

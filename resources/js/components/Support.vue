@@ -28,21 +28,18 @@
             </div>
         </div>
     </div>
-    <Footer-menu></Footer-menu>
     <Footer></Footer>
 </template>
 
 <script>
 import Header from "./header/Header";
 import ProfileSection from './sections/ProfileSection';
-import FooterMenu from './footerMenu/FooterMenu';
 import Footer from "./footer/Footer";
 export default {
     name: "Support",
     components: {
         Header,
         ProfileSection,
-        FooterMenu,
         Footer
     }
 }

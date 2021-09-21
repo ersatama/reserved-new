@@ -93,7 +93,6 @@
             </div>
         </div>
     </div>
-    <Footer-menu></Footer-menu>
     <Footer></Footer>
     <notifications position="bottom left" classes="notification notification-error" :ignoreDuplicates="true"/>
 </template>
@@ -103,7 +102,6 @@
 import Header from "./header/Header";
 import Footer from "./footer/Footer";
 import ProfileSection from './sections/ProfileSection';
-import FooterMenu from './footerMenu/FooterMenu';
 import {maska} from 'maska';
 
 export default {
@@ -113,7 +111,6 @@ export default {
         Header,
         Footer,
         ProfileSection,
-        FooterMenu,
     },
     data() {
         return {
